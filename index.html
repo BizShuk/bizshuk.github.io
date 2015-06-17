@@ -23,7 +23,6 @@
                 width:100%;
                 transition:all 50ms ease-in-out;
                 position:relative;
-                display:none;
             }
 
 
@@ -125,7 +124,6 @@
 
 
 
-                setTimeout(function(){
                 $('.grid_elem').hide();
                 // $('.grid_elem').each(function(i,e){
                 //     $(e).show(100);
@@ -149,17 +147,18 @@
                 }
                 
                 function showup(i,e,dfd){
+                    $(e[i]).addClass(' animated  flipInY ');
                     $(e[i]).show().css('display','inline-block');
                     setTimeout(function(){
                         i++;
                         if(i!=elem_length) dfd[i].resolve(i,e,dfd);
-                    },200);
+                    },300);
 
                     return dfd[i].promise()
                 }
                 var e = $('.grid_elem')[0];
                 dfd[0].resolve(0,$('.grid_elem'),dfd);
-},2000);                
+           
             });
 
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -177,37 +176,37 @@
         <div id="bg_color" class="bg_base"></div>
         <div class="pure-g">
            
-            <a href="" class="grid_elem pure-u-1-6 bg_base animated  flipInY" style="background-image:url('http://i.imgur.com/SpbbJ3z.jpg?1');">
+            <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/SpbbJ3z.jpg?1');">
 
                 <p class="img_title">temp</p>
                 <div class="bg_filter"></div>
 
             </a>
-            <a href="http://shuk.info/resume.html" class="grid_elem pure-u-1-6 bg_base animated  flipInY" style="background-image:url('http://i.imgur.com/hx7Oymx.jpg');">
+            <a href="http://shuk.info/resume.html" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/hx7Oymx.jpg');">
 
                 <p class="img_title">temp</p>
                 <div class="bg_filter"></div>
 
             </a>
-            <a href="" class="grid_elem pure-u-1-6 bg_base animated  flipInY" style="background-image:url('http://i.imgur.com/XwGpqgN.jpg?1');">
+            <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/XwGpqgN.jpg?1');">
 
                 <p class="img_title">temp</p>
                 <div class="bg_filter"></div>
 
             </a>
-            <a href="" class="grid_elem pure-u-1-6 bg_base animated  flipInY" style="background-image:url('http://i.imgur.com/zYjqjig.jpg?2');">
+            <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/zYjqjig.jpg?2');">
 
                 <p class="img_title">temp</p>
                 <div class="bg_filter"></div>
 
             </a>
-            <a href="" class="grid_elem pure-u-1-6 bg_base animated  flipInY" style="background-image:url('http://i.imgur.com/nSF6Kft.jpg?1');">
+            <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/nSF6Kft.jpg?1');">
 
                 <p class="img_title">temp</p>
                 <div class="bg_filter"></div>
 
             </a>
-            <a href="" class="grid_elem pure-u-1-6 bg_base animated  flipInY" style="background-image:url('http://i.imgur.com/SOvLqzF.jpg?1');">
+            <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/SOvLqzF.jpg?1');">
 
                 <p class="img_title">temp</p>
                 <div class="bg_filter"></div>
