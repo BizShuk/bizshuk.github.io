@@ -23,7 +23,7 @@
                 width:100%;
                 transition:all 50ms ease-in-out;
                 position:relative;
-                display:none;
+                display:inline-block;
             }
 
 
@@ -122,6 +122,9 @@
         </style>
         <script>
             $(document).ready(function(){
+
+
+                $('.grid_elem').hide();
                 // $('.grid_elem').each(function(i,e){
                 //     $(e).show(100);
                 // });
@@ -144,7 +147,7 @@
                 }
                 
                 function showup(i,e,dfd){
-                    $(e[i]).show(100);
+                    $(e[i]).show().css('display','inline-block');
                     setTimeout(function(){
                         i++;
                         if(i!=elem_length) dfd[i].resolve(i,e,dfd);
