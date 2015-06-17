@@ -23,7 +23,7 @@
                 width:100%;
                 transition:all 50ms ease-in-out;
                 position:relative;
-                display:inline-block;
+                display:none;
             }
 
 
@@ -124,6 +124,8 @@
             $(document).ready(function(){
 
 
+
+                setTimeout(function(){
                 $('.grid_elem').hide();
                 // $('.grid_elem').each(function(i,e){
                 //     $(e).show(100);
@@ -157,7 +159,7 @@
                 }
                 var e = $('.grid_elem')[0];
                 dfd[0].resolve(0,$('.grid_elem'),dfd);
-                
+},2000);                
             });
 
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
