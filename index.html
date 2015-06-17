@@ -1,5 +1,58 @@
-<<<<<<< HEAD
-test8
-=======
-test7
->>>>>>> 61ee4937e27ac409baff5c2d26ee99f6747a4c15
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shuk Gallery</title>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, User-scalable=no">
+
+        <style>
+            .pure-g div{
+                height:300px;    
+            }
+        </style>
+        <script>
+            window.onresize = function(){
+                var w_width = $(window).width();
+                var grid_replace_class = "";
+                var now_grid_class = $('.pure-g div').attr('class');
+                if( w_width >= 1800       && now_grid_class != "pure-u-1-6"){
+                    grid_replace_class = "pure-u-1-6";
+                }else if( w_width >= 1500 && now_grid_class != "pure-u-1-5"){
+                    grid_replace_class = "pure-u-1-5";
+                }else if( w_width >= 1200 && now_grid_class != "pure-u-1-4"){
+                    grid_replace_class = "pure-u-1-4";
+                }else if( w_width >= 900  && now_grid_class != "pure-u-1-3"){
+                    grid_replace_class = "pure-u-1-3";
+                }else if( w_width >= 600  && now_grid_class != "pure-u-1-2"){
+                    grid_replace_class = "pure-u-1-2";
+                }else if( now_grid_class != "pure-u-1-1"){
+                    grid_replace_class = "pure-u-1-1";
+                }
+                
+                if( grid_replace_class != ""){
+                    $(".pure-g div").each(function(i,e){
+                        e.removeClass();
+                        e.addClass(grid_replace_class);
+                    });
+                    
+                }
+            }
+        </script>
+    </head>
+    <body>
+
+        <div class="pure-g">
+            <div class="pure-u-1-6"><p>Thirds</p></div>
+            <div class="pure-u-1-6"><p>Thirds</p></div>
+            <div class="pure-u-1-6"><p>Thirds</p></div>
+            <div class="pure-u-1-6"><p>Thirds</p></div>
+            <div class="pure-u-1-6"><p>Thirds</p></div>
+            <div class="pure-u-1-6"><p>Thirds</p></div>
+        </div>
+
+
+
+
+    </body>
+</html>
