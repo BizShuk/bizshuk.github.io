@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="http://static.shuk.info/base.css">
         <link rel="stylesheet" href="animate.css">
 
-        <!-- have to -->
+        <!-- must have for every page -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, User-scalable=no">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta http-equiv="content-language" content="en-US">
@@ -27,85 +27,20 @@
                 position:relative;
             }
 
-            .pure-g  .grid_elem{
-                height:150px;    
-                background-color:#aaa;
-                background-size:cover;
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
-                box-sizing: border-box;
-                width:100%;
-                transition:all 50ms ease-in-out;
-                position:relative;
-            }
-
-
-
-
-            @media screen and (min-width:400px){
-                .pure-g  .grid_elem{
-                    height:35vw;
-                    width:50%;
-                }
-            }
-            @media screen and (min-width:900px){
-                .pure-g .grid_elem{
-                    height:30vw;
-                    width:33.3%;
-                }
-            }
-            @media screen and (min-width:1200px){
-                .pure-g  .grid_elem{
-                    height:20vw;
-                    width:25%;
-                }
-            }
-            @media screen and (min-width:1500px){
-                .pure-g  .grid_elem{
-                    height:20vw;
-                    width:20%;
-                }
-            }
-
             #bg_color{
-                background-color:000;
                 filter:blur(5px);
-                position:absolute;
-                top: 0px;
-                left: 0px;
                 width: 100vw;
                 height: 100vh;
                 position: fixed;
                 opacity: 0.6;
                 z-index:0;
-                background: #000;
             }
-            .bg_filter{
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                height: 100%;
-                width: 100%;
-                background-color: #000;
-                opacity: 0.4;
+            .background_cover{
                 transition:opacity 500ms;
                 cursor: pointer;
             }
-            .grid_elem:hover .bg_filter{
+            .grid_elem:hover .background_cover{
                 opacity: 0;
-            }
-            .img_title{
-                position: absolute;
-                right: 0px;
-                bottom: 0px;
-                padding:5px;
-                margin-right:20px;
-                color:white;
-                transition:color 500ms;
-                z-index:5;
-            }
-            .grid_elem:hover .img_title{
-                color:black;
             }
             .fb-like{
                 position:absolute !important;
@@ -119,33 +54,24 @@
         <script>
             $(document).ready(function(){
 
-
-
-                $('.grid_elem').hide();
-                // $('.grid_elem').each(function(i,e){
-                //     $(e).show(100);
-                // });
+                $('.grid_elem').hide(); // for jquery.show , it will display inline, not inline-block in FF 
 
                 var i =0;
                 var elem_length = $('.grid_elem').length;
 
                 var dfd = new Array();
 
-
                 while( i< elem_length){
-                
                     var this_dfd = new $.Deferred();
-                    
                     dfd.push(this_dfd);
-                    
                     dfd[i].done(showup);                    
-                
                     i++;
                 }
                 
+                // show up sequentially about 300ms
                 function showup(i,e,dfd){
-                    $(e[i]).addClass(' animated  flipInY ');
-                    $(e[i]).show().css('display','inline-block');
+                    $(e[i]).addClass(' animated  flipInY ');        // in FF, animated before show up
+                    $(e[i]).show().css('display','inline-block');   // for jquery.show , it will display inline, not inline-block in FF
                     setTimeout(function(){
                         i++;
                         if(i!=elem_length) dfd[i].resolve(i,e,dfd);
@@ -157,6 +83,8 @@
                 dfd[0].resolve(0,$('.grid_elem'),dfd);
            
             });
+
+
 
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -179,73 +107,73 @@
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
         <div class="fb-like" data-href="http://shuk.info/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
-        <div id="bg_color" class="bg_base"></div>
+        <div id="bg_color" class="bg_base background_cover"></div>
         <div class="pure-g">
            
             <a href="https://www.facebook.com/InitialShuk" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/SpbbJ3z.jpg?1');">
                 <p class="img_title">facebook</p>
-                <div class="bg_filter"></div>
+                <div class="background_cover"></div>
             </a>
             <a href="http://shuk.info/resume.html" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/hx7Oymx.jpg');">
                 <p class="img_title">Resume</p>
-                <div class="bg_filter"></div>
+                <div class="background_cover"></div>
             </a>
             <a href="http://shukliu.imgur.com/" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/XwGpqgN.jpg?1');">
                 <p class="img_title">imgur</p>
-                <div class="bg_filter"></div>
+                <div class="background_cover"></div>
             </a>
             <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/zYjqjig.jpg?2');">
                 <p class="img_title"></p>
-                <div class="bg_filter"></div>
+                <div class="background_cover"></div>
             </a>
             <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/nSF6Kft.jpg?1');">
                 <p class="img_title"></p>
-                <div class="bg_filter"></div>
+                <div class="background_cover"></div>
             </a>
             <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/SOvLqzF.jpg?1');">
                 <p class="img_title"></p>
-                <div class="bg_filter"></div>
+                <div class="background_cover"></div>
             </a>
             <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/MC7PivN.jpg?1');">
                 <p class="img_title"></p>
-                <div class="bg_filter"></div>
+                <div class="background_cover"></div>
             </a>
             <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/oxa6XYD.jpg?1');">
                 <p class="img_title"></p>
-                <div class="bg_filter"></div>
+                <div class="background_cover"></div>
             </a>
             <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/xzaripA.jpg?1');">
                 <p class="img_title"></p>
-                <div class="bg_filter"></div>
+                <div class="background_cover"></div>
             </a>
             <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/XhFC30m.jpg?1');">
                 <p class="img_title"></p>
-                <div class="bg_filter"></div>
+                <div class="background_cover"></div>
             </a>
             <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/qu5vTMb.jpg?1');">
                 <p class="img_title"></p>
-                <div class="bg_filter"></div>
+                <div class="background_cover"></div>
             </a>
             <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/yoWDPyR.jpg?1');">
                 <p class="img_title"></p>
-                <div class="bg_filter"></div>
+                <div class="background_cover"></div>
             </a>
             <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/n1DwNGu.jpg?1');">
                 <p class="img_title"></p>
-                <div class="bg_filter"></div>
+                <div class="background_cover"></div>
             </a>
             <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/os9cmsK.jpg?1');">
                 <p class="img_title"></p>
-                <div class="bg_filter"></div>
+                <div class="background_cover"></div>
             </a>
             <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/fnZmpWY.jpg?1');">
                 <p class="img_title"></p>
-                <div class="bg_filter"></div>
+                <div class="background_cover"></div>
             </a>
  
             <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/ernEoKm.jpg?1');">
                 <p class="img_title"></p>
-                <div class="bg_filter"></div>
+                <div class="background_cover"></div>
             </a>
             
         </div>
