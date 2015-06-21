@@ -4,10 +4,14 @@
         <title>Shuk Gallery</title>
 
         <!-- libraries-->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
         <link rel="stylesheet" href="http://static.shuk.info/base.css">
-        <link rel="stylesheet" href="animate.css">
+        <link rel="stylesheet" href="http://static.shuk.info/library/animate.css">
+        <!-- The core React library -->
+        <script src="https://fb.me/react-0.13.3.js"></script>
+        <!-- In-browser JSX transformer, remove when pre-compiling JSX. -->
+        <script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
         <!-- must have for every page -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, User-scalable=no">
@@ -26,7 +30,7 @@
             body div{
                 position:relative;
             }
-
+    
             #bg_color{
                 filter:blur(5px);
                 width: 100vw;
@@ -52,40 +56,6 @@
             }
         </style>
         <script>
-            $(document).ready(function(){
-
-                $('.grid_elem').hide(); // for jquery.show , it will display inline, not inline-block in FF 
-
-                var i =0;
-                var elem_length = $('.grid_elem').length;
-
-                var dfd = new Array();
-
-                while( i< elem_length){
-                    var this_dfd = new $.Deferred();
-                    dfd.push(this_dfd);
-                    dfd[i].done(showup);                    
-                    i++;
-                }
-                
-                // show up sequentially about 300ms
-                function showup(i,e,dfd){
-                    $(e[i]).addClass(' animated  flipInY ');        // in FF, animated before show up
-                    $(e[i]).show().css('display','inline-block');   // for jquery.show , it will display inline, not inline-block in FF
-                    setTimeout(function(){
-                        i++;
-                        if(i!=elem_length) dfd[i].resolve(i,e,dfd);
-                    },300);
-
-                    return dfd[i].promise()
-                }
-                var e = $('.grid_elem')[0];
-                dfd[0].resolve(0,$('.grid_elem'),dfd);
-           
-            });
-
-
-
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -94,8 +64,34 @@
             ga('create', 'UA-64178802-1', 'auto');
             ga('send', 'pageview');
 
-           
+
+            function show_up_sequentially(selector){
+                var elems = $(selector),
+                    elem_length = elems.length,
+                    dfd = new Array();
+
+                for(var i=0;i<elem_length;i++){
+                    var this_dfd = new $.Deferred();
+                    this_dfd.done(showup);
+                    dfd.push(this_dfd);
+                }
+
+                function showup(i,e,dfd){
+                    $(e[i]).addClass(' animated  flipInY ');        // in FF, animated before show up
+                    $(e[i]).show();
+                    setTimeout(function(){
+                        i++;
+                        if(i!=elem_length) dfd[i].resolve(i,e,dfd); // last one can't resolve next(out of length)
+                    },500);
+
+                    return dfd[i].promise()
+                }
+                dfd[0].resolve(0,elems,dfd);
+            }
+
         </script>
+
+
     </head>
     <body>
         <div id="fb-root"></div>
@@ -108,75 +104,62 @@
         }(document, 'script', 'facebook-jssdk'));</script>
         <div class="fb-like" data-href="http://shuk.info/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
         <div id="bg_color" class="bg_base background_cover"></div>
-        <div class="pure-g">
-           
-            <a href="https://www.facebook.com/InitialShuk" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/SpbbJ3z.jpg?1');">
-                <p class="img_title">facebook</p>
-                <div class="background_cover"></div>
-            </a>
-            <a href="http://shuk.info/resume.html" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/hx7Oymx.jpg');">
-                <p class="img_title">Resume</p>
-                <div class="background_cover"></div>
-            </a>
-            <a href="http://shukliu.imgur.com/" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/XwGpqgN.jpg?1');">
-                <p class="img_title">imgur</p>
-                <div class="background_cover"></div>
-            </a>
-            <a href="https://github.com/BizShuk" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/zYjqjig.jpg?2');">
-                <p class="img_title">GitHub</p>
-                <div class="background_cover"></div>
-            </a>
-            <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/nSF6Kft.jpg?1');">
-                <p class="img_title"></p>
-                <div class="background_cover"></div>
-            </a>
-            <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/SOvLqzF.jpg?1');">
-                <p class="img_title"></p>
-                <div class="background_cover"></div>
-            </a>
-            <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/MC7PivN.jpg?1');">
-                <p class="img_title"></p>
-                <div class="background_cover"></div>
-            </a>
-            <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/oxa6XYD.jpg?1');">
-                <p class="img_title"></p>
-                <div class="background_cover"></div>
-            </a>
-            <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/xzaripA.jpg?1');">
-                <p class="img_title"></p>
-                <div class="background_cover"></div>
-            </a>
-            <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/XhFC30m.jpg?1');">
-                <p class="img_title"></p>
-                <div class="background_cover"></div>
-            </a>
-            <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/qu5vTMb.jpg?1');">
-                <p class="img_title"></p>
-                <div class="background_cover"></div>
-            </a>
-            <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/yoWDPyR.jpg?1');">
-                <p class="img_title"></p>
-                <div class="background_cover"></div>
-            </a>
-            <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/n1DwNGu.jpg?1');">
-                <p class="img_title"></p>
-                <div class="background_cover"></div>
-            </a>
-            <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/os9cmsK.jpg?1');">
-                <p class="img_title"></p>
-                <div class="background_cover"></div>
-            </a>
-            <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/fnZmpWY.jpg?1');">
-                <p class="img_title"></p>
-                <div class="background_cover"></div>
-            </a>
- 
-            <a href="" class="grid_elem pure-u-1-6 bg_base " style="background-image:url('http://i.imgur.com/ernEoKm.jpg?1');">
-                <p class="img_title"></p>
-                <div class="background_cover"></div>
-            </a>
-            
-        </div>
+
+
+        
+        <div id="content"></div>
+        <script type="text/jsx">
+            var Gallery  = React.createClass({
+                getInitialState: function(){
+                    return {data:[]};
+                },               
+                componentDidMount:function(){
+                    $.ajax({
+                        url: this.props.url,
+                        dataType: 'json',cache: false,
+                        success: function(data) {
+                            var dfd = $.Deferred();
+                            dfd.promise(this);
+                            dfd.resolve(this);
+                            this.done(function(dfd_obj){
+                                dfd_obj.setState({data: data});
+                                return dfd_obj;
+                            }).done(function(dfd_obj){
+                                show_up_sequentially(".grid_elem");
+                            });
+                        }.bind(this),
+                        error: function(xhr, status, err) {
+                            console.error(this.props.url, status, err.toString());
+                        }.bind(this)
+                    });
+
+
+                },
+    
+                render: function(){
+                    var Tlems = this.state.data.map(function(elem){
+                        return (<Gallery_elem data={elem}></Gallery_elem>); 
+                    });
+                    return (<div className="pure-g">{Tlems}</div>);    
+                }
+            });
+
+            var Gallery_elem = React.createClass({
+                render: function(){
+                    this.props.data.style.display = "none";
+                    return (
+                        <a href={this.props.data.link} className="grid_elem pure-u-1-6 bg_base" style={this.props.data.style}>
+                            <p className="img_title">{this.props.data.img_title}</p>
+                            <div className="background_cover"></div>
+                        </a>
+                    );    
+                }
+            });
+            React.render(
+                <Gallery url="http://shuk.info/gallery_elem.json"/>,
+                document.getElementById('content')
+            );
+        </script>
 
 
 
