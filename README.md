@@ -1,2 +1,5 @@
-# bizshuk.github.io
-user page
+### index.html
+homepage
+
+### resume.html
+resume page
