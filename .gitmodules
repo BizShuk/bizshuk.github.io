@@ -1,6 +1,3 @@
 [submodule "test"]
 	path = test
 	url = https://github.com/BizShuk/test.git
-[submodule "static"]
-	path = static
-	url = https://github.com/BizShuk/static.git
