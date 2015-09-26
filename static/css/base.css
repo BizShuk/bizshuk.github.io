@@ -1,0 +1,506 @@
+/* line 23, ../sass/base.sass */
+.abs_0_0, .background_cover, .frontcover, .screen-cover {
+  position: absolute !important;
+  left: 0;
+  top: 0;
+}
+
+/* line 28, ../sass/base.sass */
+.clear {
+  clear: both;
+}
+
+/* line 31, ../sass/base.sass */
+body,
+ul {
+  margin: 0;
+}
+
+/* line 35, ../sass/base.sass */
+hr {
+  border: 1px solid #eeeeee;
+}
+
+/* for img  background-image(with background_cover) */
+/* line 40, ../sass/base.sass */
+.bg_base, .background_cover, .pure-g .gird_elem {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*  background_cover of parent container
+ * <div>
+ *         <div class="background_cover" style="background-image....."></div>
+ * </div> */
+/* line 49, ../sass/base.sass */
+.background_cover {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.4;
+}
+
+/* line 57, ../sass/base.sass */
+a {
+  color: black;
+}
+/* line 59, ../sass/base.sass */
+a[href^=tel] {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* mac scroll bar from https://gist.github.com/devinrhode2/2573411 */
+/* Turn on custom 8px wide scrollbar */
+/* line 67, ../sass/base.sass */
+::-webkit-scrollbar {
+  width: 8px;
+  /* This is more usable for users trying to click it. */
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-border-radius: 100px;
+}
+/* line 72, ../sass/base.sass */
+::-webkit-scrollbar:hover {
+  background-color: rgba(0, 0, 0, 0.09);
+}
+
+/* The scrollbar 'thumb' ...that marque oval shape in a scrollbar */
+/* line 76, ../sass/base.sass */
+::-webkit-scrollbar-thumb:vertical {
+  /* This is the EXACT color of Mac OS scrollbars.
+   * Yes, I pulled out digital color meter */
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 100px;
+}
+/* line 81, ../sass/base.sass */
+::-webkit-scrollbar-thumb:vertical:active {
+  background: rgba(0, 0, 0, 0.61);
+  -webkit-border-radius: 100px;
+}
+
+/* line 85, ../sass/base.sass */
+header {
+  padding: 15px 0px;
+  font-size: 24px;
+  font-family: karla;
+  text-align: center;
+}
+
+/* line 92, ../sass/base.sass */
+.tag {
+  padding: 2px 6px;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 30px;
+  margin: 0px 4px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 0px 1px #b09d48;
+  -moz-box-shadow: 0px 0px 0px 1px #b09d48;
+  box-shadow: 0px 0px 0px 1px #b09d48;
+}
+/* line 104, ../sass/base.sass */
+.tag:hover {
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
+  background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
+  background-image: -moz-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
+  background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
+}
+
+/* line 110, ../sass/base.sass */
+.tag_1 {
+  background-color: rgba(255, 255, 0, 0.1);
+}
+
+/* line 110, ../sass/base.sass */
+.tag_2 {
+  background-color: rgba(255, 255, 0, 0.2);
+}
+
+/* line 110, ../sass/base.sass */
+.tag_3 {
+  background-color: rgba(255, 255, 0, 0.3);
+}
+
+/* line 110, ../sass/base.sass */
+.tag_4 {
+  background-color: rgba(255, 255, 0, 0.4);
+}
+
+/* line 110, ../sass/base.sass */
+.tag_5 {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+
+/* line 110, ../sass/base.sass */
+.tag_6 {
+  background-color: rgba(255, 255, 0, 0.6);
+}
+
+/* line 110, ../sass/base.sass */
+.tag_7 {
+  background-color: rgba(255, 255, 0, 0.7);
+}
+
+/* line 110, ../sass/base.sass */
+.tag_8 {
+  background-color: rgba(255, 255, 0, 0.8);
+}
+
+/* line 110, ../sass/base.sass */
+.tag_9 {
+  background-color: rgba(255, 255, 0, 0.9);
+}
+
+/* line 110, ../sass/base.sass */
+.tag_10 {
+  background-color: yellow;
+}
+
+/*  Grid , depend on pure css(.pure-g ,pure-u-1-6 for initial)
+ * <div class="pure-g">
+ *    <div class="pure-u-1-6 bg_base grid_elem">
+ *        <p clss="img_title"></p>
+ *        <div class=""background_cover></div>
+ *    </div>
+ * </div> */
+/* line 122, ../sass/base.sass */
+.pure-g .gird_elem {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  background-color: #aaaaaa;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  transition: all 50ms ease-in-out;
+}
+@media screen and (min-width: 400px) {
+  /* line 122, ../sass/base.sass */
+  .pure-g .gird_elem {
+    height: 35vw;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 900px) {
+  /* line 122, ../sass/base.sass */
+  .pure-g .gird_elem {
+    height: 30vw;
+    width: 33.3%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  /* line 122, ../sass/base.sass */
+  .pure-g .gird_elem {
+    height: 20vw;
+    width: 25%;
+  }
+}
+@media screen and (min-width: 1500px) {
+  /* line 122, ../sass/base.sass */
+  .pure-g .gird_elem {
+    height: 20vw;
+    width: 20%;
+  }
+}
+/* line 142, ../sass/base.sass */
+.pure-g .gird_elem:hover .img_title {
+  color: black;
+}
+/* line 144, ../sass/base.sass */
+.pure-g .gird_elem:hover .background_cover {
+  opacity: 0;
+}
+/* line 146, ../sass/base.sass */
+.pure-g .gird_elem .img_title {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  padding: 5px;
+  margin-right: 20px;
+  color: white;
+  transition: color 500ms;
+  z-index: 5;
+}
+
+/* line 158, ../sass/base.sass */
+.frame_menu .left_menu {
+  width: 300px;
+  height: 100%;
+  background-color: #dddddd;
+  float: left;
+  z-index: 99;
+}
+/* line 164, ../sass/base.sass */
+.frame_menu .left_menu .menuitem {
+  width: 100%;
+}
+/* line 166, ../sass/base.sass */
+.frame_menu .right_content {
+  text-align: center;
+}
+
+/* line 171, ../sass/base.sass */
+.subject_list .desc {
+  line-height: 25px;
+}
+/* line 173, ../sass/base.sass */
+.subject_list .subtitle {
+  font-weight: bold;
+}
+/* line 177, ../sass/base.sass */
+.subject_list ul li header {
+  text-align: left;
+}
+/* line 179, ../sass/base.sass */
+.subject_list ul li div {
+  padding-bottom: 5px;
+}
+
+/* line 189, ../sass/base.sass */
+.sample_demo {
+  width: 900px;
+  margin: 0 auto;
+}
+/* line 192, ../sass/base.sass */
+.sample_demo section {
+  width: 250px;
+  border: 2px solid #888888;
+  vertical-align: top;
+  display: inline-block;
+  margin: 0 20px;
+  margin-bottom: 20px;
+}
+/* line 199, ../sass/base.sass */
+.sample_demo section div {
+  text-align: center;
+  background-color: #202020;
+  padding-top: 5px;
+  color: #bbbbbb;
+}
+/* line 204, ../sass/base.sass */
+.sample_demo .demo_photo {
+  width: 250px;
+  height: 200px;
+  display: block;
+}
+@media screen and (max-width: 900px) {
+  /* line 189, ../sass/base.sass */
+  .sample_demo {
+    width: 600px;
+  }
+}
+@media screen and (max-width: 600px) {
+  /* line 189, ../sass/base.sass */
+  .sample_demo {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 450px) {
+  /* line 189, ../sass/base.sass */
+  .sample_demo {
+    width: 100%;
+    margin: 0;
+    border: 0;
+  }
+  /* line 214, ../sass/base.sass */
+  .sample_demo .demo_photo {
+    width: 100%;
+    margin: 0;
+    border: 0;
+  }
+  /* line 216, ../sass/base.sass */
+  .sample_demo section {
+    width: 100%;
+    margin: 0;
+    border: 0;
+  }
+  /* line 218, ../sass/base.sass */
+  .sample_demo section div {
+    padding-bottom: 15px;
+    width: 100%;
+    margin: 0;
+    border: 0;
+  }
+}
+
+/* line 223, ../sass/base.sass */
+.banner_grid_1 {
+  width: 80%;
+  min-width: 600px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+/* line 228, ../sass/base.sass */
+.banner_grid_1 ul {
+  padding: 0;
+}
+/* line 230, ../sass/base.sass */
+.banner_grid_1 li {
+  list-style-type: none;
+  height: 150px;
+  padding-left: 5px;
+  border-top: 2px solid #eeeeee;
+}
+/* line 235, ../sass/base.sass */
+.banner_grid_1 li:hover {
+  border-left: 5px solid black;
+}
+/* line 238, ../sass/base.sass */
+.banner_grid_1 li:nth-child(even) .img {
+  float: right;
+}
+/* line 240, ../sass/base.sass */
+.banner_grid_1 li:nth-child(even) .desc {
+  margin-left: 30px;
+  margin-right: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/* line 246, ../sass/base.sass */
+.banner_grid_1 .img {
+  width: 200px;
+  height: 150px;
+  float: left;
+}
+/* line 250, ../sass/base.sass */
+.banner_grid_1 .desc {
+  margin-left: 230px;
+  padding: 10px 0px;
+}
+/* line 253, ../sass/base.sass */
+.banner_grid_1 .desc header {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 0;
+  margin-bottom: 5px;
+  text-align: none;
+}
+@media screen and (max-width: 600px) {
+  /* line 223, ../sass/base.sass */
+  .banner_grid_1 {
+    min-width: 0px;
+    max-width: 100%;
+    width: 100% !important;
+    text-align: center;
+  }
+  /* line 264, ../sass/base.sass */
+  .banner_grid_1 li {
+    padding: 0;
+    height: auto;
+  }
+  /* line 267, ../sass/base.sass */
+  .banner_grid_1 li:hover {
+    border: 0;
+  }
+  /* line 269, ../sass/base.sass */
+  .banner_grid_1 .img {
+    float: none;
+    width: 100%;
+    height: 150px;
+  }
+  /* line 273, ../sass/base.sass */
+  .banner_grid_1 .desc {
+    width: 100%;
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+}
+
+/* line 280, ../sass/base.sass */
+.outer-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* line 284, ../sass/base.sass */
+.horizontal-container {
+  white-space: nowrap;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  word-spacing: -5px;
+}
+
+/* line 292, ../sass/base.sass */
+.horizontal-photos {
+  display: inline-block;
+  height: 250px;
+}
+/* line 295, ../sass/base.sass */
+.horizontal-photos img {
+  height: 100%;
+}
+
+/* line 299, ../sass/base.sass */
+.frontcover {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  min-height: 600px;
+}
+
+/* line 306, ../sass/base.sass */
+.screen-cover {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  z-index: 15;
+  min-height: 600px;
+}
+
+/* line 315, ../sass/base.sass */
+.outer_brief {
+  position: absolute;
+  top: 30%;
+  z-index: 20;
+  color: white;
+  left: 55%;
+  width: 400px;
+  padding-right: 20px;
+  height: 500px;
+  line-height: 30px;
+}
+@media screen and (max-height: 600px) {
+  /* line 315, ../sass/base.sass */
+  .outer_brief {
+    padding: 0;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 950px) {
+  /* line 315, ../sass/base.sass */
+  .outer_brief {
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    max-height: 600px;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* line 315, ../sass/base.sass */
+  .outer_brief {
+    top: 20%;
+  }
+}
+@media screen and (max-width: 400px) {
+  /* line 315, ../sass/base.sass */
+  .outer_brief {
+    top: 50px;
+  }
+}
+/* line 342, ../sass/base.sass */
+.outer_brief .brief {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
