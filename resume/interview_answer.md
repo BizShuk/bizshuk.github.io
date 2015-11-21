@@ -23,7 +23,7 @@ I think i have abilities for Full-Stack, but due to my works, a complete website
 It's a great company, stable daily work, good communications between employees, using data-driven to do things. If I'm more than 32, I definitly stay. Just all of things are done, don't have a right way to be involved to grow up. But even i leave this company, i still keep in touch with people including Marketing director.
 
 ##### Why do i leave Gamesofa Inc. without find a job first?
-First few years of work experiences is the most important time of all life career. So i make a check point after i had been Gamesofa Inc. 3 months. And it's too comfortable to leave. So, I quited first and think about what i should do next. After that, i decided to focus on back-end and infrastructure and follow open source or tweet of top engineers in the world.
+First few years of work experiences is the most important time of all life career. So i make a check point two years after i had been Gamesofa Inc. 3 months and it's too comfortable to leave. So, I quited first and think about what i should do next. After that, i decided to focus on back-end and infrastructure and follow open source or tweet of top engineers in the world.
 
 
 
