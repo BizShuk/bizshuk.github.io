@@ -1,0 +1,1 @@
+- [Gayle Laakmann McDowell's top resume](https://www.quora.com/What-are-Gayle-Laakmann-McDowells-top-resume-evaluation-answers)

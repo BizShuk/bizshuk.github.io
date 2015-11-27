@@ -1,7 +1,13 @@
 ## This is for answers of my experices
 
-##### What do i get?
-[Resume link](https://github.com/BizShuk/bizshuk.github.io/raw/master/resume/Resume.pdf) , if you want editable version , please [check here](https://github.com/BizShuk/bizshuk.github.io/tree/master/resume) choose what you want.
+##### unanswer list
+- Why do you want to work here?
+- Why i leave last company?
+- introduce personality
+
+
+##### What do i get? 
+[Resume link](https://github.com/BizShuk/bizshuk.github.io/raw/master/resume/Resume.pdf) , including work experience and summary , if you want editable version , please [check here](https://github.com/BizShuk/bizshuk.github.io/tree/master/resume) choose what you want.
 <br><br>
 
 ##### Why do i want to work oversea?
