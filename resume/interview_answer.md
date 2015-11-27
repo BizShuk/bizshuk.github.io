@@ -1,9 +1,5 @@
 ## This is for answers of my experices
 
-##### unanswer list
-- Why do you want to work here?
-- Why i leave last company?
-- introduce personality
 
 
 ##### What do i get? 
@@ -45,3 +41,7 @@ First few years of work experiences is the most important time of all life caree
 
 
 
+##### unanswer list ( personal note )
+- Why do you want to work here?
+- Why i leave last company?
+- introduce personality
