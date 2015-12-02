@@ -3,33 +3,33 @@
 [Company List](https://github.com/BizShuk/bizshuk.github.io/blob/master/resume/list_companys.md)
 
 ### BaaS server side architecture ###
-- Summary:
+- Summary: Service of writing back-end code in cloud without seting server
 - Company: Shanghai Droi Market Co Ltd.
 - Date: 2015-10 ~ 2016-04
-- Role: Server System Architecture (not include database)
-- Co-worker: 
+- Role: System developer
+- Co-worker: Owen , James , Tune , Steven
 - Link:
-- Description:
+- Description: A platform for developer to build back-end service without private server. Model system for multi developer and constructure flexible system.
 - Tech list: Openresty, Nginx, Lua, docker, kubernetes, Jenkins, Ansible
 
 ### Lua profiler ###
-- Summary:
+- Summary: evaluate cloud code quility
 - Company: Shanghai Droi Market Co Ltd.
 - Date: 2015-09 ~ 2015-10
-- Role:
-- Co-worker: name <mail>
+- Role: System developer
+- Co-worker: none
 - Link:
-- Description:
+- Description: 
 - Tech list: Openresty, Nginx, Lua, docker, Jenkins, Ansible
 
 ### Home site ###
 - Summary: Personal website
-- Company: Self
+- Company: none
 - Date: 2015-04 ~ 2015-07
 - Role: developer
 - Co-worker: none
 - Link: [Website](http://shuk.info/) [Resume site](http://shuk.info/resume.html)
-- Description:
+- Description: personal website with some picture for introducing self, use few new tech , like reactjs, SASS , to build up
 - Tech list: html, js (reactjs), SASS, RWD, web hosting (GoDaddy),
 
 ### survey system ###
@@ -37,41 +37,33 @@
 - Company: Gamesofa Inc.
 - Date: 2014-11 ~ 2015-04
 - Role: System Architect
-- Co-worker: Micheal Lin <michael@gamesofa.com>,
-- Link: 
+- Co-worker: Micheal Lin <michael@gamesofa.com>
+- Link: private
 - Description:  
-Get answers from players, thought statistic and analyze to undestand what players want and make priority of features, to keep the most important things are on the way. In this project, I learn how to use statistic and make some analysis.
+Get answers from players, do statistic and analyze to undestand what players want and make priority of features, to keep the most important things are on the way. In this project, I learn how to use statistic and make some analysis.
 - Tech list: PHP, Perl, Html, CSS, js (angularjs 1.4), Mysql
 
 ### Analyzing user system ###
-- Summary:
+- Summary: Simplify some analyzing way to a SOP and easy to use for product manager.A quick view of some group user characteristics, including subset.
 - Company: Gamesofa Inc.
 - Date: 2014-11 ~ 2015-04
-- Role:
-- Co-worker: name <mail>
-- Link:
-- Description:
+- Role: system desiger and developer
+- Co-worker: Micheal Lin <michael@gamesofa.com>
+- Link: private
+- Description: analyze end-user behaviours  and show active rate and statistics of selected group by customized parameters. It totoly reduce a lot of time on evalute user behavious, you can see more different group of users. And visulization is one of ths most important things , it make product managers understanded easily. This time is first time cooperate with different pefessional domain knowledge people. 
 - Tech list: PHP, CSS, js (angularjs 1.4), Perl, Mysql, Statictis
 
+
 ### Refactor Customer Service ###
-- Summary:
+- Summary: refactor system
 - Company: Gamesofa Inc.
 - Date: 2014-11 ~ 2015-04
 - Role: software engineer
 - Co-worker: none
 - Link: [Website](http://www.gamesofa.com/index/?op=report)
-- Description: 
+- Description: Clean useless code and merge some redundant file. Architecture is important.
 - Tech list: PHP, CSS, js, Perl
 
-### Analyzing user behavior ###
-- Summary: A quick view of some group user characteristics, and subset
-- Company: Gamesofa Inc.
-- Date: 2014-11 ~ 2015-04
-- Role: System Design and Developer
-- Co-worker: Michael Lin <micheal@gamesofa.com>
-- Link: private
-- Description:
-- Tech list: PHP, Perl, html, css, js, mysql, statistic
 
 ### Texas Hold'em ###
 - Summary: Online Texas Hold'em 
@@ -80,7 +72,7 @@ Get answers from players, thought statistic and analyze to undestand what player
 - Role: Game developer
 - Co-worker: Taora, Billy, Lean, Jim, ... 
 - Link: [Web site](http://www.gamesofa.com/texas9/)
-- Description: 
+- Description: Dealing with game events and features. Once to implement Omaha core rules. What's the most interest things for user? That will cause user number to grow quickly.
 - Tech list: PHP, Perl, HTML, CSS, js (angularjs 1.4), Mysql
 
 ### Windows 8 App "big two" ###
@@ -88,9 +80,9 @@ Get answers from players, thought statistic and analyze to undestand what player
 - Company: Gamesofa Inc.
 - Date: 2012-11 ~ 2013-06
 - Role: Game developer
-- Co-worker: name <mail>
+- Co-worker: Robin, Ohaha ,
 - Link: [App](https://www.microsoft.com/en-us/store/apps/%E7%A5%9E%E4%BE%86%E4%B9%9F%E5%A4%A7%E8%80%812/9wzdncrdpm5w)
-- Description:
+- Description: 
 - Tech list: HTML5, CSS3, js
 
 
