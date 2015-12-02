@@ -3,7 +3,8 @@
 
 ##### What I get 
 [Resume link](https://github.com/BizShuk/bizshuk.github.io/raw/master/resume/Resume.pdf) , including work experience and summary , if you want editable version , please [check here](https://github.com/BizShuk/bizshuk.github.io/tree/master/resume) choose what you want.  
-[Linkined](https://tw.linkedin.com/in/liu-shuk-593093a0)
+  
+My [LinkedIn](https://tw.linkedin.com/in/liu-shuk-593093a0)
 <br><br>
 
 ##### Why do i want to work oversea?
