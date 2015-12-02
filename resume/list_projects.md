@@ -1,6 +1,6 @@
 # Shuk's project list 
 
-[Company List]()
+[Company List](https://github.com/BizShuk/bizshuk.github.io/blob/master/resume/list_companys.md)
 
 ### BaaS server side architecture ###
 - Summary:
@@ -30,7 +30,7 @@
 - Co-worker: none
 - Link: [Website](http://shuk.info/) [Resume site](http://shuk.info/resume.html)
 - Description:
-- Tech list: html, js (reactjs), SASS, RWD, web hosting,
+- Tech list: html, js (reactjs), SASS, RWD, web hosting (GoDaddy),
 
 ### survey system ###
 - Summary: Online survey system with customized features  
@@ -51,7 +51,7 @@ Get answers from players, thought statistic and analyze to undestand what player
 - Co-worker: name <mail>
 - Link:
 - Description:
-- Tech list: 
+- Tech list: PHP, CSS, js (angularjs 1.4), Perl, Mysql, Statictis
 
 ### Refactor Customer Service ###
 - Summary:
