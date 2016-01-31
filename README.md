@@ -8,3 +8,18 @@ folder structure
 - resume , my CV  
 - static , web libraries   
 
+
+
+## Links
+
+
+[Shuk's site](http://shuk.info/)
+[GitHub](https://github.com/BizShuk)
+[Resume list](https://github.com/BizShuk/bizshuk.github.io/tree/master/resume)
+
+
+
+
+
+### Learning
+- [Japaness](https://github.com/BizShuk/japaness) 
