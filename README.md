@@ -15,3 +15,4 @@
 ## Reading
 - [Linux A-Z Commands for Beginners](http://www.sandwichbite.com/linux-a-z-commands-for-beginners/)  
 - [First 5 mins on Server](http://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers)
+- [Fishing for Hackers](https://sysdig.com/blog/fishing-for-hackers/)
