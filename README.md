@@ -31,3 +31,6 @@ EXAMs
 
 NGINX
 - [ ] [Top Nginx Security practice](http://www.cyberciti.biz/tips/linux-unix-bsd-nginx-webserver-security.html)
+
+
+- [ ] [How to Start a Startup](https://whodyo.wordpress.com/2015/12/28/how-to-start-a-startups/)
