@@ -22,6 +22,10 @@ LINUX SERVER
 CMD
 - [ ] wrk
 
+IT
+- [ ] [Hub vs Switch](http://fossbytes.com/hub-vs-switch-comparison-and-difference/)
+- [ ] [Multi Network Hardware device type](http://fossbytes.com/networking-devices-and-hardware-types/)
+
 Openssl CA
 - [ ] [openssl CA](https://jamielinux.com/docs/openssl-certificate-authority/introduction.html)
 - [ ] [Self-Signed SSL Certificate](https://devcenter.heroku.com/articles/ssl-certificate-self)
