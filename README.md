@@ -38,3 +38,8 @@ NGINX
 
 Product
 - [X] [AAARR](http://wapbaike.baidu.com/view/10197444.htm?adapt=1&)
+
+
+SEO
+- [Tool] [Alexa](http://www.alexa.com/) 
+- [查詢網站流量](http://por.tw/seo/rewrite.php/read-72.html)
