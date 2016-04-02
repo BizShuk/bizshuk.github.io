@@ -19,6 +19,8 @@ LINUX SERVER
 - [X] [First 5 mins on Server](http://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers)
 - [X] [Fishing for Hackers](https://sysdig.com/blog/fishing-for-hackers/)
 
+CMD
+- [ ] wrk
 
 Openssl CA
 - [ ] [openssl CA](https://jamielinux.com/docs/openssl-certificate-authority/introduction.html)
@@ -32,13 +34,11 @@ EXAMs
 NGINX
 - [ ] [Top Nginx Security practice](http://www.cyberciti.biz/tips/linux-unix-bsd-nginx-webserver-security.html)
 
-
+COMPANY
 - [ ] [How to Start a Startup](https://whodyo.wordpress.com/2015/12/28/how-to-start-a-startups/)
-
 
 Product
 - [X] [AAARR](http://wapbaike.baidu.com/view/10197444.htm?adapt=1&)
-
 
 SEO
 - [Tool] [Alexa](http://www.alexa.com/) 
