@@ -10,7 +10,7 @@
 
 ### Learning
 - [Japaness](https://github.com/BizShuk/japaness)
-- 
+
 
 ## Reading
 
