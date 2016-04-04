@@ -11,7 +11,7 @@ Location:
 中国上海徐汇区桂平路391号新漕河泾国际商务大厦B座21楼  
 21F, Blk B, New CHJ International Business Centre No.391 Gui Ping Road Xuhui District Shanghai China  
 
-[introduction PDF](ref/droi_intro.pdf)  
+[Official introduction PDF](ref/droi_intro.pdf)  
 
 岁月如歌，华光如梦，转眼间，我们公司已经走到第八个年头。从一个十人的小米加步枪的小团队，成长到现在将近千人，拥有独立事业群的大公司，感谢大家一路陪伴！  
   
@@ -41,6 +41,12 @@ Location:
 _Onlne game company. 200 employees in Taiwan. Famous in Taiwan_   
 Game and BI devolper , Since 2012-11 ~ 2015-04  
   
+[Official introduction PDF](ref/gamesofa_intro.pdf)  
+
+Online Poker and Mahjong gaming company. The most popular game "Mahjong" is known as "神來也". After 2013, The company started to exxtend game type to shotting game and made a game called "Guns Rush". Steady growing and try to distribute games to world wide.
+
+
+
   
 ## [Dept. of Civil Servant Development](http://dcsd.gov.taipei/)  
 _Place of training govement staff_   
