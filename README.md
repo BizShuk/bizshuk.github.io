@@ -28,7 +28,6 @@ IT
 
 Openssl CA
 - [ ] [openssl CA](https://jamielinux.com/docs/openssl-certificate-authority/introduction.html)
-- [ ] [Self-Signed SSL Certificate](https://devcenter.heroku.com/articles/ssl-certificate-self)
 - [ ] [self-signed SSL Certificate](http://www.akadia.com/services/ssh_test_certificate.html)
 - [ ] [On stack overflow](http://stackoverflow.com/questions/10175812/how-to-create-a-self-signed-certificate-with-openssl)
 
