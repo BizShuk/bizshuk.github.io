@@ -19,6 +19,11 @@ LINUX SERVER
 - [X] [First 5 mins on Server](http://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers)
 - [X] [Fishing for Hackers](https://sysdig.com/blog/fishing-for-hackers/)
 
+Cryptographic
+- [ ] [A Few Thoughts on Cryptographic Engineering]http://blog.cryptographyengineering.com/2011/11/how-not-to-use-symmetric-encryption.html)
+
+
+
 CMD
 - [ ] wrk
 
