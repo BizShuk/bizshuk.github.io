@@ -33,7 +33,7 @@ Openssl CA
 - [ ] [CA建置工具：Openssl的管理與使用介紹（上）](http://www.ascc.sinica.edu.tw/iascc/nl/91/1818/02.txt)
 - [ ] [CA建置工具Openssl的管理與使用介紹（下）](http://www.ascc.sinica.edu.tw/iascc/nl/91/1819/02.txt)
 - [ ] [SSL basic](http://csc.ocean-pioneer.com/docum/ssl_basic.html)
-
+- [ ] [Generating Client/Server certificates with a local CA](http://dst.lbl.gov/~boverhof/openssl_certs.html)
 
 
 EXAMs
