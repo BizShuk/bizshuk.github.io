@@ -20,7 +20,7 @@ LINUX SERVER
 - [X] [Fishing for Hackers](https://sysdig.com/blog/fishing-for-hackers/)
 
 Cryptographic
-- [ ] [A Few Thoughts on Cryptographic Engineering]http://blog.cryptographyengineering.com/2011/11/how-not-to-use-symmetric-encryption.html)
+- [ ] [A Few Thoughts on Cryptographic Engineering](http://blog.cryptographyengineering.com/2011/11/how-not-to-use-symmetric-encryption.html)
 
 
 
