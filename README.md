@@ -30,6 +30,11 @@ Openssl CA
 - [ ] [openssl CA](https://jamielinux.com/docs/openssl-certificate-authority/introduction.html)
 - [ ] [self-signed SSL Certificate](http://www.akadia.com/services/ssh_test_certificate.html)
 - [ ] [On stack overflow](http://stackoverflow.com/questions/10175812/how-to-create-a-self-signed-certificate-with-openssl)
+- [ ] [CA建置工具：Openssl的管理與使用介紹（上）](http://www.ascc.sinica.edu.tw/iascc/nl/91/1818/02.txt)
+- [ ] [CA建置工具Openssl的管理與使用介紹（下）](http://www.ascc.sinica.edu.tw/iascc/nl/91/1819/02.txt)
+- [ ] [SSL basic](http://csc.ocean-pioneer.com/docum/ssl_basic.html)
+
+
 
 EXAMs
 - [ ] [各種程式考題](https://softnshare.wordpress.com/2016/02/21/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80%E9%9D%A2%E8%A9%A6%E8%80%83%E9%A1%8C%E9%9B%86%E9%8C%A6/)
