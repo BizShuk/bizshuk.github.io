@@ -1,5 +1,7 @@
 # tech
 
+Language
+- [Go study](Go_study.md)
 
 Architecture
 - ![](Architecture_design_rules.png)
