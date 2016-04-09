@@ -5,7 +5,7 @@ Guideline:
 - Travel list.md
 - World Wide Travel list.md
 - 伴手禮選購
-
+- [拍攝技巧](拍攝技巧.md)
 
 Blog:
 2016.1.23.七星山主峰.md
