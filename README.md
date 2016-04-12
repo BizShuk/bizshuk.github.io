@@ -56,4 +56,5 @@ Product
 SEO
 - [Tool] [Alexa](http://www.alexa.com/) 
 - [查詢網站流量](http://por.tw/seo/rewrite.php/read-72.html)
-- [Robot.txt](http://www.webconfs.com/what-is-robots-txt-article-12.php)
+- [Robot.txt-1](http://www.webconfs.com/what-is-robots-txt-article-12.php)
+- [Robot.txt-2](http://www.robotstxt.org/robotstxt.html)
