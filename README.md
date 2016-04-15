@@ -14,6 +14,8 @@
 
 ## Reading
 
+[An Internet Encyclopedia](http://www.freesoft.org/CIE/index.htm)
+
 LINUX SERVER
 - [ ] [Linux A-Z Commands for Beginners](http://www.sandwichbite.com/linux-a-z-commands-for-beginners/)  
 - [X] [First 5 mins on Server](http://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers)
