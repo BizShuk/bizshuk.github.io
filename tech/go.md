@@ -3,12 +3,14 @@
 ### ref
 - [Wiki](https://github.com/golang/go/wiki) , Working with Go ,Learning more about Go
 - [IDE, Edit](https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins) , [Vim-go](https://github.com/fatih/vim-go)
+- [Function Types in Go](http://jordanorelli.com/post/42369331748/function-types-in-go-golang)
 
 ### 
 function name start with uppercase => public
 function name start with lowercase => private
 
 
+### type
 
 ### code syntax
 
