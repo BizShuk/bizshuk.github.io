@@ -1,7 +1,8 @@
 # tech
 
 Language
-- [Go study](Go_study.md)
+- [Go study](go.md)
+- [git2go tutorial](https://blog.gopheracademy.com/advent-2014/git2go-tutorial/)
 
 Architecture
 - ![](Architecture_design_rules.png)
@@ -9,7 +10,7 @@ Architecture
 
 Protocol
 - [Https](https_protocol.md)
-
+- [Git Branching - Branches in a Nutshell](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
 
 DevOps
 - [GitFlow considered harmful](http://endoflineblog.com/gitflow-considered-harmful)
