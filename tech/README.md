@@ -1,7 +1,7 @@
 # tech
 
 Language
-- [Go study](go.md)
+- [Go study](go/)
 - [git2go tutorial](https://blog.gopheracademy.com/advent-2014/git2go-tutorial/)
 
 Architecture

@@ -4,16 +4,32 @@
 - [Wiki](https://github.com/golang/go/wiki) , Working with Go ,Learning more about Go
 - [IDE, Edit](https://github.com/golang/go/wiki/IDEsAndTextEditorPlugins) , [Vim-go](https://github.com/fatih/vim-go)
 - [Function Types in Go](http://jordanorelli.com/post/42369331748/function-types-in-go-golang)
+- [Go examples](https://gobyexample.com/)
 
-### 
-function name start with uppercase => public
-function name start with lowercase => private
+### Go cmd
+go get [options] <package> , download packaget to $GOPATH with hierarchical path
+    options:
+            -d , download only                                                               
+            ~                                   
+
+### Print Variable
+
+- %v , value => only property value
+- %+v , plus value => with key and property value
+- %#c , shaped value => go format
+- %s , string
+- %d , digit
+
+### Go implicit rules 
+
+- function name start with uppercase => public
+- function name start with lowercase => private
 
 
-### type
 
 ### code syntax
 
+##### type
 ```
 cases := []struct { 
     in, want string    
