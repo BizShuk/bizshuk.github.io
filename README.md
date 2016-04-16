@@ -14,7 +14,6 @@
 ### Note
 - [Tech Related](tech)
 - [Go](tech/go)
-- 
 
 
 ## Reading
