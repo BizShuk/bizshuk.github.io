@@ -11,6 +11,11 @@
 ### Learning
 - [Japaness](https://github.com/BizShuk/japaness)
 
+### Note
+- [Tech Related](tech)
+- [Go](tech/go)
+- 
+
 
 ## Reading
 
