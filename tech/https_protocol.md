@@ -1,5 +1,17 @@
-# Https
+# Http & Https
 
+# Http
+
+### Headers
+##### Authentication
+<user>:<password> ,  encode by base64
+
+
+
+
+
+
+# Https
 [ref]
 - [傳輸層安全-認識SSL](http://blog.yogo.tw/2009/11/ssl.html)
 - [How Https works](http://robertheaton.com/2014/03/27/how-does-https-actually-work/)
