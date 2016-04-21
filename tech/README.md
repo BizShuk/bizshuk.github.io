@@ -4,6 +4,11 @@ Language
 - [Go study](go/)
 - [git2go tutorial](https://blog.gopheracademy.com/advent-2014/git2go-tutorial/)
 
+Algorithm
+- [OS scheduling algo.](http://www.tutorialspoint.com/operating_system/os_process_scheduling_algorithms.htm)
+- [Scheduling algorithms](https://en.wikipedia.org/wiki/Category:Scheduling_algorithms) , include disk , network , and processor
+- [Scheduling disciplines](https://en.wikipedia.org/wiki/Scheduling_(computing))
+
 Architecture
 - ![](Architecture_design_rules.png)
 - [System design interview](https://github.com/checkcheckzz/system-design-interview)
