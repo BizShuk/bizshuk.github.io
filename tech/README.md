@@ -9,6 +9,7 @@ Algorithm
 - [OS scheduling algo.](http://www.tutorialspoint.com/operating_system/os_process_scheduling_algorithms.htm)
 - [Scheduling algorithms](https://en.wikipedia.org/wiki/Category:Scheduling_algorithms) , include disk , network , and processor
 - [Scheduling disciplines](https://en.wikipedia.org/wiki/Scheduling_(computing))
+- [演算法筆記](http://www.csie.ntnu.edu.tw/~u91029/index.html)
 
 Architecture
 - ![](Architecture_design_rules.png)
