@@ -14,6 +14,7 @@ Algorithm
 Architecture
 - ![](Architecture_design_rules.png)
 - [System design interview](https://github.com/checkcheckzz/system-design-interview)
+- [System design Concept](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
 
 Protocol
 - [Https](https_protocol.md)
