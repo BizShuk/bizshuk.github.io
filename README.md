@@ -15,6 +15,14 @@
 - [Tech Related](tech)
 - [Go](tech/go)
 
+### Contact
+- Linkedin: https://tw.linkedin.com/in/liu-shuk-593093a0
+- Line: initialshuk
+- Phone: (886)-911839712
+- Skype: initialshuk@gmail.com
+- WebChat: BizShuk
+- QQ: 3225773725
+
 
 ## Reading
 

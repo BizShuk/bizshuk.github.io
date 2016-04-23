@@ -1,5 +1,8 @@
 # tech
 
+LICENSE
+- [Choose License](http://choosealicense.com/)
+
 Language
 - [Go study](go/)
 - [git2go tutorial](https://blog.gopheracademy.com/advent-2014/git2go-tutorial/)
@@ -10,7 +13,8 @@ Architecture
 
 Protocol
 - [Https](https_protocol.md)
-- [Git Branching - Branches in a Nutshell](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
+- [Git protocol](git_protocol.md)
+
 
 DevOps
 - [GitFlow considered harmful](http://endoflineblog.com/gitflow-considered-harmful)
