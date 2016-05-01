@@ -7,6 +7,9 @@ Language
 - [Go study](go/)
 - [git2go tutorial](https://blog.gopheracademy.com/advent-2014/git2go-tutorial/)
 - [Google CS education](https://www.google.com/edu/cs/index.html)
+- [Python 加速](http://fcamel-fc.blogspot.tw/2010/01/python.html?m=1)
+
+
 
 Algorithm
 - [OS scheduling algo.](http://www.tutorialspoint.com/operating_system/os_process_scheduling_algorithms.htm)
