@@ -9,6 +9,14 @@ Language
 - [Google CS education](https://www.google.com/edu/cs/index.html)
 - [Python 加速](http://fcamel-fc.blogspot.tw/2010/01/python.html?m=1)
 
+Special Concept
+- Async
+- Socket
+- Code design
+- bytecode work
+- Linux kernel
+- Concurrency
+- Parallel
 
 
 Algorithm
@@ -16,6 +24,14 @@ Algorithm
 - [Scheduling algorithms](https://en.wikipedia.org/wiki/Category:Scheduling_algorithms) , include disk , network , and processor
 - [Scheduling disciplines](https://en.wikipedia.org/wiki/Scheduling_(computing))
 - [演算法筆記](http://www.csie.ntnu.edu.tw/~u91029/index.html)
+
+
+Algo2:
+- Huffman Code , 使用binary tree,把字元byte換成bits編碼
+  - [easy ver](http://blog.xuite.net/pika0613/notes/3749409-Huffman+Tree+Huffman+Code)
+  - [video](https://www.youtube.com/watch?v=apcCVfXfcqE)
+  - [wiki](https://en.wikipedia.org/wiki/Huffman_coding#Huffman_template_algorithm)
+  - [中文wiki](https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81)
 
 Architecture
 - ![](Architecture_design_rules.png)
