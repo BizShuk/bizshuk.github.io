@@ -6,9 +6,9 @@
 - [Resume list](https://github.com/BizShuk/bizshuk.github.io/tree/master/resume)
 
 ### Learning
+- [Software related](https://github.com/BizShuk/code_sandbox) , including server ,code ,devops
+- [Servers env](https://github.con/BizShuk/env_setup)
 - [Japaness](https://github.com/BizShuk/japaness)
-- [Code related](https://github.com/BizShuk/code_sandbox)
-- [Servers](https://github.con/BizShuk/env_setup)
 
 ### Contact
 - Linkedin: https://tw.linkedin.com/in/liu-shuk-593093a0
