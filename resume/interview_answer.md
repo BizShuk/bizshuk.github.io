@@ -19,8 +19,7 @@ My [LinkedIn](https://tw.linkedin.com/in/liu-shuk-593093a0)
 - Highly and state of the art tech enviroment (Full-Stack and infra ,any based on scriping language and Golang).
 - English-based surrounding.
 - competitive salary.
-- and a visa sponsor (specially U.S.).
-- bonus for working remotely
+- a visa sponsor.
 <br><br>
   
 ##### Why do you want to work here?
@@ -42,13 +41,7 @@ First few years of work experiences is the most important time of all life caree
 
 
 
-
-
-
-
-
 ##### unanswered list ( personal note )
-- introduce personality
 
 
 
