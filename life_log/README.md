@@ -6,6 +6,8 @@ Guideline:
 - [World Wide Travel list.md](ww_Travel_list.md)
 - [伴手禮選購](伴手禮選購.md)
 - [拍攝技巧](拍攝技巧.md)
+- [Fly ticket](fly_ticket.md)
+
 
 Blog:
 [2016.1.23.七星山主峰.md](2016.1.23.七星山主峰.md)
