@@ -2,9 +2,20 @@
 
 [Company List](https://github.com/BizShuk/bizshuk.github.io/blob/master/resume/list_companys.md)
 
-### BaaS server side architecture ###
+### Droi command line tool
+- Summary: For updating developer code to Droi Bass platform with version control
+- Company: Shanghai Droi Tech. Co Ltd.
+- Date: 2016-04 ~ 2016-05
+- Role: Software developer
+- Co-worker: James , Steven
+- Link:
+- Description: A platform for developer to build back-end service without private server. Model system for multi developer and constructure flexible system.
+- Tech list: Go, Lua, Nginx
+
+
+### Droi user side architecture ###
 - Summary: Service of writing back-end code in cloud without seting server
-- Company: Shanghai Droi Market Co Ltd.
+- Company: Shanghai Droi Tech. Co Ltd.
 - Date: 2015-10 ~ 2016-04
 - Role: System developer
 - Co-worker: Owen , James , Tune , Steven
@@ -32,6 +43,7 @@
 - Description: personal website with some picture for introducing self, use few new tech , like reactjs, SASS , to build up
 - Tech list: html, js (reactjs), SASS, RWD, web hosting (GoDaddy),
 
+
 ### survey system ###
 - Summary: Online survey system with customized features  
 - Company: Gamesofa Inc.
@@ -42,6 +54,7 @@
 - Description:  
 Get answers from players, do statistic and analyze to undestand what players want and make priority of features, to keep the most important things are on the way. In this project, I learn how to use statistic and make some analysis.
 - Tech list: PHP, Perl, Html, CSS, js (angularjs 1.4), Mysql
+
 
 ### Analyzing user system ###
 - Summary: Simplify some analyzing way to a SOP and easy to use for product manager.A quick view of some group user characteristics, including subset.
