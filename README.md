@@ -2,7 +2,7 @@
 
 ## Links
 - [Shuk's site](http://shuk.info/)
-- [Shuk's lifglog](lift_log)
+- [Shuk's life log](life_log)
 - [GitHub](https://github.com/BizShuk)
 - [Resume list](https://github.com/BizShuk/bizshuk.github.io/tree/master/resume)
 
