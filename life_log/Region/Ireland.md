@@ -40,7 +40,7 @@ Office Emergency Mobile: 353-872825680
 
 
 # Ireland 打工渡假
-[blog link](http://littlefatlegs.pixnet.net/blog/post/175712200-%5B%E6%89%93%E5%B7%A5%E5%BA%A6%E5%81%87%5D%E5%89%9B%E6%8A%B5%E9%81%94%E6%84%9B%E7%88%BE%E8%98%AD%E4%B8%8D%E5%BE%97%E4%B8%8D%E7%9F%A5-%E8%BE%A6%E4%BA%8B%E9%A0%86%E5%BA%8F)  
+BLOG [link](http://littlefatlegs.pixnet.net/blog/post/175712200-%5B%E6%89%93%E5%B7%A5%E5%BA%A6%E5%81%87%5D%E5%89%9B%E6%8A%B5%E9%81%94%E6%84%9B%E7%88%BE%E8%98%AD%E4%B8%8D%E5%BE%97%E4%B8%8D%E7%9F%A5-%E8%BE%A6%E4%BA%8B%E9%A0%86%E5%BA%8F)  
 1. [辦手機](#電話)  
 2. [辦GNIB](#GNIB)  
 3. [租房子](../backpacker.md#旅館)  
@@ -49,11 +49,7 @@ Office Emergency Mobile: 353-872825680
 6. [辦銀行帳戶](#銀行)  
 
 
-
-
 <hr>
-
-
 
 
 ### GNIB
@@ -185,7 +181,7 @@ BLOG [link1](http://abifunny.pixnet.net/blog/post/34028157-%E3%80%90%E6%84%9B%E7
 - [在台花費+地一個月愛爾蘭花費](http://littlefatlegs.pixnet.net/blog/post/179966128-%5b%E6%84%9B%E7%88%BE%E8%98%AD%E6%89%93%E5%B7%A5%E5%BA%A6%E5%81%87%5d%E7%94%B3%E8%AB%8B%E6%84%9B%E7%88%BE%E8%98%AD%E6%89%93%E5%B7%A5%E5%BA%A6%E5%81%87%E5%9C%A8%E5%8F%B0%E8%8A%B1)  
 - [餐餐自己煮一週伙食費公開](http://littlefatlegs.pixnet.net/blog/post/178388974-%5b%E6%84%9B%E7%88%BE%E8%98%AD%E7%94%9F%E6%B4%BB%5d-%E4%B8%80%E5%91%A8%E7%94%9F%E6%B4%BB%E8%B2%BB%E5%A4%A7%E5%85%AC%E9%96%8B-%28%E9%83%BD%E6%9F%8F%E6%9E%97%E8%B6%85%E5%B8%82)  
 
-800~1000x37
+$800~1000歐x37
 
 
 
