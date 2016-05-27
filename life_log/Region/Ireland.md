@@ -78,7 +78,7 @@ BLOG [link1](http://spporchyi.pixnet.net/blog/post/109143548-%E4%BD%A0%E6%9C%80%
 
 
 
-### PPSN , Personal Public Service Number
+### PPSN
 **社會福利碼 Personal Public Service Number** , [官網介紹](http://www.welfare.ie/en/Pages/PPSN.aspx) ,只要在愛爾蘭當地工作, 就必須申請PPSN, 才能合法工作.  雇主報稅使用, 可以避免被扣掉高達40%的稅(Please refer to Emergency Tax), 申請可以線上預約[Welfare Office](http://www.welfare.ie/en/Pages/Personal-Public-Service-Number-How-to-Apply.aspx)
   
 地址: 197/199 Parnell Street, Dublin 1  
