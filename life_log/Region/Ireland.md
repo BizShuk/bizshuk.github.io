@@ -1,10 +1,10 @@
 # Ireland
 
 ### 介紹
-物價水準台灣3倍 ,廉價航空$20歐 , 治安沒台灣好[1](http://littlefatlegs.pixnet.net/blog/post/185356933-%5b%E6%84%9B%E7%88%BE%E8%98%AD%E7%94%9F%E6%B4%BB%5d-%E6%84%9B%E7%88%BE%E8%98%AD%E6%B2%BB%E5%AE%89---%E5%9C%A8%E9%83%BD%E6%9F%8F%E6%9E%97%E5%8D%83%E8%90%AC%E5%88%A5%E7%95%B6) (偶發扒竊 搶劫 毆打 拐騙) , 英國物價一半 , "號稱" Dublin 友善度No1 in the world
+物價水準台灣3倍 ,廉價航空$20歐 , 治安沒台灣好[#1](http://littlefatlegs.pixnet.net/blog/post/185356933-%5b%E6%84%9B%E7%88%BE%E8%98%AD%E7%94%9F%E6%B4%BB%5d-%E6%84%9B%E7%88%BE%E8%98%AD%E6%B2%BB%E5%AE%89---%E5%9C%A8%E9%83%BD%E6%9F%8F%E6%9E%97%E5%8D%83%E8%90%AC%E5%88%A5%E7%95%B6) (偶發扒竊 搶劫 毆打 拐騙) , 英國物價一半 , "號稱" Dublin 友善度No1 in the world
 
 
-
+重要:  
 - [台灣駐愛爾蘭代表處 渡假打工宣導](http://www.roc-taiwan.org/ct.asp?xItem=541856&CtNode=13355&mp=176&xp1=176)
 - [台愛免試互換駕照](http://www.roc-taiwan.org/ct.asp?xItem=581568&CtNode=11957&mp=176&xp1=) , 右駕
 - 台灣駐愛爾蘭辦事處
@@ -16,6 +16,8 @@ Email:hmlin@mofa.gov.tw
 Office Emergency Mobile: 353-872825680
 ```
 - [Ireland 打工渡假WHA申請](applicants/Ireland_WHA.md)
+ 
+一般:
 - [愛爾蘭移民整合網站](http://www.livinginireland.ie/)
 - [愛爾蘭旅遊官網](http://www.ireland.com/)
 - [出走台灣Escaping Taiwan](http://www.evaescapingtaiwan.com/)
@@ -53,10 +55,11 @@ BLOG [link](http://littlefatlegs.pixnet.net/blog/post/175712200-%5B%E6%89%93%E5%
 
 
 ### GNIB
-Garda National Immigration Bureau, 愛爾蘭居留證 [官網](http://www.inis.gov.ie/en/INIS/Pages/WP07000031)
+**Garda National Immigration Bureau, 愛爾蘭居留證** [官網](http://www.inis.gov.ie/en/INIS/Pages/WP07000031)
   
 BLOG [link1](http://spporchyi.pixnet.net/blog/post/109143548-%E4%BD%A0%E6%9C%80%E6%83%B3%E7%9F%A5%E9%81%93%E6%84%9B%E7%88%BE%E8%98%AD%E5%B1%85%E7%95%99%E8%AD%89gnib%E7%94%B3%E8%AB%8B%E6%94%BB%E7%95%A5) , [link2](http://aaaa50126.pixnet.net/blog/post/224721706-%E3%80%90%E6%84%9B%E7%88%BE%E8%98%AD%E6%89%93%E5%B7%A5%E5%BA%A6%E5%81%87%E3%80%91%E8%BE%A6%E7%90%86gnib-%26-ppsn)  
-地址: 13/14 Burgh Quay Dublin 2   
+  
+地址: 13/14 Burgh Quay Dublin 2
 營業時間: 08:00  
 
 準備資料:  
@@ -76,9 +79,10 @@ BLOG [link1](http://spporchyi.pixnet.net/blog/post/109143548-%E4%BD%A0%E6%9C%80%
 
 
 ### PPSN , Personal Public Service Number
-社會福利碼 Personal Public Service Number , [官網介紹](http://www.welfare.ie/en/Pages/PPSN.aspx) ,只要在愛爾蘭當地工作, 就必須申請PPSN, 才能合法工作.  雇主報稅使用, 可以避免被扣掉高達40%的稅(Please refer to Emergency Tax)  
+**社會福利碼 Personal Public Service Number** , [官網介紹](http://www.welfare.ie/en/Pages/PPSN.aspx) ,只要在愛爾蘭當地工作, 就必須申請PPSN, 才能合法工作.  雇主報稅使用, 可以避免被扣掉高達40%的稅(Please refer to Emergency Tax), 申請可以線上預約[Welfare Office](http://www.welfare.ie/en/Pages/Personal-Public-Service-Number-How-to-Apply.aspx)
+  
 地址: 197/199 Parnell Street, Dublin 1  
-申請可以線上預約[Welfare Office](http://www.welfare.ie/en/Pages/Personal-Public-Service-Number-How-to-Apply.aspx)
+
 
 準備文件:  
 - 護照
