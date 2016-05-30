@@ -1,13 +1,13 @@
 ## Ireland Working Holiday Authorisation
-[WHA官網](http://www.inis.gov.ie/en/INIS/Pages/Working%20Holidays%20in%20Ireland)
-[申請書applicant](http://www.inis.gov.ie/en/INIS/WHP%20Taiwan%20-%20Application%20Form%20180213.pdf/Files/WHP%20Taiwan%20-%20Application%20Form%20180213.pdf), [教學](#申請書教學)
+- [WHA官網](http://www.inis.gov.ie/en/INIS/Pages/Working%20Holidays%20in%20Ireland)
+- [申請書applicant](http://www.inis.gov.ie/en/INIS/WHP%20Taiwan%20-%20Application%20Form%20180213.pdf/Files/WHP%20Taiwan%20-%20Application%20Form%20180213.pdf), [教學](#申請書教學)
 
 需準備:
 - 申請書 , 以英文(手寫或打字皆可)填寫表格  表格請到網址  www.inis.gov.ie 下載 
 (表格第九題一定要填上住址 email及電話) , 並附上下列文件:  (文件不退還)
 - 整本護照影本**包括空白頁**(不要正本) 有效期限在離開愛爾蘭後六個月以上
 - 近照兩張(與護照規格一樣) 照片後面請簽名
-- 最近三個月的英文版銀行存款證明 餘額至少4000歐元, 世界主要貨幣如美金或紐,澳幣亦可 [財力證明申請](../applicant_list.md#財力證明)
+- 最近三個月的英文版銀行存款證明 餘額至少4000歐元, 世界主要貨幣如美金或紐,澳幣亦可 [財力證明申請](README.md#財力證明)
  
 
 填好的申請表格連同上述文件請寄到:
@@ -28,8 +28,9 @@ Ireland.
 愛爾蘭台灣連絡人 corina.mc.tsai@gmail.com (目前沒有辦事處)
 
 <hr>
-##### 申請書教學
-全大寫 capital letters
+### 申請書教學
+全大寫 capital letters  
+[blog link](http://littlefatlegs.pixnet.net/blog/post/177112825-%5B%E6%84%9B%E7%88%BE%E8%98%AD%E6%89%93%E5%B7%A5%E5%BA%A6%E5%81%87%5D%E5%9C%A8%E5%8F%B0%E7%94%B3%E8%AB%8B%E6%B5%81%E7%A8%8B%E8%B6%85%E8%A9%B3%E7%B4%B0%E6%94%BB%E7%95%A5)
 
 ##### PERSONCAL DETAILS
 1. surname: 姓
