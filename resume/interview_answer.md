@@ -4,7 +4,7 @@
 ##### What I get 
 - [Resume link](https://github.com/BizShuk/bizshuk.github.io/tree/master/resume/export) , including work experience and summary.  
 - [LinkedIn](https://tw.linkedin.com/in/liu-shuk-593093a0)
-<br><br>
+<br>
 
 ##### Why do i want to work oversea?
 - Work with people who are top of the world.
@@ -12,18 +12,18 @@
 - Competitive saraly.
 - Casual surrounding.
 - Traveling.
-<br><br>
+<br>
   
 ##### I looking for these
 - Highly and state of the art tech enviroment (Full-Stack and infra ,any based on scriping language and Golang).
 - English-based surrounding.
 - competitive salary.
 - a visa sponsor.
-<br><br>
+<br>
   
 ##### Why do you want to work here?
 as [What am i looking for?](Whatamilookingfor?)  
-<br><br>
+
 
 # About Skills
 
