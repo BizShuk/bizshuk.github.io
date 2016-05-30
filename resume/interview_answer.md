@@ -2,8 +2,8 @@
 
 
 ##### What I get 
-[Resume link](https://github.com/BizShuk/bizshuk.github.io/tree/master/resume/export) , including work experience and summary.  
-My [LinkedIn](https://tw.linkedin.com/in/liu-shuk-593093a0)
+- [Resume link](https://github.com/BizShuk/bizshuk.github.io/tree/master/resume/export) , including work experience and summary.  
+- [LinkedIn](https://tw.linkedin.com/in/liu-shuk-593093a0)
 <br><br>
 
 ##### Why do i want to work oversea?
