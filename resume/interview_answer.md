@@ -50,7 +50,7 @@ It's a great company, stable daily work, good communications between employees, 
   
 ##### The reason i leave Gamesofa Inc. without find a job first.
 First few years of work experiences is the most important time of all life career. I make a check point two years after I had been Gamesofa Inc. 3 months and it's too comfortable to leave. So, I quited first and think about what i should do next. After that, i decided to focus on back-end and infrastructure and follow open source or tweet of top engineers in the world.  
-##### Why did i leave Droi tech Ltd. Inc.?
+##### Why did i leave Droi tech Co. Ltd.?
 A oversea working visa was authorizated.
 
 <br><br>
