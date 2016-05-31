@@ -161,11 +161,27 @@ Garda National Immigration Bureau, 愛爾蘭居留證 [官網](http://www.inis.g
 
 
 ### 移民條件
-  3萬 +繳稅紀錄
+綠卡計劃（Green Card Permit）
+　　六個月的停留期滿後，國家學生可以申請愛爾蘭綠卡(Green Card)或工作許可(Work Permit)。申請愛爾蘭綠卡的條件是：年薪收入在6萬歐元以上的所有行業從業的外籍人士或年收入在3萬至6萬歐元之間的一些愛爾蘭緊缺行業（例如IT，醫療與衛生，工程，金融服務，教育等）的外籍人員。首次簽發的綠卡有效期可長達兩年，到期後延期或申請愛爾蘭永久居民。
+　　工作許可（Work Permit）
+　　沒有達到申請綠卡條件的外籍人員可以申請愛爾蘭的工作許可，申請愛爾蘭工作許可的條件是：年薪收入在3萬歐元以上的幾乎所有行業（除了政府機構行政人員、零售行業、交通運輸等）。首次簽發的工作許可有效期可長達兩年，到期後可延期三年。
 
 
+歐盟推出新技術移民制度。這個對應美國「綠卡」居留權的「藍卡」（Blue Card）制度，不僅可獲得至少1年的有效居留證及工作許可，還提供至少高於該國最低薪資 2倍薪水以及健保的福利，希望吸引美國、亞洲、拉丁美洲等科技人才前進歐洲，未來持有藍卡的外國移民和眷屬，將可以在歐盟境內國家居住就業。 - See more at: http://www.cw.com.tw/article/article.action?id=5009798#sthash.XDfQx3jE.dpuf
 
+愛爾蘭工作簽證
+愛爾蘭有不同類型的工作簽證，包括短期工作許可證和公司內部調動工作簽證，那些希望在愛爾蘭永久居住和工作的人們，還可申請長期的愛爾蘭綠卡。
 
+愛爾蘭工作許可證
+若要申請愛爾蘭工作許可證，申請人需事先在一家愛爾蘭公司找到工作，該許可證只允許持證者在雇主公司內的指定崗位上工作。一年後，持證者可以調換工作崗位或公司，但必須重新申請工作許可證。
+雖然愛爾蘭簽發工作許可證的主要目的不是讓持證者永久定居在愛爾蘭，但是如果持證者滿足了最低居住年限，就有機會加入愛爾蘭國籍。
+愛爾蘭工作許可證的有效期為2年，但是，如果持證人的工作崗位仍然存在，並且持證者仍然滿足工作許可證的相關條件，持證人可申請把工作許可證有效期再延長3年。在愛爾蘭工作超過這延期的3年之後，持證人就可以無限期地延長工作許可證的有效期並可以申請加入愛爾蘭國籍。
+
+申請愛爾蘭工作許可證 
+和愛爾蘭綠卡相比，愛爾蘭工作許可證對申請人工資的要求相對較低，並且允許申請人所申請的工作範圍也不僅僅限於人才緊缺性的行業內。
+在大多數情況下，只有在申請人得到的年薪為3萬歐元以上時，才有可能申請到工作許可證。
+另外，儘管申請人的工作崗位不限於人才緊缺性行業，但是所有這些崗位必須經過“勞動力市場需求測試”，即雇主必須刊登這些職位的招聘廣告，並且證明沒有愛爾蘭居民或永久居民能夠勝任這些職位。
+所有的申請人都必須有與應聘崗位相關的學歷或資格證書，和或有相關的工作經驗。愛爾蘭公司為申請人提供的待遇必須與提供給愛爾蘭國內勞動力市場中
 
 
 
@@ -199,21 +215,6 @@ Garda National Immigration Bureau, 愛爾蘭居留證 [官網](http://www.inis.g
 
 
 
-
-### Leap Card
-愛爾蘭的悠遊卡
-- Student Leap Card
-- Adult Leap Card
-- Child Leap Card
-
-
-押金 $5歐 ,離開可以拿回押金,可在有**Dublin Bus Tickets**標示的地方儲直,儲直金額從$5~%125
-
-可線上[註冊](https://www.leapcard.ie/en/ConfirmationMessage.aspx) ,遺失可拿回餘額
-
-
-
-
 ### 超市,連鎖雜貨店
 超市:
 - TESCO EXPRESS 
@@ -232,12 +233,36 @@ Garda National Immigration Bureau, 愛爾蘭居留證 [官網](http://www.inis.g
 
 
 
+### 交通
 
-### 腳踏車
-##### Dublin Bike
+[Transport for Ireland](https://www.transportforireland.ie)
+[Transport map of Ireland](https://www.transportforireland.ie/journey-planner/maps/) , including 公車bus , 鐵路rail , and 電車tram
+##### Leap Card
+愛爾蘭的悠遊卡
+- Student Leap Card
+- Adult Leap Card
+- Child Leap Card
+
+
+押金 $5歐 ,離開可以拿回押金,可在有**Dublin Bus Tickets**標示的地方儲直,儲直金額從$5~%125
+
+可線上[註冊](https://www.leapcard.ie/en/ConfirmationMessage.aspx) ,遺失可拿回餘額
+
+##### Bus
+- [Bus EIREANN](http://www.buseireann.ie/) , 公車
+- Dublin Bus , 公車 [Route](http://www.dublinbus.ie/PageFiles/6275/Core_routes_interactive_map_January_2016.pdf) 
+- Luas , 電車 [Route](https://www.luas.ie/routes/) [Ticket](https://www.luas.ie/tickets-and-fares/)
+- Dark , 火車 []
+- [Ireish rail](http://www.irishrail.ie/)
+- [Citylink](http://www.citylink.ie/) , 客運
+![](http://www.citylink.ie/uploads/contentimages/CLINK81000.jpg)
+
+
+##### 腳踏車
+Dublin Bike:  
 [Dublin bike 官網](http://www.dublinbikes.ie/All-Stations/Station-map) ,裡面有站點地圖
 
-##### 二手腳踏車:
+二手腳踏車:  
 - 腳踏車行
 - fb社團
     - [Dublin Bike market](https://www.facebook.com/groups/260735854108540/?fref=ts)
