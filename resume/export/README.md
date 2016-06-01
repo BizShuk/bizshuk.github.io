@@ -1,3 +1,4 @@
 # export resume
 
-choose what type of document you want and click Raw on top-right of document container.
+- [PDF](https://github.com/BizShuk/bizshuk.github.io/raw/master/resume/export/Resume-ShukLiu.pdf)
+- [Docx](https://github.com/BizShuk/bizshuk.github.io/raw/master/resume/export/Resume-ShukLiu.docx)
