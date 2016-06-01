@@ -54,15 +54,17 @@
 
 ### 旅館
 include bed&breakfast , homestay, hostel, share hourse , share room
+- [Expedia](http://www.expedia.com/)
+- [Hostelworld](http://www.hostelworld.com/)
+- [Agoda](http://www.agoda.com/)
 - [Airbnb](https://www.airbnb.com)
 - [Roomster](https://www.roomster.com)
-- [Expedia](http://www.expedia.com/)
 
 愛爾蘭
 - [daft.ie](http://www.daft.ie/)
 - [let.ie](http://www.let.ie/)
 - [myhome.ie](http://www.myhome.ie/)
-
+- [anoige](https://anoige.ie/)
 
 
 
@@ -96,11 +98,13 @@ include bed&breakfast , homestay, hostel, share hourse , share room
 
 
 ### 工作
+- [Indeed](http://indeed.com/)
+- [Glassdoor](https://www.glassdoor.com/index.htm)
 
 #####愛爾蘭
 面試文件: 護照 簽證 PPSN GNIB 銀行資料 推薦信 前雇主聯絡方式
 - [jobs.ie](http://www.jobs.ie/)
+- [Irish job](http://www.irishjobs.ie/)
 - [excel Recruitment](http://www.excelrecruitment.ie/)
-
 
 
