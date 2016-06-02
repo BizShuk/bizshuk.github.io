@@ -1,7 +1,8 @@
 # Ireland
 
 ### 介紹
-物價水準台灣3倍 ,廉價航空$20歐 , 治安沒台灣好[#1](http://littlefatlegs.pixnet.net/blog/post/185356933-%5b%E6%84%9B%E7%88%BE%E8%98%AD%E7%94%9F%E6%B4%BB%5d-%E6%84%9B%E7%88%BE%E8%98%AD%E6%B2%BB%E5%AE%89---%E5%9C%A8%E9%83%BD%E6%9F%8F%E6%9E%97%E5%8D%83%E8%90%AC%E5%88%A5%E7%95%B6) (偶發扒竊 搶劫 毆打 拐騙) , 英國物價一半 , "號稱" Dublin 友善度No1 in the world
+物價水準台灣3倍 ,廉價航空$20歐 , 治安沒台灣好[#1](http://littlefatlegs.pixnet.net/blog/post/185356933-%5b%E6%84%9B%E7%88%BE%E8%98%AD%E7%94%9F%E6%B4%BB%5d-%E6%84%9B%E7%88%BE%E8%98%AD%E6%B2%BB%E5%AE%89---%E5%9C%A8%E9%83%BD%E6%9F%8F%E6%9E%97%E5%8D%83%E8%90%AC%E5%88%A5%E7%95%B6) (偶發扒竊 搶劫 毆打 拐騙) , 英國物價一半 , "號稱" Dublin 友善度No1 in the world 
+冬天很冷很長下雨,需要一件防風防雨的外套或雪衣
 
 
 重要:  
