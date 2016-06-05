@@ -103,8 +103,7 @@ include bed&breakfast , homestay, hostel, share hourse , share room
 
 
 ### 匯率
-- [新光銀行](https://www.skbank.com.tw/RAT/RAT2_Historys.aspx)
-
+check [here](currency.md)
 
 
 ### 工作
