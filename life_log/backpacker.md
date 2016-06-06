@@ -125,16 +125,16 @@ check [here](currency.md)
 - [Irish job](http://www.irishjobs.ie/)
 - [excel Recruitment](http://www.excelrecruitment.ie/)
 找工作：  
-http://www.fas.ie/en/(大家可以到fas print CV，每人可以免費print 10張CV)
-http://www.irishjobs.ie/
-http://www.jobs.ie/
-http://www.bestjobs.ie/
-http://www.salesjobs.ie/
-http://www.recruitireland.com/sitemap.asp
-http://www.hoteljobs.ie/
-http://www.careerjet.ie/
-另外有一個愛爾蘭華人的網站，有住屋和找工作資訊
-http://0086.ie/dss/
+- http://www.fas.ie/en/(大家可以到fas print CV，每人可以免費print 10張CV)
+- http://www.irishjobs.ie/
+- http://www.jobs.ie/
+- http://www.bestjobs.ie/
+- http://www.salesjobs.ie/
+- http://www.recruitireland.com/sitemap.asp
+- http://www.hoteljobs.ie/
+- http://www.careerjet.ie/  
+另外有一個愛爾蘭華人的網站，有住屋和找工作資訊:  
+- http://0086.ie/dss/
 
 
 
