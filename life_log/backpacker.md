@@ -26,7 +26,7 @@
     - [ ] micro usb 線  
     - [ ] 網路線  
     - [ ] 延長線 (內建100~240通用變壓器,無燈無開關=無保險)
-    - [ ] [國際電源轉接頭](http://www.backpackers.com.tw/guide/index.php/%E4%B8%96%E7%95%8C%E5%90%84%E5%9C%8B%E9%9B%BB%E6%BA%90%E6%8F%92%E9%A0%AD%E6%8F%92%E5%BA%A7%E5%BD%A2%E5%BC%8F) , 台灣用A B型 另外買C G I型 幾乎可以通用全球(C南美歐洲 G補足C的少部份國家 I澳洲附近),仍要注意去的國家是否相符
+    - [ ] [國際電源轉接頭](http://www.backpackers.com.tw/guide/index.php/%E4%B8%96%E7%95%8C%E5%90%84%E5%9C%8B%E9%9B%BB%E6%BA%90%E6%8F%92%E9%A0%AD%E6%8F%92%E5%BA%A7%E5%BD%A2%E5%BC%8F) , 只要電器符合當地電壓,可以只買萬用轉接頭,不然要多買變壓器
 
 
 日常生活:   
@@ -50,11 +50,13 @@
 - [ ] 吹風機(符合國際電壓)
 
 長期居留:  
-- [ ] 銀行申請  
-- [ ] 電話方案確認  
-- [ ] 居留證申請  
-- [ ] 稅務申請  
+- [ ] 銀行申請 
+Wells Fargo, Ulster Bank, Bank Of Ireland, Allied Irish Bank, Permanent TSB
+- [ ] 電話方案確認 (Three)
+- [ ] 居留證申請 (GNIB)
+- [ ] 稅務申請 (PPSN)
 - [ ] 履歷列印
+- [ ] 照片預留
 
 <hr>
 
@@ -85,7 +87,10 @@ include bed&breakfast , homestay, hostel, share hourse , share room
 
 ##### 歐洲
 - 目前有90天免簽
-- [歐盟免申根簽證](http://www.mofa.gov.tw/Mobile/FAQ.aspx?s=AD6908DFDDB62656)
+- [歐盟免申根簽證](http://www.mofa.gov.tw/Mobile/FAQ.aspx?s=AD6908DFDDB62656) , [PDF](http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2010:339:0006:0007:EN:PDF) 
+第二條拒絕台灣  
+Annex I: 把第二條刪除
+Annex II: 有個歐盟成員表示台灣不是個國家  
 
 愛爾蘭:  
 - [愛爾蘭打工渡假](applicants/Ireland_WHA.md)
@@ -118,5 +123,17 @@ check [here](currency.md)
 - [jobs.ie](http://www.jobs.ie/)
 - [Irish job](http://www.irishjobs.ie/)
 - [excel Recruitment](http://www.excelrecruitment.ie/)
+找工作：  
+http://www.fas.ie/en/(大家可以到fas print CV，每人可以免費print 10張CV)
+http://www.irishjobs.ie/
+http://www.jobs.ie/
+http://www.bestjobs.ie/
+http://www.salesjobs.ie/
+http://www.recruitireland.com/sitemap.asp
+http://www.hoteljobs.ie/
+http://www.careerjet.ie/
+另外有一個愛爾蘭華人的網站，有住屋和找工作資訊
+http://0086.ie/dss/
+
 
 
