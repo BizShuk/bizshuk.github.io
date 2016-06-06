@@ -40,6 +40,8 @@ Office Emergency Mobile: 353-872825680
 
 
 # Ireland 打工渡假
+- [打工簽證申請](../applicants/Ireland_WHA.md)  
+
 BLOG [link](http://littlefatlegs.pixnet.net/blog/post/175712200-%5B%E6%89%93%E5%B7%A5%E5%BA%A6%E5%81%87%5D%E5%89%9B%E6%8A%B5%E9%81%94%E6%84%9B%E7%88%BE%E8%98%AD%E4%B8%8D%E5%BE%97%E4%B8%8D%E7%9F%A5-%E8%BE%A6%E4%BA%8B%E9%A0%86%E5%BA%8F)  
 1. [辦手機](#電話)  
 2. [辦GNIB](#GNIB)  

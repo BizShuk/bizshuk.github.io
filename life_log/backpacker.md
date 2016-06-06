@@ -57,6 +57,7 @@ Wells Fargo, Ulster Bank, Bank Of Ireland, Allied Irish Bank, Permanent TSB
 - [ ] 稅務申請 (PPSN)
 - [ ] 履歷列印
 - [ ] 照片預留
+- [ ] 當地保險 , 歐洲EHIC
 
 <hr>
 
@@ -65,7 +66,8 @@ Wells Fargo, Ulster Bank, Bank Of Ireland, Allied Irish Bank, Permanent TSB
 ### 國家介紹
 - [Ireland](Region/Ireland.md)
 
-
+### 景點
+[世界景點標記](https://www.google.com/maps/d/edit?hl=zh-TW&authuser=0&mid=1IsjjM3k4TzkOvykyrWpuR11SNbY)
 
 ### 旅館
 include bed&breakfast , homestay, hostel, share hourse , share room
@@ -83,6 +85,7 @@ include bed&breakfast , homestay, hostel, share hourse , share room
 
 
 
+
 ### 簽證
 
 ##### 歐洲
@@ -93,9 +96,7 @@ Annex I: 把第二條刪除
 Annex II: 有個歐盟成員表示台灣不是個國家  
 
 愛爾蘭:  
-- [愛爾蘭打工渡假](applicants/Ireland_WHA.md)
-- [愛爾蘭GNIB](Region/Ireland.md#GNIB)
-- [愛爾蘭PPSN](Region/Ireland.md#PPSN)
+- [愛爾蘭打工渡假](Region/Ireland.md#ireland-打工渡假)
 
 
 
