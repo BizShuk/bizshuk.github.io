@@ -254,6 +254,9 @@ $800~1000歐x37
 
 
 
+### 商店
+-  SPAR ,= 7-11
+
 
 ### 電話
 [愛爾蘭電信選擇 THREE](http://littlefatlegs.pixnet.net/blog/post/157516645)
@@ -284,10 +287,17 @@ $800~1000歐x37
 
 ### 交通
 
+[Dubline bus App](https://play.google.com/store/apps/details?id=com.dublinbus.wearei3)
 [Transport for Ireland](https://www.transportforireland.ie)
 [Transport map of Ireland](https://www.transportforireland.ie/journey-planner/maps/) , including 公車bus , 鐵路rail , and 電車tram
+
+
+##### 路線
+- 機場=>Dublin市中心, Dublin bus 16 or Airlink 747
+
+
 ##### Leap Card
-愛爾蘭的悠遊卡
+愛爾蘭的悠遊卡 ,在SPAR買 可以儲直 $5, $10 ,$15,...$125
 - Student Leap Card
 - Adult Leap Card
 - Child Leap Card
@@ -298,6 +308,10 @@ $800~1000歐x37
 可線上[註冊](https://www.leapcard.ie/en/ConfirmationMessage.aspx) ,遺失可拿回餘額
 
 ##### Bus
+- Dublin bus , cheapest
+- Airlink , faster
+- Aircoach , expensive
+
 - [Bus EIREANN](http://www.buseireann.ie/) , 公車
 - Dublin Bus , 公車 [Route](http://www.dublinbus.ie/PageFiles/6275/Core_routes_interactive_map_January_2016.pdf) 
 - Luas , 電車 [Route](https://www.luas.ie/routes/) [Ticket](https://www.luas.ie/tickets-and-fares/)
