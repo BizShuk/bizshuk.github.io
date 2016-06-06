@@ -3,8 +3,8 @@
 ### 介紹
 - 1920獨立, 歐豬五國PI(Italy)I(Ireland)G()S() 第一個拖困國家, 氣溫 0~27度
 物價水準台灣3倍 ,廉價航空$20歐 , 治安沒台灣好[#1](http://littlefatlegs.pixnet.net/blog/post/185356933-%5b%E6%84%9B%E7%88%BE%E8%98%AD%E7%94%9F%E6%B4%BB%5d-%E6%84%9B%E7%88%BE%E8%98%AD%E6%B2%BB%E5%AE%89---%E5%9C%A8%E9%83%BD%E6%9F%8F%E6%9E%97%E5%8D%83%E8%90%AC%E5%88%A5%E7%95%B6) (偶發扒竊 搶劫 毆打 拐騙) , 英國物價一半 , "號稱" Dublin 友善度No1 in the world 
-冬天很冷很長下雨,需要一件防風防雨的外套或雪衣
-[愛爾蘭在台協會介紹](https://sites.google.com/site/taiwanirelandassociation/resource-center/living-in-ireland-1)
+冬天很冷很長下雨,需要一件防風防雨的外套或雪衣  
+- [愛爾蘭在台協會介紹](https://sites.google.com/site/taiwanirelandassociation/resource-center/living-in-ireland-1)
 - 工作簽一次延兩年,兩次後可以申請移民
 
   
@@ -19,7 +19,7 @@ Office TEL: 353-1-6785413
 Email:hmlin@mofa.gov.tw
 Office Emergency Mobile: 353-872825680
 ```
-- [Ireland 打工渡假WHA申請](applicants/Ireland_WHA.md)
+- [Ireland 打工渡假](#ireland-打工渡假)
   
 一般:  
 - [愛爾蘭移民整合網站](http://www.livinginireland.ie/)
@@ -59,12 +59,12 @@ BLOG [link](http://littlefatlegs.pixnet.net/blog/post/175712200-%5B%E6%89%93%E5%
 BLOG [link1](http://spporchyi.pixnet.net/blog/post/109143548-%E4%BD%A0%E6%9C%80%E6%83%B3%E7%9F%A5%E9%81%93%E6%84%9B%E7%88%BE%E8%98%AD%E5%B1%85%E7%95%99%E8%AD%89gnib%E7%94%B3%E8%AB%8B%E6%94%BB%E7%95%A5) , [link2](http://aaaa50126.pixnet.net/blog/post/224721706-%E3%80%90%E6%84%9B%E7%88%BE%E8%98%AD%E6%89%93%E5%B7%A5%E5%BA%A6%E5%81%87%E3%80%91%E8%BE%A6%E7%90%86gnib-%26-ppsn)  
  
 
-Irish Naturalisation & Immigration Service, Dublin, Ireland
-http://www.inis.gov.ie/en/INIS/Pages/WP07000002
-地址： 13/14 Burgh Quay Dublin 2
-文件：WHA授權書, 住宿地址, 費用 $300（可刷卡）
-電話： +353 1890 551 500
-營業時間: 08:00  
+- Irish Naturalisation & Immigration Service, Dublin, Ireland
+- http://www.inis.gov.ie/en/INIS/Pages/WP07000002
+- 地址： 13/14 Burgh Quay Dublin 2
+- 文件：WHA授權書, 住宿地址, 費用 $300（可刷卡）
+- 電話： +353 1890 551 500
+- 時間: 08:00 ~
 
 準備資料:  
 - 打工授權書
@@ -85,11 +85,11 @@ http://www.inis.gov.ie/en/INIS/Pages/WP07000002
 ### PPSN
 **社會福利碼 Personal Public Service Number** , [官網介紹](http://www.welfare.ie/en/Pages/PPSN.aspx) ,只要在愛爾蘭當地工作, 就必須申請PPSN, 才能合法工作.  雇主報稅使用, 可以避免被扣掉高達40%的稅(Please refer to Emergency Tax), 申請可以線上預約[Welfare Office](http://www.welfare.ie/en/Pages/Personal-Public-Service-Number-How-to-Apply.aspx)
   
-Department of Social Protection
-http://www.welfare.ie/en/Pages/Personal-Public-Service-Number-Registration-Centres-by-Count.aspx
-地址：197/199 Parnell St., Dublin 1
-時間： 09:30-16:00 Open Thu 10:30
-電話： (01) 8899500
+- Department of Social Protection
+- http://www.welfare.ie/en/Pages/Personal-Public-Service-Number-Registration-Centres-by-Count.aspx
+- 地址：197/199 Parnell St., Dublin 1
+- 時間： 09:30-16:00 Open Thu 10:30
+- 電話： (01) 8899500
 
 
 準備文件:  
@@ -181,8 +181,8 @@ http://www.threshold.ie/
 
 
 新聞:
-[愛爾蘭銀行開戶政策變動](http://www.glcstudy.com/yblog/archives/11322) 
-[愛爾蘭銀行開戶收費一覽表](http://www.epochtimes.com/b5/13/4/4/n3838731.htm)
+- [愛爾蘭銀行開戶政策變動](http://www.glcstudy.com/yblog/archives/11322) 
+- [愛爾蘭銀行開戶收費一覽表](http://www.epochtimes.com/b5/13/4/4/n3838731.htm)
 
 
 ### 旅支
@@ -243,22 +243,16 @@ $800~1000歐x37
 Three Store地址
     - 35 Henry Street, Dublin 1, Ireland
     - 46 Grafton Street, Dublin 2, Ireland
+    Sim-Only-Plan(因為有手機只要sim卡)  [link](http://www.three.ie/eshop/sim-only-plans/prepay-sim-only/) $20元預儲一個月(SPAR ton up):
+    - Free Data , All You Can Eat\*
+    - Free 4G Access , ok
+    - Free Any Network Texts , Unlimited\*
+    - Free Any Network ,Weekends Minutes 1,2 ,Unlimited\*
+    - Free Three to Three Calls , Unlimited\*
 
-Sim-Only-Plan(因為有手機只要sim卡) [link](http://www.three.ie/eshop/sim-only-plans/prepay-sim-only/) 
-$20元預儲一個月(SPAR ton up) 
-- Free Data , All You Can Eat\*
-- Free 4G Access , ok
-- Free Any Network Texts , Unlimited\*
-- Free Any Network ,Weekends Minutes 1,2 ,Unlimited\*
-- Free Three to Three Calls , Unlimited\*
-
-1 Free calls apply at weekends.
-週末免費一通電話
-2 Weekends commence at 12.01AM Saturday and end at 12.01AM Monday. 
-週末的區間
-\*To avail of these services a €20 top-up is required every 30 days. The €20 top-up offering is promotional for a limited period only, until 30th April 2017.
-每30天儲直一次, 本方案到2017 4.30
-
+1 Free calls apply at weekends.  週末免費一通電話  
+2 Weekends commence at 12.01AM Saturday and end at 12.01AM Monday. 週末的區間  
+\*To avail of these services a €20 top-up is required every 30 days. The €20 top-up offering is promotional for a limited period only, until 30th April 2017. 每30天儲直一次, 本方案到2017 4.30
 - Meteor , $20歐 7.5G
 - vodaphone
 
@@ -293,9 +287,9 @@ $20元預儲一個月(SPAR ton up)
 
 
 ### 交通
-[Dubline bus App](https://play.google.com/store/apps/details?id=com.dublinbus.wearei3)
-[Transport for Ireland](https://www.transportforireland.ie)
-[Transport map of Ireland](https://www.transportforireland.ie/journey-planner/maps/) , including 公車bus , 鐵路rail , and 電車tram
+- [Dubline bus App](https://play.google.com/store/apps/details?id=com.dublinbus.wearei3)
+- [Transport for Ireland](https://www.transportforireland.ie)
+- [Transport map of Ireland](https://www.transportforireland.ie/journey-planner/maps/) , including 公車bus , 鐵路rail , and 電車tram
 
 
 ##### 路線
@@ -328,7 +322,6 @@ $20元預儲一個月(SPAR ton up)
 
 
 ##### 腳踏車
-Dublin Bike:  
 [Dublin bike 官網](http://www.dublinbikes.ie/All-Stations/Station-map) ,裡面有站點地圖
 
 二手腳踏車:  
@@ -375,8 +368,8 @@ noel recruitment group
 
 
 ### 景點
-[景點](https://drive.google.com/open?id=1IsjjM3k4TzkOvykyrWpuR11SNbY&usp=sharing)
-[生活資訊](https://drive.google.com/open?id=10Su2KJ6J2-oH5_-aq32iO8RJYGY&usp=sharing)
+- [景點](https://drive.google.com/open?id=1IsjjM3k4TzkOvykyrWpuR11SNbY&usp=sharing)
+- [生活資訊](https://drive.google.com/open?id=10Su2KJ6J2-oH5_-aq32iO8RJYGY&usp=sharing)
 
 
 
