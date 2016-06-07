@@ -11,7 +11,7 @@
     - [ ] [ ] [歐盟免申根證明文件](#歐洲)  
     - [ ] [ ] 履歷  
     - [ ] [ ] 良民證,各地警察局外事科 ie, 台北市政府警察局外事科
-- [ ] [ ] 特殊文件(GNIB,PPSN,國際駕照)  
+- [ ] [ ] 特殊文件(國際駕照)  
 - 錢包  
     - [ ] [ ] 信用卡  
     - [ ] [ ] 基本現金 , [匯率](#匯率)  
@@ -128,16 +128,16 @@ check [here](currency.md)
 - [Irish job](http://www.irishjobs.ie/)
 - [excel Recruitment](http://www.excelrecruitment.ie/)
 找工作：  
-http://www.fas.ie/en/(大家可以到fas print CV，每人可以免費print 10張CV)
-http://www.irishjobs.ie/
-http://www.jobs.ie/
-http://www.bestjobs.ie/
-http://www.salesjobs.ie/
-http://www.recruitireland.com/sitemap.asp
-http://www.hoteljobs.ie/
-http://www.careerjet.ie/
-另外有一個愛爾蘭華人的網站，有住屋和找工作資訊
-http://0086.ie/dss/
+- http://www.fas.ie/en/(大家可以到fas print CV，每人可以免費print 10張CV)
+- http://www.irishjobs.ie/
+- http://www.jobs.ie/
+- http://www.bestjobs.ie/
+- http://www.salesjobs.ie/
+- http://www.recruitireland.com/sitemap.asp
+- http://www.hoteljobs.ie/
+- http://www.careerjet.ie/  
+另外有一個愛爾蘭華人的網站，有住屋和找工作資訊:  
+- http://0086.ie/dss/
 
 
 
