@@ -1,15 +1,20 @@
 # Guideline:
 - [backpacker](backpacker.md)
+- [bank](bank.md)
+- [currency](currency.md)
+- [e_receipt](e_receipt.md)
 - [fly_ticket](fly_ticket.md)
 - [insurance](insurance.md)
 - [Outdoor_preparing](Outdoor_preparing.md)
 - [README](README.md)
+- [shoes_size](shoes_size.md)
 - [Snowboard](Snowboard.md)
 - [Travel_list](Travel_list.md)
 - [ww_Travel_list](ww_Travel_list.md)
 - [伴手禮](伴手禮.md)
 - [拍攝技巧](拍攝技巧.md)
 - [相機選購](相機選購.md)
+- [自然人憑證](自然人憑證.md)
 - [國家介紹](Region)
 
 # Blog:
