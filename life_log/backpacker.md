@@ -54,11 +54,12 @@
 - [ ] [ ] 銀行申請 
 Wells Fargo, Ulster Bank, Bank Of Ireland, Allied Irish Bank, Permanent TSB
 - [ ] [ ] 電話方案確認 (Three)
-- [ ] [ ] 居留證申請 (GNIB)
-- [ ] [ ] 稅務申請 (PPSN)
-- [ ] [ ] 履歷列印
-- [ ] [ ] 照片預留
-- [ ] [ ] 當地保險 , 歐洲EHIC
+- [ ] [ ] 居留證申請方式 (GNIB)
+- [ ] [ ] 稅務申請方式 (PPSN)
+- [ ] [ ] 履歷列印xN
+- [ ] [ ] 照片預留xN
+- [ ] [ ] 當地保險方式 , 歐洲EHIC
+- [ ] [ ] 自備租屋契約, 收據
 
 <hr>
 
