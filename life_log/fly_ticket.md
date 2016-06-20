@@ -9,7 +9,8 @@
 ### note
 330天開位
 
-
+### 入境規定
+check [入境規定](http://www.kopu.cn/entryexit.htm)
 
 ### fly company
 

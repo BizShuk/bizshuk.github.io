@@ -64,8 +64,8 @@ Wells Fargo, Ulster Bank, Bank Of Ireland, Allied Irish Bank, Permanent TSB
 <hr>
 
 ### 航班
-check [here](fly_ticket.md)
-
+- [買機票](fly_ticket.md)
+- [入境規定](fly_ticket.md#入境規定)
 
 ### 國家介紹
 - [Ireland](Region/Ireland.md)
