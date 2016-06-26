@@ -14,8 +14,8 @@
 ### Contact
 - Linkedin: https://tw.linkedin.com/in/liu-shuk-593093a0
 - Line: initialshuk
-- Phone: (886)-911839712
-- Skype: initialshuk@gmail.com , only online when need
-- WebChat: BizShuk , only online when need
-- QQ: 3225773725 , only online when need
+- Phone: TW (886)-911839712 , IRE ()
+- Skype: initialshuk@gmail.com
+- WebChat: BizShuk , only online as needed
+- QQ: 3225773725 , only online as needed
 
