@@ -5,6 +5,9 @@
 - [YOYO 機票堂](http://travelyoyo.pixnet.net/blog)
 - [全歐洲廉價航空公司一覽](http://bbsbig5.chinesewings.com/travel/cz/0206213408.shtml)
 
+### 上機規定
+下列物品只可自行隨身攜帶上機，是不可寄艙的：燃料電池系統和備用燃料電池盒、手提氧氣機、安全火柴和打火機、備用電池(鋰金屬、鋰離子)和電子香煙。
+
 
 ### note
 330天開位
@@ -13,6 +16,12 @@
 check [入境規定](http://www.kopu.cn/entryexit.htm)
 
 ### fly company
+- 全日空
+- 長榮
+- 華航
+- 德國漢莎
+- 瑞士航空
+
 
 ### fly agent 
 - [Skyscanner](http://www.skyscanner.com.tw/) , 搜尋引擎

@@ -60,6 +60,7 @@ Wells Fargo, Ulster Bank, Bank Of Ireland, Allied Irish Bank, Permanent TSB
 - [ ] [ ] 照片預留xN
 - [ ] [ ] 當地保險方式 , 歐洲EHIC
 - [ ] [ ] 自備租屋契約, 收據
+- [ ] [ ] [健保](健保.md)
 
 <hr>
 
