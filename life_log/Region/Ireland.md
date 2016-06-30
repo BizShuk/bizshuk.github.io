@@ -260,6 +260,8 @@ Three Store地址
 
 
 ### 超市,連鎖雜貨店
+- [愛爾蘭超市比較](http://littlefatlegs.pixnet.net/blog/post/174400249-%5b%E7%94%9F%E6%B4%BB%5d%E6%84%9B%E7%88%BE%E8%98%AD%E8%B6%85%E5%B8%82%E6%AF%94%E8%BC%83-tesco%E3%80%81lidl%E3%80%81aldi%E3%80%81dunnes)
+
 超市:
 - TESCO EXPRESS 
 - TESCO Metro
