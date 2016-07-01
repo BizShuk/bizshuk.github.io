@@ -356,6 +356,9 @@ KINGS , $5c/張 , 08:30~17:00 [map](https://www.google.com/maps/place/53%C2%B021
 
 
 
+### 圖書館
+[Public library](http://www.dublincity.ie/main-menu-services-recreation-culture-dublin-city-public-libraries-and-archive/locations-hours)
+
 
 ### 公司
 [List of companies of Ireland](https://en.wikipedia.org/wiki/List_of_companies_of_Ireland#About_companies_in_Ireland)
