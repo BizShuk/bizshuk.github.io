@@ -59,6 +59,7 @@ Wells Fargo, Ulster Bank, Bank Of Ireland, Allied Irish Bank, Permanent TSB
 - [ ] [ ] 稅務申請方式 (PPSN)
 - [ ] [ ] 履歷列印xN
 - [ ] [ ] 照片預留xN
+- [ ] [ ] 找尋工作來源
 - [ ] [ ] 當地保險方式 , 歐洲EHIC
 - [ ] [ ] 自備租屋契約, 收據
 - [ ] [ ] [健保](健保.md)

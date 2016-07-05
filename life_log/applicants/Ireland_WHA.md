@@ -70,3 +70,9 @@ Have you at any time:
 
 Signed 簽名 Date 日期
 <hr>
+
+
+
+### Working Holiday Authorization
+The holder is permitted to travel to Ireland for a Working Holiday in Ireland. Entry to Ireland must be within six months of the date of issue below (21/03/2016). The Working Holiday shall be for a period not exceeding twelve (12) months after the date of initial entry into Ireland (28/06/2016). The holder has permission to work without an employment permit in order to support his/her stay in Ireland. The grant of this permission is subject to normal border immigration controls upon arrival and the applicable terms and conditions.
+

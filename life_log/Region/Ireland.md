@@ -316,7 +316,7 @@ Three Store地址
 
 - [Bus EIREANN](http://www.buseireann.ie/) , 公車
 - Dublin Bus , 公車 [Route](http://www.dublinbus.ie/PageFiles/6275/Core_routes_interactive_map_January_2016.pdf) 
-- Luas , 電車 [Route](https://www.luas.ie/routes/) [Ticket](https://www.luas.ie/tickets-and-fares/)
+- Luas , 輕軌 [Route](https://www.luas.ie/routes/) [Ticket](https://www.luas.ie/tickets-and-fares/)
 - Dark , 火車 []
 - [Ireish rail](http://www.irishrail.ie/)
 - [Citylink](http://www.citylink.ie/) , 客運
@@ -333,6 +333,9 @@ Three Store地址
 
 買的時候要試車,在Dublin需要**車燈**(推薦U字鎖)與**反光背心**([購買處](#連鎖雜貨店))  
 路邊失竊率頗高,停在公寓地下停車場會比較安全,車燈 車上裝備也會被偷
+
+##### 汽車
+二手車可以買到 €600 以下 , ref:[FB:CARS FOR 600 OR LESS](https://www.facebook.com/groups/215324928663873/?multi_permalinks=498536370342726&ref=notif&notif_t=commerce_interesting_product&notif_id=1467504229411296)
 
 ### 影印店
 KINGS , $5c/張 , 08:30~17:00 [map](https://www.google.com/maps/place/53%C2%B021'05.9%22N+6%C2%B016'12.1%22W/@53.3409334,-6.2941084,12.25z/data=!4m5!3m4!1s0x0:0x0!8m2!3d53.3516501!4d-6.270015?hl=zh-TW)
@@ -374,6 +377,12 @@ noel recruitment group
 
 ### 景點
 - [景點](https://drive.google.com/open?id=1IsjjM3k4TzkOvykyrWpuR11SNbY&usp=sharing)
+    - Kildare outlet , 不大的 outlet, 每間都小小的 Ralph Lauren 超小間, 去的時候還沒特價, 只有 outlet價 或 過計價
+    - Penny bridge , Dublin,
+    - Trinity College Dublin ,  有個圖書館要 €10 , 導覽 €13
+    - Tempo , 傳統音樂bar街
+    - ChristChurch , 教堂
+    - Guinness Storehouse , 酒廠
 - [生活資訊](https://drive.google.com/open?id=10Su2KJ6J2-oH5_-aq32iO8RJYGY&usp=sharing)
 
 
