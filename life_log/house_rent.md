@@ -1,6 +1,6 @@
 # 租屋契約
 
-
+- [如何詢問](questions/house_rental.md)
 
 ### 租戶
 - [ ] 房東可否進入

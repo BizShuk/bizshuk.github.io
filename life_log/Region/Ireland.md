@@ -1,5 +1,8 @@
 # Ireland
 
+[50 Unique Things To Do in Ireland](http://journalistontherun.com/2015/08/30/50-unique-things-to-do-in-ireland/)
+[20 Great things to do in Dublin](http://www.timeout.com/dublin/features/47/20-great-things-to-do-in-dublin)
+
 ### 介紹
 - 1920獨立, 歐豬五國PI(Italy)I(Ireland)G()S() 第一個拖困國家, 氣溫 0~27度
 物價水準台灣3倍 ,廉價航空$20歐 , 治安沒台灣好[#1](http://littlefatlegs.pixnet.net/blog/post/185356933-%5b%E6%84%9B%E7%88%BE%E8%98%AD%E7%94%9F%E6%B4%BB%5d-%E6%84%9B%E7%88%BE%E8%98%AD%E6%B2%BB%E5%AE%89---%E5%9C%A8%E9%83%BD%E6%9F%8F%E6%9E%97%E5%8D%83%E8%90%AC%E5%88%A5%E7%95%B6) (偶發扒竊 搶劫 毆打 拐騙) , 英國物價一半 , "號稱" Dublin 友善度No1 in the world 
