@@ -1,7 +1,6 @@
 # Cover letter
 
-- [PDF](https://github.com/BizShuk/bizshuk.github.io/raw/master/resume/export/Cover_letter-ShukLiu.pdf) , prefered
-- [Docx](https://github.com/BizShuk/bizshuk.github.io/raw/master/resume/export/Cover_letter-ShukLiu.docx)
+- [Software Engineer](https://github.com/BizShuk/bizshuk.github.io/raw/master/resume/export/Cover_letter-ShukLiu.pdf) , prefered
 
 
 # Resume export

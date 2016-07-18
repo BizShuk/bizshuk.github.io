@@ -2,6 +2,8 @@
 
 
 ### Concept
+- [Project Scope](http://searchcio.techtarget.com/definition/project-scope)
+    + [SOW , state of work](http://www.tutorialspoint.com/management_concepts/statement_of_work.htm)
 - [Inversion of Control]
 - [Dependency Injection]
 - What is business development manager?
