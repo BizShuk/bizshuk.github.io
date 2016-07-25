@@ -10,7 +10,7 @@
     - #[What is Business Development?](http://www.businessdevelopmentmanagerjobdescription.com/what-is-business-development/)
     - [BD 就是 Sales 嗎？新創公司如何做 BD？](https://blog.alphacamp.co/2015/07/22/startup-bd-sales/)
     - [獵人頭公司新歡：Business Development Manager](http://www.thenewslens.com/article/882)
-
+https://en.bitcoin.it/wiki/Lightning_Network
 
 ### Article
 - [靈媒之路](http://samtiger.pixnet.net/blog/category/1401943)
