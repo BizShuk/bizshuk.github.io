@@ -25,3 +25,7 @@ Compensation
 
 - [Cycle to work](http://www.citizensinformation.ie/en/money_and_tax/tax/income_tax_credits_and_reliefs/cycle_to_work_scheme.html) Schema
 - [Income Protection](https://www.irishlife.ie/life-insurance/income-protection) Schema
+
+
+### knowledge
+- [What's that little e symbol](http://www.thedieline.com/blog/2008/9/17/whats-that-little-e-symbol.html)
