@@ -2,6 +2,8 @@
 
 
 ### Concept
+- [Immediately Invoked Function Expression](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
+- [Goodbye Object-Oriented](https://medium.com/@cscalfani/goodbye-object-oriented-programming-a59cda4c0e53#.9adp7k2g3)
 - [Project Scope](http://searchcio.techtarget.com/definition/project-scope)
     + [SOW , state of work](http://www.tutorialspoint.com/management_concepts/statement_of_work.htm)
 - [Inversion of Control]
