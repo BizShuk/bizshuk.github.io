@@ -1,5 +1,16 @@
 ## This is for answers of my experices
 
+what would be expected to be doing within the first six month of the job?
+what kind of duties responsibilities that i will have?
+how do you think of 
+
+what do you do day t
+
+size of the organization
+structure of my team 
+what kind of environment you gonna be coming into
+what the cuture is?
+what's the typical day?
 
 ##### What I get 
 - [Resume link](https://github.com/BizShuk/bizshuk.github.io/tree/master/resume/export) , including work experience and summary.  

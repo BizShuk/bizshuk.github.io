@@ -1,7 +1,13 @@
 # Reading
 
+### management
+- [Micromanagement](https://en.wikipedia.org/wiki/Micromanagement)
+- [How to spot a bad boss during an interview](https://hbr.org/2015/12/how-to-spot-a-bad-boss-during-an-interview)
+
 
 ### Concept
+- [Serverless Architectures](http://martinfowler.com/articles/serverless.html)
+- [Beginners guide on how to test your code](http://www.integralist.co.uk/posts/guide-to-js-testing.html)
 - [Immediately Invoked Function Expression](http://benalman.com/news/2010/11/immediately-invoked-function-expression/)
 - [Goodbye Object-Oriented](https://medium.com/@cscalfani/goodbye-object-oriented-programming-a59cda4c0e53#.9adp7k2g3)
 - [Project Scope](http://searchcio.techtarget.com/definition/project-scope)
@@ -31,3 +37,8 @@ Compensation
 
 ### knowledge
 - [What's that little e symbol](http://www.thedieline.com/blog/2008/9/17/whats-that-little-e-symbol.html)
+
+
+### quote
+-  發條精靈戰記 天鏡的極北之星 第四卷 第三章 卡托瓦納海盜軍
+「對于犯下過失的晚輩嚴加指責是錯誤的做法……喝斥和激勵都只是單純的手段，到頭來只有告誡並引導對方才是唯一的正確答案。對方如果是小孩子那更不用說，就算直接指責錯誤的行動和想法也沒有任何效果……因為這些都是錯誤的教育方式和成長方式表現出的結果。如果沒有深入根源好好正視對方，那麼無論再怎麼斥責，都無法改變任何事……」

@@ -1,5 +1,14 @@
 ### General
 - Ask name ,title and introduce
+- Could you tell me more about this positon I might be doing in this position?
+  What is the responsibility of this position?
+- What issues are driving the need to create this position?
+  What kind of reasons are creating this opportunity?
+- What should I do in first six months?
+- Who should I report to? What kind of report and period of time should I do?
+- How do you describe the departmental culture and work atmosphere?
+- Do the office open on 24hour, or Sat. Sun. ?
+
 
 ### For Team Leader
 - What is the release process or workflow? How long and how many people were it take?
