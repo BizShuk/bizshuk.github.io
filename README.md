@@ -8,7 +8,7 @@
 
 ### Learning
 - [Software related](https://github.com/BizShuk/code_sandbox) , including server ,code ,devops
-- [Servers env](https://github.con/BizShuk/env_setup)
+- [Servers env](https://github.com/BizShuk/env_setup)
 - [Japaness](https://github.com/BizShuk/japaness)
 
 ### Contact
