@@ -87,19 +87,19 @@ Get answers from players, do statistic and analyze to undestand what players wan
 - Company: Gamesofa Inc.
 - Date: 2014-11 ~ 2015-04
 - Role: software engineer
-- Co-worker: none
+- Co-worker: Micheal Lin <michael@gamesofa.com>
 - Link: [Website](http://www.gamesofa.com/index/?op=report)
 - Description: Clean useless code and merge some redundant file. Architecture is important.
 - Tech list: PHP, CSS, js, Perl
 
-![]()
+![](img/gs_custom_service.png)
 
 ### Texas Hold'em ###
 - Summary: Online Texas Hold'em 
 - Company: Gamesofa Inc.
 - Date: 2013-07 ~ 2014-01
 - Role: Game developer
-- Co-worker: Taora, Billy, Lean, Jim, ... 
+- Co-worker: Taora, Billy, Liam, Jim, Nick , Dios , Lucus , Charlie , Hyder , Kendy , Crystal , QA team , Custom Service team 
 - Link: [Web site](http://www.gamesofa.com/texas9/)
 - Description: Dealing with game events and features. Once to implement Omaha core rules. What's the most interest things for user? That will cause user number to grow quickly.
 - Tech list: PHP, Perl, HTML, CSS, js (angularjs 1.4), Mysql
@@ -111,7 +111,7 @@ Get answers from players, do statistic and analyze to undestand what players wan
 - Company: Gamesofa Inc.
 - Date: 2012-11 ~ 2013-06
 - Role: Game developer
-- Co-worker: Robin, Ohaha ,
+- Co-worker: Robin, Ohaha , Copper
 - Link: [App](https://www.microsoft.com/en-us/store/apps/%E7%A5%9E%E4%BE%86%E4%B9%9F%E5%A4%A7%E8%80%812/9wzdncrdpm5w)
 - Description: 
 - Tech list: HTML5, CSS3, js
