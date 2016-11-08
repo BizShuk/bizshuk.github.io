@@ -33,6 +33,18 @@
 - Description: 
 - Tech list: Openresty, Nginx, Lua, docker, Jenkins, Ansible
 
+### HTC interview homework with Scala + Play + Mongo CRUD
+- Summary: a demo for sure , I understand Scala , Play , and Mongo
+- company: HTC
+- Date: 2015.04 ~ 2015.04 (about 3 days to 1 week)
+- Role: interviewee
+- Co-worker: none
+- Link:
+- Description: show htc smartphone on index page with 3 management page ( insert , modify , delete)
+- Tech stack: Scala , Play , html , CSS , js
+
+![](img/scala_play_crud_demo.png)
+
 ### Home site ###
 - Summary: Personal website
 - Company: none
@@ -43,6 +55,7 @@
 - Description: personal website with some picture for introducing self, use few new tech , like reactjs, SASS , to build up
 - Tech list: html, js (reactjs), SASS, RWD, web hosting (GoDaddy),
 
+![](img/scala_play_crud_demo.png)
 
 ### survey system ###
 - Summary: Online survey system with customized features  
@@ -55,6 +68,7 @@
 Get answers from players, do statistic and analyze to undestand what players want and make priority of features, to keep the most important things are on the way. In this project, I learn how to use statistic and make some analysis.
 - Tech list: PHP, Perl, Html, CSS, js (angularjs 1.4), Mysql
 
+![](img/survey_management.png)
 
 ### Analyzing user system ###
 - Summary: Simplify some analyzing way to a SOP and easy to use for product manager.A quick view of some group user characteristics, including subset.
@@ -66,6 +80,7 @@ Get answers from players, do statistic and analyze to undestand what players wan
 - Description: analyze end-user behaviours  and show active rate and statistics of selected group by customized parameters. It totoly reduce a lot of time on evalute user behavious, you can see more different group of users. And visulization is one of ths most important things , it make product managers understanded easily. This time is first time cooperate with different pefessional domain knowledge people. 
 - Tech list: PHP, CSS, js (angularjs 1.4), Perl, Mysql, Statictis
 
+![](img/analyzing_user.png)
 
 ### Refactor Customer Service ###
 - Summary: refactor system
@@ -77,6 +92,7 @@ Get answers from players, do statistic and analyze to undestand what players wan
 - Description: Clean useless code and merge some redundant file. Architecture is important.
 - Tech list: PHP, CSS, js, Perl
 
+![]()
 
 ### Texas Hold'em ###
 - Summary: Online Texas Hold'em 
@@ -88,6 +104,8 @@ Get answers from players, do statistic and analyze to undestand what players wan
 - Description: Dealing with game events and features. Once to implement Omaha core rules. What's the most interest things for user? That will cause user number to grow quickly.
 - Tech list: PHP, Perl, HTML, CSS, js (angularjs 1.4), Mysql
 
+![](img/texas_hold'em.png)
+
 ### Windows 8 App "big two" ###
 - Summary: Poker game app in win8
 - Company: Gamesofa Inc.
@@ -98,6 +116,7 @@ Get answers from players, do statistic and analyze to undestand what players wan
 - Description: 
 - Tech list: HTML5, CSS3, js
 
+![](img/win8_bigtwo.jpeg)
 
 
 
