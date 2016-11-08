@@ -12,10 +12,10 @@
 - [Japaness](https://github.com/BizShuk/japaness)
 
 ### Contact
-- Linkedin: https://tw.linkedin.com/in/liu-shuk-593093a0
+- Linkedin: https://www.linkedin.com/in/initialshuk
+- Skype: initialshuk@gmail.com , please let me know if you requested
+- Phone: TW +886-911839712 
 - Line: initialshuk
-- Phone: TW (886)-911839712 , IRE ()
-- Skype: initialshuk@gmail.com
-- WebChat: BizShuk , only online as needed
+- WebChat: BizShuk 
 - QQ: 3225773725 , only online as needed
 
