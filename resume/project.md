@@ -55,7 +55,7 @@
 - Description: personal website with some picture for introducing self, use few new tech , like reactjs, SASS , to build up
 - Tech list: html, js (reactjs), SASS, RWD, web hosting (GoDaddy),
 
-![](img/scala_play_crud_demo.png)
+![](img/home_page.png)
 
 ### survey system ###
 - Summary: Online survey system with customized features  
