@@ -4,7 +4,7 @@
 - [Shuk's site](http://shuk.info/)
 - [Shuk's life log](life_log)
 - [GitHub](https://github.com/BizShuk)
-- [Resume list](https://github.com/BizShuk/bizshuk.github.io/tree/master/resume)
+- [Resume related](https://github.com/BizShuk/bizshuk.github.io/tree/master/resume) , CVs with many formats, cover letters , project list , , certificate
 
 ### Learning
 - [Software related](https://github.com/BizShuk/code_sandbox) , including server ,code ,devops
