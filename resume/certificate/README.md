@@ -11,4 +11,5 @@
     - Repeated Substring Pattern5 ( 7 )
     - 4Sum II ( 7 )
     - 132 Pattern ( 11 )
+
 ![](leecode-Smarking_Algorithm Contest_4.png)
