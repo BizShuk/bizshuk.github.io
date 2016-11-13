@@ -11,3 +11,6 @@
 - [Linkedin](https://www.linkedin.com/in/initialshuk)
 - [stack overflow](http://stackoverflow.com/cv/initialshuk)
 
+
+# Other experience
+- [PDF](Resume-ShukLiu_other.pdf)
