@@ -5,6 +5,7 @@
 - [Shuk's life log](life_log)
 - [GitHub](https://github.com/BizShuk)
 - [Resume related](https://github.com/BizShuk/bizshuk.github.io/tree/master/resume) , CVs with many formats, cover letters , project list , , certificate
+- [LeeCode profile](https://leetcode.com/bizshuk/)
 
 ### Learning
 - [Software related](https://github.com/BizShuk/code_sandbox) , including server ,code ,devops
