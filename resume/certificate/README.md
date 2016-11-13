@@ -6,6 +6,8 @@
 - [Codility_for_Pagefair](Codility_for_Pagefair.pdf)
 
 # LeeCode context
+Failed submission will add 600s on Finish time.
+
 - Smarking Algorithm Contest 4 (Rank 123/807) (Score 28/28)
     - Assign Cookies ( 5 )
     - Repeated Substring Pattern5 ( 7 )
