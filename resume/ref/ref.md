@@ -1,3 +1,0 @@
-- [Gayle Laakmann McDowell's top resume](https://www.quora.com/What-are-Gayle-Laakmann-McDowells-top-resume-evaluation-answers)
-- [cover letter](http://www.essaycrafter.org/evon-writing/cover-letter_14/)
-- 

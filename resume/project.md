@@ -94,6 +94,17 @@ Get answers from players, do statistic and analyze to undestand what players wan
 
 ![](img/gs_custom_service.png)
 
+### Modular game event activity
+- Summary: Modular game event. It can be dynamicly change by management page.
+- Company: Gamesofa Inc.
+- Date: 2013-08 ~ 2013-10
+- Role: Game developer
+- Co-worker: Taora, Billy, Liam, Jim, Nick , Dios , Lucus , Charlie , Hyder , Kendy , Crystal , QA team , Custom Service team 
+- Link: [Web site](http://www.gamesofa.com/texas9/)
+- Description: Update new events for game by product manager without server engineer help. If product manager would like to make it looked like new, it just needs change the user interface.
+- Tech list: PHP, Perl, HTML, CSS, js (angularjs 1.4), Mysql
+
+
 ### Texas Hold'em ###
 - Summary: Online Texas Hold'em 
 - Company: Gamesofa Inc.

@@ -1,3 +1,69 @@
+# About interview
+
+- [Related information](ref/README.md)
+
+# Interview with HR
+
+Usually , this kind of interview is all about knowing you , maybe let you know the company as well. 
+
+### tips
+1. take up all things you have learned in previous jobs, that'll make  serveral different jobs on your resume more attractive. hiring manager love to hear how you've grown in your job 
+2. show your interest in the industry you choose
+3. talk about positive thing , even you were suffering in past experience
+4. a life quote for youself and how you implement to your life.
+5. 3 greatest achivements: survey system(with regional deployment), build user analyzing system. What? and How?
+6. how do you take challenge in previous?
+7. what did you like least about your last job? "The role didn't offer much growth potential." or "I didn't find the work fulfilling." 
+8. what do you think the main challenges of this job will be?
+9. why are you interested in the job?
+10. what are your stengths?
+11. what are your weakness? I need enviroment to update myself , so I always try to propose some ideals. but spark project has been rejected
+12. a problem you have faced , how to deal with it?
+13. How would your boss and coworkers describe you?
+14. company or job research
+15. How do you like to work?
+16. what do you like to do outside of work? research , join bar convesation ,
+17. management style? leadership experience
+18. 
+
+### process
+1. greeting , what should we start with?
+2. introduce yourself
+3. talking about your experience
+4. what kind of personalities do you have?
+5. some questions ,related with previous experience,from interviewer
+    1.
+    2. 3
+    3. what do you do when you don't know how to do a job you're assigned?
+    4. 
+6. ask some questions to know the company culture and roles
+    1. working atmospheres
+    2. what do I do in first 3 months? any trainning process? 
+    3. 
+7. 1
+8. 
+
+
+# particular things for specific company
+### booking.com
+1. What is Spare Time? ref: [A Few Small Things We Built In Our Spare Time](http://blog.booking.com/a-few-fun-tools-we-build-at-booking.html)
+2. why am I interested in the job
+
+
+
+# Interview with professional lead
+
+2. How's about work flow as a software engineer?  
+3. 
+
+
+
+
+
+
+
+
+
 ### General
 - Ask name ,title and introduce
 - Could you tell me more about this positon I might be doing in this position?
