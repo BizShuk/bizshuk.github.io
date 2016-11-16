@@ -28,29 +28,29 @@
     }
 },
 {
-    "link":"",
-    "img_title":"",
+    "link":"https://github.com/BizShuk/bizshuk.github.io/blob/master/resume/project.md",
+    "img_title":"Projects",
     "style":{
         "backgroundImage":"url('http://i.imgur.com/nSF6Kft.jpg?1')"
     }
 },
 {
-    "link":"",
-    "img_title":"",
+    "link":"https://leecode.com/bizshuk/",
+    "img_title":"LeeCode profile",
     "style":{
         "backgroundImage":"url('http://i.imgur.com/SOvLqzF.jpg?1')"
     }
 },
 {
-    "link":"",
-    "img_title":"",
+    "link":"https://github.com/BizShuk/bizshuk.github.io/tree/master/resume/certificate",
+    "img_title":"Certificate",
     "style":{
         "backgroundImage":"url('http://i.imgur.com/MC7PivN.jpg?1')"
     }
 },
 {
-    "link":"",
-    "img_title":"",
+    "link":"https://www.linkedin.com/in/initialshuk",
+    "img_title":"Linkedin",
     "style":{
         "backgroundImage":"url('http://i.imgur.com/oxa6XYD.jpg?1')"
     }

@@ -2,10 +2,10 @@
 
 # interview introduce
 
-My name is LIU, TENG-YUNG, LIU is surname. You can call me Shuk. I come from Taiwan, graduated with master degree in computer science and informatin technology department.
+My name is LIU, TENG-YUNG, LIU is surname. You can call me Shuk. I come from Taiwan, graduated with master degree in computer science 
 
 ### picking reason
-I applied booking.com  because I like to travel, I had two experience of long period of time. 5 years ago in United State and Japan , and another in past 4 months in Europe. And there are some coincidences , younger schoolmate told me that she had a interview in booking.com and another is I found a exam on HackerRank.
+I applied booking.com  because I like to travel, I had two experience of long period of time. 5 years ago in United State and Japan , and another in past 4 months in Europe. And there are some coincidences , younger schoolmate told me that she had a interview with booking.com and another is I found a exam on HackerRank.
 
 
 
@@ -47,7 +47,12 @@ She never saw a group men smile around a man.
 I think it's a joke at that time.
 But if I use it to describe my personality or collaborative relationship , I think it's appropriated.
 
+### two trips
+as I mentioned , I love to travel. In my past , there are two long period of time trips. 
 
+1. american
+2. europe , originally go Ireland , but 
+8 counties 17 citis 
 
 
 ### testing
