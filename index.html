@@ -5,8 +5,8 @@
 
         <!-- libraries-->
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-        <link rel="stylesheet" href="http://static.shuk.info/base.css">
-        <link rel="stylesheet" href="http://static.shuk.info/library/animate.css">
+        <link rel="stylesheet" href="http://bizshuk.github.io/static/base.css">
+        <link rel="stylesheet" href="http://bizshuk.github.io/static/library/animate.css">
         <!-- The core React library -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
         <!-- In-browser JSX transformer, remove when pre-compiling JSX. -->
@@ -30,7 +30,7 @@
             body div{
                 position:relative;
             }
-    
+
             #bg_color{
                 filter:blur(5px);
                 width: 100vw;
@@ -102,15 +102,15 @@
           js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.3&appId=1438624083126519";
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
-        <div class="fb-like" data-href="http://shuk.info/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+        <div class="fb-like" data-href="http://bizshuk.github.io/" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
         <div id="bg_color" class="bg_base background_cover"></div>
-        
+
         <div id="content"></div>
         <script type="text/jsx">
             var Gallery  = React.createClass({
                 getInitialState: function(){
                     return {data:[]};
-                },               
+                },
                 componentDidMount:function(){
                     $.ajax({
                         url: this.props.url,
@@ -133,12 +133,12 @@
 
 
                 },
-    
+
                 render: function(){
                     var Tlems = this.state.data.map(function(elem){
-                        return (<Gallery_elem data={elem}></Gallery_elem>); 
+                        return (<Gallery_elem data={elem}></Gallery_elem>);
                     });
-                    return (<div className="pure-g">{Tlems}</div>);    
+                    return (<div className="pure-g">{Tlems}</div>);
                 }
             });
 
@@ -150,7 +150,7 @@
                             <p className="img_title">{this.props.data.img_title}</p>
                             <div className="background_cover"></div>
                         </a>
-                    );    
+                    );
                 }
             });
             React.render(
