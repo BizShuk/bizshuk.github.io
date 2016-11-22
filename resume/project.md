@@ -122,7 +122,7 @@ Get answers from players, do statistic and analyze to undestand what players wan
 - Company: Gamesofa Inc.
 - Date: 2012-11 ~ 2013-06
 - Role: Game developer
-- Co-worker: Robin, Ohaha , Copper
+- Co-worker: Robin , Ohaha , Copper
 - Link: [App](https://www.microsoft.com/en-us/store/apps/%E7%A5%9E%E4%BE%86%E4%B9%9F%E5%A4%A7%E8%80%812/9wzdncrdpm5w)
 - Description: 
 - Tech list: HTML5, CSS3, js
