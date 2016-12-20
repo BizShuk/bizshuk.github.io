@@ -47,6 +47,12 @@ She never saw a group men smile around a man.
 I think it's a joke at that time.
 But if I use it to describe my personality or collaborative relationship , I think it's appropriated.
 
+### two trips
+as I mentioned , I love to travel. In my past , there are two long period of time trips.
+
+1. US
+2. EU , go Ireland first , but 8 counties 17 cities.
+
 
 
 
