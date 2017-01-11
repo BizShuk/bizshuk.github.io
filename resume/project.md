@@ -24,23 +24,23 @@
 - Tech list: Openresty, Nginx, Lua, docker, kubernetes, Jenkins, Ansible
 
 ### Lua profiler ###
-- Summary: evaluate cloud code quility
+- Summary: evaluate cloud code qualitiy
 - Company: Shanghai Droi Market Co Ltd.
 - Date: 2015-09 ~ 2015-10
 - Role: System developer
 - Co-worker: none
 - Link:
-- Description: 
+- Description: pull out system calls and check syntax and performance
 - Tech list: Openresty, Nginx, Lua, docker, Jenkins, Ansible
 
 ### HTC interview homework with Scala + Play + Mongo CRUD
-- Summary: a demo for sure , I understand Scala , Play , and Mongo
+- Summary: a demo for Scala , Play , and Mongo
 - company: HTC
 - Date: 2015.04 ~ 2015.04 (about 3 days to 1 week)
 - Role: interviewee
 - Co-worker: none
 - Link:
-- Description: show htc smartphone on index page with 3 management page ( insert , modify , delete)
+- Description: show htc smartphone on index page with 3 management page with Mongo (CRUD)
 - Tech stack: Scala , Play , html , CSS , js
 
 ![](img/scala_play_crud_demo.png)
@@ -122,7 +122,7 @@ Get answers from players, do statistic and analyze to undestand what players wan
 - Company: Gamesofa Inc.
 - Date: 2012-11 ~ 2013-06
 - Role: Game developer
-- Co-worker: Robin, Ohaha , Copper
+- Co-worker: Robin , Ohaha , Copper
 - Link: [App](https://www.microsoft.com/en-us/store/apps/%E7%A5%9E%E4%BE%86%E4%B9%9F%E5%A4%A7%E8%80%812/9wzdncrdpm5w)
 - Description: 
 - Tech list: HTML5, CSS3, js

@@ -42,7 +42,7 @@ Usually , this kind of interview is all about knowing you , maybe let you know t
     3. what do I do in first 3 months? any trainning process? 
     4. what about the role ? any challenges you think I'll face wtih ? 
     5. what's the role responsibilities? which department is the role belong to ?
-    6. 
+    6. what frequency do you travel
 7. Ending
     1. what do you think of me so far?
     2. any else you want to share with me?
@@ -53,8 +53,7 @@ Usually , this kind of interview is all about knowing you , maybe let you know t
 # particular things for specific company
 ### booking.com
 1. What is Spare Time? ref: [A Few Small Things We Built In Our Spare Time](http://blog.booking.com/a-few-fun-tools-we-build-at-booking.html)
-2. why am I interested in the job
-3. There is a quote on career wensite "Have the freedom to make a difference, every day.". Could you describe how you make difference?
+3. There is a quote on career wensite "Have the freedom to make a difference, every day.". Could you describe how you make difference or how a engineer make difference?
 
 
 # Interview with professional lead
