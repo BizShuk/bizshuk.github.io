@@ -1,13 +1,25 @@
+## [Innova Solutions](http://www.innovasolutions.com/) TW branch, bot for Change Health Care
+_Global cloud solution provider_
+In this branch, it's bot for Change Health Care, U.S.. I'm under CIH (Customer Integration Hub) division of Change Health Care. Working on portal connecting between internal and external applications. 
+
+Taipei Location:
++886-2-8751-8700
+9F., No.18, Jihu Rd., Neihu Dist., Taipei City 114, Taiwan (R.O.C.)
+
+
 ## [FreeCodeCamp](http://www.freecodecamp.com/map)
 _Online Full-Stack trainning and Full Stack Web Development Certification_  
 Computer Software Engineering , Since 2015 ~  
-  
 
 ## [Shanghai Droi Market Co Ltd.](http://www.droi.com/) (Taiwan branch)  
 _internet company from android device to internet, include PaaS BaaS. 500+ employees_  
 Cloud Engineer , Since 2015-07 ~   
 
-Location:  
+Taipei Location:
++886-2-81010896
+Taipei 101 32F
+
+Shanghai Location:  
 中国上海徐汇区桂平路391号新漕河泾国际商务大厦B座21楼  
 21F, Blk B, New CHJ International Business Centre No.391 Gui Ping Road Xuhui District Shanghai China  
 
@@ -40,7 +52,8 @@ Location:
 ## [Gamesofa Inc.](http://www.gamesofa.com)  
 _Onlne game company. 200 employees in Taiwan. Famous in Taiwan_   
 Game and BI devolper , Since 2012-11 ~ 2015-04  
-  
+台北市中正區羅斯福路2段100號10樓, +886-2-66325598
+
 [Official introduction PDF](ref/gamesofa_intro.pdf)  
 
 Online Poker and Mahjong gaming company. The most popular game "Mahjong" is known as "神來也". After 2013, The company started to exxtend game type to shotting game and made a game called "Guns Rush". Steady growing and try to distribute games to world wide.
