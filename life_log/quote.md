@@ -1,6 +1,10 @@
 # Quote
 
-1. 
+
+
+
+1.
+
     We humans alone in this world for a reason. We murdered and butched all the things that challenged us primacy. by Westworld S01E09
 
 2.
@@ -12,3 +16,15 @@
     在意該在意的事情就好  
     你的難過不一定是別人的難過
     但就做到你的快樂也可以是別人的快樂 that's it
+
+4.
+    
+    “Work hard at your job and you can make a living. Work hard on yourself and you can make a fortune.” — Jim Rohn
+
+5.
+    
+    “Necessity is the mother of invention.” — English Proverb
+
+6.
+
+    “The more you sweat in peace, the less you bleed in war.” — Norman Schwarzkopf

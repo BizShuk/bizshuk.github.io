@@ -4,12 +4,12 @@
 
 ### Customer Integration Hub
 - Summary: develop features and fix bugs under Custormer Integration Hub team
-- Company: Innova Solutions (It's bot for **Change Health Care** in this branch)
+- Company: Innova Solutions (It's BOT for **Change Health Care** in this branch)
 - Date: 2017-02 ~ present
 - Role: Full-Stack Engineer
 - Co-worker: Enan(Scrum master), Karthik, Subba, Allen, Lucy, Jeffrey, Iris, Jason, Anson
 - Link:
-- Description: Customer Integration Hub is the connetion between internal and external applications.
+- Description: Customer Integration Hub is the connetion between internal and external applications. queue aws scrum 
 - Tech list: Java, Javascript, Spring, Scrum.
 
 ### Droi command line tool

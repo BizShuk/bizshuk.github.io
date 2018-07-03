@@ -1,10 +1,105 @@
+# Snowboard
+### binding
+size: S M L XL
 
+##### joint with board
+- 2 x 4 , 4 x 4 (first digit is for length, second is for wide)
+.2cm.   .   .   .   . 
+4cm
+.   .   .   .   .   .
+- 3D pattern (burton)
+- channel system (burton)
+
+##### Riding type
+binding跟boots的flex要合
+
+##### Flex Rate
+1 - 10
+- park , 1 - 3
+- all mountain , 4 - 7
+- freeride , 8 - 10
+
+
+##### type of binding
+- Strap-in , most common
+- Rear-entry , also called Speed Entry
+
+##### Straps
+- Toe Cap Strap
+- Traditional Toe Strap
+- Hybrid Toe Strap
+- Ankle Strap
+- One piece
+
+##### Highback
+- Stiff and tall highbacks are intended for enhanced control and speed.
+- Soft and shorter highbacks are intended for park riders and beginners looking for flexibility and ease.
+- No back for skate-like riding
+- Forward lean highback
+
+##### Baseplate
+Baseplates are made with a variety of materials that feature different strength-to-flex ratios. Higher end bindings will have stronger baseplate materials and will optimize board flex, power transmission and durability.
+
+Canting - A small amount of tilt in the footbed ergonomically angles your stance and knee position slightly forward for a more natural stance.
+
+
+
+
+
+### Skills
+    - jipping
+    - [box](https://www.youtube.com/watch?v=bcSZDS65eGs)
+        + 50-50
+        + back board slide
+        + tail press
+        + back board fakie
+        + nose press
+        + front board slide
+        + 180 onto box
+        + 180 on 180 off
+        + box spin
+
+    - [butter tricks](https://www.youtube.com/watch?v=G9qlTInKbNE)
+        + tail press
+        + nose press
+        + penguin walk
+        + Nose roll
+        + butter 180
+        + tripod
+        + butter bagel, tail
+        + butter pretzel, nose
+        + butter spin
+        + butter 360
+
+    - [jump]
+        + front flip
+
+    + ToeSide
+    + HealSide
+    + J turn
+    + C turn
+    + S turn (linking turn)
+    + QuickTurn
+    + KickTurn
+    + Ollie (豚跳) , 重心往後,拉前腳跳(板跳起後,前高後低)
+    + Nollie , 重心往前,拉後腳往前甩 (板跳起後,前低後高)
+    + Bail , 摔倒
+    + Fallingleaf
+    + Carving (CarvedTurn)
+    + fakie , 倒滑
+    + Butter , 單腳重心旋轉 像抹奶油一般
+    + 單腳檯轉180 
+    + carving 倒勾
 
 
 below content refers to [http://www.the-house.com/helpdesk/snowboard-sizing/](http://www.the-house.com/helpdesk/snowboard-sizing/)
 
+
+
+
  名詞:
 ### snow condition:
+
 - Power , 鬆雪
 - Moguls , 饅頭 
 - Park
@@ -13,22 +108,6 @@ below content refers to [http://www.the-house.com/helpdesk/snowboard-sizing/](ht
 - groomers , 壓雪
 
 
-##### Skills:
-- ToeSide
-- HealSide
-- J turn
-- C turn
-- S turn (linking turn)
-- QuickTurn
-- KickTurn
-- Ollie (豚跳) , 重心往後,拉前腳跳(板跳起後,前高後低)
-- Nollie , 重心往前,拉後腳往前甩 (板跳起後,前低後高)
-- Bail , 摔倒
-- Fallingleaf
-- Carving (CarvedTurn)
-- fakie , 倒滑
-- Butter , 單腳重心旋轉 像抹奶油一般
-- 單腳檯轉180 
 
 ### About board:
 
@@ -91,14 +170,17 @@ below content refers to [http://www.the-house.com/helpdesk/snowboard-sizing/](ht
 - tosional flex 板寬彈性
 
 
-- Stiff Flex boards ,
-- Medium Flex boards ,
-- Soft Flex boards , made for freestyle , easily control at lower speed , ideal for  tweaking tricks in the park or street , 
+- Stiff Flex boards , freeride
+- Medium Flex boards , all mountain
+- Soft Flex boards , freestyle , easily control at lower speed , ideal for  tweaking tricks in the park or street , 
 good for beginners and lighter weight riders  easy for linking turns
 
 halfpipi rider need a stiff board for stability at high speed
 => more stiffer more stable
 heavier rider need more stiff than usual to prevent board wash-out or uncontrollable bails
+
+
+3d feature
 
 ##### Sidecut and Effective Edge
 ![](img/sidecut-effective-edge.jpg)
