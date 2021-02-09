@@ -1,4 +1,0 @@
-# Cocktail
-
-### Pina Colada
-
