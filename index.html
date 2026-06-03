@@ -1,178 +1,195 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-    <title>Shuk Gallery</title><!-- libraries-->
-    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.0/build/pure-min.css" type="text/css">
-    <link rel="stylesheet" href="https://bizshuk.github.io/static/base.css" type="text/css">
-    <link rel="stylesheet" href="https://bizshuk.github.io/static/library/animate.css" type="text/css">
-    <!-- The core React library -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js" type="text/javascript">
-    </script><!-- In-browser JSX transformer, remove when pre-compiling JSX. -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js" type="text/javascript">
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript">
-    </script><!-- must have for every page -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, User-scalable=no">
-    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-    <meta http-equiv="content-language" content="en-US"><!-- may need to modify-->
-    <link rel="shortcut icon" type="image/gif" href="https://i.imgur.com/QpGrcBZ.jpg?1" size="16x16"><!-- tab icon -->
-    <link rel="image_src" href="https://i.imgur.com/XwGpqgN.jpg?1"><!-- ? -->
-    <meta name="keywords" content="shuk,index,gallery"><!-- SEO? -->
-    <meta name="description" content="Shuk Gallery"><!-- fb share description -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuk Gallery</title>
+    <meta name="description" content="Shuk's Gallery">
     <meta property="og:site_name" content="Shuk's Gallery">
-    <meta property="og:image" content="https://i.imgur.com/XwGpqgN.jpg?"><!-- FB share image -->
 
-    <style type="text/css">
-        body div {
+    <link rel="shortcut icon" type="image/gif" href="https://i.imgur.com/QpGrcBZ.jpg?1">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #f4f4f9;
+            --text-color: #333;
+            --hover-overlay: rgba(0, 0, 0, 0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 1rem 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #666;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
             position: relative;
-        }
-
-        #bg_color {
-            filter: blur(5px);
-            width: 100vw;
-            height: 100vh;
-            position: fixed;
-            opacity: 0.6;
-            z-index: 0;
-        }
-
-        .background_cover {
-            transition: opacity 500ms;
-            cursor: pointer;
-        }
-
-        .grid_elem:hover .background_cover {
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: block;
+            background-color: #e0e0e0;
+            background-size: cover;
+            background-position: center;
             opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards;
         }
 
-        .fb-like {
-            position: absolute !important;
-            top: 0px;
-            z-index: 30;
-            left: 0px;
-            padding: 20px;
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
 
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--hover-overlay);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 1rem;
+                padding: 1rem;
+            }
+            header {
+                padding: 3rem 1rem 1rem;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
         }
     </style>
-    <script type="text/javascript">
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-64178802-1', 'auto');
-        ga('send', 'pageview');
-
-
-        function show_up_sequentially(selector) {
-            var elems = $(selector),
-                elem_length = elems.length,
-                dfd = new Array();
-
-            for (var i = 0; i < elem_length; i++) {
-                var this_dfd = new $.Deferred();
-                this_dfd.done(showup);
-                dfd.push(this_dfd);
-            }
-
-            function showup(i, e, dfd) {
-                $(e[i]).addClass(' animated  flipInY ');        // in FF, animated before show up
-                $(e[i]).show();
-                setTimeout(function () {
-                    i++;
-                    if (i != elem_length) dfd[i].resolve(i, e, dfd); // last one can't resolve next(out of length)
-                }, 500);
-
-                return dfd[i].promise()
-            }
-            dfd[0].resolve(0, elems, dfd);
-        }
-
-    </script>
 </head>
-
 <body>
-    <div id="fb-root">
-    </div>
-    <script type="text/javascript">
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.3&appId=1438624083126519";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
 
-    <div class="fb-like" data-href="https://bizshuk.github.io/" data-layout="button" data-action="like"
-        data-show-faces="false" data-share="false">
-    </div>
+    <header>
+        <h1>SHUK LIU</h1>
+        <p>Software Engineer & Developer Portfolio</p>
+    </header>
 
+    <main>
+        <div class="gallery-container" id="gallery">
+            <!-- Gallery items will be injected here via JavaScript -->
+        </div>
+    </main>
 
-    <div id="bg_color" class="bg_base background_cover">
-    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryContainer = document.getElementById('gallery');
 
+            fetch('gallery_elem.json')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach((item, index) => {
+                        // Skip empty items if they have no link and no title, though we can display them as decorative
+                        // Actually let's display all as per original, but make them unclickable if no link
+                        const isLink = item.link && item.link.trim() !== '';
+                        const elem = document.createElement(isLink ? 'a' : 'div');
 
-    <div id="content">
-    </div>
-    <script type="text/jsx">
-        var Gallery  = React.createClass({
-                getInitialState: function(){
-                    return {data:[]};
-                },
-                componentDidMount:function(){
-                    $.ajax({
-                        url: this.props.url,
-                        dataType: 'json',cache: false,
-                        success: function(data) {
-                            var dfd = $.Deferred();
-                            dfd.promise(this);
-                            dfd.resolve(this);
-                            this.done(function(dfd_obj){
-                                dfd_obj.setState({data: data});
-                                return dfd_obj;
-                            }).done(function(dfd_obj){
-                                show_up_sequentially(".grid_elem");
-                            });
-                        }.bind(this),
-                        error: function(xhr, status, err) {
-                            console.error(this.props.url, status, err.toString());
-                        }.bind(this)
+                        elem.className = 'gallery-item';
+
+                        if (isLink) {
+                            elem.href = item.link;
+                            elem.target = '_blank';
+                            elem.rel = 'noopener noreferrer';
+                        }
+
+                        // Extract background image url from style string
+                        // e.g. "url('https://i.imgur.com/SpbbJ3z.jpg?1')"
+                        if (item.style && item.style.backgroundImage) {
+                            elem.style.backgroundImage = item.style.backgroundImage;
+                        }
+
+                        // Staggered animation
+                        elem.style.animationDelay = `${index * 0.05}s`;
+
+                        if (item.img_title) {
+                            const overlay = document.createElement('div');
+                            overlay.className = 'gallery-item-overlay';
+
+                            const title = document.createElement('h3');
+                            title.className = 'gallery-item-title';
+                            title.textContent = item.img_title;
+
+                            overlay.appendChild(title);
+                            elem.appendChild(overlay);
+                        }
+
+                        galleryContainer.appendChild(elem);
                     });
-
-
-                },
-
-                render: function(){
-                    var Tlems = this.state.data.map(function(elem){
-                        return (<Gallery_elem data={elem}></Gallery_elem>);
-                    });
-                    return (<div className="pure-g">{Tlems}</div>);
-                }
-            });
-
-            var Gallery_elem = React.createClass({
-                render: function(){
-                    this.props.data.style.display = "none";
-                    return (
-                        <a href={this.props.data.link} className="grid_elem pure-u-1-6 bg_base" style={this.props.data.style}>
-                            <p className="img_title">{this.props.data.img_title}</p>
-                            <div className="background_cover"></div>
-                        </a>
-                    );
-                }
-            });
-            React.render(
-                <Gallery url="./gallery_elem.json"/>,
-                document.getElementById('content')
-            );
+                })
+                .catch(error => console.error('Error loading gallery data:', error));
+        });
     </script>
 </body>
-
 </html>

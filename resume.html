@@ -1,354 +1,557 @@
 <!DOCTYPE html>
-<html lang="en-US">
-
+<html lang="en">
 <head>
-    <base href="https://bizshuk.github.io"> <!-- used for relative uri -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuk Liu - Resume</title>
+    <meta name="description" content="Resume of Shuk Liu, Software Engineer">
 
-    <title>Shuk's resume</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, User-scalable=no">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="content-language" content="en-US">
+    <link rel="shortcut icon" type="image/gif" href="https://i.imgur.com/QpGrcBZ.jpg?1">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #18bc9c;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --white: #ffffff;
+            --border-radius: 8px;
+        }
 
-    <meta property="og:title" content="Shuk's resume" />
-    <meta property="og:site_name" content="Shuk's resume" />
-    <meta property="og:url" content="https://bizshuk.github.io" />
-    <meta property="og:image"
-        content="https://bizshuk.github.io/static/imgs/1385042_597441770314857_1399795495_n.jpg" />
-    <meta property="og:image:width" content="600" />
-    <meta property="og:image:height" content="315" />
-    <meta property="og:description" content="brief meself, you can know me better at this place." />
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+        }
 
-    <meta property="fb:app_id" content="[FB_APP_ID]" />
-    <meta property="og:type" content="article" />
-    <meta property="og:locale" content="zh_TW" /> <!-- Default -->
-    <meta property="og:locale:alternate" content="en_US" /> <!-- French -->
-    <meta property="article:author" content="https://www.facebook.com/initialshuk" />
-    <meta property="article:publisher" content="https://www.facebook.com/initialshuk" />
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
+        a:hover {
+            color: #128f76;
+            text-decoration: underline;
+        }
 
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://i.imgur.com/44BKXhD.jpg') center/cover no-repeat fixed;
+            color: var(--white);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
 
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1s ease-out;
+        }
 
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
 
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
 
-    <meta name="keywords" content="shuk,resume,demo">
-    <meta name="description" content="shuk home">
-    <!-- shortcut for what ?-->
-    <link rel="shortcut icon" type="image/gif" href="https://bizshuk.github.io/static/imgs/personal_img/icon.gif"
-        size="16x16">
-    <link rel="image_src" href="https://i1296.photobucket.com/albums/ag18/skyozora/site/logo_zpslcvsdeff.png">
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-weight: 400;
+        }
 
+        /* Horizontal Scroll Photo Gallery */
+        .photo-gallery {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            background: #222;
+            padding: 20px 0;
+        }
 
-    <link rel="stylesheet" href="https://bizshuk.github.io/static/css/base.css">
-    <link rel="stylesheet" href="https://bizshuk.github.io/static/resume.css?t=9">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        .photo-gallery::-webkit-scrollbar {
+            height: 8px;
+        }
 
+        .photo-gallery::-webkit-scrollbar-track {
+            background: #111;
+        }
 
-    <link href='https://fonts.googleapis.com/css?family=Karla:700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://bizshuk.github.io/static/library/Smooth-Div-Scroll/css/smoothDivScroll.css">
-    <!--        <script src="https://bizshuk.github.io/static/library/Smooth-Div-Scroll/js/jquery-ui-1.8.23.custom.min.js"></script>-->
-    <script src="https://bizshuk.github.io/static/library/Smooth-Div-Scroll/js/jquery.mousewheel.min.js"></script>
-    <!--        <script src="https://bizshuk.github.io/static/library/Smooth-Div-Scroll/js/jquery.kinetic.min.js"></script>-->
-    <!--        <script src="https://bizshuk.github.io/static/library/Smooth-Div-Scroll/js/jquery.smoothdivscroll-1.3-min.js"></script>-->
+        .photo-gallery::-webkit-scrollbar-thumb {
+            background: #555;
+            border-radius: 4px;
+        }
 
-    <script>
-        $(document).ready(function () {
-            var photos_length = 3770;
+        .photo-gallery img {
+            height: 300px;
+            object-fit: cover;
+            scroll-snap-align: center;
+            margin: 0 10px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
 
-            $('.horizontal-container').mousewheel(function (e, delta) {
-                this.scrollLeft -= (delta * 250);
-                if (this.scrollLeft != 0 && $(this).scrollLeft() + $(this).width() < photos_length) {
-                    e.preventDefault();
-                }
-            });
-            //                $(".horizontal-container").smoothDivScroll({
-            //                    touchScrolling: true,
-            //                    hotSpotScrolling: false,
-            //                    touchScrolling: true,
-            //                    manualContinuousScrolling: false,
-            //                    mousewheelScrolling: true
-            //                });
+        /* Container for sections */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
 
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-            window.onresize = function () {
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary-color);
+            margin: 10px auto 0;
+        }
 
-                resize_frontcover();
-            }
-            function resize_frontcover() {
-                $('#frontcover').height($(window).height());
-            }
-            resize_frontcover();
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-        });
-    </script>
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            height: 100%;
+            width: 4px;
+            background: var(--primary-color);
+        }
 
-        ga('create', 'UA-64178802-1', 'auto');
-        ga('send', 'pageview');
-    </script>
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 60px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 12px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            border: 4px solid var(--bg-color);
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .timeline-content .subtitle {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .timeline-content ul {
+            padding-left: 20px;
+        }
+
+        .timeline-content li {
+            margin-bottom: 5px;
+        }
+
+        /* Skills Section */
+        .skills-category {
+            margin-bottom: 30px;
+        }
+
+        .skills-category h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .skill-tag {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            background: var(--secondary-color);
+        }
+
+        /* Education Section */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .education-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .education-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .education-card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .education-card-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Demo Section */
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .demo-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .demo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .demo-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .demo-card-content {
+            padding: 20px;
+        }
+
+        .demo-card-content p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 30px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-content p { font-size: 1rem; }
+            .timeline::before { left: 10px; }
+            .timeline-item { padding-left: 40px; }
+            .timeline-item::before { left: 2px; }
+            .contact-info { flex-direction: column; gap: 10px; }
+        }
+    </style>
 </head>
-
 <body>
-    <div id="frontcover">
-        <div class="outer_brief">
-            <div id="brief" class="brief">
-                Hi, I'm <span style="font-size:24px;">Shuk</span>, come from Taiwan.
-                Now, i'm on the way to Full Stack enginner.
-                This website is my resume, may take a look for a while, and you'll know me better of what you need.
-                <br><br>
-                <div style="word-break:keep-all;">Email:biz.shuk@gmail.com</div>
-                <div style="word-break:keep-all;">Phone:(886)-0-911839712</div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm Shuk</h1>
+            <p>A Full Stack Engineer from Taiwan. Welcome to my digital resume, designed to give you a clear view of my skills, experience, and projects.</p>
+            <div class="contact-info">
+                <span>📧 biz.shuk@gmail.com</span>
+                <span>📱 (886) 911839712</span>
             </div>
         </div>
+    </header>
 
-        <div class="screen-cover"></div>
-        <div class="frontcover bg_base" style="background-image:url('https://i.imgur.com/44BKXhD.jpg');"></div>
-    </div>
+    <!-- Life Photos (Horizontal Scroll) -->
+    <section class="photo-gallery" id="photos">
+        <!-- Replaced smoothDivScroll with modern CSS scroll-snap -->
+        <img src="https://i.imgur.com/rq0m7yf.jpg" alt="Life Photo 1" loading="lazy">
+        <img src="https://i.imgur.com/k5fdBOy.jpg" alt="Life Photo 2" loading="lazy">
+        <img src="https://i.imgur.com/EqL6WTa.jpg" alt="Life Photo 3" loading="lazy">
+        <img src="https://i.imgur.com/gvlYnRr.jpg" alt="Life Photo 4" loading="lazy">
+        <img src="https://i.imgur.com/LEd9cB1.jpg" alt="Life Photo 5" loading="lazy">
+        <img src="https://i.imgur.com/dxwOrtg.jpg" alt="Life Photo 6" loading="lazy">
+        <img src="https://i.imgur.com/HD6Co84.jpg" alt="Life Photo 7" loading="lazy">
+        <img src="https://i.imgur.com/fsDRlqp.jpg" alt="Life Photo 8" loading="lazy">
+        <img src="https://i.imgur.com/36ITBAV.jpg" alt="Life Photo 9" loading="lazy">
+        <img src="https://i.imgur.com/MFXWYXn.jpg" alt="Life Photo 10" loading="lazy">
+        <img src="https://i.imgur.com/1Bsrohp.jpg" alt="Life Photo 11" loading="lazy">
+        <img src="https://i.imgur.com/oNLqLkj.jpg" alt="Life Photo 12" loading="lazy">
+        <img src="https://i.imgur.com/GFkBQvu.jpg" alt="Life Photo 13" loading="lazy">
+        <img src="https://i.imgur.com/oxRPqGJ.jpg" alt="Life Photo 14" loading="lazy">
+        <img src="https://i.imgur.com/dAgpB9Q.jpg" alt="Life Photo 15" loading="lazy">
+    </section>
 
-    <!-- photos inline and with width(default 100%) and scroll it in horizen-->
-    <div id="lifephoto" class="outer-container">
-        <div class="horizontal-container">
-            <div class="horizontal-photos"><img src="https://i.imgur.com/rq0m7yf.jpg"></div>
-            <div class="horizontal-photos"><img src="https://i.imgur.com/k5fdBOy.jpg"></div>
-            <div class="horizontal-photos"><img src="https://i.imgur.com/EqL6WTa.jpg"></div>
-            <div class="horizontal-photos"><img src="https://i.imgur.com/gvlYnRr.jpg"></div>
-            <div class="horizontal-photos"><img src="https://i.imgur.com/LEd9cB1.jpg"></div>
-            <div class="horizontal-photos"><img src="https://i.imgur.com/dxwOrtg.jpg"></div>
-            <div class="horizontal-photos"><img src="https://i.imgur.com/HD6Co84.jpg"></div>
-            <div class="horizontal-photos"><img src="https://i.imgur.com/fsDRlqp.jpg"></div>
-            <div class="horizontal-photos"><img src="https://i.imgur.com/36ITBAV.jpg"></div>
-            <div class="horizontal-photos"><img src="https://i.imgur.com/MFXWYXn.jpg"></div>
-            <div class="horizontal-photos"><img src="https://i.imgur.com/1Bsrohp.jpg"></div>
-            <div class="horizontal-photos"><img src="https://i.imgur.com/oNLqLkj.jpg"></div>
-            <div class="horizontal-photos"><img src="https://i.imgur.com/GFkBQvu.jpg"></div>
-            <div class="horizontal-photos"><img src="https://i.imgur.com/oxRPqGJ.jpg"></div>
-            <div class="horizontal-photos"><img src="https://i.imgur.com/dAgpB9Q.jpg"></div>
+    <!-- Work Experience -->
+    <section class="container" id="experience">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3><a href="https://www.gamesofa.com/" target="_blank" rel="noopener noreferrer">Gamesofa Inc. (Taipei, Taiwan)</a></h3>
+                    <div class="subtitle">Game Developer and BI Programmer | Nov 2012 – Apr 2015</div>
+                    <ul>
+                        <li>Independently developed Win8 App "Godgame Big Two".</li>
+                        <li>Developed the server architecture for "Godgame Texas Hold'em".</li>
+                        <li>Implemented Omaha rules and logic.</li>
+                        <li>Refactored the customer service system for improved efficiency.</li>
+                        <li>Independently built the company survey system.</li>
+                        <li>Created and maintained a comprehensive user analyzing system.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3><a href="https://dcsd.gov.taipei/" target="_blank" rel="noopener noreferrer">Department of Civil Servant Development (Taipei, Taiwan)</a></h3>
+                    <div class="subtitle">Alternative Civilian Service (PM equivalent) | Dec 2011 – Nov 2012</div>
+                    <ul>
+                        <li>Managed and contributed to Taipei e-campus initiatives.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3><a href="https://www.ncu.edu.tw/" target="_blank" rel="noopener noreferrer">National Central University (Jhongli, Taiwan)</a></h3>
+                    <div class="subtitle">Web Developer | Mar 2010 – Jun 2011</div>
+                    <ul>
+                        <li>Set up websites and fixed bugs in CCS, ISS, and EAS.</li>
+                        <li>Developed the EAS borrow active space system.</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-    </div>
+    </section>
 
-    <div id="experience">
-        <header>Work Experience</header>
-        <div id="experience_list" class="subject_list">
-            <ul>
-                <li>
-                    <header><a href="https://www.gamesofa.com/" target="_blank">Gamesofa Inc. , online game , Taipei
-                            Taiwan</a></header>
-                    <div class="subtitle">Game developer and BI programmer , during 2012.11~2015.04</div>
-                    <div class="desc">
-                    </div>
-                    <div class="ref_list">
-                        <ul>
-                            <li>stand along in developing Win8 App "Godgame big two" <a
-                                    href="https://apps.microsoft.com/windows/zh-tw/app/2/0da60d5a-381c-49ac-8f40-44fcfa565f70">[link]</a>
-                            </li>
-                            <li>develop server of "Godgame texas hold'em" <a href="https://www.godgame.com.tw/texas9/"
-                                    target="_blank">[link]</a>
-                            </li>
-                            <li>develop Omaha rule<a
-                                    href="https://play.google.com/store/apps/details?id=com.gamesofa.omaha.android&hl=zh_TW"
-                                    target="_blank">[link]</a>
-                            <li>refactor custom service system
-                            </li>
-                            <li>stand along in developing survey system
-                            </li>
-                            <li>develop user analyzing system
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <header><a href="https://dcsd.gov.taipei/" target="_blank">Department of Civil Servant Development ,
-                            gov , Taipei Taiwan</a></header>
-                    <div class="subtitle">Alternative civilian service( simular PM ) , during 2011.12~2012.11</div>
-                    <div class="desc">
-                    </div>
-                    <div class="ref_list">
-                        <ul>
-                            <li>Taipei e-campus <a href="https://elearning.taipei.gov.tw/" target="_blank">[link]</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <header><a href="https://www.ncu.edu.tw/" target="_blank">National Central University , edu , Jongli
-                            Taiwan</a></header>
-                    <div class="subtitle">web developer , during 2010.03~2011.06</div>
-                    <div class="desc">
-                    </div>
-                    <div class="ref_list">
-                        <ul>
-                            <li>setup website and fix bugs in CCS ISS EAS。
-                            </li>
-                            <li>EAS borrow active space <a
-                                    href="https://club.adm.ncu.edu.tw/activity/zh_tw/activity/ target="
-                                    _blank"">[link]</a>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+    <!-- Skills -->
+    <section class="container" id="skills" style="background-color: var(--white); border-radius: var(--border-radius); box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <h2 class="section-title">Skills & Technologies</h2>
+
+        <div class="skills-category">
+            <h3>Programming Languages</h3>
+            <ul class="skills-list">
+                <li class="skill-tag">PHP</li>
+                <li class="skill-tag">Perl</li>
+                <li class="skill-tag">HTML5</li>
+                <li class="skill-tag">JavaScript</li>
+                <li class="skill-tag">CSS</li>
+                <li class="skill-tag">Java</li>
+                <li class="skill-tag">Python (Django)</li>
+                <li class="skill-tag">C/C++</li>
+                <li class="skill-tag">Scala (Play)</li>
             </ul>
         </div>
 
-        <div class="bg_base background_cover"
-            style="background-image:url('https://bizshuk.github.io/static/imgs/rsz_10679715_758386474220385_6775723097014002997_o.jpg');background-position:left top;">
-        </div>
-    </div>
-
-    <div id="skill">
-        <header>Skills</header>
-        <ul class="a1">
-            <li class="tag tag_10">Excellent</li>
-            <li class="tag tag_7">Well</li>
-            <li class="tag tag_4">OK</li>
-            <li class="tag tag_2">fine</li>
-        </ul>
-
-        <ul class="a2">
-            <b>Language:</b>
-            <li>
-                <ul class="a2_item">
-                    <li><a class="tag_10 tag">#Chinese</a></li>
-                    <li><a class="tag_7 tag">#English</a></li>
-                </ul>
-            </li>
-            <b>Program language:</b>
-            <li>
-                <ul class="a2_item">
-                    <li><a class="tag_10 tag">#PHP</a></li>
-                    <li><a class="tag_10 tag">#PERL</a></li>
-                    <li><a class="tag_10 tag">#HTML5</a></li>
-                    <li><a class="tag_10 tag">#javascript</a></li>
-                    <li><a class="tag_10 tag">#jQuery</a></li>
-                    <li><a class="tag_7 tag">#Angularjs</a></li>
-                    <li><a class="tag_7 tag">#reactjs</a></li>
-                    <li><a class="tag_10 tag">#amChartjs</a></li>
-                    <li><a class="tag_7 tag">#createJs</a></li>
-                    <li><a class="tag_10 tag">#FB graph api</a></li>
-                    <li><a class="tag_10 tag">#Google+ OAuth</a></li>
-                    <li><a class="tag_10 tag">#CSS</a></li>
-                    <li><a class="tag_7 tag">#SASS</a></li>
-                    <li><a class="tag_10 tag">#bootstrap</a></li>
-                    <li><a class="tag_10 tag">#semanticUI</a></li>
-                    <li><a class="tag_10 tag">#pure</a></li>
-                    <li><a class="tag_4 tag">#Java</a></li>
-                    <li><a class="tag_7 tag">#Python(Django)</a></li>
-                    <li><a class="tag_4 tag">#C</a></li>
-                    <li><a class="tag_4 tag">#C++</a></li>
-                    <li><a class="tag_2 tag">#Scala(Play)</a></li>
-                </ul>
-            </li>
-            <b>Server enviroment:</b>
-            <li>
-                <ul class="a2_item">
-                    <li><a class="tag_7 tag">#Apache</a></li>
-                    <li><a class="tag_4 tag">#Tomcat</a></li>
-                    <li><a class="tag_4 tag">#IIS</a></li>
-                    <li><a class="tag_10 tag">#Mysql</a></li>
-                    <li><a class="tag_7 tag">#MongoDB</a></li>
-                    <li><a class="tag_7 tag">#Linux</a></li>
-                    <li><a class="tag_7 tag">#Windows</a></li>
-                    <li><a class="tag_4 tag">#Android</a></li>
-                    <li><a class="tag_2 tag">#Apache Spark</a></li>
-                </ul>
-            </li>
-            <b>Program concept:</b>
-            <li>
-                <ul class="a2_item">
-                    <li><a class="tag_7 tag">#MVC</a></li>
-                    <li><a class="tag_7 tag">#design pattern</a></li>
-                    <li><a class="tag_7 tag">#Object-Oriented</a></li>
-                    <li><a class="tag_7 tag">#Deferred & Promise</a></li>
-                    <li><a class="tag_10 tag">#Ajax</a></li>
-                    <li><a class="tag_10 tag">#RWD</a></li>
-                    <li><a class="tag_10 tag">#Http</a></li>
-                    <li><a class="tag_4 tag">#Tcp/ip</a></li>
-                    <li><a class="tag_4 tag">#LAN</a></li>
-                    <li><a class="tag_7 tag">#web service</a></li>
-                    <li><a class="tag_4 tag">#Big data</a></li>
-                </ul>
-            </li>
-        </ul>
-        <div class="background_cover bg_base"
-            style="z-index:10;background:url('https://bizshuk.github.io/static/imgs/288404_197055913686780_5124360_o.jpg');background-position:center bottom;">
-        </div>
-    </div>
-
-    <div id="education">
-        <header>Education</header>
-        <div class="banner_grid_1 bg_base">
-            <ul>
-                <li>
-                    <div class="img bg_base"
-                        style="background-image:url('https://bizshuk.github.io/static/imgs/personal_img/edu/ncu/ncu.jpg');">
-                    </div>
-                    <div class="desc">
-                        <header>National Central University</header>
-                        MS , Computer Science and Information , during 2009.09 ~ 2011.06
-                    </div>
-                </li>
-                <li class="right">
-                    <div class="img bg_base"
-                        style="background-image:url('https://bizshuk.github.io/static/imgs/personal_img/edu/ndhu/ndhu.jpg');">
-                    </div>
-                    <div class="desc">
-                        <header>National Dong-Hwa University</header>
-                        BS , Computer Science and Information , during 2004.09 ~ 2009.01
-                    </div>
-                </li>
+        <div class="skills-category">
+            <h3>Frameworks & Libraries</h3>
+            <ul class="skills-list">
+                <li class="skill-tag">jQuery</li>
+                <li class="skill-tag">AngularJS</li>
+                <li class="skill-tag">React.js</li>
+                <li class="skill-tag">Bootstrap</li>
+                <li class="skill-tag">Semantic UI</li>
+                <li class="skill-tag">Pure CSS</li>
+                <li class="skill-tag">SASS</li>
+                <li class="skill-tag">amCharts.js</li>
+                <li class="skill-tag">Create.js</li>
             </ul>
         </div>
-    </div>
 
-
-
-    <div id="demo">
-        <header>Demo</header>
-        <div class="sample_demo bg_base">
-            <section>
-                <a href="https://www.flickr.com/photos/129046109@N07/18634879066" target="_blank"
-                    title="User analysis by Shuk Liu, 於 Flickr" class="demo_photo bg_base"
-                    style="background-image:url('https://c1.staticflickr.com/1/505/18634879066_9645c6944b_z.jpg');width:100%;">
-                </a>
-                <div>
-                    User analyzing data visualized with Perl , PHP , jQueyr, amChart.js.
-                    Work with analysist to know how to analyze perfectly , and then build convenient website for project
-                    manager
-                </div>
-            </section>
-
-            <section>
-                <a href="https://www.flickr.com/photos/129046109@N07/18656490312" target="_blank"
-                    title="Survey system by Shuk Liu, 於 Flickr" class="demo_photo bg_base"
-                    style="background-image:url('https://c1.staticflickr.com/1/321/18656490312_ba3c77e997_z.jpg');">
-                </a>
-                <div>
-                    Survey system builded by PHP ,mysql, jQuery , angularjs .
-                    There are some advanced question types for structure and design
-                </div>
-            </section>
-
-            <section>
-                <a href="https://www.flickr.com/photos/129046109@N07/17452678121" target="_blank"
-                    title="htc interview assignment by Shuk Liu, 於 Flickr" class="demo_photo bg_base"
-                    style="background-image:url('https://c2.staticflickr.com/6/5461/17452678121_1f308304c4_z.jpg');background-position:left center;">
-                </a>
-                <div>
-                    Demonstration with Play framework(Scala) and mongoDB
-                </div>
-            </section>
+        <div class="skills-category">
+            <h3>Environment & Tools</h3>
+            <ul class="skills-list">
+                <li class="skill-tag">MySQL</li>
+                <li class="skill-tag">MongoDB</li>
+                <li class="skill-tag">Apache</li>
+                <li class="skill-tag">Tomcat</li>
+                <li class="skill-tag">Linux</li>
+                <li class="skill-tag">Git</li>
+                <li class="skill-tag">Apache Spark</li>
+                <li class="skill-tag">Android</li>
+            </ul>
         </div>
-    </div>
 
-    <div id="footer">
-    </div>
+        <div class="skills-category">
+            <h3>Concepts & APIs</h3>
+            <ul class="skills-list">
+                <li class="skill-tag">MVC</li>
+                <li class="skill-tag">OOP</li>
+                <li class="skill-tag">Design Patterns</li>
+                <li class="skill-tag">RESTful APIs</li>
+                <li class="skill-tag">AJAX</li>
+                <li class="skill-tag">Responsive Web Design</li>
+                <li class="skill-tag">FB Graph API</li>
+                <li class="skill-tag">Google OAuth</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="container" id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="education-grid">
+
+            <div class="education-card">
+                <img src="https://bizshuk.github.io/static/imgs/personal_img/edu/ncu/ncu.jpg" alt="National Central University" onerror="this.src='https://via.placeholder.com/400x200?text=NCU'">
+                <div class="education-card-content">
+                    <h3>National Central University</h3>
+                    <p>MS, Computer Science and Information Engineering</p>
+                    <p><em>Sep 2009 – Jun 2011</em></p>
+                </div>
+            </div>
+
+            <div class="education-card">
+                <img src="https://bizshuk.github.io/static/imgs/personal_img/edu/ndhu/ndhu.jpg" alt="National Dong-Hwa University" onerror="this.src='https://via.placeholder.com/400x200?text=NDHU'">
+                <div class="education-card-content">
+                    <h3>National Dong-Hwa University</h3>
+                    <p>BS, Computer Science and Information Engineering</p>
+                    <p><em>Sep 2004 – Jan 2009</em></p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Demo / Projects -->
+    <section class="container" id="demo">
+        <h2 class="section-title">Project Demos</h2>
+        <div class="demo-grid">
+
+            <a href="https://www.flickr.com/photos/129046109@N07/18634879066" target="_blank" rel="noopener noreferrer" class="demo-card">
+                <img src="https://c1.staticflickr.com/1/505/18634879066_9645c6944b_z.jpg" alt="User Analysis Visualization">
+                <div class="demo-card-content">
+                    <p><strong>User Analysis Dashboard</strong><br>Visualized user data using Perl, PHP, jQuery, and amCharts.js. Collaborated with analysts to build a convenient reporting website for project managers.</p>
+                </div>
+            </a>
+
+            <a href="https://www.flickr.com/photos/129046109@N07/18656490312" target="_blank" rel="noopener noreferrer" class="demo-card">
+                <img src="https://c1.staticflickr.com/1/321/18656490312_ba3c77e997_z.jpg" alt="Survey System">
+                <div class="demo-card-content">
+                    <p><strong>Survey System</strong><br>Built using PHP, MySQL, jQuery, and AngularJS. Features advanced question types with complex structure and design capabilities.</p>
+                </div>
+            </a>
+
+            <a href="https://www.flickr.com/photos/129046109@N07/17452678121" target="_blank" rel="noopener noreferrer" class="demo-card">
+                <img src="https://c2.staticflickr.com/6/5461/17452678121_1f308304c4_z.jpg" alt="HTC Interview Assignment">
+                <div class="demo-card-content">
+                    <p><strong>Demo Application</strong><br>Demonstration web application built with the Play Framework (Scala) and MongoDB backend.</p>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Shuk Liu. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Optional: Add simple mouse drag scrolling for the photo gallery for desktop users
+        const slider = document.querySelector('.photo-gallery');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.style.cursor = 'grabbing';
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.style.cursor = 'default';
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.style.cursor = 'default';
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // scroll-fast
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
 </body>
-
 </html>
