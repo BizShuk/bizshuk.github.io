@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>TOOLS — Shuk Liu</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne+Mono&family=Syne:wght@600;700;800&family=DM+Mono:wght@300;400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:         #060609;
+  --bg-2:       #0d0d16;
+  --surface:    #13131e;
+  --surface-2:  #1a1a2c;
+  --border:     rgba(255,255,255,0.07);
+  --border-hi:  rgba(255,255,255,0.13);
+  --text:       #dbd9e8;
+  --text-2:     #8a88a8;
+  --text-3:     #48466a;
+  --accent:     #64ffda;
+  --accent-dim: rgba(100,255,218,0.1);
+  --accent-glow:rgba(100,255,218,0.22);
+  --warm:       #ff9466;
+  --f-disp: 'Syne Mono', monospace;
+  --f-head: 'Syne', sans-serif;
+  --f-body: 'Plus Jakarta Sans', sans-serif;
+  --f-mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+
+/* Grain */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 9999;
+  pointer-events: none; opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* Ambient glow */
+body::after {
+  content: '';
+  position: fixed;
+  top: -160px; left: -160px;
+  width: 520px; height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(100,255,218,0.05) 0%, transparent 70%);
+  pointer-events: none; z-index: 0;
+}
+
+/* ─── Layout ───────────────────────────────────────────────────── */
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+  position: relative; z-index: 1;
+}
+
+/* ─── Header ──────────────────────────────────────────────────── */
+header {
+  padding: clamp(3.5rem, 8vw, 6rem) 0 clamp(2rem, 4vw, 3rem);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+.header__back {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--text-3);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  transition: color 0.2s;
+  text-transform: uppercase;
+}
+.header__back:hover { color: var(--accent); }
+
+.header__sys {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin-bottom: 1.1rem;
+  display: flex; align-items: center; gap: 0.7rem;
+}
+.header__sys::before { content: ''; width: 20px; height: 1px; background: var(--accent); opacity: 0.5; }
+
+h1 {
+  font-family: var(--f-disp);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+h1 em { font-style: normal; color: var(--accent); }
+
+.header__sub {
+  font-size: 0.9rem;
+  color: var(--text-2);
+  max-width: 420px;
+  line-height: 1.7;
+}
+
+/* ─── Tool Grid ───────────────────────────────────────────────── */
+.section {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+.section__label {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--text-3);
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+.section__label span { color: var(--accent); }
+.section__label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tool-card {
+  background: var(--surface);
+  padding: 1.1rem 1.3rem 1.2rem;
+  transition: background 0.18s;
+  position: relative;
+}
+.tool-card:hover { background: var(--surface-2); }
+
+.tool-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.tool-card__name {
+  font-family: var(--f-head);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.tool-card__badge {
+  font-family: var(--f-mono);
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+.tool-card__badge--daily {
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid rgba(100,255,218,0.2);
+}
+.tool-card__badge--free {
+  background: rgba(255,255,255,0.05);
+  color: var(--text-3);
+  border: 1px solid var(--border);
+}
+.tool-card__badge--paid {
+  background: rgba(255,148,102,0.1);
+  color: var(--warm);
+  border: 1px solid rgba(255,148,102,0.2);
+}
+.tool-card__desc {
+  font-size: 0.82rem;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+.tool-card__link {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--text-3);
+  transition: color 0.2s;
+}
+.tool-card:hover .tool-card__link { color: var(--accent); }
+
+/* ─── Footer ─────────────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.4rem 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.footer__copy {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--text-3);
+}
+.footer__nav {
+  display: flex; gap: 1.2rem;
+}
+.footer__nav a {
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--text-3);
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.footer__nav a:hover { color: var(--accent); }
+
+/* ─── Fade-up ─────────────────────────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-up.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <a class="header__back" href="sys-zero.html">← sys-zero</a>
+
+    <div class="header__sys fade-up">TOOL.INDEX // 2026.06.14</div>
+    <h1 class="fade-up" style="transition-delay:.06s">MY<em>.</em>STACK</h1>
+    <p class="header__sub fade-up" style="transition-delay:.12s">
+      The actual tools I use daily — no sponsorships, no fluff.
+      Updated when something changes.
+    </p>
+  </header>
+
+  <!-- Terminal & CLI -->
+  <div class="section fade-up">
+    <div class="section__label"><span>01</span> Terminal &amp; CLI</div>
+    <div class="tool-grid">
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">WezTerm</span>
+          <span class="tool-card__badge tool-card__badge--daily">daily</span>
+        </div>
+        <p class="tool-card__desc">GPU-accelerated terminal. Lua config, multiplexer built-in, ligature support.</p>
+        <span class="tool-card__link">wezfurlong.org ↗</span>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">fish shell</span>
+          <span class="tool-card__badge tool-card__badge--daily">daily</span>
+        </div>
+        <p class="tool-card__desc">Autosuggestions out of the box. Switched from zsh and never looked back.</p>
+        <span class="tool-card__link">fishshell.com ↗</span>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">tmux</span>
+          <span class="tool-card__badge tool-card__badge--free">free</span>
+        </div>
+        <p class="tool-card__desc">Session persistence across SSH. Pairs with WezTerm's native mux for local work.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">ripgrep</span>
+          <span class="tool-card__badge tool-card__badge--free">free</span>
+        </div>
+        <p class="tool-card__desc">Replaced grep everywhere. Respects .gitignore, orders of magnitude faster.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">fzf</span>
+          <span class="tool-card__badge tool-card__badge--daily">daily</span>
+        </div>
+        <p class="tool-card__desc">Fuzzy finder for files, git log, shell history. Installed on every machine I touch.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">lazygit</span>
+          <span class="tool-card__badge tool-card__badge--daily">daily</span>
+        </div>
+        <p class="tool-card__desc">TUI git client. Interactive rebase without memorising flag combinations.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Editor -->
+  <div class="section fade-up">
+    <div class="section__label"><span>02</span> Editor</div>
+    <div class="tool-grid">
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">Neovim</span>
+          <span class="tool-card__badge tool-card__badge--daily">daily</span>
+        </div>
+        <p class="tool-card__desc">LazyVim config. LSP, Telescope, Treesitter. Fast enough that I stopped noticing it.</p>
+        <span class="tool-card__link">neovim.io ↗</span>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">VS Code</span>
+          <span class="tool-card__badge tool-card__badge--free">free</span>
+        </div>
+        <p class="tool-card__desc">Fallback for pair programming and when someone else is driving. Also for notebooks.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">JetBrains IDEs</span>
+          <span class="tool-card__badge tool-card__badge--paid">paid</span>
+        </div>
+        <p class="tool-card__desc">GoLand for Go, DataGrip for database work. The refactoring tooling is unmatched.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Infrastructure -->
+  <div class="section fade-up">
+    <div class="section__label"><span>03</span> Infrastructure</div>
+    <div class="tool-grid">
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">Docker</span>
+          <span class="tool-card__badge tool-card__badge--daily">daily</span>
+        </div>
+        <p class="tool-card__desc">All dev environments in containers. Eliminates "works on my machine" permanently.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">k9s</span>
+          <span class="tool-card__badge tool-card__badge--daily">daily</span>
+        </div>
+        <p class="tool-card__desc">TUI for Kubernetes. Browse pods, exec shells, watch logs — no kubectl incantations.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">Terraform</span>
+          <span class="tool-card__badge tool-card__badge--free">free</span>
+        </div>
+        <p class="tool-card__desc">Infrastructure as code. Modules for all shared cloud resources.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">1Password CLI</span>
+          <span class="tool-card__badge tool-card__badge--paid">paid</span>
+        </div>
+        <p class="tool-card__desc">Secret injection into shell sessions. No more plaintext .env files in home dir.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Apps & Services -->
+  <div class="section fade-up">
+    <div class="section__label"><span>04</span> Apps &amp; Services</div>
+    <div class="tool-grid">
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">Raycast</span>
+          <span class="tool-card__badge tool-card__badge--daily">daily</span>
+        </div>
+        <p class="tool-card__desc">Launcher, clipboard manager, window manager. Replaced Alfred + Magnet + a dozen utilities.</p>
+        <span class="tool-card__link">raycast.com ↗</span>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">Obsidian</span>
+          <span class="tool-card__badge tool-card__badge--free">free</span>
+        </div>
+        <p class="tool-card__desc">Local-first notes in Markdown. Sync via iCloud. Graph view only occasionally useful.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">Claude</span>
+          <span class="tool-card__badge tool-card__badge--daily">daily</span>
+        </div>
+        <p class="tool-card__desc">Coding assistant, design rubber duck, and occasionally the voice of reason when I'm wrong.</p>
+        <span class="tool-card__link">claude.ai ↗</span>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">Linear</span>
+          <span class="tool-card__badge tool-card__badge--paid">paid</span>
+        </div>
+        <p class="tool-card__desc">Issue tracking with a keyboard-first interface. Cycles and roadmaps that don't feel painful.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">Figma</span>
+          <span class="tool-card__badge tool-card__badge--free">free</span>
+        </div>
+        <p class="tool-card__desc">For quick mockups and system diagrams. I'm not a designer but Figma lets me pretend.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">Spotify</span>
+          <span class="tool-card__badge tool-card__badge--paid">paid</span>
+        </div>
+        <p class="tool-card__desc">Deep work: ambient / post-rock / lo-fi. No-lyrics policy during debugging sessions.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Hardware -->
+  <div class="section fade-up">
+    <div class="section__label"><span>05</span> Hardware</div>
+    <div class="tool-grid">
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">MacBook Pro M3</span>
+          <span class="tool-card__badge tool-card__badge--daily">daily</span>
+        </div>
+        <p class="tool-card__desc">16" 36GB. Compiles Go at a speed that makes the fan question its purpose in life.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">HHKB Pro Hybrid</span>
+          <span class="tool-card__badge tool-card__badge--paid">paid</span>
+        </div>
+        <p class="tool-card__desc">Topre switches. The tactile thock is either a feature or a personality defect.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">LG 27UK850</span>
+          <span class="tool-card__badge tool-card__badge--paid">paid</span>
+        </div>
+        <p class="tool-card__desc">4K IPS. Not a colour-accurate panel but more than enough for code and dashboards.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-card__head">
+          <span class="tool-card__name">Sony WH-1000XM5</span>
+          <span class="tool-card__badge tool-card__badge--paid">paid</span>
+        </div>
+        <p class="tool-card__desc">ANC for open office days. Also doubles as a social do-not-disturb signal.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer__copy">MY.STACK · updated 2026.06</span>
+    <nav class="footer__nav">
+      <a href="sys-zero.html">sys-zero</a>
+      <a href="index.html">home</a>
+      <a href="santifer-style.html">santifer</a>
+    </nav>
+  </footer>
+
+</div>
+
+<script>
+// Collect all animatable elements in DOM order
+const REVEAL_TARGETS = [
+  '.header__back',
+  '.header__sys',
+  'h1',
+  '.header__sub',
+  '.section__label',
+  '.tool-card'
+];
+
+const allItems = [...document.querySelectorAll(REVEAL_TARGETS.join(','))];
+
+if (location.hash === '#matrix-enter') {
+  // ── Matrix-enter mode: sequential per-line reveal ──────────────
+  history.replaceState(null, '', location.pathname);
+
+  // Start fully hidden (override fade-up so observer doesn't interfere)
+  allItems.forEach(el => {
+    el.classList.remove('fade-up');
+    el.style.cssText = 'opacity:0; transform:translateY(10px); transition:none;';
+  });
+
+  // Reveal each item in sequence, 48ms apart
+  allItems.forEach((el, idx) => {
+    setTimeout(() => {
+      el.style.transition = 'opacity 0.38s ease, transform 0.38s ease';
+      el.style.opacity    = '1';
+      el.style.transform  = 'translateY(0)';
+    }, idx * 48);
+  });
+
+} else {
+  // ── Normal page load: IntersectionObserver fade-up ─────────────
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+}
+</script>
+</body>
+</html>

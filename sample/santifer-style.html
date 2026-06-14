@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shuk Liu — Style Sample (santifer.io inspired)</title>
+  <meta name="referrer" content="no-referrer">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── Tokens ── */
+    :root {
+      --bg:           #f4f5f5;
+      --dot:          rgba(85, 85, 94, 0.22);
+      --surface:      #ffffff;
+      --border:       #e4e4e7;
+      --border-hover: #d4d4d8;
+      --text:         #09090b;
+      --text-muted:   #71717a;
+      --text-dim:     #a1a1aa;
+      --teal:         #0d9488;
+      --teal-bg:      rgba(13, 148, 136, 0.08);
+      --orange:       #e8743b;
+      --orange-bg:    rgba(232, 116, 59, 0.1);
+      --font:         'DM Sans', system-ui, sans-serif;
+      --font-head:    'Space Grotesk', system-ui, sans-serif;
+      --radius:       16px;
+      --radius-sm:    8px;
+      --t:            0.14s ease;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    ul { list-style: none; }
+    a { text-decoration: none; color: inherit; transition: color var(--t); }
+    img { max-width: 100%; display: block; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* ── Base ── */
+    body {
+      font-family: var(--font);
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--text);
+      background-color: var(--bg);
+      background-image: radial-gradient(circle, var(--dot) 1px, transparent 1px);
+      background-size: 24px 24px;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Nav ── */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(244, 245, 245, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.1rem;
+    }
+
+    .nav-links a {
+      padding: 0.35rem 0.8rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color var(--t), background var(--t);
+    }
+
+    .nav-links a:hover { color: var(--text); background: rgba(0,0,0,0.05); }
+
+    .nav-actions { display: flex; align-items: center; gap: 0.5rem; }
+
+    .icon-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      transition: all var(--t);
+    }
+
+    .icon-btn:hover { border-color: var(--border-hover); color: var(--text); }
+
+    /* ── Page layout ── */
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── Section divider ── */
+    .s-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3.5rem 0;
+    }
+
+    /* ── Section label ── */
+    .s-label {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 2rem;
+    }
+
+    .s-label-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 5rem 0 3.5rem;
+    }
+
+    .hero-greeting {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-greeting a { color: var(--teal); font-weight: 500; }
+    .hero-greeting a:hover { text-decoration: underline; }
+
+    .hero-h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-cursor {
+      display: inline-block;
+      width: 3px;
+      height: 0.85em;
+      background: var(--text);
+      margin-left: 2px;
+      vertical-align: middle;
+      animation: blink 1.1s step-end infinite;
+    }
+
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+    .hero-roles {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .role-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.8rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .hero-bio {
+      font-size: 1.025rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-bio strong { color: var(--text); font-weight: 600; }
+
+    /* press bar */
+    .hero-press {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .press-eyebrow {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-dim);
+    }
+
+    .press-logos { display: flex; align-items: center; gap: 1.25rem; }
+
+    .press-logo-text {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      opacity: 0.55;
+      transition: opacity var(--t);
+    }
+
+    .press-logo-text:hover { opacity: 1; }
+
+    .press-logo-bi {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--text-dim);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      opacity: 0.55;
+      line-height: 1.3;
+      transition: opacity var(--t);
+    }
+
+    .press-logo-bi:hover { opacity: 1; }
+
+    /* ── EXPERIENCE ── */
+    .exp-list { display: flex; flex-direction: column; gap: 2.75rem; }
+
+    .exp-entry {}
+
+    .exp-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .exp-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    .exp-meta { flex: 1; }
+
+    .exp-company-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.1rem;
+    }
+
+    .exp-company { font-size: 0.975rem; font-weight: 700; }
+    .exp-location { font-size: 0.82rem; color: var(--text-muted); }
+
+    .os-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.1rem 0.55rem;
+      background: var(--orange-bg);
+      color: var(--orange);
+      border: 1px solid rgba(232, 116, 59, 0.28);
+      border-radius: 999px;
+      font-size: 0.63rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .ext-link {
+      font-size: 0.75rem;
+      color: var(--teal);
+      font-weight: 500;
+    }
+
+    .ext-link:hover { text-decoration: underline; }
+
+    .exp-role {
+      font-size: 0.875rem;
+      color: var(--teal);
+      font-weight: 600;
+      margin-bottom: 0.12rem;
+    }
+
+    .exp-dates { font-size: 0.78rem; color: var(--text-dim); }
+
+    .exp-body { padding-left: 3.375rem; }
+
+    .exp-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 0.9rem;
+    }
+
+    /* press mention inside exp */
+    .exp-press-mention {
+      margin-bottom: 0.75rem;
+    }
+
+    .exp-press-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 0.4rem;
+    }
+
+    .exp-press-row { display: flex; align-items: center; gap: 1rem; }
+
+    .exp-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.38rem 0.9rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      transition: border-color var(--t), color var(--t);
+    }
+
+    .exp-cta:hover { border-color: var(--teal); color: var(--teal); }
+
+    /* ── PROJECTS ── */
+    .projects-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: border-color var(--t), box-shadow var(--t);
+    }
+
+    .project-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.055);
+    }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .project-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .project-title-row { flex: 1; }
+
+    .project-name {
+      font-size: 1.025rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .project-stars {
+      margin-left: auto;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .star-count {
+      font-family: var(--font-head);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .star-label { font-size: 0.62rem; color: var(--text-dim); letter-spacing: 0.04em; }
+
+    .project-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.72;
+      margin-bottom: 1.1rem;
+    }
+
+    .project-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 1rem; }
+
+    .tag {
+      padding: 0.18rem 0.6rem;
+      background: #f4f4f5;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .project-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.38rem 0.9rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      transition: border-color var(--t), color var(--t);
+    }
+
+    .project-cta:hover { border-color: var(--teal); color: var(--teal); }
+
+    /* ── TESTIMONIAL ── */
+    .testimonial {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+    }
+
+    .t-quote {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+
+    .t-author {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .t-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: #065f46;
+      flex-shrink: 0;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .t-name { font-size: 0.875rem; font-weight: 700; margin-bottom: 0.05rem; }
+    .t-title { font-size: 0.75rem; color: var(--text-muted); }
+
+    .t-li {
+      margin-left: auto;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: #0077b5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      opacity: 0.85;
+      transition: opacity var(--t);
+    }
+
+    .t-li:hover { opacity: 1; }
+
+    /* ── CONTACT ── */
+    .cta-section {
+      text-align: center;
+      padding: 4rem 0 5.5rem;
+    }
+
+    .cta-h {
+      font-family: var(--font-head);
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.72rem 1.6rem;
+      background: var(--text);
+      color: var(--bg);
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      transition: opacity var(--t);
+    }
+
+    .cta-btn:hover { opacity: 0.82; color: var(--bg); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.4rem 1.5rem;
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    footer a { color: var(--text-muted); }
+    footer a:hover { color: var(--text); }
+
+    .footer-links { display: flex; gap: 1.25rem; }
+  </style>
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <div class="nav-links">
+      <a href="#experience">Mi camino</a>
+      <a href="#projects">Lo que construyo</a>
+      <a href="#contact">Hablemos</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn" title="Toggle dark mode" aria-label="Toggle dark mode">☽</button>
+    </div>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- ── Hero ── -->
+  <section class="hero" id="home">
+    <p class="hero-greeting">Hola, soy <a href="#">@shuk</a></p>
+    <h1 class="hero-h1">
+      Open Source Builder<span class="hero-cursor"></span><br>
+      que lleva sistemas a producción
+    </h1>
+    <div class="hero-roles">
+      <span class="role-chip">Builder</span>
+      <span class="role-chip">Backend Engineer</span>
+      <span class="role-chip">Open Source</span>
+    </div>
+    <p class="hero-bio">
+      <strong>15+ años construyendo desde cero.</strong><br>
+      Lo que me mueve va más allá de escribir código.<br>
+      Construir sistemas que duran. Equipos que escalan.
+    </p>
+    <div class="hero-press">
+      <span class="press-eyebrow">Mencionado en</span>
+      <div class="press-logos">
+        <span class="press-logo-text">WIRED</span>
+        <span class="press-logo-bi">Business<br>Insider</span>
+        <span class="press-logo-text" style="font-style:italic;letter-spacing:0;font-size:0.75rem;">The Pragmatic<br>Engineer</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="s-divider">
+
+  <!-- ── Experience ── -->
+  <section id="experience">
+    <div class="s-label">
+      <span class="s-label-icon">💼</span>
+      Experiencia Laboral
+    </div>
+
+    <div class="exp-list">
+
+      <!-- Job 1 -->
+      <div class="exp-entry">
+        <div class="exp-header">
+          <div class="exp-logo" style="background:linear-gradient(135deg,#eff6ff,#dbeafe);">⚡</div>
+          <div class="exp-meta">
+            <div class="exp-company-row">
+              <span class="exp-company">TechFlow Inc</span>
+              <span class="exp-location">· Remote</span>
+            </div>
+            <div class="exp-role">Senior Software Engineer</div>
+            <div class="exp-dates">2023 – Present</div>
+          </div>
+        </div>
+        <div class="exp-body">
+          <p class="exp-desc">
+            Led migration of monolithic payment service to microservices, cutting p99 latency 40%.
+            Designed Kafka event pipeline handling 50k events/sec. Authored Go service template
+            adopted by 4 teams. Mentored 3 junior engineers.
+          </p>
+        </div>
+      </div>
+
+      <!-- Job 2: Open source -->
+      <div class="exp-entry">
+        <div class="exp-header">
+          <div class="exp-logo" style="background:linear-gradient(135deg,#fff7ed,#fed7aa);">⛓</div>
+          <div class="exp-meta">
+            <div class="exp-company-row">
+              <span class="exp-company">FlowAPI</span>
+              <span class="os-badge">Open Source</span>
+              <a href="#" class="ext-link">flow-api.dev ↗</a>
+            </div>
+            <div class="exp-role">Creator & Maintainer</div>
+            <div class="exp-dates">2024 – Present</div>
+          </div>
+        </div>
+        <div class="exp-body">
+          <p class="exp-desc">
+            High-performance API gateway in Go — JWT auth, adaptive rate limiting, and distributed
+            tracing built-in. Ships as a single binary with zero external dependencies.
+            3.4K GitHub stars · used by 400+ developers.
+          </p>
+          <div class="exp-press-mention">
+            <div class="exp-press-label">Mención en prensa</div>
+            <div class="exp-press-row">
+              <span class="press-logo-text" style="font-size:0.75rem;">WIRED</span>
+              <span class="press-logo-bi">Business<br>Insider</span>
+            </div>
+          </div>
+          <a href="#" class="exp-cta">Leer: cómo construí FlowAPI →</a>
+        </div>
+      </div>
+
+      <!-- Job 3 -->
+      <div class="exp-entry">
+        <div class="exp-header">
+          <div class="exp-logo" style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0);">🏗</div>
+          <div class="exp-meta">
+            <div class="exp-company-row">
+              <span class="exp-company">DataEdge Corp</span>
+              <span class="exp-location">· Taipei, Taiwan</span>
+            </div>
+            <div class="exp-role">Software Engineer</div>
+            <div class="exp-dates">2021 – 2023 · SaaS / Data</div>
+          </div>
+        </div>
+        <div class="exp-body">
+          <p class="exp-desc">
+            Built real-time ingestion service processing 2M+ rows/day from 15 external sources.
+            Reduced API response time 60% via Redis caching. Shipped internal analytics dashboard
+            used by 200+ stakeholders weekly.
+          </p>
+        </div>
+      </div>
+
+      <!-- Job 4 -->
+      <div class="exp-entry">
+        <div class="exp-header">
+          <div class="exp-logo" style="background:linear-gradient(135deg,#fdf4ff,#e9d5ff);">🛠</div>
+          <div class="exp-meta">
+            <div class="exp-company-row">
+              <span class="exp-company">StartupXYZ</span>
+              <span class="exp-location">· Taipei, Taiwan</span>
+            </div>
+            <div class="exp-role">Backend Engineer</div>
+            <div class="exp-dates">2019 – 2021 · E-commerce</div>
+          </div>
+        </div>
+        <div class="exp-body">
+          <p class="exp-desc">
+            Owned auth service for 80k registered accounts. Integrated payment gateway reducing
+            checkout drop-off 22%. Set up GitHub Actions CI/CD cutting deploy time from 40 → 8 min.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="s-divider">
+
+  <!-- ── Projects ── -->
+  <section id="projects">
+    <div class="s-label">
+      <span class="s-label-icon">🛠</span>
+      Proyectos
+    </div>
+
+    <div class="projects-list">
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon" style="background:linear-gradient(135deg,#ecfdf5,#a7f3d0);">⚡</div>
+          <div class="project-title-row">
+            <div class="project-name">FlowAPI</div>
+            <div class="project-meta">
+              <span class="os-badge">Open Source</span>
+              <a href="#" class="ext-link">flow-api.dev ↗</a>
+            </div>
+          </div>
+          <div class="project-stars">
+            <div class="star-count">3.4K</div>
+            <div class="star-label">★ GitHub</div>
+          </div>
+        </div>
+        <p class="project-desc">
+          API gateway en Go con rate limiting adaptativo, JWT auth, y tracing distribuido.
+          10k req/seg en nodo único. Ships as a single binary — zero external dependencies.
+          Used by 400+ developers in production.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Go</span>
+          <span class="tag">Redis</span>
+          <span class="tag">OpenTelemetry</span>
+          <span class="tag">Docker</span>
+          <span class="tag">JWT</span>
+        </div>
+        <a href="#" class="project-cta">Leer: cómo construí FlowAPI →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">🛠</div>
+          <div class="project-title-row">
+            <div class="project-name">OpenMesh</div>
+            <div class="project-meta">
+              <span class="os-badge">Open Source</span>
+            </div>
+          </div>
+          <div class="project-stars">
+            <div class="star-count">1.8K</div>
+            <div class="star-label">★ GitHub</div>
+          </div>
+        </div>
+        <p class="project-desc">
+          CLI para gestión declarativa de service mesh (Istio + Linkerd). Dry-run mode,
+          diff output, y validación YAML. Adoptado por 4 organizaciones de ingeniería.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Go</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">Istio</span>
+          <span class="tag">CLI</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-icon" style="background:linear-gradient(135deg,#ede9fe,#ddd6fe);">📊</div>
+          <div class="project-title-row">
+            <div class="project-name">DataPulse</div>
+            <div class="project-meta">
+              <span class="os-badge">Open Source</span>
+            </div>
+          </div>
+          <div class="project-stars">
+            <div class="star-count">640</div>
+            <div class="star-label">★ GitHub</div>
+          </div>
+        </div>
+        <p class="project-desc">
+          Real-time analytics dashboard — WebSocket live updates, 14 chart types,
+          multi-tenant data isolation. Built for SaaS products at scale.
+        </p>
+        <div class="project-tags">
+          <span class="tag">TypeScript</span>
+          <span class="tag">WebSocket</span>
+          <span class="tag">PostgreSQL</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="s-divider">
+
+  <!-- ── Testimonial ── -->
+  <section>
+    <div class="s-label">
+      <span class="s-label-icon">💬</span>
+      Testimonios
+    </div>
+
+    <div class="projects-list">
+
+      <div class="testimonial">
+        <p class="t-quote">
+          "Shuk redesigned our entire data pipeline from scratch. The new system handles 10× the
+          volume with half the infrastructure cost. One of the most impactful engineers I've
+          ever worked with — ships fast, documents well, and mentors along the way."
+        </p>
+        <div class="t-author">
+          <div class="t-avatar">CL</div>
+          <div>
+            <div class="t-name">Claire Lin</div>
+            <div class="t-title">CTO @ DataEdge Corp</div>
+          </div>
+          <a href="#" class="t-li" title="LinkedIn">in</a>
+        </div>
+      </div>
+
+      <div class="testimonial">
+        <p class="t-quote">
+          "FlowAPI saved us weeks of integration work. The documentation is exceptional and
+          Shuk responds to issues within 24 hours. That's rare quality for an open source
+          maintainer — he genuinely cares about the people using it."
+        </p>
+        <div class="t-author">
+          <div class="t-avatar" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);color:#1e40af;">MK</div>
+          <div>
+            <div class="t-name">Marcus Kim</div>
+            <div class="t-title">Staff Engineer @ fintech startup</div>
+          </div>
+          <a href="#" class="t-li" title="LinkedIn">in</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="s-divider">
+
+  <!-- ── Contact ── -->
+  <section class="cta-section" id="contact">
+    <p class="cta-h">Hablemos</p>
+    <p class="cta-sub">
+      Abierto a nuevas oportunidades, colaboraciones open source,<br>
+      y conversaciones sobre sistemas distribuidos y buena arquitectura.
+    </p>
+    <a href="mailto:shuk@example.com" class="cta-btn">✉ shuk@example.com</a>
+  </section>
+
+</div>
+
+<footer>
+  <span>Shuk Liu · 2026</span>
+  <div class="footer-links">
+    <a href="#">GitHub</a>
+    <a href="#">LinkedIn</a>
+    <a href="#">Twitter</a>
+  </div>
+</footer>
+
+</body>
+</html>
