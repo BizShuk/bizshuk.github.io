@@ -11,6 +11,12 @@
         "backgroundImage": "url('https://i.imgur.com/hx7Oymx.jpg')"
     }
 }, {
+    "link": "surf.html",
+    "img_title": "Surf · Uluwatu",
+    "style": {
+        "backgroundImage": "url('assets/images/personal/surf/uluwatu-dropin.jpg')"
+    }
+}, {
     "link": "https://shukliu.imgur.com/",
     "img_title": "imgur",
     "style": {

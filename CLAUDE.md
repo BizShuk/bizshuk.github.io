@@ -6,6 +6,7 @@
 bizshuk.github.io/
 ├── index.html              # 入口頁 (gallery landing)
 ├── resume.html             # 履歷頁 (long-form CV)
+├── surf.html               # 衝浪頁 (ocean editorial, Uluwatu hero)
 ├── README.md
 ├── CLAUDE.md
 │
@@ -13,19 +14,22 @@ bizshuk.github.io/
 │   └── images/
 │       ├── personal/       # 個人相關圖示 / 校園照
 │       │   ├── icon.gif
-│       │   └── edu/
-│       │       ├── ncu/ncu.jpg
-│       │       └── ndhu/ndhu.jpg
+│       │   ├── edu/
+│       │   │   ├── ncu/ncu.jpg
+│       │   │   └── ndhu/ndhu.jpg
+│       │   └── surf/uluwatu-dropin.jpg   # surf 頁 hero (本人 Uluwatu 照)
 │       ├── photos/         # 歷史生活照片 (未在現有頁面中使用)
 │       └── profile/shuk-profile.jpg
 │
 ├── css/
 │   ├── index.css           # gallery 頁樣式
-│   └── resume.css          # resume 頁樣式
+│   ├── resume.css          # resume 頁樣式
+│   └── surf.css            # surf 頁樣式 (ocean editorial tokens)
 │
 ├── js/
 │   ├── gallery.js          # DOMContentLoaded → fetch gallery.json → 渲染格狀
-│   └── resume.js           # footer 年份 + 橫向相簿拖曳捲動
+│   ├── resume.js           # footer 年份 + 橫向相簿拖曳捲動
+│   └── surf.js             # IntersectionObserver reveal + footer 年份
 │
 └── data/
     ├── gallery.json        # gallery tile 資料來源
@@ -78,6 +82,7 @@ bizshuk.github.io/
 | 個人作品集 (Personal Portfolio) | `index.html`, `js/gallery.js`, `data/gallery.json`, `css/index.css` | `DOMContentLoaded` listener in `js/gallery.js` |
 | 履歷展示 (Resume Showcase)      | `resume.html`, `js/resume.js`, `css/resume.css`                     | Top-level load in `js/resume.js` (year + drag) |
 | 履歷圖片 (Resume Photos)        | `resume.html` `.photo-gallery`                                      | 15 inline `<img>` in `resume.html`             |
+| 衝浪頁 (Surf Page)              | `surf.html`, `js/surf.js`, `css/surf.css`                           | `DOMContentLoaded` listener in `js/surf.js`    |
 | 教育卡片 (Education Cards)      | `assets/images/personal/edu/*`                                      | `resume.html` `.education-card` + `onerror`    |
 
 ## 開發指南 (Development Guide)

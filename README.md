@@ -1,13 +1,16 @@
 ### bizshuk.github.io
 
 `https://bizshuk.github.io` is the personal portfolio site for Shuk Liu. The site
-runs as a static GitHub Pages deployment with two top-level pages, a small JSON
+runs as a static GitHub Pages deployment with three top-level pages, a small JSON
 data layer, and external CSS/JS files. There is no backend, no build step, and
 no framework runtime — the production output is the working tree itself.
 
 - `index.html` is the main entry point. It renders a gallery of links driven by
   [data/gallery.json](data/gallery.json), and from there the user can navigate
-  to [resume.html](resume.html) and the rest of the site.
+  to [resume.html](resume.html), [surf.html](surf.html) and the rest of the site.
+- `surf.html` is an ocean-editorial magazine page built around the owner's own
+  Uluwatu drop-in photo — story, surf-spot footprints (Bali / Lombok / Taiwan),
+  and quiver.
 
 ## 業務領域 (Business Domains)
 
