@@ -4,19 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shuk Gallery</title>
-    <meta name="description" content="Shuk's Gallery">
+    <meta name="description" content="Shuk's Gallery - Software Engineer & Developer Portfolio">
     <meta property="og:site_name" content="Shuk's Gallery">
     <meta name="referrer" content="no-referrer">
 
     <link rel="shortcut icon" type="image/gif" href="https://i.imgur.com/QpGrcBZ.jpg?1">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
     <header>
         <h1>SHUK LIU</h1>
-        <p>Software Engineer & Developer Portfolio</p>
+        <p class="subtitle">Software Engineer & Developer Portfolio</p>
+        <div class="botanical-divider">
+            <svg viewBox="0 0 100 20" class="leaf-svg" aria-hidden="true">
+                <path d="M15 10 Q 35 15, 50 10 T 85 10" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+                <!-- Left branch leaves -->
+                <path d="M30 11 C 28 8, 24 9, 26 12 C 28 15, 32 14, 30 11 Z" fill="currentColor" opacity="0.8"/>
+                <path d="M42 12 C 40 9, 36 10, 38 13 C 40 16, 44 15, 42 12 Z" fill="currentColor" opacity="0.8"/>
+                <!-- Right branch leaves -->
+                <path d="M58 9 C 60 6, 64 7, 62 10 C 60 13, 56 12, 58 9 Z" fill="currentColor" opacity="0.8"/>
+                <path d="M70 10 C 72 7, 76 8, 74 11 C 72 14, 68 13, 70 10 Z" fill="currentColor" opacity="0.8"/>
+                <!-- Center bud -->
+                <circle cx="50" cy="10" r="1.5" fill="currentColor"/>
+            </svg>
+        </div>
     </header>
 
     <main>
@@ -24,6 +37,22 @@
             <!-- Gallery items will be injected here via JavaScript -->
         </div>
     </main>
+
+    <footer>
+        <div class="footer-divider">
+            <span class="leaf-icon">🌿</span>
+        </div>
+        <nav class="footer-nav">
+            <a href="resume.html">Resume</a>
+            <span class="nav-dot">✦</span>
+            <a href="surf.html">Surf Editorial</a>
+            <span class="nav-dot">✦</span>
+            <a href="https://github.com/BizShuk" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <span class="nav-dot">✦</span>
+            <a href="https://www.linkedin.com/in/initialshuk" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </nav>
+        <p class="copyright">Shuk Liu &copy; 2026. Cultivated in Taiwan.</p>
+    </footer>
 
     <script src="js/gallery.js"></script>
 </body>

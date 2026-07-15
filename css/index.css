@@ -1,9 +1,17 @@
-/* index.html - Gallery page styles */
+/* index.html - Pastoral (田園風) Gallery page styles */
 
 :root {
-    --bg-color: #f4f4f9;
-    --text-color: #333;
-    --hover-overlay: rgba(0, 0, 0, 0.6);
+    --bg-color: #FAF8F5;
+    --text-color: #2E3A2F;
+    --text-muted: #6B7C6E;
+    --primary-color: #4A5D4E;
+    --primary-light: #A2B29F;
+    --accent-color: #D4A373;
+    --border-color: #E6E1D8;
+    --card-bg: #FFFFFF;
+    
+    --font-serif: 'Cormorant Garamond', 'Newsreader', serif;
+    --font-sans: 'Montserrat', sans-serif;
 }
 
 * {
@@ -13,89 +21,217 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-sans);
     background-color: var(--bg-color);
+    background-image: radial-gradient(circle at 50% 50%, #FAF8F5 0%, #F1EDE4 100%);
     color: var(--text-color);
     line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
+/* ==== Scrollbar ==== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #F1EDE4;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-light);
+    border-radius: 5px;
+    border: 2px solid #F1EDE4;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* ==== Header ==== */
 header {
     text-align: center;
-    padding: 4rem 1rem 2rem;
+    padding: 5rem 1rem 3rem;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    letter-spacing: 2px;
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 7vw, 4.2rem);
+    font-weight: 300;
+    margin-bottom: 0.25rem;
+    letter-spacing: 4px;
+    color: var(--primary-color);
+    text-wrap: balance;
 }
 
-header p {
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: #666;
+header .subtitle {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    text-wrap: balance;
+}
+
+.botanical-divider {
+    margin: 1.5rem auto 0;
+    max-width: 160px;
+    color: var(--primary-light);
+    opacity: 0.75;
+}
+
+.leaf-svg {
+    width: 100%;
+    height: auto;
+}
+
+/* ==== Main Gallery ==== */
+main {
+    flex: 1;
 }
 
 .gallery-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1.5rem 2rem 4rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
 }
 
+/* Gallery Item - Framed Art Style */
 .gallery-item {
     position: relative;
-    border-radius: 12px;
+    border-radius: 4px;
     overflow: hidden;
     aspect-ratio: 1 / 1;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    background-size: 104%;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Inset shadow creates a vintage picture frame double matte look */
+    box-shadow: 
+        inset 0 0 0 10px #FAF7F2, 
+        inset 0 0 0 11px var(--border-color), 
+        0 6px 18px rgba(47, 58, 47, 0.06);
+    opacity: 0;
+    transform: translateY(24px);
+    animation: fadeInUp 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    transition: 
+        transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1), 
+        box-shadow 0.45s ease, 
+        background-size 0.45s cubic-bezier(0.165, 0.84, 0.44, 1);
     text-decoration: none;
     display: block;
-    background-color: #e0e0e0;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.6s forwards;
 }
 
 .gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transform: translateY(-6px);
+    background-size: 112%;
+    box-shadow: 
+        inset 0 0 0 10px #FAF7F2, 
+        inset 0 0 0 11px var(--accent-color), 
+        0 16px 32px rgba(47, 58, 47, 0.12);
 }
 
+/* Hover Overlay - Floating Inset Frame */
 .gallery-item-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--hover-overlay);
-    color: #fff;
+    inset: 18px;
+    background-color: rgba(74, 93, 78, 0.84);
+    border: 1px solid var(--accent-color);
+    border-radius: 2px;
+    color: #FAF8F5;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transform: scale(0.96);
+    transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.215, 0.61, 0.355, 1);
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
+    backdrop-filter: blur(1.5px);
 }
 
 .gallery-item:hover .gallery-item-overlay {
     opacity: 1;
+    transform: scale(1);
 }
 
 .gallery-item-title {
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    color: #FAF8F5;
+    line-height: 1.4;
+    text-wrap: balance;
 }
 
+.gallery-item-title::after {
+    content: '✿';
+    display: block;
+    margin-top: 0.6rem;
+    font-size: 0.75rem;
+    color: var(--accent-color);
+    opacity: 0.9;
+}
+
+/* ==== Footer ==== */
+footer {
+    border-top: 1px solid var(--border-color);
+    background-color: rgba(241, 237, 228, 0.4);
+    padding: 4rem 1rem 3rem;
+    text-align: center;
+}
+
+.footer-divider {
+    color: var(--primary-light);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-nav a {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--accent-color);
+}
+
+.nav-dot {
+    color: var(--accent-color);
+    font-size: 0.6rem;
+    opacity: 0.7;
+}
+
+.copyright {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* ==== Animations ==== */
 @keyframes fadeInUp {
     to {
         opacity: 1;
@@ -103,17 +239,46 @@ header p {
     }
 }
 
-/* Responsive adjustments */
+/* ==== Responsive ==== */
 @media (max-width: 768px) {
     .gallery-container {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem 1.5rem 3rem;
+    }
+    
+    header {
+        padding: 4rem 1rem 2rem;
+    }
+    
+    .gallery-item-overlay {
+        inset: 12px;
         padding: 1rem;
     }
-    header {
-        padding: 3rem 1rem 1rem;
+    
+    .gallery-item-title {
+        font-size: 1.05rem;
+        letter-spacing: 1px;
     }
-    header h1 {
-        font-size: 2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-item {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    .gallery-item:hover {
+        transform: none;
+        background-size: 104%;
+        box-shadow: 
+            inset 0 0 0 10px #FAF7F2, 
+            inset 0 0 0 11px var(--border-color), 
+            0 6px 18px rgba(47, 58, 47, 0.06);
+    }
+    .gallery-item-overlay {
+        transform: none;
+        transition: none;
     }
 }
