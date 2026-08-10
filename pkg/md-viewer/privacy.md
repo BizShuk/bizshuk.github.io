@@ -8,7 +8,7 @@ explains what the App accesses, where information is stored, and the choices
 available to you.
 
 For the styled version of this policy, visit
-[Privacy Policy](https://bizshuk.github.io/pkg/mdviewer/privacy.html).
+[Privacy Policy](https://bizshuk.github.io/pkg/md-viewer/privacy.html).
 
 ## Privacy at a glance
 
