@@ -4,6 +4,7 @@
   "private": true,
   "description": "Shuk Liu 個人作品集 (personal portfolio) 靜態站 — vanilla HTML/CSS/JS，無 build step，GitHub Pages 部署",
   "scripts": {
+    "release:store": "./scripts/release-store.sh",
     "dev": "python3 -m http.server 8306",
     "build": "docker build -t bizshuk-site .",
     "deploy": "docker run -d --name bizshuk-site -p 8306:8306 bizshuk-site",

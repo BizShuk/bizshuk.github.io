@@ -180,7 +180,7 @@ when an update is published.
 
 For privacy questions, support, or requests concerning MD Viewer, contact the
 developer through the
-[public support issue tracker](https://github.com/BizShuk/bizshuk.github.io/issues/new?title=MD%20Viewer%20Privacy%20Request).
+[public support issue tracker](https://github.com/bizshuk/bizshuk.github.io/issues).
 
 Do not include access tokens, private repository content, or other secrets in a
 public issue.
