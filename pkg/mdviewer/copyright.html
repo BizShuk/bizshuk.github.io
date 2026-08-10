@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Copyright and attribution notice for the MD Viewer iPhone application."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#eef6d2" />
+    <title>Copyright &amp; Attribution — MD Viewer</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --page: #eef6d2;
+        --surface: #f6fadf;
+        --surface-strong: #e4edc4;
+        --ink: #20251a;
+        --heading: #11150d;
+        --muted: #626b50;
+        --accent: #385f43;
+        --accent-hover: #294b33;
+        --accent-soft: rgba(56, 95, 67, 0.1);
+        --border: rgba(44, 58, 34, 0.2);
+        --border-strong: rgba(44, 58, 34, 0.34);
+        --shadow: 0 22px 70px rgba(39, 53, 28, 0.1);
+        --radius-sm: 0.75rem;
+        --radius-md: 1.125rem;
+        --radius-lg: 1.75rem;
+        --font-sans: ui-rounded, "SF Pro Rounded", "Avenir Next", -apple-system,
+          BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-serif: ui-serif, "Iowan Old Style", "Palatino Linotype",
+          Palatino, Georgia, serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 2rem;
+      }
+
+      body {
+        min-width: 20rem;
+        margin: 0;
+        color: var(--ink);
+        background: var(--page);
+        font-family: var(--font-serif);
+        font-size: 1.0625rem;
+        line-height: 1.78;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration-color: color-mix(in srgb, var(--accent) 44%, transparent);
+        text-underline-offset: 0.2em;
+      }
+
+      a:hover {
+        color: var(--accent-hover);
+      }
+
+      a:focus-visible {
+        border-radius: 0.2rem;
+        outline: 3px solid var(--accent);
+        outline-offset: 4px;
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 100;
+        top: 1rem;
+        left: 1rem;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        color: var(--surface);
+        background: var(--heading);
+        font-family: var(--font-sans);
+        font-size: 0.875rem;
+        font-weight: 700;
+        transform: translateY(-180%);
+        transition: transform 160ms ease;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .shell {
+        width: min(76rem, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 1rem 0 5rem;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 3.5rem;
+        gap: 1rem;
+        border-bottom: 1px solid var(--border);
+        font-family: var(--font-sans);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        color: var(--heading);
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 2rem;
+        height: 2rem;
+        place-items: center;
+        border: 1px solid var(--border-strong);
+        border-radius: 0.65rem;
+        background: var(--surface);
+        box-shadow: 0 6px 18px rgba(39, 53, 28, 0.08);
+      }
+
+      .brand-mark svg {
+        width: 1.1rem;
+        height: 1.1rem;
+      }
+
+      .brand-name {
+        font-size: 0.94rem;
+        font-weight: 750;
+        letter-spacing: 0.01em;
+      }
+
+      .topbar-label {
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 750;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        padding: clamp(4.5rem, 11vw, 8.5rem) 0 clamp(3rem, 7vw, 5rem);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0 0 1rem;
+        color: var(--accent);
+        font-family: var(--font-sans);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 1.6rem;
+        height: 1px;
+        background: currentColor;
+        content: "";
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--heading);
+        font-family: var(--font-sans);
+        line-height: 1.08;
+        text-wrap: balance;
+      }
+
+      h1 {
+        max-width: 12ch;
+        margin: 0;
+        font-size: clamp(3.15rem, 9vw, 7rem);
+        font-weight: 760;
+        letter-spacing: -0.055em;
+      }
+
+      .hero-summary {
+        max-width: 44rem;
+        margin: 2rem 0 0;
+        color: var(--muted);
+        font-size: clamp(1.08rem, 2.2vw, 1.35rem);
+        line-height: 1.62;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin: 2rem 0 0;
+        padding: 0;
+        list-style: none;
+        font-family: var(--font-sans);
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .hero-meta li {
+        padding: 0.45rem 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--surface) 72%, transparent);
+      }
+
+      .copyright-card {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        align-items: center;
+        gap: clamp(1.5rem, 5vw, 4rem);
+        margin-bottom: clamp(4rem, 8vw, 7rem);
+        padding: clamp(1.75rem, 5vw, 3.75rem);
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-lg);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      .copyright-symbol {
+        display: grid;
+        width: clamp(6.5rem, 15vw, 10rem);
+        aspect-ratio: 1;
+        place-items: center;
+        border: 1px solid var(--border-strong);
+        border-radius: 50%;
+        color: var(--accent);
+        background: var(--surface-strong);
+        font-family: var(--font-sans);
+        font-size: clamp(3.5rem, 9vw, 6.5rem);
+        font-weight: 500;
+        line-height: 1;
+      }
+
+      .copyright-card h2 {
+        margin: 0;
+        font-size: clamp(1.5rem, 3vw, 2.35rem);
+        letter-spacing: -0.035em;
+      }
+
+      .copyright-card p {
+        max-width: 42rem;
+        margin: 0.85rem 0 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .copyright-facts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 1.25rem 0 0;
+        padding: 0;
+        list-style: none;
+        font-family: var(--font-sans);
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+
+      .copyright-facts li {
+        padding: 0.4rem 0.65rem;
+        border-radius: 999px;
+        color: var(--accent);
+        background: var(--accent-soft);
+      }
+
+      .legal-layout {
+        display: grid;
+        grid-template-columns: minmax(12rem, 15rem) minmax(0, 45rem);
+        justify-content: space-between;
+        gap: clamp(3rem, 8vw, 8rem);
+      }
+
+      .toc {
+        align-self: start;
+        position: sticky;
+        top: 2rem;
+        font-family: var(--font-sans);
+      }
+
+      .toc-title {
+        margin: 0 0 1rem;
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .toc ol {
+        display: grid;
+        gap: 0.25rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .toc a {
+        display: block;
+        padding: 0.42rem 0;
+        color: var(--muted);
+        font-size: 0.86rem;
+        font-weight: 650;
+        line-height: 1.3;
+        text-decoration: none;
+      }
+
+      .toc a:hover {
+        color: var(--heading);
+      }
+
+      .legal-content section {
+        padding: 0 0 4rem;
+        border-top: 1px solid var(--border);
+      }
+
+      .section-heading {
+        display: grid;
+        grid-template-columns: 2.2rem minmax(0, 1fr);
+        align-items: baseline;
+        gap: 0.75rem;
+        margin: -0.08rem 0 1.5rem;
+        padding-top: 1.7rem;
+      }
+
+      .section-number {
+        color: var(--accent);
+        font-family: var(--font-sans);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+      }
+
+      .section-heading h2 {
+        margin: 0;
+        font-size: clamp(1.55rem, 3vw, 2.25rem);
+        letter-spacing: -0.035em;
+      }
+
+      .legal-content p {
+        margin: 0 0 1.25rem;
+      }
+
+      .legal-content h3 {
+        margin: 2.1rem 0 0.7rem;
+        font-size: 1.05rem;
+        letter-spacing: -0.015em;
+      }
+
+      .legal-content ul {
+        display: grid;
+        gap: 0.75rem;
+        margin: 1.25rem 0;
+        padding-left: 1.35rem;
+      }
+
+      .legal-content li::marker {
+        color: var(--accent);
+      }
+
+      .note {
+        margin: 1.75rem 0;
+        padding: 1.25rem 1.35rem;
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--accent);
+        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        background: var(--accent-soft);
+      }
+
+      .note strong {
+        color: var(--heading);
+        font-family: var(--font-sans);
+      }
+
+      .contact-card {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 1.75rem;
+        padding: clamp(1.4rem, 4vw, 2.25rem);
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-md);
+        background: var(--surface);
+      }
+
+      .contact-card h3 {
+        margin: 0 0 0.4rem;
+      }
+
+      .contact-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+
+      .contact-link {
+        display: inline-flex;
+        min-height: 2.75rem;
+        align-items: center;
+        justify-content: center;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        color: var(--surface);
+        background: var(--accent);
+        font-family: var(--font-sans);
+        font-size: 0.84rem;
+        font-weight: 750;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .contact-link:hover {
+        color: white;
+        background: var(--accent-hover);
+      }
+
+      footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        padding: 2rem 0 0;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-family: var(--font-sans);
+        font-size: 0.78rem;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      footer nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      @media (max-width: 52rem) {
+        .copyright-card {
+          grid-template-columns: 1fr;
+        }
+
+        .legal-layout {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 2.5rem;
+        }
+
+        .toc {
+          position: static;
+          padding: 1.25rem;
+          border: 1px solid var(--border);
+          border-radius: var(--radius-md);
+          background: color-mix(in srgb, var(--surface) 76%, transparent);
+        }
+
+        .toc ol {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          column-gap: 1.25rem;
+        }
+      }
+
+      @media (max-width: 36rem) {
+        .shell {
+          width: min(100% - 1.25rem, 76rem);
+          padding-top: 0.5rem;
+        }
+
+        .topbar-label {
+          display: none;
+        }
+
+        h1 {
+          font-size: clamp(3rem, 17vw, 4.7rem);
+        }
+
+        .hero-meta {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .toc ol {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-card {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-link {
+          width: 100%;
+        }
+
+        footer {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          color-scheme: dark;
+          --page: #10150f;
+          --surface: #182017;
+          --surface-strong: #202a1e;
+          --ink: #d8e1d1;
+          --heading: #f2f7ec;
+          --muted: #a3af9c;
+          --accent: #94c49f;
+          --accent-hover: #b7d9bd;
+          --accent-soft: rgba(148, 196, 159, 0.09);
+          --border: rgba(211, 229, 205, 0.14);
+          --border-strong: rgba(211, 229, 205, 0.26);
+          --shadow: 0 22px 70px rgba(0, 0, 0, 0.24);
+        }
+
+        .contact-link {
+          color: #10150f;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      @media print {
+        :root {
+          color-scheme: light;
+        }
+
+        body {
+          background: white;
+        }
+
+        .shell {
+          width: 100%;
+          padding: 0;
+        }
+
+        .topbar,
+        .toc,
+        footer nav {
+          display: none;
+        }
+
+        .hero {
+          padding: 2rem 0;
+        }
+
+        h1 {
+          font-size: 4rem;
+        }
+
+        .copyright-card {
+          box-shadow: none;
+        }
+
+        .legal-layout {
+          display: block;
+        }
+
+        .legal-content section {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to notice</a>
+
+    <div class="shell">
+      <header class="topbar">
+        <a
+          class="brand"
+          href="#main-content"
+          aria-label="MD Viewer Copyright Notice home"
+        >
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M6.5 4.5h7.2l3.8 3.8v11.2h-11z"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M13.5 4.8v3.8h3.8M9 12.2h6M9 15.5h4.3"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          <span class="brand-name">MD Viewer</span>
+        </a>
+        <span class="topbar-label">Legal notice</span>
+      </header>
+
+      <main id="main-content">
+        <header class="hero">
+          <p class="eyebrow">Ownership, clearly stated</p>
+          <h1>Copyright &amp; Attribution</h1>
+          <p class="hero-summary">
+            This notice explains ownership of MD Viewer, the content you open
+            with it, and the third-party software and names referenced by the App.
+          </p>
+          <ul class="hero-meta" aria-label="Notice details">
+            <li>Copyright © 2026 BizShuk</li>
+            <li>Last updated August 10, 2026</li>
+          </ul>
+        </header>
+
+        <section class="copyright-card" aria-label="Copyright summary">
+          <div class="copyright-symbol" aria-hidden="true">©</div>
+          <div>
+            <h2>Original work is protected. Your content stays yours.</h2>
+            <p>
+              MD Viewer claims no ownership over repositories or documents you
+              choose to access. Third-party software and brand rights remain with
+              their respective owners.
+            </p>
+            <ul class="copyright-facts" aria-label="Ownership principles">
+              <li>App rights reserved</li>
+              <li>User content unchanged</li>
+              <li>Third-party rights respected</li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="legal-layout">
+          <nav class="toc" aria-label="Copyright Notice sections">
+            <p class="toc-title">On this page</p>
+            <ol>
+              <li><a href="#notice">Copyright notice</a></li>
+              <li><a href="#your-content">Your content</a></li>
+              <li><a href="#app-license">App license</a></li>
+              <li><a href="#open-source">Open-source software</a></li>
+              <li><a href="#trademarks">Names and trademarks</a></li>
+              <li><a href="#permitted-use">Permitted references</a></li>
+              <li><a href="#concerns">Copyright concerns</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ol>
+          </nav>
+
+          <article class="legal-content">
+            <section id="notice">
+              <div class="section-heading">
+                <span class="section-number">01</span>
+                <h2>Copyright notice</h2>
+              </div>
+              <p>
+                Except where this notice says otherwise, the original software,
+                interface design, text, graphics, iconography, and documentation
+                created for MD Viewer are copyright © 2026 BizShuk. All rights
+                reserved.
+              </p>
+              <p>
+                The MD Viewer name and original product identity are identifiers
+                of BizShuk to the extent protected by applicable law. No ownership
+                right is transferred merely because the App or this website is
+                made available to you.
+              </p>
+            </section>
+
+            <section id="your-content">
+              <div class="section-heading">
+                <span class="section-number">02</span>
+                <h2>Your content remains yours</h2>
+              </div>
+              <p>
+                MD Viewer does not claim copyright or ownership over Markdown,
+                code, images, repository history, TODO items, or other material
+                that you access, create, edit, or commit through the App.
+              </p>
+              <p>
+                Rights in repository content remain with the relevant authors,
+                contributors, employers, organizations, or other rights holders.
+                You are responsible for ensuring that you have permission to view,
+                modify, translate, publish, or redistribute that content.
+              </p>
+              <div class="note">
+                <strong>Repository licenses still apply.</strong> Using MD Viewer
+                does not change a repository’s license, confidentiality, access
+                controls, or attribution requirements.
+              </div>
+            </section>
+
+            <section id="app-license">
+              <div class="section-heading">
+                <span class="section-number">03</span>
+                <h2>License to use the App</h2>
+              </div>
+              <p>
+                MD Viewer is licensed, not sold. Unless the App Store listing
+                provides a custom agreement, your use of the App is governed by
+                Apple’s
+                <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+                  >Standard End User License Agreement</a
+                > and the applicable App Store Usage Rules.
+              </p>
+              <p>
+                This copyright notice does not replace that license agreement.
+                Except where the license agreement or applicable law permits it,
+                you may not reproduce, redistribute, sublicense, sell, or create
+                misleading derivative versions of the App or its original brand
+                assets.
+              </p>
+            </section>
+
+            <section id="open-source">
+              <div class="section-heading">
+                <span class="section-number">04</span>
+                <h2>Open-source software</h2>
+              </div>
+              <p>
+                MD Viewer is built with third-party open-source software,
+                including libraries for the iOS container, user interface,
+                Markdown rendering, diagrams, math, and syntax highlighting.
+                Those components remain subject to their own copyright notices
+                and license terms.
+              </p>
+              <p>
+                Nothing in this notice limits rights granted by an applicable
+                open-source license. If this notice and a third-party component’s
+                license differ, that component’s license controls for the
+                component.
+              </p>
+            </section>
+
+            <section id="trademarks">
+              <div class="section-heading">
+                <span class="section-number">05</span>
+                <h2>Third-party names and trademarks</h2>
+              </div>
+              <p>
+                GitHub and related marks are trademarks of GitHub, Inc. Their use
+                in MD Viewer describes compatibility and the GitHub service
+                connection; it does not imply sponsorship or endorsement. See
+                GitHub’s
+                <a href="https://docs.github.com/en/site-policy/content-removal-policies/github-trademark-policy"
+                  >Trademark Policy</a
+                >.
+              </p>
+              <p>
+                Apple, App Store, iPhone, iOS, Keychain, and Xcode are trademarks
+                or service marks of Apple Inc., registered in the United States
+                and other countries and regions. See Apple’s
+                <a href="https://www.apple.com/legal/intellectual-property/trademark/appletmlist.html"
+                  >Trademark List</a
+                >.
+              </p>
+              <p>
+                All other company names, product names, service names, logos, and
+                marks are the property of their respective owners. Their mention
+                is descriptive and does not grant MD Viewer any ownership in them.
+              </p>
+            </section>
+
+            <section id="permitted-use">
+              <div class="section-heading">
+                <span class="section-number">06</span>
+                <h2>Permitted references</h2>
+              </div>
+              <p>Subject to applicable law, you may:</p>
+              <ul>
+                <li>refer to MD Viewer by name to identify the App;</li>
+                <li>link to an official MD Viewer page;</li>
+                <li>
+                  use ordinary screenshots for truthful reviews, commentary,
+                  support, education, or other legally permitted purposes; and
+                </li>
+                <li>retain all visible copyright and attribution notices.</li>
+              </ul>
+              <p>
+                You may not use MD Viewer branding in a way that implies an
+                affiliation, sponsorship, or endorsement that does not exist, or
+                present copied App assets as your own product identity.
+              </p>
+            </section>
+
+            <section id="concerns">
+              <div class="section-heading">
+                <span class="section-number">07</span>
+                <h2>Copyright concerns</h2>
+              </div>
+              <p>
+                If you believe material distributed by MD Viewer infringes a right
+                you own, send a notice identifying the protected work, the
+                material at issue, where it appears, your relationship to the
+                right, and a way to contact you.
+              </p>
+              <p>
+                Repository content loaded at a user’s direction is generally
+                hosted by GitHub and controlled by the repository owner. Requests
+                concerning that content may need to be directed to the repository
+                owner or GitHub under their applicable process.
+              </p>
+            </section>
+
+            <section id="contact">
+              <div class="section-heading">
+                <span class="section-number">08</span>
+                <h2>Contact</h2>
+              </div>
+              <p>
+                For copyright questions, attribution corrections, or permission
+                requests concerning MD Viewer, contact the developer through the
+                public support issue tracker. Do not include private repository
+                content, access tokens, or other secrets in a public issue.
+              </p>
+
+              <div class="contact-card">
+                <div>
+                  <h3>MD Viewer Legal Support</h3>
+                  <p>Copyright, attribution, and permission requests</p>
+                </div>
+                <a
+                  class="contact-link"
+                  href="https://github.com/BizShuk/bizshuk.github.io/issues/new?title=MD%20Viewer%20Copyright%20Request"
+                  >Open support request</a
+                >
+              </div>
+            </section>
+          </article>
+        </div>
+      </main>
+
+      <footer>
+        <p>© 2026 BizShuk. All rights reserved.</p>
+        <nav aria-label="Footer links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="https://github.com/BizShuk">Developer</a>
+          <a href="https://github.com/BizShuk/bizshuk.github.io/issues"
+            >Support</a
+          >
+          <a href="#main-content">Back to top</a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>

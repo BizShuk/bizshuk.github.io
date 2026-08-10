@@ -1,0 +1,1226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="MD Viewer is an iPhone Markdown reader and editor for GitHub repositories."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f5f5f7" />
+    <meta property="og:title" content="MD Viewer for iPhone" />
+    <meta
+      property="og:description"
+      content="Browse repositories, render rich Markdown, translate documents, and commit changes from one focused reader."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="preview/preview-iphone-core.PNG"
+    />
+    <title>MD Viewer for iPhone</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --page: #f5f5f7;
+        --page-elevated: #fbfbfd;
+        --surface: #ffffff;
+        --surface-soft: #edf3e3;
+        --surface-strong: #dce8ca;
+        --ink: #1d1d1f;
+        --ink-soft: #424245;
+        --muted: #6e6e73;
+        --faint: #929298;
+        --accent: #315d42;
+        --accent-hover: #244a33;
+        --accent-ink: #f6fbf0;
+        --line: rgba(29, 29, 31, 0.14);
+        --line-strong: rgba(29, 29, 31, 0.24);
+        --shadow-soft: 0 22px 70px rgba(49, 62, 40, 0.12);
+        --shadow-phone: 0 34px 80px rgba(24, 30, 20, 0.2);
+        --font: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+          "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+        --content: min(76rem, calc(100% - 2.5rem));
+        --radius-surface: 2rem;
+        --radius-control: 999px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 5.5rem;
+      }
+
+      body {
+        min-width: 20rem;
+        margin: 0;
+        color: var(--ink);
+        background: var(--page);
+        font-family: var(--font);
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      body::before {
+        position: fixed;
+        z-index: -1;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(circle at 72% 8%, rgba(181, 208, 155, 0.22), transparent 30rem),
+          radial-gradient(circle at 15% 62%, rgba(211, 225, 196, 0.28), transparent 34rem);
+        content: "";
+      }
+
+      a {
+        color: inherit;
+      }
+
+      a:focus-visible {
+        border-radius: 0.35rem;
+        outline: 3px solid var(--accent);
+        outline-offset: 4px;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 100;
+        top: 0.75rem;
+        left: 0.75rem;
+        padding: 0.7rem 1rem;
+        border-radius: var(--radius-control);
+        color: var(--accent-ink);
+        background: var(--accent);
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-decoration: none;
+        transform: translateY(-170%);
+        transition: transform 180ms ease;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .site-nav {
+        position: sticky;
+        z-index: 20;
+        top: 0;
+        border-bottom: 1px solid var(--line);
+        background: color-mix(in srgb, var(--page) 82%, transparent);
+        backdrop-filter: blur(20px) saturate(160%);
+        -webkit-backdrop-filter: blur(20px) saturate(160%);
+      }
+
+      .nav-inner {
+        display: flex;
+        width: var(--content);
+        min-height: 3.75rem;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        margin: 0 auto;
+      }
+
+      .wordmark {
+        font-size: 1rem;
+        font-weight: 730;
+        letter-spacing: -0.02em;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: clamp(1rem, 2.5vw, 2rem);
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 560;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        transition: color 160ms ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--ink);
+      }
+
+      main {
+        overflow: hidden;
+      }
+
+      .hero {
+        display: grid;
+        width: var(--content);
+        min-height: calc(100dvh - 3.75rem);
+        grid-template-columns: minmax(0, 0.9fr) minmax(26rem, 1.1fr);
+        align-items: center;
+        gap: clamp(2rem, 7vw, 7rem);
+        margin: 0 auto;
+        padding: clamp(4rem, 8vw, 6.5rem) 0;
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 2;
+      }
+
+      .app-identity {
+        display: grid;
+        grid-template-columns: 5rem minmax(0, 1fr);
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .app-icon {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 1.35rem;
+        box-shadow: 0 10px 30px rgba(69, 111, 158, 0.18);
+      }
+
+      .app-name {
+        margin: 0;
+        font-size: 1.4rem;
+        font-weight: 700;
+        letter-spacing: -0.035em;
+      }
+
+      .app-category {
+        margin: 0.25rem 0 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin-top: 0;
+        color: var(--ink);
+        letter-spacing: -0.05em;
+        text-wrap: balance;
+      }
+
+      h1 {
+        max-width: 10ch;
+        margin-bottom: 1.35rem;
+        font-size: clamp(3.25rem, 6.3vw, 5.8rem);
+        font-weight: 740;
+        line-height: 0.98;
+      }
+
+      .hero-description {
+        max-width: 31rem;
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: clamp(1.08rem, 1.7vw, 1.28rem);
+        line-height: 1.48;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.9rem;
+        margin-top: 2rem;
+      }
+
+      .primary-action,
+      .secondary-action {
+        display: inline-flex;
+        min-height: 3rem;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem 1.25rem;
+        border-radius: var(--radius-control);
+        font-size: 0.9rem;
+        font-weight: 660;
+        text-decoration: none;
+        white-space: nowrap;
+        transition:
+          transform 180ms ease,
+          background 180ms ease,
+          color 180ms ease;
+      }
+
+      .primary-action {
+        color: var(--accent-ink);
+        background: var(--accent);
+      }
+
+      .primary-action:hover {
+        background: var(--accent-hover);
+        transform: translateY(-1px);
+      }
+
+      .secondary-action {
+        color: var(--accent);
+      }
+
+      .secondary-action:hover {
+        color: var(--accent-hover);
+        background: rgba(49, 93, 66, 0.08);
+      }
+
+      .primary-action:active,
+      .secondary-action:active {
+        transform: translateY(1px);
+      }
+
+      .hero-visual {
+        position: relative;
+        min-height: 42rem;
+      }
+
+      .soft-orbit {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: min(44rem, 88vw);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: var(--surface-strong);
+        opacity: 0.7;
+        transform: translate(-50%, -50%);
+      }
+
+      .device {
+        position: relative;
+        overflow: hidden;
+        width: clamp(15rem, 23vw, 20rem);
+        aspect-ratio: 1284 / 2778;
+        border: 0.48rem solid #171919;
+        border-radius: clamp(2.2rem, 4vw, 3.25rem);
+        background: #171919;
+        box-shadow: var(--shadow-phone);
+      }
+
+      .device img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-device-primary {
+        position: absolute;
+        z-index: 2;
+        top: 2%;
+        left: 8%;
+        transform: rotate(-3deg);
+      }
+
+      .hero-device-secondary {
+        position: absolute;
+        z-index: 1;
+        right: 1%;
+        bottom: 0;
+        transform: rotate(4deg) scale(0.92);
+      }
+
+      .section {
+        padding: clamp(5.5rem, 10vw, 9rem) 0;
+      }
+
+      .section-inner {
+        width: var(--content);
+        margin: 0 auto;
+      }
+
+      .section-label {
+        margin: 0 0 0.9rem;
+        color: var(--accent);
+        font-size: 0.76rem;
+        font-weight: 760;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .section-title {
+        max-width: 15ch;
+        margin-bottom: 1.2rem;
+        font-size: clamp(2.5rem, 5vw, 4.8rem);
+        font-weight: 730;
+        line-height: 1.02;
+      }
+
+      .section-description {
+        max-width: 42rem;
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+        line-height: 1.55;
+      }
+
+      .preview-section {
+        background: var(--page-elevated);
+      }
+
+      .preview-header {
+        margin-bottom: 3rem;
+      }
+
+      .screenshot-rail {
+        display: flex;
+        width: 100%;
+        gap: clamp(1.25rem, 3vw, 2.4rem);
+        overflow-x: auto;
+        padding: 1rem max(1.25rem, calc((100vw - 76rem) / 2)) 3rem;
+        scroll-padding-inline: max(1.25rem, calc((100vw - 76rem) / 2));
+        scroll-snap-type: x mandatory;
+        scrollbar-color: var(--line-strong) transparent;
+        scrollbar-width: thin;
+      }
+
+      .screenshot-rail::-webkit-scrollbar {
+        height: 0.5rem;
+      }
+
+      .screenshot-rail::-webkit-scrollbar-thumb {
+        border-radius: var(--radius-control);
+        background: var(--line-strong);
+      }
+
+      .screenshot-item {
+        flex: 0 0 clamp(15rem, 24vw, 19rem);
+        scroll-snap-align: start;
+      }
+
+      .screenshot-item .device {
+        width: 100%;
+        box-shadow: 0 24px 60px rgba(24, 30, 20, 0.16);
+      }
+
+      .screenshot-caption {
+        margin: 1rem 0 0;
+        color: var(--ink-soft);
+        font-size: 0.92rem;
+        font-weight: 610;
+        line-height: 1.35;
+      }
+
+      .capabilities {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(17rem, 0.75fr);
+        gap: clamp(3rem, 9vw, 8rem);
+        align-items: start;
+      }
+
+      .capability-intro {
+        position: sticky;
+        top: 7rem;
+      }
+
+      .capability-list {
+        margin: 0;
+      }
+
+      .capability {
+        padding: 1.8rem 0 2.1rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .capability:first-child {
+        padding-top: 0.4rem;
+      }
+
+      .capability:last-child {
+        border-bottom: 0;
+      }
+
+      .capability dt {
+        margin-bottom: 0.55rem;
+        color: var(--ink);
+        font-size: 1.22rem;
+        font-weight: 680;
+        letter-spacing: -0.025em;
+      }
+
+      .capability dd {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.55;
+      }
+
+      .settings-section {
+        background: var(--surface-soft);
+      }
+
+      .settings-layout {
+        display: grid;
+        grid-template-columns: minmax(20rem, 0.78fr) minmax(0, 1.22fr);
+        gap: clamp(3rem, 9vw, 8rem);
+        align-items: center;
+      }
+
+      .settings-copy .section-title {
+        max-width: 11ch;
+      }
+
+      .settings-points {
+        display: grid;
+        gap: 1.25rem;
+        margin: 2.3rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .settings-points li {
+        color: var(--ink-soft);
+        line-height: 1.5;
+      }
+
+      .settings-points strong {
+        display: block;
+        margin-bottom: 0.2rem;
+        color: var(--ink);
+      }
+
+      .settings-visual {
+        position: relative;
+        min-height: 46rem;
+      }
+
+      .settings-device-en {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 4%;
+      }
+
+      .settings-device-zh {
+        position: absolute;
+        z-index: 1;
+        right: 1%;
+        bottom: 0;
+        transform: scale(0.92);
+      }
+
+      .trust-section {
+        padding-top: clamp(5rem, 9vw, 8rem);
+      }
+
+      .trust-panel {
+        overflow: hidden;
+        padding: clamp(2rem, 6vw, 5rem);
+        border-radius: var(--radius-surface);
+        color: var(--accent-ink);
+        background: var(--accent);
+        box-shadow: var(--shadow-soft);
+      }
+
+      .trust-panel h2 {
+        max-width: 12ch;
+        margin-bottom: 1.2rem;
+        color: inherit;
+        font-size: clamp(2.4rem, 5vw, 4.5rem);
+        font-weight: 720;
+        line-height: 1.03;
+      }
+
+      .trust-intro {
+        max-width: 42rem;
+        margin: 0;
+        color: rgba(246, 251, 240, 0.82);
+        font-size: 1.1rem;
+        line-height: 1.55;
+      }
+
+      .trust-facts {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr 1fr;
+        gap: 0;
+        margin: 3.25rem 0 0;
+      }
+
+      .trust-fact {
+        padding: 0 2rem;
+        border-left: 1px solid rgba(246, 251, 240, 0.25);
+      }
+
+      .trust-fact:first-child {
+        padding-left: 0;
+        border-left: 0;
+      }
+
+      .trust-fact:last-child {
+        padding-right: 0;
+      }
+
+      .trust-fact h3 {
+        margin-bottom: 0.6rem;
+        color: inherit;
+        font-size: 1.08rem;
+        font-weight: 680;
+        letter-spacing: -0.02em;
+      }
+
+      .trust-fact p {
+        margin: 0;
+        color: rgba(246, 251, 240, 0.76);
+        font-size: 0.94rem;
+        line-height: 1.52;
+      }
+
+      .legal-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 2rem;
+      }
+
+      .legal-links a {
+        display: inline-flex;
+        min-height: 2.75rem;
+        align-items: center;
+        padding: 0.7rem 1rem;
+        border: 1px solid rgba(246, 251, 240, 0.35);
+        border-radius: var(--radius-control);
+        color: var(--accent-ink);
+        font-size: 0.82rem;
+        font-weight: 650;
+        text-decoration: none;
+        white-space: nowrap;
+        transition:
+          background 180ms ease,
+          transform 180ms ease;
+      }
+
+      .legal-links a:hover {
+        background: rgba(246, 251, 240, 0.12);
+        transform: translateY(-1px);
+      }
+
+      footer {
+        width: var(--content);
+        margin: 0 auto;
+        padding: 2.5rem 0 3rem;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.76rem;
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+      }
+
+      .footer-links a {
+        text-decoration: none;
+      }
+
+      .footer-links a:hover {
+        color: var(--ink);
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .hero-copy {
+          animation: enter-copy 720ms cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .hero-device-primary {
+          animation: enter-primary 900ms 100ms cubic-bezier(0.16, 1, 0.3, 1)
+            both;
+        }
+
+        .hero-device-secondary {
+          animation: enter-secondary 900ms 180ms cubic-bezier(0.16, 1, 0.3, 1)
+            both;
+        }
+      }
+
+      @keyframes enter-copy {
+        from {
+          opacity: 0;
+          transform: translateY(1.1rem);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes enter-primary {
+        from {
+          opacity: 0;
+          transform: translateY(1.5rem) rotate(-3deg);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) rotate(-3deg);
+        }
+      }
+
+      @keyframes enter-secondary {
+        from {
+          opacity: 0;
+          transform: translateY(1.5rem) rotate(4deg) scale(0.92);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) rotate(4deg) scale(0.92);
+        }
+      }
+
+      @media (max-width: 62rem) {
+        .hero {
+          grid-template-columns: minmax(0, 1fr);
+          padding-top: 4.5rem;
+        }
+
+        .hero-copy {
+          max-width: 42rem;
+        }
+
+        h1 {
+          max-width: 12ch;
+        }
+
+        .hero-visual {
+          width: min(42rem, 100%);
+          min-height: 39rem;
+          justify-self: center;
+        }
+
+        .device {
+          width: clamp(14rem, 34vw, 18rem);
+        }
+
+        .capabilities,
+        .settings-layout {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .capability-intro {
+          position: static;
+        }
+
+        .settings-copy {
+          max-width: 44rem;
+        }
+
+        .settings-visual {
+          width: min(42rem, 100%);
+          justify-self: center;
+        }
+
+        .trust-facts {
+          grid-template-columns: 1fr;
+        }
+
+        .trust-fact {
+          padding: 1.5rem 0;
+          border-top: 1px solid rgba(246, 251, 240, 0.25);
+          border-left: 0;
+        }
+
+        .trust-fact:first-child {
+          padding-top: 0;
+          border-top: 0;
+        }
+      }
+
+      @media (max-width: 40rem) {
+        :root {
+          --content: min(100% - 1.5rem, 76rem);
+        }
+
+        .nav-links a:first-child {
+          display: none;
+        }
+
+        .hero {
+          min-height: auto;
+          gap: 2.5rem;
+          padding: 3.5rem 0 4.5rem;
+        }
+
+        .app-identity {
+          grid-template-columns: 4rem minmax(0, 1fr);
+          margin-bottom: 1.6rem;
+        }
+
+        .app-icon {
+          width: 4rem;
+          height: 4rem;
+          border-radius: 1.1rem;
+        }
+
+        h1 {
+          font-size: clamp(3rem, 15vw, 4.3rem);
+        }
+
+        .hero-visual {
+          min-height: 30rem;
+        }
+
+        .device {
+          width: min(59vw, 15rem);
+          border-width: 0.38rem;
+          border-radius: 2.4rem;
+        }
+
+        .hero-device-primary {
+          left: 2%;
+        }
+
+        .hero-device-secondary {
+          right: -5%;
+        }
+
+        .screenshot-rail {
+          padding-inline: 0.75rem;
+          scroll-padding-inline: 0.75rem;
+        }
+
+        .screenshot-item {
+          flex-basis: min(76vw, 18rem);
+        }
+
+        .settings-visual {
+          min-height: 31rem;
+        }
+
+        .settings-device-en {
+          left: 0;
+        }
+
+        .settings-device-zh {
+          right: -7%;
+        }
+
+        .trust-panel {
+          border-radius: 1.5rem;
+        }
+
+        .footer-inner {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          color-scheme: dark;
+          --page: #111412;
+          --page-elevated: #151916;
+          --surface: #1b201c;
+          --surface-soft: #1d281f;
+          --surface-strong: #29372b;
+          --ink: #f2f4ef;
+          --ink-soft: #d1d6ce;
+          --muted: #9fa89d;
+          --faint: #7c847a;
+          --accent: #85b394;
+          --accent-hover: #a0c6aa;
+          --accent-ink: #102016;
+          --line: rgba(234, 241, 231, 0.14);
+          --line-strong: rgba(234, 241, 231, 0.24);
+          --shadow-soft: 0 22px 70px rgba(0, 0, 0, 0.26);
+          --shadow-phone: 0 34px 80px rgba(0, 0, 0, 0.48);
+        }
+
+        body::before {
+          opacity: 0.55;
+        }
+
+        .app-icon {
+          box-shadow: 0 10px 30px rgba(78, 138, 190, 0.14);
+        }
+
+        .device {
+          border-color: #050605;
+          background: #050605;
+        }
+
+        .primary-action {
+          color: var(--accent-ink);
+        }
+
+        .secondary-action:hover {
+          background: rgba(133, 179, 148, 0.1);
+        }
+
+        .trust-panel {
+          color: #102016;
+        }
+
+        .trust-intro,
+        .trust-fact p {
+          color: rgba(16, 32, 22, 0.76);
+        }
+
+        .trust-fact {
+          border-color: rgba(16, 32, 22, 0.25);
+        }
+
+        .legal-links a {
+          border-color: rgba(16, 32, 22, 0.35);
+          color: #102016;
+        }
+
+        .legal-links a:hover {
+          background: rgba(16, 32, 22, 0.09);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      @media (prefers-reduced-transparency: reduce) {
+        .site-nav {
+          background: var(--page);
+          backdrop-filter: none;
+          -webkit-backdrop-filter: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <a class="wordmark" href="#main-content">MD Viewer</a>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#preview">Preview</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="copyright.html">Copyright</a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="app-identity">
+            <img
+              class="app-icon"
+              src="app-icon.png"
+              width="1024"
+              height="1024"
+              alt="MD Viewer app icon"
+            />
+            <div>
+              <p class="app-name">MD Viewer</p>
+              <p class="app-category">GitHub Markdown reader and editor</p>
+            </div>
+          </div>
+
+          <h1 id="hero-title">Markdown for iPhone.</h1>
+          <p class="hero-description">
+            Browse repositories, render rich Markdown, translate documents, and
+            commit changes from one focused reader.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#preview">See the app</a>
+            <a class="secondary-action" href="#features">Explore features</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="MD Viewer app preview">
+          <div class="soft-orbit" aria-hidden="true"></div>
+          <div class="device hero-device-primary">
+            <img
+              src="preview/preview-iphone-core.PNG"
+              width="1284"
+              height="2778"
+              fetchpriority="high"
+              alt="MD Viewer displaying a richly rendered Markdown document"
+            />
+          </div>
+          <div class="device hero-device-secondary">
+            <img
+              src="preview/preview-iphone-side.PNG"
+              width="1284"
+              height="2778"
+              alt="MD Viewer repository file navigation drawer"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section preview-section" id="preview" aria-labelledby="preview-title">
+        <div class="section-inner preview-header">
+          <p class="section-label">Preview</p>
+          <h2 class="section-title" id="preview-title">
+            A reader that keeps the repository attached.
+          </h2>
+          <p class="section-description">
+            Move from files to rendered content, code, themes, and language
+            settings without leaving the document flow.
+          </p>
+        </div>
+
+        <div class="screenshot-rail" aria-label="MD Viewer screenshots">
+          <figure class="screenshot-item">
+            <div class="device">
+              <img
+                src="preview/preview-iphone-core.PNG"
+                width="1284"
+                height="2778"
+                loading="lazy"
+                alt="Rich Markdown rendering in the Sage Reading theme"
+              />
+            </div>
+            <figcaption class="screenshot-caption">
+              Read complete Markdown documents
+            </figcaption>
+          </figure>
+
+          <figure class="screenshot-item">
+            <div class="device">
+              <img
+                src="preview/preview-iphone-function.PNG"
+                width="1284"
+                height="2778"
+                loading="lazy"
+                alt="Syntax highlighting and technical content rendered in MD Viewer"
+              />
+            </div>
+            <figcaption class="screenshot-caption">
+              Inspect code, tables, and math
+            </figcaption>
+          </figure>
+
+          <figure class="screenshot-item">
+            <div class="device">
+              <img
+                src="preview/preview-iphone-side.PNG"
+                width="1284"
+                height="2778"
+                loading="lazy"
+                alt="Repository file browser with Glob filtering"
+              />
+            </div>
+            <figcaption class="screenshot-caption">
+              Navigate the repository file tree
+            </figcaption>
+          </figure>
+
+          <figure class="screenshot-item">
+            <div class="device">
+              <img
+                src="preview/preview-iphone-setting-en.PNG"
+                width="1284"
+                height="2778"
+                loading="lazy"
+                alt="English reader and interface settings"
+              />
+            </div>
+            <figcaption class="screenshot-caption">
+              Tune the reader in English
+            </figcaption>
+          </figure>
+
+          <figure class="screenshot-item">
+            <div class="device">
+              <img
+                src="preview/preview-iphone-setting-zh.PNG"
+                width="1284"
+                height="2778"
+                loading="lazy"
+                alt="Traditional Chinese reader and interface settings"
+              />
+            </div>
+            <figcaption class="screenshot-caption">
+              Switch the interface to Traditional Chinese
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" id="features" aria-labelledby="features-title">
+        <div class="section-inner capabilities">
+          <div class="capability-intro">
+            <h2 class="section-title" id="features-title">
+              Repository context stays within reach.
+            </h2>
+            <p class="section-description">
+              MD Viewer treats Markdown as part of a repository, not as an
+              isolated page.
+            </p>
+          </div>
+
+          <dl class="capability-list">
+            <div class="capability">
+              <dt>GitHub repositories</dt>
+              <dd>
+                Sign in with GitHub Device Flow, choose an available repository
+                and branch, then move through the file tree from iPhone.
+              </dd>
+            </div>
+            <div class="capability">
+              <dt>Rich Markdown</dt>
+              <dd>
+                Render GFM tables, GitHub Alerts, syntax highlighting, KaTeX,
+                Mermaid diagrams, frontmatter, and internal document links.
+              </dd>
+            </div>
+            <div class="capability">
+              <dt>Navigation that survives a restart</dt>
+              <dd>
+                Return to repository, branch, and file history while local cache
+                keeps recently used content close at hand.
+              </dd>
+            </div>
+            <div class="capability">
+              <dt>Edit where you read</dt>
+              <dd>
+                Update Markdown and README.todo, then submit the change to the
+                repository with an explicit commit.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="section settings-section" aria-labelledby="settings-title">
+        <div class="section-inner settings-layout">
+          <div class="settings-copy">
+            <h2 class="section-title" id="settings-title">
+              Make the reader fit the moment.
+            </h2>
+            <p class="section-description">
+              Change language, color, and offline behavior while the document
+              remains the center of the interface.
+            </p>
+            <ul class="settings-points">
+              <li>
+                <span>
+                  <strong>Three interface languages</strong>
+                  English, Traditional Chinese, and Spanish update App labels and
+                  accessibility metadata.
+                </span>
+              </li>
+              <li>
+                <span>
+                  <strong>Reader-wide themes</strong>
+                  Choose from four built-in styles or save a custom accessible
+                  color palette.
+                </span>
+              </li>
+              <li>
+                <span>
+                  <strong>Intentional offline retention</strong>
+                  Keep downloaded Markdown when needed, or clear the local cache
+                  directly from Settings.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="settings-visual" aria-label="MD Viewer settings in two languages">
+            <div class="device settings-device-en">
+              <img
+                src="preview/preview-iphone-setting-en.PNG"
+                width="1284"
+                height="2778"
+                loading="lazy"
+                alt="MD Viewer settings in English"
+              />
+            </div>
+            <div class="device settings-device-zh">
+              <img
+                src="preview/preview-iphone-setting-zh.PNG"
+                width="1284"
+                height="2778"
+                loading="lazy"
+                alt="MD Viewer settings in Traditional Chinese"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section trust-section" aria-labelledby="trust-title">
+        <div class="section-inner trust-panel">
+          <h2 id="trust-title">Private repositories deserve a clear boundary.</h2>
+          <p class="trust-intro">
+            Native authentication, device-local preferences, and on-device
+            translation keep each responsibility in the service that owns it.
+          </p>
+
+          <div class="trust-facts">
+            <article class="trust-fact">
+              <h3>GitHub sign-in stays native</h3>
+              <p>
+                OAuth credentials are stored in iOS Keychain and attached to
+                GitHub requests by the native layer.
+              </p>
+            </article>
+            <article class="trust-fact">
+              <h3>No intermediary backend</h3>
+              <p>
+                Repository requests travel directly between the App and GitHub.
+              </p>
+            </article>
+            <article class="trust-fact">
+              <h3>Translation stays on device</h3>
+              <p>
+                Supported iPhones use Apple Translation, and translated text is
+                kept only for the current App session.
+              </p>
+            </article>
+          </div>
+
+          <div class="legal-links" aria-label="Legal information">
+            <a href="privacy.html">Read Privacy Policy</a>
+            <a href="copyright.html">Copyright and Attribution</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <p>© 2026 BizShuk. MD Viewer for iPhone.</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#preview">Screenshots</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="copyright.html">Copyright</a>
+          <a href="https://github.com/BizShuk/bizshuk.github.io/issues">Support</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
