@@ -1,0 +1,1021 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Privacy Policy for MD Viewer, a Markdown reader and editor for GitHub repositories."
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#eef6d2" />
+    <title>Privacy Policy — MD Viewer</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --page: #eef6d2;
+        --surface: #f6fadf;
+        --surface-strong: #e4edc4;
+        --ink: #20251a;
+        --heading: #11150d;
+        --muted: #626b50;
+        --accent: #385f43;
+        --accent-hover: #294b33;
+        --accent-soft: rgba(56, 95, 67, 0.1);
+        --border: rgba(44, 58, 34, 0.2);
+        --border-strong: rgba(44, 58, 34, 0.34);
+        --shadow: 0 22px 70px rgba(39, 53, 28, 0.1);
+        --radius-sm: 0.75rem;
+        --radius-md: 1.125rem;
+        --radius-lg: 1.75rem;
+        --font-sans: ui-rounded, "SF Pro Rounded", "Avenir Next", -apple-system,
+          BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --font-serif: ui-serif, "Iowan Old Style", "Palatino Linotype",
+          Palatino, Georgia, serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 2rem;
+      }
+
+      body {
+        min-width: 20rem;
+        margin: 0;
+        color: var(--ink);
+        background: var(--page);
+        font-family: var(--font-serif);
+        font-size: 1.0625rem;
+        line-height: 1.78;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration-color: color-mix(in srgb, var(--accent) 44%, transparent);
+        text-underline-offset: 0.2em;
+      }
+
+      a:hover {
+        color: var(--accent-hover);
+      }
+
+      a:focus-visible {
+        border-radius: 0.2rem;
+        outline: 3px solid var(--accent);
+        outline-offset: 4px;
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 100;
+        top: 1rem;
+        left: 1rem;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        color: var(--surface);
+        background: var(--heading);
+        font-family: var(--font-sans);
+        font-size: 0.875rem;
+        font-weight: 700;
+        transform: translateY(-180%);
+        transition: transform 160ms ease;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .shell {
+        width: min(76rem, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: 1rem 0 5rem;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 3.5rem;
+        gap: 1rem;
+        border-bottom: 1px solid var(--border);
+        font-family: var(--font-sans);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        color: var(--heading);
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 2rem;
+        height: 2rem;
+        place-items: center;
+        border: 1px solid var(--border-strong);
+        border-radius: 0.65rem;
+        background: var(--surface);
+        box-shadow: 0 6px 18px rgba(39, 53, 28, 0.08);
+      }
+
+      .brand-mark svg {
+        width: 1.1rem;
+        height: 1.1rem;
+      }
+
+      .brand-name {
+        font-size: 0.94rem;
+        font-weight: 750;
+        letter-spacing: 0.01em;
+      }
+
+      .topbar-label {
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 750;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        padding: clamp(4.5rem, 11vw, 8.5rem) 0 clamp(3rem, 7vw, 5rem);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0 0 1rem;
+        color: var(--accent);
+        font-family: var(--font-sans);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 1.6rem;
+        height: 1px;
+        background: currentColor;
+        content: "";
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--heading);
+        font-family: var(--font-sans);
+        line-height: 1.08;
+        text-wrap: balance;
+      }
+
+      h1 {
+        max-width: 14ch;
+        margin: 0;
+        font-size: clamp(3.15rem, 9vw, 7rem);
+        font-weight: 760;
+        letter-spacing: -0.055em;
+      }
+
+      .hero-summary {
+        max-width: 44rem;
+        margin: 2rem 0 0;
+        color: var(--muted);
+        font-size: clamp(1.08rem, 2.2vw, 1.35rem);
+        line-height: 1.62;
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin: 2rem 0 0;
+        padding: 0;
+        list-style: none;
+        font-family: var(--font-sans);
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .hero-meta li {
+        padding: 0.45rem 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: color-mix(in srgb, var(--surface) 72%, transparent);
+      }
+
+      .at-a-glance {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        overflow: hidden;
+        margin-bottom: clamp(4rem, 8vw, 7rem);
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-lg);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      .principle {
+        min-height: 13rem;
+        padding: clamp(1.5rem, 3vw, 2.5rem);
+      }
+
+      .principle + .principle {
+        border-left: 1px solid var(--border);
+      }
+
+      .principle-number {
+        display: block;
+        margin-bottom: 2.25rem;
+        color: var(--accent);
+        font-family: var(--font-sans);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+      }
+
+      .principle h2 {
+        margin: 0;
+        font-size: 1.25rem;
+        letter-spacing: -0.025em;
+      }
+
+      .principle p {
+        margin: 0.75rem 0 0;
+        color: var(--muted);
+        font-size: 0.98rem;
+        line-height: 1.62;
+      }
+
+      .policy-layout {
+        display: grid;
+        grid-template-columns: minmax(12rem, 15rem) minmax(0, 45rem);
+        justify-content: space-between;
+        gap: clamp(3rem, 8vw, 8rem);
+      }
+
+      .toc {
+        align-self: start;
+        position: sticky;
+        top: 2rem;
+        font-family: var(--font-sans);
+      }
+
+      .toc-title {
+        margin: 0 0 1rem;
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .toc ol {
+        display: grid;
+        gap: 0.25rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .toc a {
+        display: block;
+        padding: 0.42rem 0;
+        color: var(--muted);
+        font-size: 0.86rem;
+        font-weight: 650;
+        line-height: 1.3;
+        text-decoration: none;
+      }
+
+      .toc a:hover {
+        color: var(--heading);
+      }
+
+      .policy-content section {
+        padding: 0 0 4rem;
+        border-top: 1px solid var(--border);
+      }
+
+      .section-heading {
+        display: grid;
+        grid-template-columns: 2.2rem minmax(0, 1fr);
+        align-items: baseline;
+        gap: 0.75rem;
+        margin: -0.08rem 0 1.5rem;
+        padding-top: 1.7rem;
+      }
+
+      .section-number {
+        color: var(--accent);
+        font-family: var(--font-sans);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+      }
+
+      .section-heading h2 {
+        margin: 0;
+        font-size: clamp(1.55rem, 3vw, 2.25rem);
+        letter-spacing: -0.035em;
+      }
+
+      .policy-content p {
+        margin: 0 0 1.25rem;
+      }
+
+      .policy-content h3 {
+        margin: 2.1rem 0 0.7rem;
+        font-size: 1.05rem;
+        letter-spacing: -0.015em;
+      }
+
+      .policy-content ul {
+        display: grid;
+        gap: 0.75rem;
+        margin: 1.25rem 0;
+        padding-left: 1.35rem;
+      }
+
+      .policy-content li::marker {
+        color: var(--accent);
+      }
+
+      .data-list {
+        display: grid;
+        gap: 0;
+        margin: 1.5rem 0 2rem;
+        border-top: 1px solid var(--border-strong);
+      }
+
+      .data-item {
+        display: grid;
+        grid-template-columns: minmax(9rem, 0.7fr) minmax(0, 1.5fr);
+        gap: 1.5rem;
+        padding: 1.35rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .data-item dt {
+        color: var(--heading);
+        font-family: var(--font-sans);
+        font-size: 0.9rem;
+        font-weight: 750;
+        line-height: 1.4;
+      }
+
+      .data-item dd {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.98rem;
+        line-height: 1.65;
+      }
+
+      .note {
+        margin: 1.75rem 0;
+        padding: 1.25rem 1.35rem;
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--accent);
+        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        background: var(--accent-soft);
+      }
+
+      .note strong {
+        color: var(--heading);
+        font-family: var(--font-sans);
+      }
+
+      .contact-card {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 1.75rem;
+        padding: clamp(1.4rem, 4vw, 2.25rem);
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-md);
+        background: var(--surface);
+      }
+
+      .contact-card h3 {
+        margin: 0 0 0.4rem;
+      }
+
+      .contact-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+
+      .contact-link {
+        display: inline-flex;
+        min-height: 2.75rem;
+        align-items: center;
+        justify-content: center;
+        padding: 0.7rem 1rem;
+        border-radius: 999px;
+        color: var(--surface);
+        background: var(--accent);
+        font-family: var(--font-sans);
+        font-size: 0.84rem;
+        font-weight: 750;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .contact-link:hover {
+        color: white;
+        background: var(--accent-hover);
+      }
+
+      footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        padding: 2rem 0 0;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-family: var(--font-sans);
+        font-size: 0.78rem;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      footer nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      @media (max-width: 52rem) {
+        .at-a-glance {
+          grid-template-columns: 1fr;
+        }
+
+        .principle {
+          min-height: 0;
+        }
+
+        .principle + .principle {
+          border-top: 1px solid var(--border);
+          border-left: 0;
+        }
+
+        .principle-number {
+          margin-bottom: 1.25rem;
+        }
+
+        .policy-layout {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 2.5rem;
+        }
+
+        .toc {
+          position: static;
+          padding: 1.25rem;
+          border: 1px solid var(--border);
+          border-radius: var(--radius-md);
+          background: color-mix(in srgb, var(--surface) 76%, transparent);
+        }
+
+        .toc ol {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          column-gap: 1.25rem;
+        }
+      }
+
+      @media (max-width: 36rem) {
+        .shell {
+          width: min(100% - 1.25rem, 76rem);
+          padding-top: 0.5rem;
+        }
+
+        .topbar-label {
+          display: none;
+        }
+
+        h1 {
+          font-size: clamp(3rem, 17vw, 4.7rem);
+        }
+
+        .hero-meta {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .toc ol {
+          grid-template-columns: 1fr;
+        }
+
+        .data-item {
+          grid-template-columns: 1fr;
+          gap: 0.5rem;
+        }
+
+        .contact-card {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-link {
+          width: 100%;
+        }
+
+        footer {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          color-scheme: dark;
+          --page: #10150f;
+          --surface: #182017;
+          --surface-strong: #202a1e;
+          --ink: #d8e1d1;
+          --heading: #f2f7ec;
+          --muted: #a3af9c;
+          --accent: #94c49f;
+          --accent-hover: #b7d9bd;
+          --accent-soft: rgba(148, 196, 159, 0.09);
+          --border: rgba(211, 229, 205, 0.14);
+          --border-strong: rgba(211, 229, 205, 0.26);
+          --shadow: 0 22px 70px rgba(0, 0, 0, 0.24);
+        }
+
+        .contact-link {
+          color: #10150f;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      @media print {
+        :root {
+          color-scheme: light;
+        }
+
+        body {
+          background: white;
+        }
+
+        .shell {
+          width: 100%;
+          padding: 0;
+        }
+
+        .topbar,
+        .toc,
+        footer nav {
+          display: none;
+        }
+
+        .hero {
+          padding: 2rem 0;
+        }
+
+        h1 {
+          font-size: 4rem;
+        }
+
+        .at-a-glance {
+          box-shadow: none;
+        }
+
+        .policy-layout {
+          display: block;
+        }
+
+        .policy-content section {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to policy</a>
+
+    <div class="shell">
+      <header class="topbar">
+        <a
+          class="brand"
+          href="#main-content"
+          aria-label="MD Viewer Privacy Policy home"
+        >
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M6.5 4.5h7.2l3.8 3.8v11.2h-11z"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M13.5 4.8v3.8h3.8M9 12.2h6M9 15.5h4.3"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          <span class="brand-name">MD Viewer</span>
+        </a>
+        <span class="topbar-label">App privacy</span>
+      </header>
+
+      <main id="main-content">
+        <header class="hero">
+          <p class="eyebrow">Privacy, in plain language</p>
+          <h1>Privacy Policy</h1>
+          <p class="hero-summary">
+            MD Viewer is a Markdown reader and editor for GitHub repositories.
+            This policy explains what the App accesses, where information is
+            stored, and the choices available to you.
+          </p>
+          <ul class="hero-meta" aria-label="Policy details">
+            <li>Effective August 10, 2026</li>
+            <li>Last updated August 10, 2026</li>
+          </ul>
+        </header>
+
+        <section class="at-a-glance" aria-label="Privacy at a glance">
+          <article class="principle">
+            <span class="principle-number">01</span>
+            <h2>No tracking</h2>
+            <p>
+              The App contains no advertising, analytics, cross-app tracking,
+              or data-broker integrations.
+            </p>
+          </article>
+          <article class="principle">
+            <span class="principle-number">02</span>
+            <h2>Direct connection</h2>
+            <p>
+              GitHub requests travel directly between your device and GitHub.
+              MD Viewer does not operate an intermediary backend.
+            </p>
+          </article>
+          <article class="principle">
+            <span class="principle-number">03</span>
+            <h2>Local control</h2>
+            <p>
+              Credentials, settings, navigation history, and cached content are
+              kept on your device and can be removed by you.
+            </p>
+          </article>
+        </section>
+
+        <div class="policy-layout">
+          <nav class="toc" aria-label="Privacy Policy sections">
+            <p class="toc-title">On this page</p>
+            <ol>
+              <li><a href="#scope">Scope</a></li>
+              <li><a href="#data">Information handled</a></li>
+              <li><a href="#use">How information is used</a></li>
+              <li><a href="#sharing">Sharing and services</a></li>
+              <li><a href="#storage">Storage and retention</a></li>
+              <li><a href="#choices">Your privacy choices</a></li>
+              <li><a href="#security">Security</a></li>
+              <li><a href="#children">Children</a></li>
+              <li><a href="#changes">Policy changes</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ol>
+          </nav>
+
+          <article class="policy-content">
+            <section id="scope">
+              <div class="section-heading">
+                <span class="section-number">01</span>
+                <h2>Scope</h2>
+              </div>
+              <p>
+                This Privacy Policy applies to the MD Viewer iPhone application
+                (the “App”). It covers the App’s GitHub sign-in, repository
+                browsing, Markdown viewing and editing, local caching, reader
+                preferences, and on-device document translation features.
+              </p>
+              <p>
+                The App is designed as a client for content you choose to access.
+                The developer does not run a server that receives your GitHub
+                credentials, repository content, or App activity.
+              </p>
+            </section>
+
+            <section id="data">
+              <div class="section-heading">
+                <span class="section-number">02</span>
+                <h2>Information the App handles</h2>
+              </div>
+              <p>
+                MD Viewer handles only the information needed to provide the
+                features you request. Depending on how you use the App, that may
+                include:
+              </p>
+
+              <dl class="data-list">
+                <div class="data-item">
+                  <dt>GitHub account information</dt>
+                  <dd>
+                    Your GitHub account identifier, username, installation list,
+                    and repository access metadata are requested from GitHub to
+                    establish the correct account scope and show repositories
+                    available to you.
+                  </dd>
+                </div>
+                <div class="data-item">
+                  <dt>Authentication information</dt>
+                  <dd>
+                    GitHub OAuth access and refresh tokens are obtained through
+                    GitHub Device Flow. They are held in the iOS Keychain and are
+                    not exposed to the App’s web interface or sent to the
+                    developer. During sign-in, the temporary GitHub verification
+                    code is placed on the system clipboard so you can paste it on
+                    GitHub’s verification page.
+                  </dd>
+                </div>
+                <div class="data-item">
+                  <dt>Repository content</dt>
+                  <dd>
+                    Repository names, branches, file trees, Markdown files,
+                    README.todo, linked assets, and related Git metadata are
+                    accessed when needed to display or cache your selected
+                    repository.
+                  </dd>
+                </div>
+                <div class="data-item">
+                  <dt>Content you change</dt>
+                  <dd>
+                    Markdown edits, TODO changes, and commit information you
+                    submit are sent directly to GitHub and become part of the
+                    repository you selected.
+                  </dd>
+                </div>
+                <div class="data-item">
+                  <dt>Device-local preferences</dt>
+                  <dd>
+                    Reader style, custom colors, interface language, repository
+                    selection, navigation history, cache settings, and cached
+                    repository content are stored locally to preserve your App
+                    experience and support faster or offline reading.
+                  </dd>
+                </div>
+                <div class="data-item">
+                  <dt>Translation content</dt>
+                  <dd>
+                    On supported devices, readable Markdown text is processed by
+                    Apple’s on-device Translation framework. Translations remain
+                    in memory for the current App session and are not written back
+                    to your repository.
+                  </dd>
+                </div>
+              </dl>
+
+              <div class="note">
+                <strong>What MD Viewer does not handle:</strong> the App does not
+                request your contacts, photos, camera, microphone, health data,
+                precise location, payment information, or advertising identifier.
+              </div>
+            </section>
+
+            <section id="use">
+              <div class="section-heading">
+                <span class="section-number">03</span>
+                <h2>How information is used</h2>
+              </div>
+              <p>The App uses the information above only to:</p>
+              <ul>
+                <li>authenticate your GitHub session and maintain access;</li>
+                <li>list repositories and verify their granted permissions;</li>
+                <li>load, render, search, navigate, and cache selected content;</li>
+                <li>save edits and commits you explicitly submit;</li>
+                <li>restore your preferences and reading position; and</li>
+                <li>translate eligible text on supported Apple devices.</li>
+              </ul>
+              <p>
+                MD Viewer does not use your information for advertising,
+                marketing, user profiling, analytics, or sale. It does not combine
+                your information with data from other apps or services for
+                tracking.
+              </p>
+            </section>
+
+            <section id="sharing">
+              <div class="section-heading">
+                <span class="section-number">04</span>
+                <h2>Sharing and external services</h2>
+              </div>
+
+              <h3>GitHub</h3>
+              <p>
+                The App communicates with GitHub to sign you in and perform the
+                repository actions you choose. GitHub processes those requests
+                under its own
+                <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+                  >Privacy Statement</a
+                >. Access is limited by your GitHub permissions and the
+                repositories authorized for the MD Viewer GitHub App.
+              </p>
+
+              <h3>Apple</h3>
+              <p>
+                iOS provides Keychain, clipboard, Dynamic Type, WebView storage,
+                and on-device Translation capabilities used by the App. Apple’s
+                handling of information through its platform is governed by
+                Apple’s policies and your device settings.
+              </p>
+
+              <p>
+                MD Viewer does not share information with advertising networks,
+                analytics providers, or data brokers. If you follow a link to an
+                external website, that website’s own privacy practices apply.
+              </p>
+              <p>
+                MD Viewer only uses external services needed to provide the
+                features you request. Any service provider engaged to process
+                information for the App must provide privacy protections
+                consistent with this policy and applicable law. The developer does
+                not authorize those providers to use App information for MD Viewer
+                advertising or marketing.
+              </p>
+            </section>
+
+            <section id="storage">
+              <div class="section-heading">
+                <span class="section-number">05</span>
+                <h2>Storage and retention</h2>
+              </div>
+
+              <h3>Credentials</h3>
+              <p>
+                GitHub OAuth tokens remain in the iOS Keychain until you sign out,
+                the credentials expire, or you revoke the App’s authorization in
+                GitHub. Signing out removes the local Keychain credentials.
+              </p>
+
+              <h3>Preferences and navigation</h3>
+              <p>
+                Reader settings, interface language, selected repository, and
+                navigation coordinates stay on your device until you clear them,
+                sign out where applicable, or remove the App.
+              </p>
+
+              <h3>Repository cache</h3>
+              <p>
+                Repository content may be cached on your device. With offline
+                retention turned off, repository caches expire after one day and
+                are checked periodically. With offline retention turned on,
+                automatic expiry is disabled so content remains available until
+                you clear the cache, sign out, or remove the App. On-demand file
+                content is also subject to a size-bounded local cache.
+              </p>
+
+              <h3>GitHub records</h3>
+              <p>
+                Content and commits you submit are stored by GitHub as part of the
+                selected repository. Their retention and deletion follow your
+                GitHub repository settings and GitHub’s policies.
+              </p>
+            </section>
+
+            <section id="choices">
+              <div class="section-heading">
+                <span class="section-number">06</span>
+                <h2>Your privacy choices</h2>
+              </div>
+              <p>You control the App’s access and local data. You may:</p>
+              <ul>
+                <li>choose which repositories the GitHub App can access;</li>
+                <li>turn offline retention on or off;</li>
+                <li>clear the local repository cache from App settings;</li>
+                <li>sign out to remove credentials, history, and cached content;</li>
+                <li>
+                  revoke MD Viewer from your
+                  <a href="https://github.com/settings/installations"
+                    >GitHub App installations</a
+                  >; and
+                </li>
+                <li>remove the App to delete its remaining device-local data.</li>
+              </ul>
+              <p>
+                To remove content already committed to GitHub, use GitHub’s
+                repository controls or contact the relevant repository owner.
+              </p>
+              <p>
+                Depending on where you live, you may also have rights to access,
+                correct, delete, restrict, or obtain a copy of personal information.
+                The developer does not maintain an MD Viewer account database or a
+                server-side copy of your App data. Use GitHub’s privacy controls for
+                information held by GitHub, or contact the developer if you believe
+                the developer holds personal information about you.
+              </p>
+            </section>
+
+            <section id="security">
+              <div class="section-heading">
+                <span class="section-number">07</span>
+                <h2>Security</h2>
+              </div>
+              <p>
+                MD Viewer uses GitHub’s HTTPS endpoints for network communication
+                and stores OAuth credentials using the iOS Keychain. Credentials
+                are separated from repository caches and are never written into
+                repository content, App logs, or this website.
+              </p>
+              <p>
+                No method of storage or transmission is completely secure. Keep
+                your device and GitHub account protected, review the repositories
+                granted to the App, and revoke access if you believe your account
+                or device has been compromised.
+              </p>
+            </section>
+
+            <section id="children">
+              <div class="section-heading">
+                <span class="section-number">08</span>
+                <h2>Children’s privacy</h2>
+              </div>
+              <p>
+                MD Viewer is a developer and productivity tool and is not directed
+                to children under 13. The developer does not knowingly collect
+                personal information from children. GitHub account eligibility is
+                governed by GitHub’s terms.
+              </p>
+            </section>
+
+            <section id="changes">
+              <div class="section-heading">
+                <span class="section-number">09</span>
+                <h2>Changes to this policy</h2>
+              </div>
+              <p>
+                This policy may be updated when MD Viewer’s features, data
+                practices, or legal obligations change. The effective date at the
+                top of this page will be revised when an update is published.
+              </p>
+            </section>
+
+            <section id="contact">
+              <div class="section-heading">
+                <span class="section-number">10</span>
+                <h2>Contact</h2>
+              </div>
+              <p>
+                For privacy questions, support, or requests concerning MD Viewer,
+                contact the developer through the public support issue tracker.
+                Please do not include access tokens, private repository content,
+                or other secrets in a public issue.
+              </p>
+
+              <div class="contact-card">
+                <div>
+                  <h3>MD Viewer Support</h3>
+                  <p>Privacy questions and product support</p>
+                </div>
+                <a
+                  class="contact-link"
+                  href="https://github.com/BizShuk/bizshuk.github.io/issues/new?title=MD%20Viewer%20Privacy%20Request"
+                  >Open support request</a
+                >
+              </div>
+            </section>
+          </article>
+        </div>
+      </main>
+
+      <footer>
+        <p>© 2026 MD Viewer. Built for private, focused reading.</p>
+        <nav aria-label="Footer links">
+          <a href="https://github.com/BizShuk">Developer</a>
+          <a href="https://github.com/BizShuk/bizshuk.github.io/issues"
+            >Support</a
+          >
+          <a href="#main-content">Back to top</a>
+        </nav>
+      </footer>
+    </div>
+  </body>
+</html>
