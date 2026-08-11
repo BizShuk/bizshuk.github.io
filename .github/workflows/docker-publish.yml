@@ -1,0 +1,53 @@
+# Canonical source: bizshuk/cloud/github/workflow/docker-publish.yml
+#
+# This file is byte-identical across every repo that publishes an image to
+# GHCR. Edit the canonical copy in the cloud repo, then re-sync — a local edit
+# here will be overwritten and silently diverge from the other repos.
+#
+# Publishes to ghcr.io/bizshuk/<repo>. Uses the built-in GITHUB_TOKEN, so no
+# secret needs to be configured. GHCR packages are created private by default
+# and are NOT auto-linked to the repository's own access control — grant the
+# pulling machine a PAT with read:packages, and link the package to this repo
+# from its Package settings page if repo-inherited access is wanted.
+#
+# The owner segment is hardcoded lowercase on purpose: github.repository_owner
+# resolves to "BizShuk", and GHCR rejects uppercase path segments.
+
+name: docker-publish
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: docker-publish-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/bizshuk/${{ github.event.repository.name }}:latest
+            ghcr.io/bizshuk/${{ github.event.repository.name }}:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
