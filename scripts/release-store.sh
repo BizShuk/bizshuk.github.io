@@ -11,7 +11,7 @@ POLICY_VALIDATOR="${POLICY_VALIDATOR:-${IPHONE_PROJECTS_ROOT}/.agents/skills/pol
 APPS=(
   "MinimalBrowser:MinimalBrowser"
   "iphone_sync:iphone_sync"
-  "live-casting:live-casting"
+  "castlan:castlan"
   "md-viewer:md-viewer"
   "push:push"
   "tally:tally"

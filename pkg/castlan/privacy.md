@@ -1,15 +1,15 @@
-# SurfCast Privacy Policy
+# CastLan Privacy Policy
 
 Effective August 10, 2026
 Last updated August 10, 2026
 
-SurfCast streams camera video, and optionally microphone audio, to an RTMP
+CastLan streams camera video, and optionally microphone audio, to an RTMP
 listener selected by the operator. The App does not operate a cloud relay or
 developer account service.
 
 ## 1. Scope
 
-This policy applies to SurfCast for iPhone, including camera capture, optional
+This policy applies to CastLan for iPhone, including camera capture, optional
 audio capture, local-network listener discovery, manual endpoint entry,
 streaming controls, and device-local operator settings.
 
@@ -34,11 +34,11 @@ server may view, record, transform, redistribute, or retain the stream under
 its own configuration and policies. The developer does not receive the stream
 unless the operator deliberately selects infrastructure operated by the
 developer. Apple provides camera, microphone, local-network, and other platform
-services. SurfCast also includes open-source streaming components.
+services. CastLan also includes open-source streaming components.
 
 ## 5. Storage and retention
 
-SurfCast stores endpoint and operator preferences locally in device settings.
+CastLan stores endpoint and operator preferences locally in device settings.
 The App does not persist captured video or audio. Retention at the chosen RTMP
 server is controlled by that server's owner and is outside the App's local
 storage controls.
@@ -55,13 +55,13 @@ controls of the selected server owner.
 
 The current stream uses RTMP without transport encryption or endpoint
 authentication. Anyone with suitable access to the network path or listener
-may be able to observe or receive it. Use SurfCast only on a trusted, segmented
+may be able to observe or receive it. Use CastLan only on a trusted, segmented
 network with a listener you control. Do not use the current release for
 sensitive or confidential capture.
 
 ## 8. Children's privacy
 
-SurfCast is an operator camera tool and is not directed to children under 13.
+CastLan is an operator camera tool and is not directed to children under 13.
 The developer does not knowingly collect children's information through an
 App-operated service.
 
