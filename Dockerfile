@@ -1,22 +1,37 @@
 # syntax=docker/dockerfile:1
 
+FROM nginx:1.29-alpine AS image-build
+WORKDIR /home/app/src
+
+COPY . .
+RUN mkdir -p /home/app/out/html \
+    && cp -a . /home/app/out/html/ \
+    && rm -rf \
+        /home/app/out/html/.git \
+        /home/app/out/html/Dockerfile \
+        /home/app/out/html/docker \
+    && find /home/app/out -type f -name '*.map' -delete \
+    && cp docker/nginx.conf /home/app/out/nginx.conf \
+    && printf '%s\n' '#!/bin/sh' 'exec nginx -c /home/app/out/nginx.conf -g "daemon off;"' > /home/app/out/entrypoint.sh \
+    && chmod +x /home/app/out/entrypoint.sh
+
 FROM nginx:1.29-alpine
-COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
-
-COPY . /usr/share/nginx/html
-RUN rm -rf \
-    /usr/share/nginx/html/.git \
-    /usr/share/nginx/html/Dockerfile \
-    /usr/share/nginx/html/docker \
-    && addgroup -S -g 10001 app \
+RUN addgroup -S -g 10001 app \
     && adduser -S -D -u 10001 -G app -h /home/app app \
-    && touch /var/run/nginx.pid \
-    && chown -R app:app /etc/nginx/conf.d /usr/share/nginx/html /var/cache/nginx /var/run/nginx.pid
+    && install -d -o app -g app \
+        /home/app/.config/bizshuk.github.io/data \
+        /home/app/.config/bizshuk.github.io/logs \
+    && printf '{}\n' > /home/app/.config/bizshuk.github.io/settings.json \
+    && chown app:app /home/app/.config/bizshuk.github.io/settings.json \
+    && chown -R app:app /var/cache/nginx
+WORKDIR /home/app
 
-ENV HOME=/home/app
+COPY --from=image-build --chown=app:app /home/app/out ./out
+RUN ln -s /home/app/out/entrypoint.sh /home/app/app \
+    && chown -h app:app /home/app/app
 
 EXPOSE 8306
 
 USER app
 
-CMD ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["/home/app/app"]
