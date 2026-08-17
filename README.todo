@@ -1,0 +1,41 @@
+# TODO
+
+- [ ] `README.md` / `CLAUDE.md` 已與現況分岔: 兩份文件都寫「無 `package.json`」「無 build step」「未偵測到部署設定」,
+      但 repo 內已有 `package.json`(`dev` / `build` / `deploy` / `release:store` scripts)、`Dockerfile`、
+      `docker/nginx.conf`。下次動文件時同步修正,不要再新增第三份說法。
+- [ ] `pkg/` 底下的 App Store 政策頁 (App Store Policy Pages) 是第三個業務領域,README 的
+      `業務領域 (Business Domains)` 只寫了作品集與履歷兩個,缺這一節。
+
+## 作品集頁面 (Gallery)
+
+- [ ] 把 gallery 圖片從 `i.imgur.com` 搬到本地 `assets/images/gallery/`。目前 tile 底圖與履歷相片牆
+      都靠第三方圖床 hot-link,imgur 一改政策封面就整片消失。
+- [ ] `data/gallery.json` 中 `link` 為空字串的 decorative tile 會渲染成不可點的 `<div>`,
+      視覺上和可點 tile 一樣。補上連結,或在 README 明說它們是佔位。
+- [ ] gallery tile 補 `aria-label` / 鍵盤 focus 樣式,目前只有滑鼠可用。
+
+## 履歷頁面 (Resume)
+
+- [ ] `resume.html` 的 experience / skills / education / demo 四區塊全部 inline 手寫。
+      比照 gallery 抽成 JSON 資料層,才有辦法再輸出 PDF 或 hResume JSON-LD。
+- [ ] `js/resume.js` 的相片牆拖曳只綁 mouse 事件,沒有 touch 與鍵盤路徑;
+      `scroll-snap` 的鍵盤導航也未處理。
+
+## 版面共用 (Shared Layout)
+
+- [ ] `index.html`、`resume.html`、`surf.html` 各自重複 font import、favicon、referrer meta。
+      抽成 client-side include 或共用 fragment,改一次就好。
+- [ ] `data/params.json` 是原始 GitHub Pages 產生器留下的 legacy metadata,沒有任何 handler 讀它。
+      刪掉或在文件裡註明它不是真實來源。
+
+## 品質防線 (Quality Gate)
+
+- [ ] 沒有任何 CI、lint、測試。至少加一個 dead-link / broken-image 檢查,
+      現況只能靠人工開瀏覽器確認。
+
+## 計畫回填 (Plan Backfill)
+
+- [ ] `plans/2026-06-15-surfer-intro-implementation.md` 與 `-v2.md` 的 step checkbox 全部仍是未勾,
+      但 `sample/intro.html`、`sample/intro-v2.html` 已存在。確認實作範圍後回填勾選或標記放棄。
+
+## Archive
