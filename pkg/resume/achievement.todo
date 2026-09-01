@@ -1,0 +1,39 @@
+TSMC:
+    stack: K8S(Docker, Istio, EFK, prometheus, Grafana, EFK, Argo, Kong, Nats), Node, Redis, Azure DevOps
+    Leadership:
+        ✔ Architect whole system and hand to senior properly (Feedback from attendee: even I was going to leave, It is still clear on what I design to members take it.) @done(22-10-30 18:12)
+        ✔ Drive roadmap to Department manager(Deputy Director) @done(22-10-30 18:14)
+
+    Project:
+        ✔ Promote Scrum methodology
+        ✔ Architect AI Vision platform including security
+        ✔ GPU Job Scheduler,
+            Nodejs + Fasity + Mongo with best practice on code. (most of function less than 20~30lines,95% coverage)
+        ✔ PoC tools (Kong API gateway, Nats)
+        ✔ CI/CD flow on Azure DevOps in TSMC
+        ✔ Operation (Error SOP with notification)
+
+CHC:
+    stack:  Scrum, AWS, Golang, Java (Spring Boot, MVC, Batch, Data), ElasticSearch, React
+    Leadership:
+        ✔ Convincing senior director when commenting new rules should have proper notice.
+        ✔ Satisfy geek staff engineer on code review just by telling to junior developer how to do
+        ✔ Convincing members to take legacy tasks willingly and consume priority point for some cutting edge tasks. @done(22-10-30 18:10)
+    Project:
+        ✔ Lead one team around 5p and coordinate with other teams inside/outside department
+        ✔ Assess interviewees tech level from junior to lead level around 30 rounds, forward 10 to next
+        ✔ Async file event batch process(S3)
+        ✔ User engagement service (Pinpoint, CloudFront)
+        ✔ Log alerting(CloudWatch, SNS)
+        ✔ Enterprise solutions migration (AWS, Apigee)
+        Frameworks:
+            ✔ Lambda
+            ✔ Event Annotation
+            ✔ Spring Secret Manager plugin
+            ✔ EventBus
+
+Droi:
+    Project:
+
+Gamesofa:
+    Project:
