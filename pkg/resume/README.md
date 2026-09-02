@@ -22,4 +22,4 @@
 
 ## 關聯 (Related)
 
-- `../../resume.html` — 線上履歷頁,內容應與本資料夾的 PDF 保持一致
+- `index.html` — 線上履歷頁 (原 `../../resume.html` 已移除),內容應與本資料夾的 PDF 保持一致

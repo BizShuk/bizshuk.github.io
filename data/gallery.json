@@ -5,13 +5,13 @@
         "backgroundImage": "url('https://i.imgur.com/SpbbJ3z.jpg?1')"
     }
 }, {
-    "link": "resume.html",
+    "link": "pkg/resume/index.html",
     "img_title": "Resume (non-updated)",
     "style": {
         "backgroundImage": "url('https://i.imgur.com/hx7Oymx.jpg')"
     }
 }, {
-    "link": "surf.html",
+    "link": "pkg/surf/index.html",
     "img_title": "Surf · Uluwatu",
     "style": {
         "backgroundImage": "url('assets/images/personal/surf/uluwatu-dropin.jpg')"

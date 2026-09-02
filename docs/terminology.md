@@ -17,23 +17,19 @@
 
 | 術語 (Term) | 英文 (English) | 定義 (Definition) | 出處 (Source) |
 | ----------- | -------------- | ----------------- | ------------- |
-| 相片牆 | Photo Gallery | 履歷頁頂端的橫向捲動相片列,以 `scroll-snap` 對齊 | `resume.html` `.photo-gallery`, `css/resume.css` |
-| 拖曳捲動 | Drag-to-Scroll | 以 `mousedown` / `mousemove` / `mouseup` / `mouseleave` 四個 listener 模擬的相片牆滑鼠拖曳。倍率固定 `* 2` | `js/resume.js` |
-| 經歷項 | Timeline Item | 工作經歷區塊的單筆條目(雇主、職稱、期間、條列)。內容 inline 手寫,無資料層 | `resume.html` `#experience` |
-| 技能標籤 | Skill Tag | 技能分類下的藥丸狀 chip | `resume.html` `#skills` |
-| 學歷卡 | Education Card | 校名 / 學位 / 期間 + 校園照的卡片。圖片失效時走 inline `onerror` fallback | `resume.html` `#education` |
-| 作品卡 | Demo Card | 連往過往專案截圖的錨點卡片 | `resume.html` `#demo` |
+| 經歷項 | Timeline Item | 工作經歷區塊的單筆條目(職稱、公司與地點、期間、條列)。內容 inline 手寫,無資料層 | `pkg/resume/index.html` `.job` |
+| 技能標籤 | Skill Tag | 技能分類下的藥丸狀 chip | `pkg/resume/index.html` `.tag` |
 
 ## 衝浪頁 (Surf Editorial)
 
 | 術語 (Term) | 英文 (English) | 定義 (Definition) | 出處 (Source) |
 | ----------- | -------------- | ----------------- | ------------- |
-| 章 | Chapter | 長卷軸雜誌版面的一個編號段落,含 `chapter-no` / `chapter-label` / `chapter-rule` | `surf.html` `.chapter` |
-| 足跡 | Footprints | 衝浪地點列表區塊(Bali / Lombok / Taiwan) | `surf.html` `#footprints` |
-| 板櫃 | Quiver | 衝浪板收藏區塊,每張板有 `board-brand` / `board-model` / `board-role` / `board-note` | `surf.html` `#quiver` |
-| 浪點 | Spot | 足跡區塊內的單一衝浪點,含 `spot-name` / `spot-tag` / `spot-note` | `surf.html` `.spot` |
-| 捲動顯影 | Reveal | 元素進入視窗時由 `IntersectionObserver` 加上 `is-visible` 的漸入效果。threshold 為 `0.15` | `js/surf.js`, `surf.html` `.reveal` |
-| JS 旗標 | `js` class | `js/surf.js` 在 `documentElement` 掛上的 class。作為 progressive enhancement 開關 — 沒有 JS 時內容維持全可見 | `js/surf.js`, `css/surf.css` |
+| 章 | Chapter | 長卷軸雜誌版面的一個編號段落,含 `chapter-no` / `chapter-label` / `chapter-rule` | `pkg/surf/index.html` `.chapter` |
+| 足跡 | Footprints | 衝浪地點列表區塊(Bali / Lombok / Taiwan) | `pkg/surf/index.html` `#footprints` |
+| 板櫃 | Quiver | 衝浪板收藏區塊,每張板有 `board-brand` / `board-model` / `board-role` / `board-note` | `pkg/surf/index.html` `#quiver` |
+| 浪點 | Spot | 足跡區塊內的單一衝浪點,含 `spot-name` / `spot-tag` / `spot-note` | `pkg/surf/index.html` `.spot` |
+| 捲動顯影 | Reveal | 元素進入視窗時由 `IntersectionObserver` 加上 `is-visible` 的漸入效果。threshold 為 `0.15` | `pkg/surf/surf.js`, `pkg/surf/index.html` `.reveal` |
+| JS 旗標 | `js` class | `pkg/surf/surf.js` 在 `documentElement` 掛上的 class。作為 progressive enhancement 開關 — 沒有 JS 時內容維持全可見 | `pkg/surf/surf.js`, `pkg/surf/surf.css` |
 
 ## App Store 政策頁 (Store Policy Pages)
 
@@ -61,5 +57,5 @@
 
 ## 待補 (To be extended)
 
-- `css/index.css`、`css/resume.css`、`css/surf.css` 各自維護一組 `:root` design token,
+- `css/index.css`、`pkg/surf/surf.css` 與 `pkg/resume/index.html` 的 inline 樣式各自維護一組 `:root` design token,
   尚未整理出共用命名。統一 token 之後再把 token 名收進本表。

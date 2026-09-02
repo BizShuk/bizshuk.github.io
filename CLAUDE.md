@@ -5,8 +5,6 @@
 ```tree
 bizshuk.github.io/
 ├── index.html              # 入口頁 (gallery landing)
-├── resume.html             # 履歷頁 (long-form CV)
-├── surf.html               # 衝浪頁 (ocean editorial, Uluwatu hero)
 ├── README.md
 ├── CLAUDE.md
 │
@@ -21,19 +19,22 @@ bizshuk.github.io/
 │       ├── photos/         # 歷史生活照片 (未在現有頁面中使用)
 │       └── profile/shuk-profile.jpg
 │
-├── css/
-│   ├── index.css           # gallery 頁樣式
-│   ├── resume.css          # resume 頁樣式
-│   └── surf.css            # surf 頁樣式 (ocean editorial tokens)
+├── css/index.css           # gallery 頁樣式
+├── js/gallery.js           # DOMContentLoaded → fetch gallery.json → 渲染格狀
 │
-├── js/
-│   ├── gallery.js          # DOMContentLoaded → fetch gallery.json → 渲染格狀
-│   ├── resume.js           # footer 年份 + 橫向相簿拖曳捲動
-│   └── surf.js             # IntersectionObserver reveal + footer 年份
+├── data/
+│   ├── gallery.json        # gallery tile 資料來源
+│   └── params.json         # legacy GitHub Pages metadata (未使用)
 │
-└── data/
-    ├── gallery.json        # gallery tile 資料來源
-    └── params.json         # legacy GitHub Pages metadata (未使用)
+└── pkg/                    # 各自封裝的子頁面 (subpage packages)
+    ├── resume/
+    │   ├── index.html      # 履歷頁 (sunny 風格,樣式與腳本 inline)
+    │   ├── Resume.md       # 履歷內容主稿
+    │   └── export/*.pdf    # 可下載的履歷 PDF
+    └── surf/
+        ├── index.html      # 衝浪頁 (ocean editorial, Uluwatu hero)
+        ├── surf.css        # ocean editorial tokens
+        └── surf.js         # IntersectionObserver reveal + footer 年份
 ```
 
 `.gitignore` 內容：
@@ -54,7 +55,6 @@ bizshuk.github.io/
 關鍵相依：
 
 - 瀏覽器原生 `fetch` (gallery.js)
-- 瀏覽器原生 `scroll-snap` (resume.css `.photo-gallery`)
 - Google Fonts CDN
 - 第三方圖床 (imgur.com)
 
@@ -63,12 +63,11 @@ bizshuk.github.io/
 - Decision 1: 不使用任何前端框架。`index.html` 透過原生 `fetch` 從
   `data/gallery.json` 拉資料,以保持頁面輕量、避免 bundler 依賴。
 - Decision 2: 將頁面邏輯切到外部 `js/` 與樣式切到 `css/` 進行分離,讓
-  `index.html` / `resume.html` 只保留 semantic markup。
+  `index.html` 只保留 semantic markup;`pkg/` 下的子頁面則自成一包,樣式與腳本隨頁面放在同一資料夾。
 - Decision 3: 圖片以外部 CDN (imgur) 為主,減少 repo 體積,但代價是依賴
   第三方 hot-link 政策 (見 README 改善建議)。
-- Decision 4: `resume.html` 採用純手寫 HTML 而非模板引擎。所有 work
-  experience、skills、education、demo 區塊直接 inline 在 HTML 中,換得零
-  工具鏈成本。
+- Decision 4: 履歷頁採用純手寫 HTML 而非模板引擎,內容以 `pkg/resume/Resume.md`
+  為主稿手動同步,換得零工具鏈成本。
 - Decision 5: 在兩個 HTML 頁面都使用 `<meta name="referrer" content="no-referrer">`,
   避免將 referrer 洩漏給第三方 (imgur、外部社交連結)。
 - Decision 6: 教育卡片使用 inline `onerror="this.src='https://via.placeholder.com/...'"` 處理圖片失效情境,確保卡片 layout 不會破。
@@ -80,10 +79,8 @@ bizshuk.github.io/
 | 業務領域 (Domain)               | 套件/模組 (Package/Module)                                          | 進入點 (Entry Point)                           |
 | ------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------- |
 | 個人作品集 (Personal Portfolio) | `index.html`, `js/gallery.js`, `data/gallery.json`, `css/index.css` | `DOMContentLoaded` listener in `js/gallery.js` |
-| 履歷展示 (Resume Showcase)      | `resume.html`, `js/resume.js`, `css/resume.css`                     | Top-level load in `js/resume.js` (year + drag) |
-| 履歷圖片 (Resume Photos)        | `resume.html` `.photo-gallery`                                      | 15 inline `<img>` in `resume.html`             |
-| 衝浪頁 (Surf Page)              | `surf.html`, `js/surf.js`, `css/surf.css`                           | `DOMContentLoaded` listener in `js/surf.js`    |
-| 教育卡片 (Education Cards)      | `assets/images/personal/edu/*`                                      | `resume.html` `.education-card` + `onerror`    |
+| 履歷展示 (Resume Showcase)      | `pkg/resume/index.html` (樣式與腳本 inline)                         | 頁尾 inline `<script>` (年份 + 捲動顯影)       |
+| 衝浪頁 (Surf Page)              | `pkg/surf/index.html`, `pkg/surf/surf.js`, `pkg/surf/surf.css`      | `DOMContentLoaded` listener in `pkg/surf/surf.js` |
 
 ## 開發指南 (Development Guide)
 
@@ -107,7 +104,7 @@ bizshuk.github.io/
 
 1. 開啟 `index.html` 並確認 gallery 16 個 tile 都正確載入
 2. 將 `data/gallery.json` 暫時改成非法 JSON,確認 console 有錯誤訊息
-3. 開啟 `resume.html` 並確認 footer 年份、橫向相簿拖曳、教育卡片 fallback
+3. 開啟 `pkg/resume/index.html` 確認 PDF 下載連結,以及 `pkg/surf/index.html` 的捲動顯影
 
 ### 部署 (Deploy)
 
@@ -117,11 +114,11 @@ bizshuk.github.io/
 
 ## 慣例 (Conventions)
 
-- Naming: kebab-case 用於檔名 (`gallery.js`, `resume.css`);camelCase
+- Naming: kebab-case 用於檔名 (`gallery.js`, `surf.css`);camelCase
   用於 CSS class 中的複合名 (`gallery-item`, `gallery-item-overlay`)。
 - CSS variables: 兩個 stylesheet 都以 `:root` 宣告 design tokens
-  (`--primary-color`, `--bg-color`, ...)。`index.css` 與 `resume.css`
-  分別維護自己的 token 集合,沒有抽出 shared token 檔。
+  (`--primary-color`, `--bg-color`, ...)。各頁面分別維護自己的 token 集合,
+  沒有抽出 shared token 檔。
 - Error handling: JS 端僅在 `gallery.js` 的 `fetch` chain 結尾有
   `console.error`,沒有 UI 層級的 fallback;HTML 端用 inline `onerror`
   處理圖片失效。

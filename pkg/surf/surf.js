@@ -1,4 +1,4 @@
-/* surf.html - Reveal-on-scroll and footer year.
+/* pkg/surf/index.html - Reveal-on-scroll and footer year.
  * Progressive enhancement: without JS, all content stays visible.
  */
 document.documentElement.classList.add('js');
