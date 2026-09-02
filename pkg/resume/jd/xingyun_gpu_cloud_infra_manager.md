@@ -46,6 +46,8 @@
 > 3. 團隊現有編制與可招募 headcount, 六項職責的實際分攤.
 > 4. 住房補貼, 返鄉機票, 醫療保險是否為免稅福利; package 是否含股權.
 >
+> `延伸文件`: 缺口的詳細說明與學習路徑見 [xingyun_gap_analysis_and_study_map.md](xingyun_gap_analysis_and_study_map.md); 稅務與居留分析見 `research/work/docs/cases/2026-09-02-xingyun-gpu-cloud-malaysia.md`.
+>
 > `文件缺陷`: 下方「加分項 (優先考慮)」標題重複兩次, 第一段內容為任職要求第 7 點的誤植.
 
 
