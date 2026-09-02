@@ -1,6 +1,6 @@
 # Liu, Teng-Yuan (Shuk Liu)
 
-<biz.shuk@gmail.com> · [LinkedIn](https://www.linkedin.com/in/initialshuk/) · [WhatsApp](https://api.whatsapp.com/send?phone=6580129716) Last updated: 2026-09-02.
+<biz.shuk@gmail.com> · [LinkedIn](https://www.linkedin.com/in/bizshuk/) · [WhatsApp](https://api.whatsapp.com/send?phone=6580129716) Last updated: 2026-09-02.
 
 > Singapore Permanent Resident (PR), currently based in Singapore. 12+ years of experience, focused on
 > system architecture (organisation design included) and AI orchestration. Familiar with the majority of

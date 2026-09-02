@@ -1,714 +1,1183 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shuk Liu — Resume</title>
-    <meta name="description" content="Resume of Liu, Teng-Yuan (Shuk Liu) — system architecture and AI orchestration.">
-    <meta name="referrer" content="no-referrer">
-    <meta property="og:title" content="Shuk Liu — Resume">
-    <meta property="og:description" content="12+ years in system architecture and AI orchestration.">
-    <meta property="og:image" content="../../assets/images/profile/shuk-profile.jpg">
-
-    <link rel="icon" type="image/jpeg" href="../../assets/images/profile/shuk-profile.jpg">
-    <link rel="apple-touch-icon" href="../../assets/images/profile/shuk-profile.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --sun-1: #FFC53D;
-            --sun-2: #FF9F1C;
-            --coral: #FF6B4A;
-            --sky: #29A9E0;
-            --leaf: #2FB380;
-            --ink: #22303C;
-            --muted: #5F7180;
-            --line: #F0E2CB;
-            --bg: #FFFDF6;
-            --card: #FFFFFF;
-            --shadow: 0 10px 30px rgba(255, 159, 28, .12);
-            --shadow-lg: 0 18px 48px rgba(214, 132, 20, .18);
-            --radius: 18px;
-            --max: 940px;
-        }
-
-        * { box-sizing: border-box; }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: var(--ink);
-            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-weight: 400;
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a { color: inherit; }
-
-        /* ---------- PDF download (icon only) ---------- */
-        .btn-pdf {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--sun-1), var(--sun-2));
-            color: #4A2C00;
-            text-decoration: none;
-            box-shadow: var(--shadow-lg);
-            transition: transform .18s ease, box-shadow .18s ease;
-        }
-
-        .btn-pdf:hover { transform: translateY(-3px) scale(1.04); }
-        .btn-pdf svg { width: 24px; height: 24px; }
-
-        .btn-pdf.floating {
-            position: fixed;
-            top: 20px;
-            right: 22px;
-            z-index: 30;
-            border: 3px solid rgba(255, 255, 255, .85);
-        }
-
-        /* ---------- Hero ---------- */
-        .hero {
-            position: relative;
-            overflow: hidden;
-            background:
-                radial-gradient(900px 420px at 78% -12%, rgba(255, 197, 61, .55), transparent 62%),
-                linear-gradient(165deg, #FFF6DF 0%, #FFEDE2 52%, #EAF7FF 100%);
-            padding: 68px 24px 76px;
-        }
-
-        .sunburst {
-            position: absolute;
-            top: -180px;
-            right: -140px;
-            width: 520px;
-            height: 520px;
-            opacity: .5;
-            pointer-events: none;
-        }
-
-        .hero-inner {
-            position: relative;
-            max-width: var(--max);
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .avatar-wrap { position: relative; flex: 0 0 auto; }
-
-        .avatar-wrap::after {
-            content: "";
-            position: absolute;
-            inset: -14px;
-            border-radius: 50%;
-            background: conic-gradient(from 210deg, var(--sun-1), var(--coral), var(--sun-1));
-            opacity: .35;
-            filter: blur(14px);
-            z-index: 0;
-        }
-
-        .avatar {
-            position: relative;
-            z-index: 1;
-            width: 168px;
-            height: 168px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #fff;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .hero-text { flex: 1 1 340px; min-width: 280px; }
-
-        .eyebrow {
-            display: inline-block;
-            padding: 5px 14px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, .75);
-            border: 1px solid rgba(255, 159, 28, .38);
-            color: #B26100;
-            font-size: .74rem;
-            font-weight: 600;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-
-        h1 {
-            margin: 0 0 6px;
-            font-size: clamp(2.1rem, 5.2vw, 3.1rem);
-            font-weight: 700;
-            letter-spacing: -.015em;
-            line-height: 1.15;
-        }
-
-        .role {
-            margin: 0 0 18px;
-            font-size: 1.02rem;
-            font-weight: 600;
-            background: linear-gradient(100deg, var(--sun-2), var(--coral));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .summary { margin: 0 0 22px; color: #3D4B57; max-width: 56ch; }
-
-        .contact { display: flex; flex-wrap: wrap; gap: 10px; }
-
-        .chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            padding: 8px 15px;
-            border-radius: 999px;
-            background: #fff;
-            border: 1px solid var(--line);
-            font-size: .84rem;
-            font-weight: 500;
-            text-decoration: none;
-            box-shadow: 0 3px 10px rgba(180, 120, 20, .07);
-            transition: transform .16s ease, border-color .16s ease;
-        }
-
-        .chip:hover { transform: translateY(-2px); border-color: var(--sun-2); }
-
-        /* ---------- Layout ---------- */
-        main { max-width: var(--max); margin: 0 auto; padding: 0 24px 40px; }
-
-        section { padding: 52px 0 8px; }
-
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin: 0 0 26px;
-            font-size: 1.32rem;
-            font-weight: 700;
-            letter-spacing: -.01em;
-        }
-
-        .section-title::before {
-            content: "";
-            width: 13px;
-            height: 13px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--sun-1), var(--coral));
-            box-shadow: 0 0 0 5px rgba(255, 197, 61, .22);
-            flex: 0 0 auto;
-        }
-
-        .section-title::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, var(--line), transparent);
-        }
-
-        /* ---------- Cards ---------- */
-        .card {
-            background: var(--card);
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            padding: 22px 24px;
-            box-shadow: 0 6px 20px rgba(190, 130, 30, .07);
-            transition: transform .2s ease, box-shadow .2s ease;
-        }
-
-        .card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-
-        .grid { display: grid; gap: 14px; }
-        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-
-        .edu-item h3 { margin: 0 0 4px; font-size: 1rem; font-weight: 600; }
-        .edu-item p { margin: 0; font-size: .86rem; color: var(--muted); }
-
-        /* ---------- Skills ---------- */
-        .skill-row {
-            display: grid;
-            grid-template-columns: 150px 1fr;
-            gap: 8px 20px;
-            padding: 14px 0;
-            border-bottom: 1px dashed var(--line);
-        }
-
-        .skill-row:last-child { border-bottom: 0; }
-
-        .skill-label {
-            font-weight: 600;
-            font-size: .84rem;
-            letter-spacing: .06em;
-            text-transform: uppercase;
-            color: #C07200;
-        }
-
-        .tags { display: flex; flex-wrap: wrap; gap: 7px; }
-
-        .tag {
-            padding: 4px 12px;
-            border-radius: 999px;
-            font-size: .8rem;
-            font-weight: 500;
-            background: linear-gradient(135deg, #FFF6E0, #FFEFE6);
-            border: 1px solid rgba(255, 159, 28, .3);
-            color: #6B4A16;
-        }
-
-        .tag.sky { background: linear-gradient(135deg, #EAF6FF, #E6FBF3); border-color: rgba(41, 169, 224, .32); color: #14607F; }
-
-        .note { color: var(--muted); font-size: .9rem; margin: -12px 0 20px; }
-
-        /* ---------- Timeline ---------- */
-        .timeline { position: relative; padding-left: 30px; }
-
-        .timeline::before {
-            content: "";
-            position: absolute;
-            left: 6px;
-            top: 8px;
-            bottom: 8px;
-            width: 2px;
-            background: linear-gradient(180deg, var(--sun-1), var(--coral) 55%, rgba(41, 169, 224, .5));
-            border-radius: 2px;
-        }
-
-        .job { position: relative; margin-bottom: 26px; }
-
-        .job::before {
-            content: "";
-            position: absolute;
-            left: -30px;
-            top: 26px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: #fff;
-            border: 3px solid var(--sun-2);
-            box-shadow: 0 0 0 4px rgba(255, 197, 61, .2);
-        }
-
-        .job.now::before { border-color: var(--leaf); box-shadow: 0 0 0 4px rgba(47, 179, 128, .2); }
-
-        .job-head {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            justify-content: space-between;
-            gap: 6px 16px;
-            margin-bottom: 4px;
-        }
-
-        .job-title { margin: 0; font-size: 1.05rem; font-weight: 700; }
-
-        .job-date {
-            font-size: .8rem;
-            font-weight: 600;
-            color: #B26100;
-            background: #FFF6E2;
-            border-radius: 999px;
-            padding: 3px 12px;
-            white-space: nowrap;
-        }
-
-        .job.now .job-date { color: #1B7B57; background: #E9F9F2; }
-
-        .job-org { margin: 0 0 10px; font-size: .92rem; font-weight: 600; color: var(--sky); }
-
-        .job-meta { margin: 0 0 12px; font-size: .85rem; color: var(--muted); }
-
-        ul.points { margin: 0; padding: 0; list-style: none; }
-
-        ul.points li {
-            position: relative;
-            padding-left: 22px;
-            margin-bottom: 8px;
-            font-size: .93rem;
-        }
-
-        ul.points li::before {
-            content: "";
-            position: absolute;
-            left: 4px;
-            top: .68em;
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--sun-1), var(--coral));
-        }
-
-        ul.points li:last-child { margin-bottom: 0; }
-
-        /* ---------- Other experience ---------- */
-        .other-item h3 { margin: 0 0 2px; font-size: 1rem; font-weight: 600; }
-        .other-item .job-meta { margin-bottom: 10px; }
-        .other-item p { margin: 0 0 10px; font-size: .92rem; color: #3D4B57; }
-
-        /* ---------- Footer ---------- */
-        footer {
-            margin-top: 30px;
-            padding: 34px 24px 44px;
-            text-align: center;
-            background: linear-gradient(180deg, transparent, #FFF3DC);
-            border-top: 1px solid var(--line);
-        }
-
-        footer p { margin: 0 0 14px; color: var(--muted); font-size: .85rem; }
-
-        .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
-        .reveal.visible { opacity: 1; transform: none; }
-
-        @media (max-width: 640px) {
-            .btn-pdf.floating { top: 14px; right: 14px; width: 46px; height: 46px; }
-            .btn-pdf.floating svg { width: 21px; height: 21px; }
-            .hero { padding: 44px 20px 54px; }
-            .hero-inner { gap: 26px; }
-            .avatar { width: 124px; height: 124px; }
-            main { padding: 0 18px 30px; }
-            .skill-row { grid-template-columns: 1fr; gap: 8px; }
-            .job-head { flex-direction: column; }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            .reveal { opacity: 1; transform: none; transition: none; }
-        }
-
-        @media print {
-            .btn-pdf, footer, .sunburst { display: none; }
-            body { background: #fff; }
-            .card, .hero { box-shadow: none; }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- PDF download (icon only, floats top right) -->
-    <a class="btn-pdf floating" href="export/Resume-ShukLiu.pdf" download title="Download PDF resume" aria-label="Download PDF resume">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 3 14 8 19 8"></polyline>
-            <polyline points="9.5 12.5 12 15 14.5 12.5"></polyline>
-            <line x1="12" y1="15" x2="12" y2="10.5"></line>
-        </svg>
-    </a>
-
-    <!-- Hero -->
-    <header class="hero" id="top">
-        <svg class="sunburst" viewBox="0 0 200 200" aria-hidden="true">
-            <g fill="none" stroke="#FFB53D" stroke-width="2" stroke-linecap="round" opacity=".55">
-                <circle cx="100" cy="100" r="42" stroke-width="3"></circle>
-                <path d="M100 30V8M100 192v-22M30 100H8M192 100h-22M50 50 34 34M166 166l-16-16M150 50l16-16M34 166l16-16"></path>
-                <circle cx="100" cy="100" r="68" stroke-dasharray="4 12"></circle>
-            </g>
-        </svg>
-        <div class="hero-inner">
-            <div class="avatar-wrap">
-                <img class="avatar" src="../../assets/images/profile/shuk-profile.jpg" alt="Portrait of Shuk Liu">
-            </div>
-            <div class="hero-text">
-                <span class="eyebrow">☀ Open to build something good</span>
-                <h1>Liu, Teng-Yuan<br>(Shuk Liu)</h1>
-                <p class="role">System Architecture · AI Orchestration · 12+ years</p>
-                <p class="summary">
-                    Singapore Permanent Resident, currently based in Singapore. Focused on system architecture
-                    (organisation design included) and AI orchestration, and familiar with the majority of the
-                    tech stack, the SDLC and its methodologies.
-                </p>
-                <div class="contact">
-                    <a class="chip" href="mailto:biz.shuk@gmail.com">✉️ biz.shuk@gmail.com</a>
-                    <a class="chip" href="https://www.linkedin.com/in/initialshuk/" target="_blank" rel="noopener">🔗 LinkedIn</a>
-                    <a class="chip" href="https://api.whatsapp.com/send?phone=6580129716" target="_blank" rel="noopener">💬 WhatsApp</a>
-                    <span class="chip">📍 Singapore</span>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <main>
-
-        <!-- Education -->
-        <section class="reveal">
-            <h2 class="section-title">Education</h2>
-            <div class="grid grid-2">
-                <div class="card edu-item">
-                    <h3>M.S. in Computer Science</h3>
-                    <p>National Central University, Jongli, TW · 2009/09 ~ 2011/06</p>
-                </div>
-                <div class="card edu-item">
-                    <h3>B.S. in Computer Science</h3>
-                    <p>National Dong-Hua University, Hualien, TW · 2004/09 ~ 2009/06</p>
-                </div>
-                <div class="card edu-item">
-                    <h3>Taipei Municipal Heping High School</h3>
-                    <p>Taipei, TW · 2001/09 ~ 2004/06</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills -->
-        <section class="reveal">
-            <h2 class="section-title">Skills</h2>
-            <p class="note">Tools matter less than the patterns and concepts behind them.</p>
-            <div class="card">
-                <div class="skill-row">
-                    <div class="skill-label">Certificate</div>
-                    <div class="tags">
-                        <span class="tag">AWS Solutions Architect – Associate (2018/08)</span>
-                        <span class="tag">TOEIC 830 (2019/01)</span>
-                    </div>
-                </div>
-                <div class="skill-row">
-                    <div class="skill-label">Language</div>
-                    <div class="tags">
-                        <span class="tag">Golang</span><span class="tag">JavaScript</span>
-                        <span class="tag">Java (Spring Boot)</span><span class="tag">HTML5</span>
-                        <span class="tag">Bash</span><span class="tag">SQL</span>
-                    </div>
-                </div>
-                <div class="skill-row">
-                    <div class="skill-label">Test</div>
-                    <div class="tags">
-                        <span class="tag sky">Unit test (mock)</span><span class="tag sky">Integration test</span>
-                        <span class="tag sky">Stress test</span><span class="tag sky">Coverage above 90%</span>
-                    </div>
-                </div>
-                <div class="skill-row">
-                    <div class="skill-label">Infra / Tooling</div>
-                    <div class="tags">
-                        <span class="tag sky">AWS</span><span class="tag sky">Kubernetes (Istio)</span>
-                        <span class="tag sky">EFK</span><span class="tag sky">Docker</span>
-                        <span class="tag sky">Linux</span><span class="tag sky">GitLab</span>
-                        <span class="tag sky">Azure DevOps</span><span class="tag sky">RDB</span>
-                        <span class="tag sky">Elasticsearch</span><span class="tag sky">MongoDB</span>
-                        <span class="tag sky">Redis</span>
-                    </div>
-                </div>
-                <div class="skill-row">
-                    <div class="skill-label">Concept</div>
-                    <div class="tags">
-                        <span class="tag">Microservice</span><span class="tag">Event-driven</span>
-                        <span class="tag">HA</span><span class="tag">Scalability</span>
-                        <span class="tag">SOLID</span><span class="tag">Design pattern</span>
-                        <span class="tag">CI/CD</span><span class="tag">Cache</span>
-                        <span class="tag">TDD</span><span class="tag">RWD</span><span class="tag">SDLC</span>
-                    </div>
-                </div>
-                <div class="skill-row">
-                    <div class="skill-label">Methodology</div>
-                    <div class="tags">
-                        <span class="tag">Scrum</span><span class="tag">Agile</span><span class="tag">Lean</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Work Experience -->
-        <section class="reveal">
-            <h2 class="section-title">Work Experience</h2>
-            <div class="timeline">
-
-                <article class="card job now">
-                    <div class="job-head">
-                        <h3 class="job-title">AI Engineer</h3>
-                        <span class="job-date">2026/06 ~ present</span>
-                    </div>
-                    <p class="job-org">Self-directed</p>
-                    <ul class="points">
-                        <li>Work across a variety of AI models: Gemini, Claude, GPT, Grok, MiniMax, DeepSeek, Qwen, ElevenLabs.</li>
-                        <li>Built an Agent SDK that accommodates different providers and models behind one interface.</li>
-                        <li>Orchestrated personal infrastructure covering account, payment and cloud.</li>
-                        <li>Shipped several iOS tool apps, one product service, a surfing tracker and two voice agent prototypes (tutor, customer service).</li>
-                    </ul>
-                </article>
-
-                <article class="card job">
-                    <div class="job-head">
-                        <h3 class="job-title">Senior Software Engineer (Tech Lead)</h3>
-                        <span class="job-date">2023/01 ~ 2026/08</span>
-                    </div>
-                    <p class="job-org">ByteDance (TikTok PTE. LTD.) · Singapore</p>
-                    <ul class="points">
-                        <li>Aligned internal and external services onto a new data centre, coordinating across teams.</li>
-                        <li>Built a flexible data channel foundation between data centres to satisfy compliance and stability.</li>
-                        <li>Designed global data centre redundancy, lowering implementation and maintenance effort by 2 job grades.</li>
-                        <li>Designed a high-level task orchestration framework and drove adoption of a regional compliance migration framework across departments.</li>
-                    </ul>
-                </article>
-
-                <article class="card job">
-                    <div class="job-head">
-                        <h3 class="job-title">Senior Engineer</h3>
-                        <span class="job-date">2022/03 ~ 2022/07</span>
-                    </div>
-                    <p class="job-org">TSMC · Hsinchu, TW</p>
-                    <p class="job-meta">The largest semiconductor company. Stack: Kubernetes (Docker, Istio, EFK, Prometheus, Grafana, Argo, NATS), Node.js, Redis, Azure DevOps.</p>
-                    <ul class="points">
-                        <li>Acted as technical project manager: broke work into tasks and set target schedules against goals.</li>
-                        <li>Architected the AI platform to make scope explicit, drive direction and align with business needs.</li>
-                        <li>Set a high project standard: functions under 30 lines, testing coverage above 90%.</li>
-                        <li>Projects: GPU job scheduler, PoC tooling, CI/CD flow on Azure.</li>
-                        <li>Left over company culture fit, with appreciation from both managers and the department manager.</li>
-                    </ul>
-                </article>
-
-                <article class="card job">
-                    <div class="job-head">
-                        <h3 class="job-title">Tech Lead + Senior Engineer</h3>
-                        <span class="job-date">2017/02 ~ 2021/09</span>
-                    </div>
-                    <p class="job-org">Change Healthcare · Songshan, TW</p>
-                    <p class="job-meta">US healthcare company (remote). Stack: Scrum, AWS, Golang, Java (Spring Boot, MVC, Batch, Data), Elasticsearch, React.</p>
-                    <ul class="points">
-                        <li>Managed 5 people, coordinated across teams and assessed candidates over 30+ interview rounds.</li>
-                        <li>Created shared frameworks for Lambda, event annotation, a Spring Secret Manager plugin and EventBus.</li>
-                        <li>Designed and resolved security issues: email unsubscribe with JWT, KMS in Jenkins CI, Fortify findings.</li>
-                        <li>Projects: async file event batch processing (S3), user engagement service (Pinpoint, CloudFront), log alerting (CloudWatch, SNS), enterprise solutions migration (AWS, Apigee).</li>
-                    </ul>
-                </article>
-
-                <article class="card job">
-                    <div class="job-head">
-                        <h3 class="job-title">Cloud Engineer</h3>
-                        <span class="job-date">2015/07 ~ 2016/05</span>
-                    </div>
-                    <p class="job-org">Shanghai Droi Tech Co. Ltd. · Taipei 101, TW</p>
-                    <p class="job-meta">Internet company, 500+ people, spanning device hardware to backend as a cloud application solution. Stack: Bash, Lua, Linux, Nginx, Docker, Jenkins, Ansible, Kubernetes, MongoDB, PostgreSQL.</p>
-                    <ul class="points">
-                        <li>Modelled the CI/CD of a Backend-as-a-Service platform by integrating Jenkins, Docker and Kubernetes.</li>
-                        <li>Built an end-to-end test framework with syntax checks, API detection and request profiling.</li>
-                        <li>Shipped a CLI that gives users linear version control over their own code.</li>
-                    </ul>
-                </article>
-
-                <article class="card job">
-                    <div class="job-head">
-                        <h3 class="job-title">Game and BI Developer</h3>
-                        <span class="job-date">2012/11 ~ 2015/04</span>
-                    </div>
-                    <p class="job-org">Gamesofa Inc. · Taipei, TW</p>
-                    <p class="job-meta">Online game company, 200 people, self-made titles across Mahjong, Poker, FPS and RPG. Stack: LAMP, Perl, HTML5, JavaScript, AngularJS, CSS, Memcached, A/B testing, data pipeline.</p>
-                    <ul class="points">
-                        <li>Developed game features and worked as data engineer for the analytics side.</li>
-                        <li>Projects: Win8 app "Godgame Big Two", "Godgame Texas Hold'em", Omaha hand-evaluation time-complexity optimisation, friend service, survey service, user group analysis tool, customer service refactor.</li>
-                    </ul>
-                </article>
-
-                <article class="card job">
-                    <div class="job-head">
-                        <h3 class="job-title">Web Developer</h3>
-                        <span class="job-date">2010/03 ~ 2011/06</span>
-                    </div>
-                    <p class="job-org">National Central University · Jongli, TW</p>
-                    <ul class="points">
-                        <li>Set up LAMP sites and an e-book search bypassing the library system, saving $20,000+ plus maintenance fees.</li>
-                    </ul>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- Other Experience -->
-        <section class="reveal">
-            <h2 class="section-title">Other Experience</h2>
-            <div class="grid">
-                <article class="card other-item">
-                    <div class="job-head">
-                        <h3>Working Holiday — Europe</h3>
-                        <span class="job-date">2016/06 ~ 2017/02</span>
-                    </div>
-                    <p>
-                        Went to Ireland on a working-holiday visa, which permits any role in the country. Even after
-                        clarifying that ambiguous policy with the WHA immigration office, it was not recognised for a
-                        permanent SE role. After 80 days there and a 30-day Euro tour I returned to Taiwan, revisited
-                        the role criteria I had seen on the trip and studied more algorithms.
-                    </p>
-                    <ul class="points">
-                        <li>Participated in a language exchange community.</li>
-                        <li>LeetCode with Python, C++ and JavaScript (2016/05 ~ present).</li>
-                        <li>Google C++ education (2016/06).</li>
-                    </ul>
-                </article>
-
-                <article class="card other-item">
-                    <div class="job-head">
-                        <h3>Break and Self-Study — Taiwan</h3>
-                        <span class="job-date">2015/04 ~ 2015/06</span>
-                    </div>
-                    <ul class="points">
-                        <li>freeCodeCamp with HTML5 (2015/09 ~ 2015/11).</li>
-                        <li>Personal website http://shuk.info/ with ReactJS and RWD (2015/04 ~ 2015/06); domain no longer available.</li>
-                    </ul>
-                </article>
-
-                <article class="card other-item">
-                    <div class="job-head">
-                        <h3>Alternative Civilian Service</h3>
-                        <span class="job-date">2011/12 ~ 2012/11</span>
-                    </div>
-                    <p class="job-meta">Dept. of Civil Servant Development · Taipei, TW</p>
-                    <ul class="points">
-                        <li>Assisted staff in specifying the Taipei e-campus system in PHP and set priorities with third-party engineers.</li>
-                    </ul>
-                </article>
-
-                <article class="card other-item">
-                    <div class="job-head">
-                        <h3>Housekeeper — Motel 6 (working holiday)</h3>
-                        <span class="job-date">2011/06 ~ 2011/11</span>
-                    </div>
-                    <p class="job-meta">Moab, US</p>
-                    <ul class="points">
-                        <li>US working-holiday project (J1 visa), working alongside American, Mexican, Indian, Russian, Chinese and Turkish colleagues.</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>Last updated 2026-09-02 · © <span id="year">2026</span> Shuk Liu</p>
-        <a class="btn-pdf" href="export/Resume-ShukLiu.pdf" download title="Download PDF resume" aria-label="Download PDF resume">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shuk Liu — Resume</title>
+        <meta
+            name="description"
+            content="Resume of Liu, Teng-Yuan (Shuk Liu) — system architecture and AI orchestration."
+        />
+        <meta name="referrer" content="no-referrer" />
+        <meta property="og:title" content="Shuk Liu — Resume" />
+        <meta
+            property="og:description"
+            content="12+ years in system architecture and AI orchestration."
+        />
+        <meta
+            property="og:image"
+            content="../../assets/images/profile/shuk-profile.jpg"
+        />
+
+        <link
+            rel="icon"
+            type="image/jpeg"
+            href="../../assets/images/profile/shuk-profile.jpg"
+        />
+        <link
+            rel="apple-touch-icon"
+            href="../../assets/images/profile/shuk-profile.jpg"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <style>
+            :root {
+                --sun-1: #ffc53d;
+                --sun-2: #ff9f1c;
+                --coral: #ff6b4a;
+                --sky: #29a9e0;
+                --leaf: #2fb380;
+                --ink: #22303c;
+                --muted: #5f7180;
+                --line: #f0e2cb;
+                --bg: #fffdf6;
+                --card: #ffffff;
+                --shadow: 0 10px 30px rgba(255, 159, 28, 0.12);
+                --shadow-lg: 0 18px 48px rgba(214, 132, 20, 0.18);
+                --radius: 18px;
+                --max: 940px;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                margin: 0;
+                background: var(--bg);
+                color: var(--ink);
+                font-family:
+                    "Montserrat",
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    sans-serif;
+                font-weight: 400;
+                line-height: 1.7;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            a {
+                color: inherit;
+            }
+
+            /* ---------- PDF download (icon only) ---------- */
+            .btn-pdf {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 52px;
+                height: 52px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, var(--sun-1), var(--sun-2));
+                color: #4a2c00;
+                text-decoration: none;
+                box-shadow: var(--shadow-lg);
+                transition:
+                    transform 0.18s ease,
+                    box-shadow 0.18s ease;
+            }
+
+            .btn-pdf:hover {
+                transform: translateY(-3px) scale(1.04);
+            }
+            .btn-pdf svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .btn-pdf.floating {
+                position: fixed;
+                top: 20px;
+                right: 22px;
+                z-index: 30;
+                border: 3px solid rgba(255, 255, 255, 0.85);
+            }
+
+            /* ---------- Hero ---------- */
+            .hero {
+                position: relative;
+                overflow: hidden;
+                background:
+                    radial-gradient(
+                        900px 420px at 78% -12%,
+                        rgba(255, 197, 61, 0.55),
+                        transparent 62%
+                    ),
+                    linear-gradient(
+                        165deg,
+                        #fff6df 0%,
+                        #ffede2 52%,
+                        #eaf7ff 100%
+                    );
+                padding: 68px 24px 76px;
+            }
+
+            .sunburst {
+                position: absolute;
+                top: -180px;
+                right: -140px;
+                width: 520px;
+                height: 520px;
+                opacity: 0.5;
+                pointer-events: none;
+            }
+
+            .hero-inner {
+                position: relative;
+                max-width: var(--max);
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                gap: 40px;
+                flex-wrap: wrap;
+            }
+
+            .avatar-wrap {
+                position: relative;
+                flex: 0 0 auto;
+            }
+
+            .avatar-wrap::after {
+                content: "";
+                position: absolute;
+                inset: -14px;
+                border-radius: 50%;
+                background: conic-gradient(
+                    from 210deg,
+                    var(--sun-1),
+                    var(--coral),
+                    var(--sun-1)
+                );
+                opacity: 0.35;
+                filter: blur(14px);
+                z-index: 0;
+            }
+
+            .avatar {
+                position: relative;
+                z-index: 1;
+                width: 168px;
+                height: 168px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 5px solid #fff;
+                box-shadow: var(--shadow-lg);
+            }
+
+            .hero-text {
+                flex: 1 1 340px;
+                min-width: 280px;
+            }
+
+            .eyebrow {
+                display: inline-block;
+                padding: 5px 14px;
+                border-radius: 999px;
+                background: rgba(255, 255, 255, 0.75);
+                border: 1px solid rgba(255, 159, 28, 0.38);
+                color: #b26100;
+                font-size: 0.74rem;
+                font-weight: 600;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                margin-bottom: 16px;
+            }
+
+            h1 {
+                margin: 0 0 6px;
+                font-size: clamp(2.1rem, 5.2vw, 3.1rem);
+                font-weight: 700;
+                letter-spacing: -0.015em;
+                line-height: 1.15;
+            }
+
+            .role {
+                margin: 0 0 18px;
+                font-size: 1.02rem;
+                font-weight: 600;
+                background: linear-gradient(100deg, var(--sun-2), var(--coral));
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+
+            .summary {
+                margin: 0 0 22px;
+                color: #3d4b57;
+                max-width: 56ch;
+            }
+
+            .contact {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .chip {
+                display: inline-flex;
+                align-items: center;
+                gap: 7px;
+                padding: 8px 15px;
+                border-radius: 999px;
+                background: #fff;
+                border: 1px solid var(--line);
+                font-size: 0.84rem;
+                font-weight: 500;
+                text-decoration: none;
+                box-shadow: 0 3px 10px rgba(180, 120, 20, 0.07);
+                transition:
+                    transform 0.16s ease,
+                    border-color 0.16s ease;
+            }
+
+            .chip:hover {
+                transform: translateY(-2px);
+                border-color: var(--sun-2);
+            }
+
+            /* ---------- Layout ---------- */
+            main {
+                max-width: var(--max);
+                margin: 0 auto;
+                padding: 0 24px 40px;
+            }
+
+            section {
+                padding: 52px 0 8px;
+            }
+
+            .section-title {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin: 0 0 26px;
+                font-size: 1.32rem;
+                font-weight: 700;
+                letter-spacing: -0.01em;
+            }
+
+            .section-title::before {
+                content: "";
+                width: 13px;
+                height: 13px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, var(--sun-1), var(--coral));
+                box-shadow: 0 0 0 5px rgba(255, 197, 61, 0.22);
+                flex: 0 0 auto;
+            }
+
+            .section-title::after {
+                content: "";
+                flex: 1;
+                height: 1px;
+                background: linear-gradient(90deg, var(--line), transparent);
+            }
+
+            /* ---------- Cards ---------- */
+            .card {
+                background: var(--card);
+                border: 1px solid var(--line);
+                border-radius: var(--radius);
+                padding: 22px 24px;
+                box-shadow: 0 6px 20px rgba(190, 130, 30, 0.07);
+                transition:
+                    transform 0.2s ease,
+                    box-shadow 0.2s ease;
+            }
+
+            .card:hover {
+                transform: translateY(-3px);
+                box-shadow: var(--shadow);
+            }
+
+            .grid {
+                display: grid;
+                gap: 14px;
+            }
+            .grid-2 {
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            }
+
+            .edu-item h3 {
+                margin: 0 0 4px;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+            .edu-item p {
+                margin: 0;
+                font-size: 0.86rem;
+                color: var(--muted);
+            }
+
+            /* ---------- Skills ---------- */
+            .skill-row {
+                display: grid;
+                grid-template-columns: 150px 1fr;
+                gap: 8px 20px;
+                padding: 14px 0;
+                border-bottom: 1px dashed var(--line);
+            }
+
+            .skill-row:last-child {
+                border-bottom: 0;
+            }
+
+            .skill-label {
+                font-weight: 600;
+                font-size: 0.84rem;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                color: #c07200;
+            }
+
+            .tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 7px;
+            }
+
+            .tag {
+                padding: 4px 12px;
+                border-radius: 999px;
+                font-size: 0.8rem;
+                font-weight: 500;
+                background: linear-gradient(135deg, #fff6e0, #ffefe6);
+                border: 1px solid rgba(255, 159, 28, 0.3);
+                color: #6b4a16;
+            }
+
+            .tag.sky {
+                background: linear-gradient(135deg, #eaf6ff, #e6fbf3);
+                border-color: rgba(41, 169, 224, 0.32);
+                color: #14607f;
+            }
+
+            .note {
+                color: var(--muted);
+                font-size: 0.9rem;
+                margin: -12px 0 20px;
+            }
+
+            /* ---------- Timeline ---------- */
+            .timeline {
+                position: relative;
+                padding-left: 30px;
+            }
+
+            .timeline::before {
+                content: "";
+                position: absolute;
+                left: 6px;
+                top: 8px;
+                bottom: 8px;
+                width: 2px;
+                background: linear-gradient(
+                    180deg,
+                    var(--sun-1),
+                    var(--coral) 55%,
+                    rgba(41, 169, 224, 0.5)
+                );
+                border-radius: 2px;
+            }
+
+            .job {
+                position: relative;
+                margin-bottom: 26px;
+            }
+
+            .job::before {
+                content: "";
+                position: absolute;
+                left: -30px;
+                top: 26px;
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                background: #fff;
+                border: 3px solid var(--sun-2);
+                box-shadow: 0 0 0 4px rgba(255, 197, 61, 0.2);
+            }
+
+            .job.now::before {
+                border-color: var(--leaf);
+                box-shadow: 0 0 0 4px rgba(47, 179, 128, 0.2);
+            }
+
+            .job-head {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: baseline;
+                justify-content: space-between;
+                gap: 6px 16px;
+                margin-bottom: 4px;
+            }
+
+            .job-title {
+                margin: 0;
+                font-size: 1.05rem;
+                font-weight: 700;
+            }
+
+            .job-date {
+                font-size: 0.8rem;
+                font-weight: 600;
+                color: #b26100;
+                background: #fff6e2;
+                border-radius: 999px;
+                padding: 3px 12px;
+                white-space: nowrap;
+            }
+
+            .job.now .job-date {
+                color: #1b7b57;
+                background: #e9f9f2;
+            }
+
+            .job-org {
+                margin: 0 0 10px;
+                font-size: 0.92rem;
+                font-weight: 600;
+                color: var(--sky);
+            }
+
+            .job-meta {
+                margin: 0 0 12px;
+                font-size: 0.85rem;
+                color: var(--muted);
+            }
+
+            ul.points {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            ul.points li {
+                position: relative;
+                padding-left: 22px;
+                margin-bottom: 8px;
+                font-size: 0.93rem;
+            }
+
+            ul.points li::before {
+                content: "";
+                position: absolute;
+                left: 4px;
+                top: 0.68em;
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, var(--sun-1), var(--coral));
+            }
+
+            ul.points li:last-child {
+                margin-bottom: 0;
+            }
+
+            /* ---------- Other experience ---------- */
+            .other-item h3 {
+                margin: 0 0 2px;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+            .other-item .job-meta {
+                margin-bottom: 10px;
+            }
+            .other-item p {
+                margin: 0 0 10px;
+                font-size: 0.92rem;
+                color: #3d4b57;
+            }
+
+            /* ---------- Footer ---------- */
+            footer {
+                margin-top: 30px;
+                padding: 34px 24px 44px;
+                text-align: center;
+                background: linear-gradient(180deg, transparent, #fff3dc);
+                border-top: 1px solid var(--line);
+            }
+
+            footer p {
+                margin: 0 0 14px;
+                color: var(--muted);
+                font-size: 0.85rem;
+            }
+
+            /* Content is visible by default; the reveal animation only arms itself
+           once JS runs (html.js-anim), so a script failure never hides the page. */
+            .js-anim .reveal {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            .js-anim .reveal.visible {
+                opacity: 1;
+                transform: none;
+            }
+            .reveal {
+                transition:
+                    opacity 0.6s ease,
+                    transform 0.6s ease;
+            }
+
+            @media (max-width: 640px) {
+                .btn-pdf.floating {
+                    top: 14px;
+                    right: 14px;
+                    width: 46px;
+                    height: 46px;
+                }
+                .btn-pdf.floating svg {
+                    width: 21px;
+                    height: 21px;
+                }
+                .hero {
+                    padding: 44px 20px 54px;
+                }
+                .hero-inner {
+                    gap: 26px;
+                }
+                .avatar {
+                    width: 124px;
+                    height: 124px;
+                }
+                main {
+                    padding: 0 18px 30px;
+                }
+                .skill-row {
+                    grid-template-columns: 1fr;
+                    gap: 8px;
+                }
+                .job-head {
+                    flex-direction: column;
+                }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                html {
+                    scroll-behavior: auto;
+                }
+                .js-anim .reveal {
+                    opacity: 1;
+                    transform: none;
+                    transition: none;
+                }
+            }
+
+            @media print {
+                .btn-pdf,
+                footer,
+                .sunburst {
+                    display: none;
+                }
+                body {
+                    background: #fff;
+                }
+                .card,
+                .hero {
+                    box-shadow: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- PDF download (icon only, floats top right) -->
+        <a
+            class="btn-pdf floating"
+            href="export/Resume-ShukLiu.pdf"
+            download
+            title="Download PDF resume"
+            aria-label="Download PDF resume"
+        >
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.9"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+            >
+                <path
+                    d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"
+                ></path>
                 <polyline points="14 3 14 8 19 8"></polyline>
                 <polyline points="9.5 12.5 12 15 14.5 12.5"></polyline>
                 <line x1="12" y1="15" x2="12" y2="10.5"></line>
             </svg>
         </a>
-    </footer>
 
-    <script>
-        /* pkg/resume/index.html - footer year + scroll reveal */
-        document.getElementById('year').textContent = new Date().getFullYear();
+        <!-- Hero -->
+        <header class="hero" id="top">
+            <svg class="sunburst" viewBox="0 0 200 200" aria-hidden="true">
+                <g
+                    fill="none"
+                    stroke="#FFB53D"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    opacity=".55"
+                >
+                    <circle cx="100" cy="100" r="42" stroke-width="3"></circle>
+                    <path
+                        d="M100 30V8M100 192v-22M30 100H8M192 100h-22M50 50 34 34M166 166l-16-16M150 50l16-16M34 166l16-16"
+                    ></path>
+                    <circle
+                        cx="100"
+                        cy="100"
+                        r="68"
+                        stroke-dasharray="4 12"
+                    ></circle>
+                </g>
+            </svg>
+            <div class="hero-inner">
+                <div class="avatar-wrap">
+                    <img
+                        class="avatar"
+                        src="../../assets/images/profile/shuk-profile.jpg"
+                        alt="Portrait of Shuk Liu"
+                    />
+                </div>
+                <div class="hero-text">
+                    <span class="eyebrow">☀ Open to build something good</span>
+                    <h1>
+                        Liu, Teng-Yuan
+                        <br />
+                        (Shuk Liu)
+                    </h1>
+                    <p class="role">
+                        System Architecture · AI Orchestration · 12+ years
+                    </p>
+                    <p class="summary">
+                        Singapore Permanent Resident, currently based in
+                        Singapore. Focused on system architecture (organisation
+                        design included) and AI orchestration, and familiar with
+                        the majority of the tech stack, the SDLC and its
+                        methodologies.
+                    </p>
+                    <div class="contact">
+                        <a class="chip" href="mailto:biz.shuk@gmail.com">
+                            ✉️ biz.shuk@gmail.com
+                        </a>
+                        <a
+                            class="chip"
+                            href="https://www.linkedin.com/in/bizshuk/"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            🔗 LinkedIn
+                        </a>
+                        <a
+                            class="chip"
+                            href="https://api.whatsapp.com/send?phone=6580129716"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            💬 WhatsApp
+                        </a>
+                        <span class="chip">📍 Singapore</span>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-        var targets = document.querySelectorAll('.reveal');
-        if ('IntersectionObserver' in window) {
-            var io = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        io.unobserve(entry.target);
+        <main>
+            <!-- Education -->
+            <section class="reveal">
+                <h2 class="section-title">Education</h2>
+                <div class="grid grid-2">
+                    <div class="card edu-item">
+                        <h3>M.S. in Computer Science</h3>
+                        <p>
+                            National Central University, Jongli, TW · 2009/09 ~
+                            2011/06
+                        </p>
+                    </div>
+                    <div class="card edu-item">
+                        <h3>B.S. in Computer Science</h3>
+                        <p>
+                            National Dong-Hua University, Hualien, TW · 2004/09
+                            ~ 2009/06
+                        </p>
+                    </div>
+                    <div class="card edu-item">
+                        <h3>Taipei Municipal Heping High School</h3>
+                        <p>Taipei, TW · 2001/09 ~ 2004/06</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="reveal">
+                <h2 class="section-title">Skills</h2>
+                <p class="note">
+                    Tools matter less than the patterns and concepts behind
+                    them.
+                </p>
+                <div class="card">
+                    <div class="skill-row">
+                        <div class="skill-label">Certificate</div>
+                        <div class="tags">
+                            <span class="tag">
+                                AWS Solutions Architect – Associate (2018/08)
+                            </span>
+                            <span class="tag">TOEIC 830 (2019/01)</span>
+                        </div>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-label">Language</div>
+                        <div class="tags">
+                            <span class="tag">Golang</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Java (Spring Boot)</span>
+                            <span class="tag">HTML5</span>
+                            <span class="tag">Bash</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-label">Test</div>
+                        <div class="tags">
+                            <span class="tag sky">Unit test (mock)</span>
+                            <span class="tag sky">Integration test</span>
+                            <span class="tag sky">Stress test</span>
+                            <span class="tag sky">Coverage above 90%</span>
+                        </div>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-label">Infra / Tooling</div>
+                        <div class="tags">
+                            <span class="tag sky">AWS</span>
+                            <span class="tag sky">Kubernetes (Istio)</span>
+                            <span class="tag sky">EFK</span>
+                            <span class="tag sky">Docker</span>
+                            <span class="tag sky">Linux</span>
+                            <span class="tag sky">GitLab</span>
+                            <span class="tag sky">Azure DevOps</span>
+                            <span class="tag sky">RDB</span>
+                            <span class="tag sky">Elasticsearch</span>
+                            <span class="tag sky">MongoDB</span>
+                            <span class="tag sky">Redis</span>
+                        </div>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-label">Concept</div>
+                        <div class="tags">
+                            <span class="tag">Microservice</span>
+                            <span class="tag">Event-driven</span>
+                            <span class="tag">HA</span>
+                            <span class="tag">Scalability</span>
+                            <span class="tag">SOLID</span>
+                            <span class="tag">Design pattern</span>
+                            <span class="tag">CI/CD</span>
+                            <span class="tag">Cache</span>
+                            <span class="tag">TDD</span>
+                            <span class="tag">RWD</span>
+                            <span class="tag">SDLC</span>
+                        </div>
+                    </div>
+                    <div class="skill-row">
+                        <div class="skill-label">Methodology</div>
+                        <div class="tags">
+                            <span class="tag">Scrum</span>
+                            <span class="tag">Agile</span>
+                            <span class="tag">Lean</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Work Experience -->
+            <section class="reveal">
+                <h2 class="section-title">Work Experience</h2>
+                <div class="timeline">
+                    <article class="card job now">
+                        <div class="job-head">
+                            <h3 class="job-title">AI Engineer</h3>
+                            <span class="job-date">2026/06 ~ present</span>
+                        </div>
+                        <p class="job-org">Self-directed</p>
+                        <ul class="points">
+                            <li>
+                                Work across a variety of AI models: Gemini,
+                                Claude, GPT, Grok, MiniMax, DeepSeek, Qwen,
+                                ElevenLabs.
+                            </li>
+                            <li>
+                                Built an Agent SDK that accommodates different
+                                providers and models behind one interface.
+                            </li>
+                            <li>
+                                Orchestrated personal infrastructure covering
+                                account, payment and cloud.
+                            </li>
+                            <li>
+                                Shipped several iOS tool apps, one product
+                                service, a surfing tracker and two voice agent
+                                prototypes (tutor, customer service).
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="card job">
+                        <div class="job-head">
+                            <h3 class="job-title">
+                                Senior Software Engineer (Tech Lead)
+                            </h3>
+                            <span class="job-date">2023/01 ~ 2026/08</span>
+                        </div>
+                        <p class="job-org">
+                            ByteDance (TikTok PTE. LTD.) · Singapore
+                        </p>
+                        <ul class="points">
+                            <li>
+                                Aligned internal and external services onto a
+                                new data centre, coordinating across teams.
+                            </li>
+                            <li>
+                                Built a flexible data channel foundation between
+                                data centres to satisfy compliance and
+                                stability.
+                            </li>
+                            <li>
+                                Designed global data centre redundancy, lowering
+                                implementation and maintenance effort by 2 job
+                                grades.
+                            </li>
+                            <li>
+                                Designed a high-level task orchestration
+                                framework and drove adoption of a regional
+                                compliance migration framework across
+                                departments.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="card job">
+                        <div class="job-head">
+                            <h3 class="job-title">Senior Engineer</h3>
+                            <span class="job-date">2022/03 ~ 2022/07</span>
+                        </div>
+                        <p class="job-org">TSMC · Hsinchu, TW</p>
+                        <p class="job-meta">
+                            The largest semiconductor company. Stack: Kubernetes
+                            (Docker, Istio, EFK, Prometheus, Grafana, Argo,
+                            NATS), Node.js, Redis, Azure DevOps.
+                        </p>
+                        <ul class="points">
+                            <li>
+                                Acted as technical project manager: broke work
+                                into tasks and set target schedules against
+                                goals.
+                            </li>
+                            <li>
+                                Architected the AI platform to make scope
+                                explicit, drive direction and align with
+                                business needs.
+                            </li>
+                            <li>
+                                Set a high project standard: functions under 30
+                                lines, testing coverage above 90%.
+                            </li>
+                            <li>
+                                Projects: GPU job scheduler, PoC tooling, CI/CD
+                                flow on Azure.
+                            </li>
+                            <li>
+                                Left over company culture fit, with appreciation
+                                from both managers and the department manager.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="card job">
+                        <div class="job-head">
+                            <h3 class="job-title">
+                                Tech Lead + Senior Engineer
+                            </h3>
+                            <span class="job-date">2017/02 ~ 2021/09</span>
+                        </div>
+                        <p class="job-org">Change Healthcare · Songshan, TW</p>
+                        <p class="job-meta">
+                            US healthcare company (remote). Stack: Scrum, AWS,
+                            Golang, Java (Spring Boot, MVC, Batch, Data),
+                            Elasticsearch, React.
+                        </p>
+                        <ul class="points">
+                            <li>
+                                Managed 5 people, coordinated across teams and
+                                assessed candidates over 30+ interview rounds.
+                            </li>
+                            <li>
+                                Created shared frameworks for Lambda, event
+                                annotation, a Spring Secret Manager plugin and
+                                EventBus.
+                            </li>
+                            <li>
+                                Designed and resolved security issues: email
+                                unsubscribe with JWT, KMS in Jenkins CI, Fortify
+                                findings.
+                            </li>
+                            <li>
+                                Projects: async file event batch processing
+                                (S3), user engagement service (Pinpoint,
+                                CloudFront), log alerting (CloudWatch, SNS),
+                                enterprise solutions migration (AWS, Apigee).
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="card job">
+                        <div class="job-head">
+                            <h3 class="job-title">Cloud Engineer</h3>
+                            <span class="job-date">2015/07 ~ 2016/05</span>
+                        </div>
+                        <p class="job-org">
+                            Shanghai Droi Tech Co. Ltd. · Taipei 101, TW
+                        </p>
+                        <p class="job-meta">
+                            Internet company, 500+ people, spanning device
+                            hardware to backend as a cloud application solution.
+                            Stack: Bash, Lua, Linux, Nginx, Docker, Jenkins,
+                            Ansible, Kubernetes, MongoDB, PostgreSQL.
+                        </p>
+                        <ul class="points">
+                            <li>
+                                Modelled the CI/CD of a Backend-as-a-Service
+                                platform by integrating Jenkins, Docker and
+                                Kubernetes.
+                            </li>
+                            <li>
+                                Built an end-to-end test framework with syntax
+                                checks, API detection and request profiling.
+                            </li>
+                            <li>
+                                Shipped a CLI that gives users linear version
+                                control over their own code.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="card job">
+                        <div class="job-head">
+                            <h3 class="job-title">Game and BI Developer</h3>
+                            <span class="job-date">2012/11 ~ 2015/04</span>
+                        </div>
+                        <p class="job-org">Gamesofa Inc. · Taipei, TW</p>
+                        <p class="job-meta">
+                            Online game company, 200 people, self-made titles
+                            across Mahjong, Poker, FPS and RPG. Stack: LAMP,
+                            Perl, HTML5, JavaScript, AngularJS, CSS, Memcached,
+                            A/B testing, data pipeline.
+                        </p>
+                        <ul class="points">
+                            <li>
+                                Developed game features and worked as data
+                                engineer for the analytics side.
+                            </li>
+                            <li>
+                                Projects: Win8 app "Godgame Big Two", "Godgame
+                                Texas Hold'em", Omaha hand-evaluation
+                                time-complexity optimisation, friend service,
+                                survey service, user group analysis tool,
+                                customer service refactor.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="card job">
+                        <div class="job-head">
+                            <h3 class="job-title">Web Developer</h3>
+                            <span class="job-date">2010/03 ~ 2011/06</span>
+                        </div>
+                        <p class="job-org">
+                            National Central University · Jongli, TW
+                        </p>
+                        <ul class="points">
+                            <li>
+                                Set up LAMP sites and an e-book search bypassing
+                                the library system, saving $20,000+ plus
+                                maintenance fees.
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Other Experience -->
+            <section class="reveal">
+                <h2 class="section-title">Other Experience</h2>
+                <div class="grid">
+                    <article class="card other-item">
+                        <div class="job-head">
+                            <h3>Working Holiday — Europe</h3>
+                            <span class="job-date">2016/06 ~ 2017/02</span>
+                        </div>
+                        <p>
+                            Went to Ireland on a working-holiday visa, which
+                            permits any role in the country. Even after
+                            clarifying that ambiguous policy with the WHA
+                            immigration office, it was not recognised for a
+                            permanent SE role. After 80 days there and a 30-day
+                            Euro tour I returned to Taiwan, revisited the role
+                            criteria I had seen on the trip and studied more
+                            algorithms.
+                        </p>
+                        <ul class="points">
+                            <li>
+                                Participated in a language exchange community.
+                            </li>
+                            <li>
+                                LeetCode with Python, C++ and JavaScript
+                                (2016/05 ~ present).
+                            </li>
+                            <li>Google C++ education (2016/06).</li>
+                        </ul>
+                    </article>
+
+                    <article class="card other-item">
+                        <div class="job-head">
+                            <h3>Break and Self-Study — Taiwan</h3>
+                            <span class="job-date">2015/04 ~ 2015/06</span>
+                        </div>
+                        <ul class="points">
+                            <li>
+                                freeCodeCamp with HTML5 (2015/09 ~ 2015/11).
+                            </li>
+                            <li>
+                                Personal website http://shuk.info/ with ReactJS
+                                and RWD (2015/04 ~ 2015/06); domain no longer
+                                available.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="card other-item">
+                        <div class="job-head">
+                            <h3>Alternative Civilian Service</h3>
+                            <span class="job-date">2011/12 ~ 2012/11</span>
+                        </div>
+                        <p class="job-meta">
+                            Dept. of Civil Servant Development · Taipei, TW
+                        </p>
+                        <ul class="points">
+                            <li>
+                                Assisted staff in specifying the Taipei e-campus
+                                system in PHP and set priorities with
+                                third-party engineers.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="card other-item">
+                        <div class="job-head">
+                            <h3>Housekeeper — Motel 6 (working holiday)</h3>
+                            <span class="job-date">2011/06 ~ 2011/11</span>
+                        </div>
+                        <p class="job-meta">Moab, US</p>
+                        <ul class="points">
+                            <li>
+                                US working-holiday project (J1 visa), working
+                                alongside American, Mexican, Indian, Russian,
+                                Chinese and Turkish colleagues.
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                Last updated 2026-09-02 · ©
+                <span id="year">2026</span>
+                Shuk Liu
+            </p>
+            <a
+                class="btn-pdf"
+                href="export/Resume-ShukLiu.pdf"
+                download
+                title="Download PDF resume"
+                aria-label="Download PDF resume"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"
+                    ></path>
+                    <polyline points="14 3 14 8 19 8"></polyline>
+                    <polyline points="9.5 12.5 12 15 14.5 12.5"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="10.5"></line>
+                </svg>
+            </a>
+        </footer>
+
+        <script>
+            /* pkg/resume/index.html - footer year + scroll reveal */
+            (function () {
+                var year = document.getElementById("year");
+                if (year) {
+                    year.textContent = new Date().getFullYear();
+                }
+
+                var targets = document.querySelectorAll(".reveal");
+                if (!targets.length || !("IntersectionObserver" in window)) {
+                    return;
+                }
+
+                function showAll() {
+                    for (var i = 0; i < targets.length; i++) {
+                        targets[i].classList.add("visible");
                     }
-                });
-            }, { threshold: 0.08 });
-            targets.forEach(function (el) { io.observe(el); });
-        } else {
-            targets.forEach(function (el) { el.classList.add('visible'); });
-        }
-    </script>
+                }
 
-</body>
+                document.documentElement.classList.add("js-anim");
+
+                var io = new IntersectionObserver(
+                    function (entries) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add("visible");
+                                io.unobserve(entry.target);
+                            }
+                        });
+                    },
+                    { threshold: 0, rootMargin: "0px 0px -8% 0px" }
+                );
+
+                for (var i = 0; i < targets.length; i++) {
+                    io.observe(targets[i]);
+                }
+
+                /* Safety net: never leave content hidden if the observer misbehaves. */
+                setTimeout(showAll, 2500);
+            })();
+        </script>
+    </body>
 </html>
