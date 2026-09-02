@@ -189,26 +189,18 @@
                 min-width: 280px;
             }
 
-            .eyebrow {
-                display: inline-block;
-                padding: 5px 14px;
-                border-radius: 999px;
-                background: rgba(255, 255, 255, 0.75);
-                border: 1px solid rgba(255, 159, 28, 0.38);
-                color: #b26100;
-                font-size: 0.74rem;
-                font-weight: 600;
-                letter-spacing: 0.12em;
-                text-transform: uppercase;
-                margin-bottom: 16px;
-            }
 
             h1 {
                 margin: 0 0 6px;
-                font-size: clamp(2.1rem, 5.2vw, 3.1rem);
+                font-size: clamp(1.55rem, 3.6vw, 2.5rem);
                 font-weight: 700;
                 letter-spacing: -0.015em;
-                line-height: 1.15;
+                line-height: 1.2;
+                text-wrap: balance;
+            }
+
+            h1 .nick {
+                white-space: nowrap;
             }
 
             .role {
@@ -231,6 +223,16 @@
                 display: flex;
                 flex-wrap: wrap;
                 gap: 10px;
+            }
+
+            .last-updated {
+                position: absolute;
+                right: 26px;
+                bottom: 16px;
+                margin: 0;
+                font-size: 0.76rem;
+                letter-spacing: 0.04em;
+                color: var(--muted);
             }
 
             .chip {
@@ -429,7 +431,16 @@
                 align-items: baseline;
                 justify-content: space-between;
                 gap: 6px 16px;
-                margin-bottom: 4px;
+                margin-bottom: 10px;
+            }
+
+            /* Role + company/location share one line; the date stays right-aligned. */
+            .job-ident {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: baseline;
+                gap: 2px 10px;
+                min-width: 0;
             }
 
             .job-title {
@@ -454,10 +465,19 @@
             }
 
             .job-org {
-                margin: 0 0 10px;
-                font-size: 0.92rem;
+                margin: 0;
+                font-size: 0.9rem;
                 font-weight: 600;
                 color: var(--sky);
+            }
+
+            /* Separator rides on the role so it never dangles at the start
+               of a wrapped line; dropped once role and company stack. */
+            .job-ident h3::after {
+                content: "·";
+                margin-left: 10px;
+                color: var(--muted);
+                font-weight: 400;
             }
 
             .job-meta {
@@ -571,6 +591,18 @@
                 .job-head {
                     flex-direction: column;
                 }
+                .job-ident {
+                    flex-direction: column;
+                    gap: 2px;
+                }
+                .job-ident h3::after {
+                    content: none;
+                }
+                .last-updated {
+                    position: static;
+                    margin-top: 18px;
+                    text-align: right;
+                }
             }
 
             @media (prefers-reduced-motion: reduce) {
@@ -658,11 +690,8 @@
                     />
                 </div>
                 <div class="hero-text">
-                    <span class="eyebrow">☀ Open to build something good</span>
                     <h1>
-                        Liu, Teng-Yuan
-                        <br />
-                        (Shuk Liu)
+                        Liu, Teng-Yuan <span class="nick">(Shuk Liu)</span>
                     </h1>
                     <p class="role">
                         System Architecture · AI Orchestration · 12+ years
@@ -698,6 +727,7 @@
                     </div>
                 </div>
             </div>
+            <p class="last-updated">Last updated 2026-09-02</p>
         </header>
 
         <main>
@@ -812,10 +842,12 @@
                 <div class="timeline">
                     <article class="card job now">
                         <div class="job-head">
-                            <h3 class="job-title">AI Engineer</h3>
+                            <div class="job-ident">
+                                <h3 class="job-title">AI Engineer</h3>
+                                <span class="job-org">Self-directed</span>
+                            </div>
                             <span class="job-date">2026/06 ~ present</span>
                         </div>
-                        <p class="job-org">Self-directed</p>
                         <ul class="points">
                             <li>
                                 Work across a variety of AI models: Gemini,
@@ -840,14 +872,12 @@
 
                     <article class="card job">
                         <div class="job-head">
-                            <h3 class="job-title">
-                                Senior Software Engineer (Tech Lead)
-                            </h3>
+                            <div class="job-ident">
+                                <h3 class="job-title">Senior Software Engineer (Tech Lead)</h3>
+                                <span class="job-org">ByteDance (TikTok PTE. LTD.) · Singapore</span>
+                            </div>
                             <span class="job-date">2023/01 ~ 2026/08</span>
                         </div>
-                        <p class="job-org">
-                            ByteDance (TikTok PTE. LTD.) · Singapore
-                        </p>
                         <ul class="points">
                             <li>
                                 Aligned internal and external services onto a
@@ -874,10 +904,12 @@
 
                     <article class="card job">
                         <div class="job-head">
-                            <h3 class="job-title">Senior Engineer</h3>
+                            <div class="job-ident">
+                                <h3 class="job-title">Senior Engineer</h3>
+                                <span class="job-org">TSMC · Hsinchu, TW</span>
+                            </div>
                             <span class="job-date">2022/03 ~ 2022/07</span>
                         </div>
-                        <p class="job-org">TSMC · Hsinchu, TW</p>
                         <p class="job-meta">
                             The largest semiconductor company. Stack: Kubernetes
                             (Docker, Istio, EFK, Prometheus, Grafana, Argo,
@@ -911,12 +943,12 @@
 
                     <article class="card job">
                         <div class="job-head">
-                            <h3 class="job-title">
-                                Tech Lead + Senior Engineer
-                            </h3>
+                            <div class="job-ident">
+                                <h3 class="job-title">Tech Lead + Senior Engineer</h3>
+                                <span class="job-org">Change Healthcare · Songshan, TW</span>
+                            </div>
                             <span class="job-date">2017/02 ~ 2021/09</span>
                         </div>
-                        <p class="job-org">Change Healthcare · Songshan, TW</p>
                         <p class="job-meta">
                             US healthcare company (remote). Stack: Scrum, AWS,
                             Golang, Java (Spring Boot, MVC, Batch, Data),
@@ -948,12 +980,12 @@
 
                     <article class="card job">
                         <div class="job-head">
-                            <h3 class="job-title">Cloud Engineer</h3>
+                            <div class="job-ident">
+                                <h3 class="job-title">Cloud Engineer</h3>
+                                <span class="job-org">Shanghai Droi Tech Co. Ltd. · Taipei 101, TW</span>
+                            </div>
                             <span class="job-date">2015/07 ~ 2016/05</span>
                         </div>
-                        <p class="job-org">
-                            Shanghai Droi Tech Co. Ltd. · Taipei 101, TW
-                        </p>
                         <p class="job-meta">
                             Internet company, 500+ people, spanning device
                             hardware to backend as a cloud application solution.
@@ -979,10 +1011,12 @@
 
                     <article class="card job">
                         <div class="job-head">
-                            <h3 class="job-title">Game and BI Developer</h3>
+                            <div class="job-ident">
+                                <h3 class="job-title">Game and BI Developer</h3>
+                                <span class="job-org">Gamesofa Inc. · Taipei, TW</span>
+                            </div>
                             <span class="job-date">2012/11 ~ 2015/04</span>
                         </div>
-                        <p class="job-org">Gamesofa Inc. · Taipei, TW</p>
                         <p class="job-meta">
                             Online game company, 200 people, self-made titles
                             across Mahjong, Poker, FPS and RPG. Stack: LAMP,
@@ -1006,12 +1040,12 @@
 
                     <article class="card job">
                         <div class="job-head">
-                            <h3 class="job-title">Web Developer</h3>
+                            <div class="job-ident">
+                                <h3 class="job-title">Web Developer</h3>
+                                <span class="job-org">National Central University · Jongli, TW</span>
+                            </div>
                             <span class="job-date">2010/03 ~ 2011/06</span>
                         </div>
-                        <p class="job-org">
-                            National Central University · Jongli, TW
-                        </p>
                         <ul class="points">
                             <li>
                                 Set up LAMP sites and an e-book search bypassing
@@ -1029,56 +1063,12 @@
                 <div class="grid">
                     <article class="card other-item">
                         <div class="job-head">
-                            <h3>Working Holiday — Europe</h3>
-                            <span class="job-date">2016/06 ~ 2017/02</span>
+                            <div class="job-ident">
+                                <h3>Working Holiday — Europe</h3>
+                                <span class="job-org">Dept. of Civil Servant Development · Taipei, TW</span>
+                            </div>
+                            <span class="job-date">2016/06 ~ 2017/02</span> </div> <p> Went to Ireland on a working-holiday visa, which permits any role in the country. Even after clarifying that ambiguous policy with the WHA immigration office, it was not recognised for a permanent SE role. After 80 days there and a 30-day Euro tour I returned to Taiwan, revisited the role criteria I had seen on the trip and studied more algorithms. </p> <ul class="points"> <li> Participated in a language exchange community. </li> <li> LeetCode with Python, C++ and JavaScript (2016/05 ~ present). </li> <li>Google C++ education (2016/06).</li> </ul> </article> <article class="card other-item"> <div class="job-head"> <h3>Break and Self-Study — Taiwan</h3> <span class="job-date">2015/04 ~ 2015/06</span> </div> <ul class="points"> <li> freeCodeCamp with HTML5 (2015/09 ~ 2015/11). </li> <li> Personal website http://shuk.info/ with ReactJS and RWD (2015/04 ~ 2015/06); domain no longer available. </li> </ul> </article> <article class="card other-item"> <div class="job-head"> <h3>Alternative Civilian Service</h3> <span class="job-date">2011/12 ~ 2012/11</span>
                         </div>
-                        <p>
-                            Went to Ireland on a working-holiday visa, which
-                            permits any role in the country. Even after
-                            clarifying that ambiguous policy with the WHA
-                            immigration office, it was not recognised for a
-                            permanent SE role. After 80 days there and a 30-day
-                            Euro tour I returned to Taiwan, revisited the role
-                            criteria I had seen on the trip and studied more
-                            algorithms.
-                        </p>
-                        <ul class="points">
-                            <li>
-                                Participated in a language exchange community.
-                            </li>
-                            <li>
-                                LeetCode with Python, C++ and JavaScript
-                                (2016/05 ~ present).
-                            </li>
-                            <li>Google C++ education (2016/06).</li>
-                        </ul>
-                    </article>
-
-                    <article class="card other-item">
-                        <div class="job-head">
-                            <h3>Break and Self-Study — Taiwan</h3>
-                            <span class="job-date">2015/04 ~ 2015/06</span>
-                        </div>
-                        <ul class="points">
-                            <li>
-                                freeCodeCamp with HTML5 (2015/09 ~ 2015/11).
-                            </li>
-                            <li>
-                                Personal website http://shuk.info/ with ReactJS
-                                and RWD (2015/04 ~ 2015/06); domain no longer
-                                available.
-                            </li>
-                        </ul>
-                    </article>
-
-                    <article class="card other-item">
-                        <div class="job-head">
-                            <h3>Alternative Civilian Service</h3>
-                            <span class="job-date">2011/12 ~ 2012/11</span>
-                        </div>
-                        <p class="job-meta">
-                            Dept. of Civil Servant Development · Taipei, TW
-                        </p>
                         <ul class="points">
                             <li>
                                 Assisted staff in specifying the Taipei e-campus
@@ -1090,10 +1080,12 @@
 
                     <article class="card other-item">
                         <div class="job-head">
-                            <h3>Housekeeper — Motel 6 (working holiday)</h3>
+                            <div class="job-ident">
+                                <h3>Housekeeper — Motel 6 (working holiday)</h3>
+                                <span class="job-org">Moab, US</span>
+                            </div>
                             <span class="job-date">2011/06 ~ 2011/11</span>
                         </div>
-                        <p class="job-meta">Moab, US</p>
                         <ul class="points">
                             <li>
                                 US working-holiday project (J1 visa), working
@@ -1107,35 +1099,7 @@
         </main>
 
         <footer>
-            <p>
-                Last updated 2026-09-02 · ©
-                <span id="year">2026</span>
-                Shuk Liu
-            </p>
-            <a
-                class="btn-pdf"
-                href="export/Resume-ShukLiu.pdf"
-                download
-                title="Download PDF resume"
-                aria-label="Download PDF resume"
-            >
-                <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.9"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                >
-                    <path
-                        d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"
-                    ></path>
-                    <polyline points="14 3 14 8 19 8"></polyline>
-                    <polyline points="9.5 12.5 12 15 14.5 12.5"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="10.5"></line>
-                </svg>
-            </a>
+            <p>© <span id="year">2026</span> Shuk Liu</p>
         </footer>
 
         <script>
