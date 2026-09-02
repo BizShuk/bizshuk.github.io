@@ -4,7 +4,7 @@
 
 ```tree
 bizshuk.github.io/
-├── index.html              # 入口頁 (gallery landing)
+├── index.html              # 入口頁 (gallery landing,樣式與腳本 inline)
 ├── README.md
 ├── CLAUDE.md
 │
@@ -19,9 +19,6 @@ bizshuk.github.io/
 │       ├── photos/         # 歷史生活照片 (未在現有頁面中使用)
 │       └── profile/shuk-profile.jpg
 │
-├── css/index.css           # gallery 頁樣式
-├── js/gallery.js           # DOMContentLoaded → fetch gallery.json → 渲染格狀
-│
 ├── data/
 │   ├── gallery.json        # gallery tile 資料來源
 │   └── params.json         # legacy GitHub Pages metadata (未使用)
@@ -30,11 +27,9 @@ bizshuk.github.io/
     ├── resume/
     │   ├── index.html      # 履歷頁 (sunny 風格,樣式與腳本 inline)
     │   ├── Resume.md       # 履歷內容主稿
-    │   └── export/*.pdf    # 可下載的履歷 PDF
+    │   └── assets/         # 可下載的履歷 PDF 與作品截圖
     └── surf/
-        ├── index.html      # 衝浪頁 (ocean editorial, Uluwatu hero)
-        ├── surf.css        # ocean editorial tokens
-        └── surf.js         # IntersectionObserver reveal + footer 年份
+        └── index.html      # 衝浪頁 (ocean editorial, Uluwatu hero,樣式與腳本 inline)
 ```
 
 `.gitignore` 內容：
@@ -78,9 +73,9 @@ bizshuk.github.io/
 
 | 業務領域 (Domain)               | 套件/模組 (Package/Module)                                          | 進入點 (Entry Point)                           |
 | ------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------- |
-| 個人作品集 (Personal Portfolio) | `index.html`, `js/gallery.js`, `data/gallery.json`, `css/index.css` | `DOMContentLoaded` listener in `js/gallery.js` |
+| 個人作品集 (Personal Portfolio) | `index.html` (樣式與腳本 inline), `data/gallery.json`            | `index.html` inline `<script>` 的 `DOMContentLoaded` |
 | 履歷展示 (Resume Showcase)      | `pkg/resume/index.html` (樣式與腳本 inline)                         | 頁尾 inline `<script>` (年份 + 捲動顯影)       |
-| 衝浪頁 (Surf Page)              | `pkg/surf/index.html`, `pkg/surf/surf.js`, `pkg/surf/surf.css`      | `DOMContentLoaded` listener in `pkg/surf/surf.js` |
+| 衝浪頁 (Surf Page)              | `pkg/surf/index.html` (樣式與腳本 inline)                           | `pkg/surf/index.html` inline `<script>` 的 `DOMContentLoaded` |
 
 ## 開發指南 (Development Guide)
 
@@ -114,7 +109,7 @@ bizshuk.github.io/
 
 ## 慣例 (Conventions)
 
-- Naming: kebab-case 用於檔名 (`gallery.js`, `surf.css`);camelCase
+- Naming: kebab-case 用於檔名 (`gallery.json`, `uluwatu-dropin.jpg`);camelCase
   用於 CSS class 中的複合名 (`gallery-item`, `gallery-item-overlay`)。
 - CSS variables: 兩個 stylesheet 都以 `:root` 宣告 design tokens
   (`--primary-color`, `--bg-color`, ...)。各頁面分別維護自己的 token 集合,

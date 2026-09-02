@@ -12,7 +12,432 @@
 
     <link rel="shortcut icon" type="image/gif" href="https://i.imgur.com/QpGrcBZ.jpg?1">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="surf.css">
+    <style>
+        /* pkg/surf/index.html - Ocean editorial magazine long-scroll styles */
+
+        :root {
+            --sea-deep: #071e33;
+            --sea: #0b3a63;
+            --sea-face: #1f6fae;
+            --foam: #eef6fb;
+            --foam-dim: rgba(238, 246, 251, 0.6);
+            --hairline: rgba(238, 246, 251, 0.14);
+            --gold: #ffd24a;
+            --rainbow: linear-gradient(90deg, #ff6b57, #ffb84d, #ffd24a);
+            --font-sans: 'Montserrat', sans-serif;
+            --font-serif: 'Newsreader', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--sea-deep);
+            background-image:
+                radial-gradient(90rem 50rem at 80% -10%, rgba(31, 111, 174, 0.28), transparent 60%),
+                radial-gradient(70rem 40rem at 0% 110%, rgba(11, 58, 99, 0.55), transparent 60%);
+            color: var(--foam);
+            font-family: var(--font-sans);
+            font-weight: 300;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ==== Hero ==== */
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            height: 100svh;
+            overflow: hidden;
+        }
+
+        .hero-photo {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+        }
+
+        .hero-shade {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(7, 30, 51, 0.35) 0%, rgba(7, 30, 51, 0) 30%),
+                linear-gradient(180deg, rgba(7, 30, 51, 0) 45%, rgba(7, 30, 51, 0.88) 100%);
+        }
+
+        .hero-title {
+            position: absolute;
+            left: clamp(1.5rem, 6vw, 6rem);
+            right: clamp(1.5rem, 6vw, 6rem);
+            bottom: clamp(3rem, 10vh, 6rem);
+        }
+
+        .hero-kicker {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.42em;
+            text-transform: uppercase;
+            color: var(--foam-dim);
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-kicker::after {
+            content: '';
+            display: block;
+            width: 4.5rem;
+            height: 2px;
+            margin-top: 0.9rem;
+            background: var(--rainbow);
+        }
+
+        .hero-title h1 {
+            font-size: clamp(3.2rem, 11vw, 8.5rem);
+            font-weight: 300;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            line-height: 1.02;
+        }
+
+        .hero-dot {
+            color: var(--gold);
+        }
+
+        .hero-caption {
+            margin-top: 1.1rem;
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--foam-dim);
+        }
+
+        .hero-cue {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 1px;
+            height: 4.5rem;
+            overflow: hidden;
+        }
+
+        .hero-cue::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, transparent, var(--foam));
+            animation: cue-drop 2.2s ease-in-out infinite;
+        }
+
+        @keyframes cue-drop {
+            0%   { top: -100%; }
+            60%  { top: 100%; }
+            100% { top: 100%; }
+        }
+
+        /* ==== Chapters ==== */
+
+        main {
+            max-width: 68rem;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 3rem);
+        }
+
+        .chapter {
+            padding: clamp(5rem, 12vh, 8.5rem) 0 0;
+        }
+
+        .chapter-head {
+            display: flex;
+            align-items: baseline;
+            gap: 1.4rem;
+            margin-bottom: clamp(2.5rem, 6vh, 4rem);
+        }
+
+        .chapter-no {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 2rem;
+            color: var(--gold);
+        }
+
+        .chapter-rule {
+            flex: 1;
+            height: 1px;
+            background: var(--hairline);
+            align-self: center;
+        }
+
+        .chapter-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.42em;
+            text-transform: uppercase;
+            color: var(--foam-dim);
+        }
+
+        /* ==== 01 Story ==== */
+
+        .story {
+            max-width: 40rem;
+            font-family: var(--font-serif);
+            font-size: 1.22rem;
+            line-height: 1.85;
+            color: rgba(238, 246, 251, 0.88);
+        }
+
+        .story p + p {
+            margin-top: 1.4em;
+        }
+
+        .story-lead::first-letter {
+            float: left;
+            font-size: 4.2em;
+            line-height: 0.82;
+            padding: 0.08em 0.12em 0 0;
+            color: var(--gold);
+            font-style: normal;
+        }
+
+        .pull-quote {
+            margin: 2.6rem 0;
+            padding-left: 1.6rem;
+            border-left: 2px solid transparent;
+            border-image: var(--rainbow) 1;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-style: italic;
+            line-height: 1.45;
+            color: var(--foam);
+        }
+
+        /* ==== 02 Footprints ==== */
+
+        .region {
+            margin-bottom: clamp(3rem, 7vh, 4.5rem);
+        }
+
+        .region-name {
+            font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+            font-weight: 300;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--sea-face);
+            margin-bottom: 1.4rem;
+        }
+
+        .spot-list {
+            list-style: none;
+        }
+
+        .spot {
+            display: grid;
+            grid-template-columns: minmax(8rem, 12rem) 1fr auto;
+            align-items: baseline;
+            gap: 1.2rem;
+            padding: 1.05rem 0.4rem;
+            border-top: 1px solid var(--hairline);
+            transition: background-color 0.3s ease;
+        }
+
+        .spot:last-child {
+            border-bottom: 1px solid var(--hairline);
+        }
+
+        .spot:hover {
+            background-color: rgba(31, 111, 174, 0.12);
+        }
+
+        .spot:hover .spot-name {
+            color: var(--gold);
+        }
+
+        .spot-name {
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .spot-note {
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--foam-dim);
+        }
+
+        .spot-tag {
+            font-size: 0.66rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--foam-dim);
+            border: 1px solid var(--hairline);
+            border-radius: 999px;
+            padding: 0.28em 0.9em;
+            white-space: nowrap;
+        }
+
+        /* ==== 03 Quiver ==== */
+
+        .boards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(1.2rem, 3vw, 2rem);
+        }
+
+        .board {
+            position: relative;
+            border: 1px solid var(--hairline);
+            padding: 2.2rem 2rem 2rem;
+            transition: transform 0.35s ease, border-color 0.35s ease;
+        }
+
+        .board::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+        }
+
+        .board-cymatic::before {
+            background: var(--rainbow);
+        }
+
+        .board-shadow::before {
+            background: linear-gradient(90deg, var(--sea-face), #9fc9e8);
+        }
+
+        .board:hover {
+            transform: translateY(-4px);
+            border-color: rgba(238, 246, 251, 0.32);
+        }
+
+        .board-brand {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.42em;
+            text-transform: uppercase;
+            color: var(--foam-dim);
+        }
+
+        .board-model {
+            font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+            font-weight: 300;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin: 0.35rem 0 1rem;
+        }
+
+        .board-role {
+            display: inline-block;
+            font-size: 0.66rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            border: 1px solid var(--hairline);
+            border-radius: 999px;
+            padding: 0.32em 1em;
+            margin-bottom: 1.3rem;
+            color: var(--foam-dim);
+        }
+
+        .board-note {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.02rem;
+            line-height: 1.75;
+            color: var(--foam-dim);
+        }
+
+        /* ==== Footer ==== */
+
+        .foot {
+            max-width: 68rem;
+            margin: clamp(5rem, 12vh, 8rem) auto 0;
+            padding: 2.2rem clamp(1.5rem, 5vw, 3rem);
+            border-top: 1px solid var(--hairline);
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--foam-dim);
+        }
+
+        /* ==== Reveal on scroll (JS adds .js to <html>) ==== */
+
+        .js .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .js .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .js .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+
+            .hero-cue::after {
+                animation: none;
+            }
+
+            .board:hover {
+                transform: none;
+            }
+        }
+
+        /* ==== Responsive ==== */
+
+        @media (max-width: 720px) {
+            .spot {
+                grid-template-columns: 1fr auto;
+                row-gap: 0.3rem;
+            }
+
+            .spot-name {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .spot-tag {
+                grid-column: 2;
+                grid-row: 1;
+                justify-self: end;
+            }
+
+            .spot-note {
+                grid-column: 1 / -1;
+                grid-row: 2;
+            }
+
+            .boards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -180,6 +605,34 @@
         <p>© <span id="year">2026</span> shuk.liu — shot at Uluwatu, Bali</p>
     </footer>
 
-    <script src="surf.js"></script>
+    <script>
+        /* pkg/surf/index.html - Reveal-on-scroll and footer year.
+         * Progressive enhancement: without JS, all content stays visible.
+         */
+        document.documentElement.classList.add('js');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const targets = document.querySelectorAll('.reveal');
+
+            if (reduceMotion || !('IntersectionObserver' in window)) {
+                targets.forEach(el => el.classList.add('is-visible'));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            targets.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>

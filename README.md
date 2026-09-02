@@ -28,7 +28,7 @@ Pages.
 `領域流程 (Domain Flow):`
 
 1. Visitor opens `https://bizshuk.github.io/` (served as `index.html`).
-2. Browser executes `js/gallery.js`, which `fetch`-es `data/gallery.json` on
+2. Browser executes the page's inline script, which `fetch`-es `data/gallery.json` on
    `DOMContentLoaded`.
 3. Each gallery entry is materialised as either an `<a>` (when `link` is set)
    or a `<div>` (decorative tile), with the `img_title` rendered as a hover
@@ -37,21 +37,21 @@ Pages.
    `index * 0.05s`).
 5. The résumé tile links to `pkg/resume/index.html`, which renders the full
    CV. The remaining tiles fan out to external profiles (GitHub, LinkedIn,
-   Facebook, Imgur, LeeCode, certificates, projects).
+   Instagram, Imgur, LeeCode).
 
 `核心實體 (Key Entities):`
 
 - `GalleryItem` — `{ link, img_title, style.backgroundImage }`. Lives in
-  `data/gallery.json` and is consumed by `js/gallery.js`.
+  `data/gallery.json` and is consumed by the inline script in `index.html`.
 - `ResumeSection` — `hero`, `education`, `skills`, `work experience`,
   `other experience`. Each section is a static block in
   `pkg/resume/index.html`, styled by that page's own inline CSS.
 
 `相關處理器 (Related Handlers):`
 
-- `DOMContentLoaded` listener in `js/gallery.js` — bootstraps the gallery.
-- `IntersectionObserver` in the inline script of `pkg/resume/index.html` and in
-  `pkg/surf/surf.js` — reveals sections on scroll as progressive enhancement.
+- `DOMContentLoaded` listener in `index.html` — bootstraps the gallery.
+- `IntersectionObserver` in the inline scripts of `pkg/resume/index.html` and
+  `pkg/surf/index.html` — reveals sections on scroll as progressive enhancement.
 
 ---
 
@@ -68,7 +68,7 @@ template engine and no data binding.
    `https://bizshuk.github.io/pkg/resume/`.
 2. The hero introduces the owner (portrait, one-paragraph summary, contact
    chips) and carries the last-updated stamp; a floating icon in the top
-   right downloads `export/Resume-ShukLiu.pdf`.
+   right downloads `assets/Resume-ShukLiu.pdf`.
 3. Sections render from inline HTML and are visible without JavaScript; when
    scripting is available they fade in on scroll and the footer year updates.
 
@@ -110,7 +110,7 @@ template engine and no data binding.
   `https://bizshuk.github.io/`.
 - View the resume: click the résumé tile, or visit
   `https://bizshuk.github.io/pkg/resume/` directly. The PDF is at
-  `https://bizshuk.github.io/pkg/resume/export/Resume-ShukLiu.pdf`.
+  `https://bizshuk.github.io/pkg/resume/assets/Resume-ShukLiu.pdf`.
 - View the surf page: `https://bizshuk.github.io/pkg/surf/`.
 - Edit the gallery: append or remove entries in `data/gallery.json`. An
   entry with an empty `link` renders as a decorative tile (no anchor, no
@@ -119,9 +119,10 @@ template engine and no data binding.
 
 ## 改善建議 (Improvement Suggestions)
 
-- [ ] Extract the shared head boilerplate (font import, favicon, referrer
-      policy) duplicated across `index.html` and the `pkg/` subpages into a
-      small client-side include so layout changes are made in one place.
+- [ ] The shared head boilerplate (font import, favicon, referrer policy) is
+      duplicated across `index.html` and the `pkg/` subpages, and each page now
+      inlines its own CSS/JS. Consider a small generator or include so shared
+      layout changes are made in one place.
 - [ ] Add a build/lint step (e.g. an `html-validate` or `markdownlint` hook)
       to catch dead links, broken image refs, and stale copy. The site has
       no CI and `data/params.json` is still the original GitHub Pages

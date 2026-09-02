@@ -7,11 +7,11 @@
 
 | 術語 (Term) | 英文 (English) | 定義 (Definition) | 出處 (Source) |
 | ----------- | -------------- | ----------------- | ------------- |
-| 作品格 | Gallery Item | 首頁格狀清單的一格。schema 為 `{ link, img_title, style.backgroundImage }`,由 JS 於執行期 fetch 後渲染 | `data/gallery.json`, `js/gallery.js` |
-| 格標題 | `img_title` | 作品格的顯示文字,渲染成 hover 時浮現的 overlay 標題 | `data/gallery.json`, `js/gallery.js` (`gallery-item-title`) |
-| 裝飾格 | Decorative Tile | `link` 為空字串或空白的作品格。渲染成 `<div>` 而非 `<a>`,外觀相同但不可點擊 | `js/gallery.js` (`isLink` 判斷式) |
-| 疊層 | Overlay | 覆蓋在作品格底圖上的標題層,class 為 `gallery-item-overlay` | `js/gallery.js`, `css/index.css` |
-| 錯位進場 | Staggered Animation | 每格依索引遞增 `animationDelay`(`index * 0.05s`)造成的依序淡入 | `js/gallery.js` |
+| 作品格 | Gallery Item | 首頁格狀清單的一格。schema 為 `{ link, img_title, style.backgroundImage }`,由 JS 於執行期 fetch 後渲染 | `data/gallery.json`, `index.html` inline script |
+| 格標題 | `img_title` | 作品格的顯示文字,渲染成 hover 時浮現的 overlay 標題 | `data/gallery.json`, `index.html` (`gallery-item-title`) |
+| 裝飾格 | Decorative Tile | `link` 為空字串或空白的作品格。渲染成 `<div>` 而非 `<a>`,外觀相同但不可點擊 | `index.html` inline script (`isLink` 判斷式) |
+| 疊層 | Overlay | 覆蓋在作品格底圖上的標題層,class 為 `gallery-item-overlay` | `index.html` inline script 與 inline 樣式 |
+| 錯位進場 | Staggered Animation | 每格依索引遞增 `animationDelay`(`index * 0.05s`)造成的依序淡入 | `index.html` inline script |
 
 ## 履歷展示 (Resume Showcase)
 
@@ -28,8 +28,8 @@
 | 足跡 | Footprints | 衝浪地點列表區塊(Bali / Lombok / Taiwan) | `pkg/surf/index.html` `#footprints` |
 | 板櫃 | Quiver | 衝浪板收藏區塊,每張板有 `board-brand` / `board-model` / `board-role` / `board-note` | `pkg/surf/index.html` `#quiver` |
 | 浪點 | Spot | 足跡區塊內的單一衝浪點,含 `spot-name` / `spot-tag` / `spot-note` | `pkg/surf/index.html` `.spot` |
-| 捲動顯影 | Reveal | 元素進入視窗時由 `IntersectionObserver` 加上 `is-visible` 的漸入效果。threshold 為 `0.15` | `pkg/surf/surf.js`, `pkg/surf/index.html` `.reveal` |
-| JS 旗標 | `js` class | `pkg/surf/surf.js` 在 `documentElement` 掛上的 class。作為 progressive enhancement 開關 — 沒有 JS 時內容維持全可見 | `pkg/surf/surf.js`, `pkg/surf/surf.css` |
+| 捲動顯影 | Reveal | 元素進入視窗時由 `IntersectionObserver` 加上 `is-visible` 的漸入效果。threshold 為 `0.15` | `pkg/surf/index.html` inline script, `.reveal` |
+| JS 旗標 | `js` class | `pkg/surf/index.html` 的 inline script 在 `documentElement` 掛上的 class。作為 progressive enhancement 開關 — 沒有 JS 時內容維持全可見 | `pkg/surf/index.html` inline script 與 inline 樣式 |
 
 ## App Store 政策頁 (Store Policy Pages)
 
@@ -53,9 +53,9 @@
 ## 狀態值 (Status Values)
 
 未偵測到列舉型狀態值 (Not detected) — 本站無執行期狀態機,唯一的分支是
-`js/gallery.js` 以 `link` 是否為非空字串決定渲染成 `<a>` 或 `<div>`。
+`index.html` 的 inline script 以 `link` 是否為非空字串決定渲染成 `<a>` 或 `<div>`。
 
 ## 待補 (To be extended)
 
-- `css/index.css`、`pkg/surf/surf.css` 與 `pkg/resume/index.html` 的 inline 樣式各自維護一組 `:root` design token,
+- `index.html`、`pkg/resume/index.html`、`pkg/surf/index.html` 的 inline 樣式各自維護一組 `:root` design token,
   尚未整理出共用命名。統一 token 之後再把 token 名收進本表。

@@ -1,26 +1,20 @@
 [{
-    "link": "https://www.facebook.com/InitialShuk",
-    "img_title": "facebook",
-    "style": {
-        "backgroundImage": "url('https://i.imgur.com/SpbbJ3z.jpg?1')"
-    }
-}, {
     "link": "pkg/resume/index.html",
-    "img_title": "Resume (non-updated)",
+    "img_title": "Resume",
     "style": {
         "backgroundImage": "url('https://i.imgur.com/hx7Oymx.jpg')"
     }
 }, {
-    "link": "pkg/surf/index.html",
-    "img_title": "Surf · Uluwatu",
+    "link": "https://www.instagram.com/lifeshuk/",
+    "img_title": "Instagram",
     "style": {
-        "backgroundImage": "url('assets/images/personal/surf/uluwatu-dropin.jpg')"
+        "backgroundImage": "url('https://i.imgur.com/SpbbJ3z.jpg?1')"
     }
 }, {
-    "link": "https://shukliu.imgur.com/",
-    "img_title": "imgur",
+    "link": "https://www.linkedin.com/in/initialshuk",
+    "img_title": "Linkedin",
     "style": {
-        "backgroundImage": "url('https://i.imgur.com/XwGpqgN.jpg?1')"
+        "backgroundImage": "url('https://i.imgur.com/oxa6XYD.jpg?1')"
     }
 }, {
     "link": "https://github.com/BizShuk",
@@ -29,10 +23,10 @@
         "backgroundImage": "url('https://i.imgur.com/zYjqjig.jpg')"
     }
 }, {
-    "link": "https://github.com/BizShuk/bizshuk.github.io/blob/master/resume/project.md",
-    "img_title": "Projects",
+    "link": "pkg/surf/index.html",
+    "img_title": "Surf · Uluwatu",
     "style": {
-        "backgroundImage": "url('https://i.imgur.com/nSF6Kft.jpg?1')"
+        "backgroundImage": "url('assets/images/personal/surf/uluwatu-dropin.jpg')"
     }
 }, {
     "link": "https://leecode.com/bizshuk/",
@@ -41,16 +35,22 @@
         "backgroundImage": "url('https://i.imgur.com/SOvLqzF.jpg?1')"
     }
 }, {
-    "link": "https://github.com/BizShuk/bizshuk.github.io/tree/master/resume/certificate",
-    "img_title": "Certificate",
+    "link": "https://shukliu.imgur.com/",
+    "img_title": "imgur",
     "style": {
-        "backgroundImage": "url('https://i.imgur.com/MC7PivN.jpg?1')"
+        "backgroundImage": "url('https://i.imgur.com/XwGpqgN.jpg?1')"
     }
 }, {
-    "link": "https://www.linkedin.com/in/initialshuk",
-    "img_title": "Linkedin",
+    "link": "",
+    "img_title": "",
     "style": {
-        "backgroundImage": "url('https://i.imgur.com/oxa6XYD.jpg?1')"
+        "backgroundImage": "url('https://i.imgur.com/nSF6Kft.jpg?1')"
+    }
+}, {
+    "link": "",
+    "img_title": "",
+    "style": {
+        "backgroundImage": "url('https://i.imgur.com/MC7PivN.jpg?1')"
     }
 }, {
     "link": "",
