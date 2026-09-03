@@ -1,6 +1,6 @@
 # Liu, Teng-Yuan (Shuk Liu)
 
-<biz.shuk@gmail.com> · [LinkedIn](https://www.linkedin.com/in/bizshuk/) · [WhatsApp](https://api.whatsapp.com/send?phone=6580129716) Last updated: 2026-09-02.
+<biz.shuk@gmail.com> · [LinkedIn](https://www.linkedin.com/in/bizshuk/) · [WhatsApp](https://api.whatsapp.com/send?phone=6580129716) Last updated: 2026-09-03.
 
 > Singapore Permanent Resident (PR), currently based in Singapore. 12+ years of experience, focused on
 > system architecture (organisation design included) and AI orchestration. Familiar with the majority of
@@ -19,7 +19,7 @@ Tools matter less than the patterns and concepts behind them.
 | Area            | Detail                                                                                                |
 | --------------- | ----------------------------------------------------------------------------------------------------- |
 | Certificate     | AWS Solutions Architect – Associate (2018/08) · TOEIC 830 (2019/01)                                   |
-| Language        | Golang, JavaScript, Java (Spring Boot), HTML5, Bash, SQL                                              |
+| Language        | Java 4.5 yrs — Spring Boot, Spring Batch, Spring Data, MVC; authored a shared EventBus framework and a Spring Secret Manager plugin. Golang, JavaScript, HTML5, Bash, SQL |
 | Test            | Unit test (mock), integration test, stress test; coverage above 90%                                   |
 | Infra / Tooling | AWS, Kubernetes (Istio), EFK, Docker, Linux, GitLab, Azure DevOps, RDB, Elasticsearch, MongoDB, Redis |
 | Concept         | Microservice, event-driven, HA, scalability, SOLID, design pattern, CI/CD, cache, TDD, RWD, SDLC      |

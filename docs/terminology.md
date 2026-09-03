@@ -3,6 +3,9 @@
 本檔是本站術語的`單一定義來源 (single source of truth)`。`README.md`、`CLAUDE.md`、
 程式碼註解與 commit message 一律沿用此處用詞,同一概念不得有第二種說法。
 
+本表涵蓋`網站本身`。履歷與職缺庫的術語自成一域,定義於
+[pkg/resume/docs/terminology.md](../pkg/resume/docs/terminology.md)。
+
 ## 個人作品集 (Personal Portfolio)
 
 | 術語 (Term) | 英文 (English) | 定義 (Definition) | 出處 (Source) |
@@ -54,6 +57,9 @@
 
 未偵測到列舉型狀態值 (Not detected) — 本站無執行期狀態機,唯一的分支是
 `index.html` 的 inline script 以 `link` 是否為非空字串決定渲染成 `<a>` 或 `<div>`。
+
+職缺庫 (`pkg/resume/jd/`) 的投遞狀態列舉值不屬於本站執行期,定義見
+[pkg/resume/docs/terminology.md](../pkg/resume/docs/terminology.md)。
 
 ## 待補 (To be extended)
 
