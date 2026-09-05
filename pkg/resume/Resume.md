@@ -21,7 +21,7 @@ Tools matter less than the patterns and concepts behind them.
 | Certificate     | AWS Solutions Architect – Associate (2018/08) · TOEIC 830 (2019/01)                                   |
 | Language        | Java 4.5 yrs — Spring Boot, Spring Batch, Spring Data, MVC; authored a shared EventBus framework and a Spring Secret Manager plugin. Golang, JavaScript, HTML5, Bash, SQL |
 | Test            | Unit test (mock), integration test, stress test; coverage above 90%                                   |
-| Infra / Tooling | AWS, Kubernetes (Istio), EFK, Docker, Linux, GitLab, Azure DevOps, RDB, Elasticsearch, MongoDB, Redis |
+| Infra / Tooling | AWS, Kubernetes (Istio), Terraform, GitOps (Argo CD), Ansible, EFK, Docker, Linux, GitLab, Azure DevOps, RDB, Elasticsearch, MongoDB, Redis |
 | Concept         | Microservice, event-driven, HA, scalability, SOLID, design pattern, CI/CD, cache, TDD, RWD, SDLC      |
 | Methodology     | Scrum, Agile, Lean                                                                                    |
 
@@ -46,11 +46,13 @@ Tools matter less than the patterns and concepts behind them.
 ### Senior Engineer — TSMC, Hsinchu, TW · 2022/03 ~ 2022/07
 
 The largest semiconductor company.
-Stack: Kubernetes (Docker, Istio, EFK, Prometheus, Grafana, Argo, NATS), Node.js, Redis, Azure DevOps.
+Stack: Kubernetes (Docker, Istio, EFK, Prometheus, Grafana, Argo CD, NATS), Terraform, Node.js, Redis, Azure DevOps.
 
 - Acted as technical project manager: broke work into tasks and set target schedules against goals.
 - Architected the AI platform to make scope explicit, drive direction and align with business needs.
 - Set a high project standard: functions under 30 lines, testing coverage above 90%.
+- Ran platform delivery as GitOps: Argo CD reconciled cluster state from Git, with Terraform describing the
+  underlying cloud and cluster resources so environments stayed reproducible and reviewable.
 - Projects: GPU job scheduler, PoC tooling, CI/CD flow on Azure.
 - Left over company culture fit, with appreciation from both managers and the department manager.
 
@@ -69,9 +71,11 @@ Stack: Scrum, AWS, Golang, Java (Spring Boot, MVC, Batch, Data), Elasticsearch, 
 
 Internet company, 500+ people, spanning device hardware to backend as a cloud application solution
 (comparable to parse.com).
-Stack: Bash, Lua, Linux, Nginx, Docker, Jenkins, Ansible, Kubernetes, MongoDB, PostgreSQL.
+Stack: Bash, Lua, Linux, Nginx, Docker, Jenkins, Terraform, Ansible, Kubernetes, MongoDB, PostgreSQL.
 
 - Modelled the CI/CD of a Backend-as-a-Service platform by integrating Jenkins, Docker and Kubernetes.
+- Codified infrastructure with Terraform and Ansible, and made Git the single source of truth for
+  environment state so every change to the platform landed through review rather than manual steps.
 - Built an end-to-end test framework with syntax checks, API detection and request profiling.
 - Shipped a CLI that gives users linear version control over their own code.
 

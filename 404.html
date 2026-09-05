@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>404 - 迷路的旅人 | 小朋友下樓梯</title>
+    <meta name="description" content="404 Page Not Found - 既然走錯路了，就來玩場經典的小朋友下樓梯吧！">
+    <meta name="referrer" content="no-referrer">
+    <link rel="shortcut icon" type="image/gif" href="https://i.imgur.com/QpGrcBZ.jpg?1">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #141A16;
+            --surface-color: #1E2721;
+            --surface-card: #27342C;
+            --text-primary: #F3F5F2;
+            --text-muted: #8E9F92;
+            --accent-gold: #E5B869;
+            --accent-green: #52B788;
+            --accent-red: #E76F51;
+            --accent-blue: #4EA8DE;
+            --border-color: rgba(162, 178, 159, 0.2);
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --font-retro: 'Press Start 2P', monospace, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 50% 20%, rgba(82, 183, 136, 0.12) 0%, transparent 60%),
+                radial-gradient(circle at 80% 80%, rgba(229, 184, 105, 0.08) 0%, transparent 50%),
+                linear-gradient(180deg, #121814 0%, #17201a 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 16px 12px 24px;
+            overflow-x: hidden;
+        }
+
+        /* ==== Header & 404 Message ==== */
+        .header {
+            text-align: center;
+            margin-bottom: 12px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .error-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            background: rgba(231, 111, 81, 0.15);
+            border: 1px solid rgba(231, 111, 81, 0.4);
+            border-radius: 999px;
+            color: var(--accent-red);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            font-weight: 400;
+        }
+
+        /* ==== Arcade Game Frame ==== */
+        .game-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 440px;
+            background: var(--surface-color);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Top HUD Bar */
+        .hud-bar {
+            width: 100%;
+            height: 48px;
+            background: #18201A;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 14px;
+            font-size: 0.8rem;
+            font-family: var(--font-retro);
+        }
+
+        .hud-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hud-floor {
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .hud-hp-container {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hud-hp-label {
+            color: var(--text-muted);
+            font-size: 0.65rem;
+        }
+
+        .hp-bar-bg {
+            width: 90px;
+            height: 12px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hp-bar-fill {
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, #E76F51 0%, #E9C46A 40%, #52B788 100%);
+            border-radius: 3px;
+            transition: width 0.15s ease-out;
+        }
+
+        .hud-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sound-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-primary);
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .sound-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.05);
+        }
+
+        /* Canvas Arena */
+        .canvas-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 400 / 560;
+            background: #0F1411;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #gameCanvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+            image-rendering: pixelated;
+        }
+
+        /* Overlays: Start Screen & Game Over */
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 20, 17, 0.88);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            text-align: center;
+            z-index: 10;
+            transition: opacity 0.25s ease;
+        }
+
+        .overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+            display: none;
+        }
+
+        .overlay-title {
+            font-family: var(--font-retro);
+            font-size: 1.25rem;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+            line-height: 1.4;
+            text-shadow: 0 0 10px rgba(229, 184, 105, 0.5);
+        }
+
+        .game-over-title {
+            color: var(--accent-red);
+            text-shadow: 0 0 12px rgba(231, 111, 81, 0.6);
+        }
+
+        .overlay-stats {
+            margin: 14px 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            width: 100%;
+            max-width: 260px;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+        }
+
+        .stat-val {
+            font-family: var(--font-retro);
+            font-size: 0.85rem;
+            color: var(--text-primary);
+        }
+
+        .stat-val.highlight {
+            color: var(--accent-gold);
+        }
+
+        .new-record-tag {
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            font-family: var(--font-retro);
+            animation: pulse 1s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { opacity: 0.5; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1.05); }
+        }
+
+        .tips-box {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            max-width: 300px;
+        }
+
+        .tips-box p {
+            margin-bottom: 4px;
+        }
+
+        .key-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: var(--font-retro);
+            font-size: 0.65rem;
+            color: var(--text-primary);
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            max-width: 240px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px 20px;
+            font-family: var(--font-retro);
+            font-size: 0.8rem;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #52B788 0%, #2D6A4F 100%);
+            color: #FFFFFF;
+            box-shadow: 0 4px 14px rgba(82, 183, 136, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(82, 183, 136, 0.6);
+            background: linear-gradient(135deg, #5ec996 0%, #347c5d 100%);
+        }
+
+        .btn-primary:active {
+            transform: translateY(1px);
+        }
+
+        .btn-retry {
+            background: linear-gradient(135deg, #E76F51 0%, #C85A3F 100%);
+            color: #FFFFFF;
+            box-shadow: 0 4px 14px rgba(231, 111, 81, 0.4);
+        }
+
+        .btn-retry:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 111, 81, 0.6);
+            background: linear-gradient(135deg, #f07b5e 0%, #d86347 100%);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Mobile Touch Controls */
+        .touch-controls {
+            width: 100%;
+            display: flex;
+            gap: 12px;
+            padding: 12px 14px;
+            background: #18201A;
+            border-top: 2px solid var(--border-color);
+        }
+
+        .touch-btn {
+            flex: 1;
+            height: 52px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.1s;
+            touch-action: manipulation;
+        }
+
+        .touch-btn:active, .touch-btn.active {
+            background: rgba(82, 183, 136, 0.25);
+            border-color: var(--accent-green);
+            transform: scale(0.96);
+        }
+
+        /* Footer links */
+        .footer-nav {
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.85rem;
+        }
+
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-link:hover {
+            color: var(--accent-gold);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="error-badge">Error 404 • Page Not Found</div>
+        <h1 class="title">迷失在未知的層級</h1>
+        <p class="subtitle">既然走錯路了，不妨踩著階梯向地下深處探險吧！</p>
+    </header>
+
+    <!-- Arcade Game Frame -->
+    <main class="game-wrapper">
+        <!-- Top HUD -->
+        <div class="hud-bar">
+            <div class="hud-left">
+                <div class="hud-floor" id="hudFloor">B 1 F</div>
+                <div class="hud-hp-container">
+                    <span class="hud-hp-label">HP</span>
+                    <div class="hp-bar-bg">
+                        <div class="hp-bar-fill" id="hpBarFill"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="hud-right">
+                <button class="sound-btn" id="soundBtn" title="切換音效" aria-label="切換音效">🔊</button>
+            </div>
+        </div>
+
+        <!-- Canvas Container -->
+        <div class="canvas-container">
+            <canvas id="gameCanvas" width="400" height="560"></canvas>
+
+            <!-- Start Screen Overlay -->
+            <div class="overlay" id="startOverlay">
+                <div class="overlay-title">小朋友下樓梯<br><span style="font-size:0.75rem; color:var(--text-muted); font-family:var(--font-sans);">NS-SHAFT ARCADE</span></div>
+                
+                <div class="tips-box">
+                    <p>🏃 <span class="key-badge">◀</span> <span class="key-badge">▶</span> 或 <span class="key-badge">A</span> <span class="key-badge">D</span> 移動</p>
+                    <p>🟩 <b>普通階梯</b>：恢復 1 點生命值</p>
+                    <p>⚡ <b>彈簧階梯</b>：強力向上高彈跳</p>
+                    <p>⚠️ <b>尖刺階梯</b>：碰觸大量扣血</p>
+                    <p>💨 <b>傳送帶</b>：急速強制橫向滑動</p>
+                    <p>💥 <b>易碎階梯</b>：踏上後快速崩塌</p>
+                    <p style="color:var(--accent-red); margin-top:6px;">☠️ 避開天花板利刺與跌落深淵！</p>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-primary" id="startBtn">開始遊戲 START</button>
+                    <a href="/" class="btn btn-outline">返回首頁 HOME</a>
+                </div>
+            </div>
+
+            <!-- Game Over Screen Overlay -->
+            <div class="overlay hidden" id="gameOverOverlay">
+                <div class="overlay-title game-over-title">GAME OVER</div>
+                
+                <div class="overlay-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">本次探險</span>
+                        <span class="stat-val highlight" id="finalFloor">B 1 F</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">歷史紀錄</span>
+                        <span class="stat-val" id="bestFloor">B 1 F</span>
+                    </div>
+                    <div id="newRecordAlert" class="new-record-tag" style="display: none;">🏆 創下新紀錄！</div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-retry" id="retryBtn">再玩一次 RETRY</button>
+                    <a href="/" class="btn btn-outline">返回首頁 HOME</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Touch Controls -->
+        <div class="touch-controls" id="touchControls">
+            <button class="touch-btn" id="touchLeft" aria-label="向左移動">◀</button>
+            <button class="touch-btn" id="touchRight" aria-label="向右移動">▶</button>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <footer class="footer-nav">
+        <a href="/" class="footer-link">← 回到首頁 (Personal Portfolio)</a>
+        <a href="/pkg/resume/" class="footer-link">檢視個人履歷 (Résumé)</a>
+    </footer>
+
+    <!-- Game Script -->
+    <script>
+        (function() {
+            'use strict';
+
+            // ==========================================
+            // Audio System (Web Audio API Synthesizer)
+            // ==========================================
+            let audioCtx = null;
+            let isMuted = false;
+
+            function initAudio() {
+                if (!audioCtx) {
+                    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                    if (AudioContextClass) {
+                        audioCtx = new AudioContextClass();
+                    }
+                }
+                if (audioCtx && audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+            }
+
+            function playTone(freq, type, duration, startDelay = 0, endFreq = null) {
+                if (isMuted || !audioCtx) return;
+                try {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    const now = audioCtx.currentTime + startDelay;
+
+                    osc.type = type;
+                    osc.frequency.setValueAtTime(freq, now);
+                    if (endFreq) {
+                        osc.frequency.exponentialRampToValueAtTime(endFreq, now + duration);
+                    }
+
+                    gain.gain.setValueAtTime(0.12, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+
+                    osc.start(now);
+                    osc.stop(now + duration);
+                } catch (e) {
+                    // Audio ignore error
+                }
+            }
+
+            const SFX = {
+                stepNormal() {
+                    playTone(340, 'sine', 0.08);
+                },
+                heal() {
+                    playTone(440, 'triangle', 0.1, 0, 880);
+                },
+                bounce() {
+                    playTone(280, 'sine', 0.22, 0, 750);
+                },
+                spike() {
+                    playTone(160, 'sawtooth', 0.25, 0, 70);
+                },
+                crumble() {
+                    playTone(180, 'square', 0.15, 0, 90);
+                },
+                conveyor() {
+                    playTone(220, 'triangle', 0.05);
+                },
+                gameOver() {
+                    playTone(320, 'sawtooth', 0.2, 0, 200);
+                    playTone(200, 'sawtooth', 0.4, 0.2, 80);
+                }
+            };
+
+            // ==========================================
+            // Game Constants & Configuration
+            // ==========================================
+            const CANVAS_W = 400;
+            const CANVAS_H = 560;
+            const MAX_HP = 12;
+            const CEILING_SPIKE_H = 20;
+
+            const PLATFORM_TYPES = {
+                NORMAL: 'normal',
+                SPIKE: 'spike',
+                BOUNCE: 'bounce',
+                CONVEYOR_L: 'conveyor_l',
+                CONVEYOR_R: 'conveyor_r',
+                CRUMBLE: 'crumble'
+            };
+
+            const canvas = document.getElementById('gameCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // Set Retina Display crisp resolution
+            function setupCanvasDpi() {
+                const dpr = window.devicePixelRatio || 1;
+                canvas.width = CANVAS_W * dpr;
+                canvas.height = CANVAS_H * dpr;
+                ctx.scale(dpr, dpr);
+            }
+            setupCanvasDpi();
+
+            // DOM Elements
+            const hudFloor = document.getElementById('hudFloor');
+            const hpBarFill = document.getElementById('hpBarFill');
+            const soundBtn = document.getElementById('soundBtn');
+            const startOverlay = document.getElementById('startOverlay');
+            const gameOverOverlay = document.getElementById('gameOverOverlay');
+            const startBtn = document.getElementById('startBtn');
+            const retryBtn = document.getElementById('retryBtn');
+            const finalFloorText = document.getElementById('finalFloor');
+            const bestFloorText = document.getElementById('bestFloor');
+            const newRecordAlert = document.getElementById('newRecordAlert');
+            const touchLeft = document.getElementById('touchLeft');
+            const touchRight = document.getElementById('touchRight');
+
+            // Game States
+            const STATE = {
+                MENU: 0,
+                PLAYING: 1,
+                GAMEOVER: 2
+            };
+            let gameState = STATE.MENU;
+
+            // Inputs
+            const keys = {
+                left: false,
+                right: false
+            };
+
+            // Player State
+            const player = {
+                x: 188,
+                y: 120,
+                width: 24,
+                height: 28,
+                vx: 0,
+                vy: 0,
+                speed: 4.8,
+                gravity: 0.38,
+                maxVy: 10,
+                hp: MAX_HP,
+                facing: 1, // 1 right, -1 left
+                onPlatform: null,
+                invincibleFrames: 0,
+                runCycle: 0,
+                isBouncing: false
+            };
+
+            // Platforms & Scrolling
+            let platforms = [];
+            let scrollSpeed = 1.6;
+            let currentFloor = 1;
+            let distanceScrolled = 0;
+            let platformIdCounter = 0;
+            let highScore = parseInt(localStorage.getItem('ns_shaft_highscore') || '1', 10);
+
+            // Particles
+            let particles = [];
+
+            function createParticles(x, y, color, count = 8) {
+                for (let i = 0; i < count; i++) {
+                    particles.push({
+                        x: x,
+                        y: y,
+                        vx: (Math.random() - 0.5) * 5,
+                        vy: (Math.random() - 0.5) * 5,
+                        size: Math.random() * 3 + 2,
+                        color: color,
+                        alpha: 1,
+                        decay: Math.random() * 0.04 + 0.02
+                    });
+                }
+            }
+
+            // ==========================================
+            // Platform Creation & Management
+            // ==========================================
+            function createPlatform(y, forcedType = null) {
+                const width = 94;
+                const height = 15;
+                const margin = 16;
+                const x = Math.floor(Math.random() * (CANVAS_W - width - margin * 2)) + margin;
+
+                let type = forcedType;
+                if (!type) {
+                    const r = Math.random();
+                    if (r < 0.42) {
+                        type = PLATFORM_TYPES.NORMAL;
+                    } else if (r < 0.58) {
+                        type = PLATFORM_TYPES.SPIKE;
+                    } else if (r < 0.72) {
+                        type = PLATFORM_TYPES.BOUNCE;
+                    } else if (r < 0.82) {
+                        type = PLATFORM_TYPES.CONVEYOR_L;
+                    } else if (r < 0.92) {
+                        type = PLATFORM_TYPES.CONVEYOR_R;
+                    } else {
+                        type = PLATFORM_TYPES.CRUMBLE;
+                    }
+                }
+
+                platformIdCounter++;
+                return {
+                    id: platformIdCounter,
+                    x: x,
+                    y: y,
+                    width: width,
+                    height: height,
+                    type: type,
+                    crumbleTimer: 0,
+                    isCrumbled: false,
+                    animOffset: 0
+                };
+            }
+
+            function initGame() {
+                player.x = CANVAS_W / 2 - 12;
+                player.y = 80;
+                player.vx = 0;
+                player.vy = 0;
+                player.hp = MAX_HP;
+                player.onPlatform = null;
+                player.invincibleFrames = 0;
+                player.isBouncing = false;
+
+                currentFloor = 1;
+                distanceScrolled = 0;
+                scrollSpeed = 1.6;
+                particles = [];
+                platforms = [];
+
+                // Create starter platforms
+                // First platform right under player
+                platforms.push({
+                    id: 0,
+                    x: CANVAS_W / 2 - 50,
+                    y: 170,
+                    width: 100,
+                    height: 15,
+                    type: PLATFORM_TYPES.NORMAL,
+                    crumbleTimer: 0,
+                    isCrumbled: false,
+                    animOffset: 0
+                });
+
+                // Generate platforms downwards
+                let currentY = 240;
+                while (currentY < CANVAS_H + 40) {
+                    platforms.push(createPlatform(currentY));
+                    currentY += 72 + Math.floor(Math.random() * 16);
+                }
+
+                updateHUD();
+            }
+
+            function updateHUD() {
+                hudFloor.textContent = `B ${currentFloor} F`;
+                const hpPercent = Math.max(0, Math.min(100, (player.hp / MAX_HP) * 100));
+                hpBarFill.style.width = `${hpPercent}%`;
+
+                if (hpPercent <= 25) {
+                    hpBarFill.style.background = '#E76F51';
+                } else if (hpPercent <= 50) {
+                    hpBarFill.style.background = '#E9C46A';
+                } else {
+                    hpBarFill.style.background = 'linear-gradient(90deg, #E76F51 0%, #E9C46A 40%, #52B788 100%)';
+                }
+            }
+
+            // ==========================================
+            // Physics & Game Loop
+            // ==========================================
+            function update() {
+                if (gameState !== STATE.PLAYING) return;
+
+                // Difficulty scaling
+                scrollSpeed = 1.6 + Math.min(2.0, (currentFloor - 1) * 0.035);
+
+                // Update Floor depth
+                distanceScrolled += scrollSpeed;
+                currentFloor = 1 + Math.floor(distanceScrolled / 52);
+                updateHUD();
+
+                // Horizontal movement
+                if (keys.left) {
+                    player.vx = -player.speed;
+                    player.facing = -1;
+                    player.runCycle += 0.25;
+                } else if (keys.right) {
+                    player.vx = player.speed;
+                    player.facing = 1;
+                    player.runCycle += 0.25;
+                } else {
+                    player.vx *= 0.55;
+                    if (Math.abs(player.vx) < 0.1) player.vx = 0;
+                }
+
+                // Conveyor influence
+                if (player.onPlatform) {
+                    if (player.onPlatform.type === PLATFORM_TYPES.CONVEYOR_L) {
+                        player.x -= 2.6;
+                        if (Math.random() < 0.05) SFX.conveyor();
+                    } else if (player.onPlatform.type === PLATFORM_TYPES.CONVEYOR_R) {
+                        player.x += 2.6;
+                        if (Math.random() < 0.05) SFX.conveyor();
+                    }
+                }
+
+                player.x += player.vx;
+
+                // Wall bounds
+                if (player.x < 4) {
+                    player.x = 4;
+                    player.vx = 0;
+                } else if (player.x + player.width > CANVAS_W - 4) {
+                    player.x = CANVAS_W - 4 - player.width;
+                    player.vx = 0;
+                }
+
+                // Invincible frames countdown
+                if (player.invincibleFrames > 0) {
+                    player.invincibleFrames--;
+                }
+
+                // Gravity & Vertical physics
+                if (player.onPlatform) {
+                    // Check if player walked off platform
+                    const p = player.onPlatform;
+                    const onP = (player.x + player.width > p.x && player.x < p.x + p.width);
+                    if (!onP || p.isCrumbled) {
+                        player.onPlatform = null;
+                    } else {
+                        // Move with platform upward
+                        player.y = p.y - player.height;
+                        player.vy = 0;
+                    }
+                }
+
+                if (!player.onPlatform) {
+                    player.vy += player.gravity;
+                    if (player.vy > player.maxVy) player.vy = player.maxVy;
+                    player.y += player.vy;
+                }
+
+                // Platform collisions (One-way jumping / landing down)
+                if (player.vy >= 0 && !player.onPlatform) {
+                    for (let i = 0; i < platforms.length; i++) {
+                        const p = platforms[i];
+                        if (p.isCrumbled) continue;
+
+                        const feetY = player.y + player.height;
+                        const prevFeetY = feetY - player.vy;
+
+                        if (player.x + player.width - 4 > p.x && player.x + 4 < p.x + p.width) {
+                            if (prevFeetY <= p.y + 4 && feetY >= p.y - 4) {
+                                // Land on platform
+                                player.y = p.y - player.height;
+                                player.vy = 0;
+                                player.onPlatform = p;
+
+                                // Handle platform specific effects
+                                handlePlatformLanding(p);
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                // Ceiling Spikes Collision
+                if (player.y <= CEILING_SPIKE_H) {
+                    player.y = CEILING_SPIKE_H + 1;
+                    player.vy = 4.5;
+                    player.onPlatform = null;
+
+                    if (player.invincibleFrames === 0) {
+                        damagePlayer(4);
+                        createParticles(player.x + player.width / 2, CEILING_SPIKE_H, '#E76F51', 12);
+                    }
+                }
+
+                // Bottom Pit Collision (Falling to death)
+                if (player.y > CANVAS_H + 10) {
+                    gameOver();
+                    return;
+                }
+
+                // Scroll Platforms upwards
+                for (let i = 0; i < platforms.length; i++) {
+                    const p = platforms[i];
+                    p.y -= scrollSpeed;
+                    p.animOffset = (p.animOffset + 0.15) % 10;
+
+                    // Crumble logic
+                    if (p.type === PLATFORM_TYPES.CRUMBLE && p.isTriggered && !p.isCrumbled) {
+                        p.crumbleTimer++;
+                        if (p.crumbleTimer > 24) {
+                            p.isCrumbled = true;
+                            createParticles(p.x + p.width / 2, p.y + p.height / 2, '#D4A373', 14);
+                            SFX.crumble();
+                            if (player.onPlatform === p) {
+                                player.onPlatform = null;
+                            }
+                        }
+                    }
+                }
+
+                // Remove platforms that left the top
+                platforms = platforms.filter(p => p.y + p.height > 0);
+
+                // Spawn new platforms at bottom
+                const lowestPlatform = platforms.reduce((max, p) => p.y > max.y ? p : max, platforms[0] || { y: 0 });
+                if (lowestPlatform.y < CANVAS_H - 20) {
+                    const nextY = lowestPlatform.y + 70 + Math.floor(Math.random() * 16);
+                    platforms.push(createPlatform(nextY));
+                }
+
+                // Update particles
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    const pt = particles[i];
+                    pt.x += pt.vx;
+                    pt.y += pt.vy;
+                    pt.alpha -= pt.decay;
+                    if (pt.alpha <= 0) {
+                        particles.splice(i, 1);
+                    }
+                }
+            }
+
+            function handlePlatformLanding(p) {
+                switch (p.type) {
+                    case PLATFORM_TYPES.NORMAL:
+                        if (player.hp < MAX_HP) {
+                            player.hp = Math.min(MAX_HP, player.hp + 1);
+                            updateHUD();
+                            SFX.heal();
+                            createParticles(player.x + player.width / 2, p.y, '#52B788', 6);
+                        } else {
+                            SFX.stepNormal();
+                        }
+                        break;
+
+                    case PLATFORM_TYPES.SPIKE:
+                        if (player.invincibleFrames === 0) {
+                            damagePlayer(3);
+                            createParticles(player.x + player.width / 2, p.y, '#E76F51', 10);
+                        }
+                        break;
+
+                    case PLATFORM_TYPES.BOUNCE:
+                        SFX.bounce();
+                        player.onPlatform = null;
+                        player.vy = -10.5;
+                        player.isBouncing = true;
+                        createParticles(player.x + player.width / 2, p.y + 8, '#4EA8DE', 10);
+                        setTimeout(() => { player.isBouncing = false; }, 300);
+                        break;
+
+                    case PLATFORM_TYPES.CRUMBLE:
+                        if (!p.isTriggered) {
+                            p.isTriggered = true;
+                            SFX.stepNormal();
+                        }
+                        break;
+
+                    case PLATFORM_TYPES.CONVEYOR_L:
+                    case PLATFORM_TYPES.CONVEYOR_R:
+                        SFX.stepNormal();
+                        break;
+                }
+            }
+
+            function damagePlayer(dmg) {
+                player.hp = Math.max(0, player.hp - dmg);
+                player.invincibleFrames = 45; // 0.75s invulnerability
+                updateHUD();
+                SFX.spike();
+
+                if (player.hp <= 0) {
+                    gameOver();
+                }
+            }
+
+            function gameOver() {
+                gameState = STATE.GAMEOVER;
+                SFX.gameOver();
+
+                finalFloorText.textContent = `B ${currentFloor} F`;
+
+                let isNewRecord = false;
+                if (currentFloor > highScore) {
+                    highScore = currentFloor;
+                    localStorage.setItem('ns_shaft_highscore', highScore.toString());
+                    isNewRecord = true;
+                }
+
+                bestFloorText.textContent = `B ${highScore} F`;
+                newRecordAlert.style.display = isNewRecord ? 'block' : 'none';
+
+                gameOverOverlay.classList.remove('hidden');
+                gameOverOverlay.style.display = 'flex';
+            }
+
+            // ==========================================
+            // Rendering & Drawing
+            // ==========================================
+            function draw() {
+                ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
+
+                // 1. Draw Background Grid & Depth lines
+                ctx.fillStyle = '#101612';
+                ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+
+                ctx.strokeStyle = 'rgba(162, 178, 159, 0.05)';
+                ctx.lineWidth = 1;
+                for (let x = 20; x < CANVAS_W; x += 20) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, 0);
+                    ctx.lineTo(x, CANVAS_H);
+                    ctx.stroke();
+                }
+
+                // 2. Draw Platforms
+                for (let i = 0; i < platforms.length; i++) {
+                    drawPlatform(platforms[i]);
+                }
+
+                // 3. Draw Player
+                drawPlayer();
+
+                // 4. Draw Ceiling Spikes
+                drawCeilingSpikes();
+
+                // 5. Draw Particles
+                for (let i = 0; i < particles.length; i++) {
+                    const pt = particles[i];
+                    ctx.save();
+                    ctx.globalAlpha = pt.alpha;
+                    ctx.fillStyle = pt.color;
+                    ctx.fillRect(pt.x, pt.y, pt.size, pt.size);
+                    ctx.restore();
+                }
+            }
+
+            function drawCeilingSpikes() {
+                const spikeW = 16;
+                const count = Math.ceil(CANVAS_W / spikeW);
+
+                ctx.fillStyle = '#8B261E';
+                ctx.beginPath();
+                for (let i = 0; i < count; i++) {
+                    const sx = i * spikeW;
+                    ctx.moveTo(sx, 0);
+                    ctx.lineTo(sx + spikeW / 2, CEILING_SPIKE_H);
+                    ctx.lineTo(sx + spikeW, 0);
+                }
+                ctx.closePath();
+                ctx.fill();
+
+                // Metallic Highlight on Spikes
+                ctx.fillStyle = '#E76F51';
+                ctx.beginPath();
+                for (let i = 0; i < count; i++) {
+                    const sx = i * spikeW;
+                    ctx.moveTo(sx + 2, 0);
+                    ctx.lineTo(sx + spikeW / 2, CEILING_SPIKE_H - 2);
+                    ctx.lineTo(sx + spikeW / 2 + 1, 0);
+                }
+                ctx.closePath();
+                ctx.fill();
+            }
+
+            function drawPlatform(p) {
+                if (p.isCrumbled) return;
+
+                ctx.save();
+
+                // Crumble shaking
+                let drawX = p.x;
+                let drawY = p.y;
+                if (p.type === PLATFORM_TYPES.CRUMBLE && p.isTriggered) {
+                    drawX += (Math.random() - 0.5) * 4;
+                    drawY += (Math.random() - 0.5) * 2;
+                }
+
+                switch (p.type) {
+                    case PLATFORM_TYPES.NORMAL:
+                        // Pastoral stone slab
+                        ctx.fillStyle = '#4A5D4E';
+                        ctx.fillRect(drawX, drawY, p.width, p.height);
+                        ctx.fillStyle = '#6E8B74';
+                        ctx.fillRect(drawX, drawY, p.width, 3);
+                        ctx.fillStyle = '#2F3C32';
+                        ctx.fillRect(drawX, drawY + p.height - 2, p.width, 2);
+                        // Heart badge in center
+                        ctx.fillStyle = '#52B788';
+                        ctx.fillRect(drawX + p.width / 2 - 3, drawY + 5, 6, 5);
+                        break;
+
+                    case PLATFORM_TYPES.SPIKE:
+                        // Spike base
+                        ctx.fillStyle = '#552220';
+                        ctx.fillRect(drawX, drawY + 6, p.width, p.height - 6);
+                        // Sharp spikes on top
+                        const spCount = 8;
+                        const sw = p.width / spCount;
+                        ctx.fillStyle = '#E76F51';
+                        for (let k = 0; k < spCount; k++) {
+                            ctx.beginPath();
+                            ctx.moveTo(drawX + k * sw, drawY + 6);
+                            ctx.lineTo(drawX + k * sw + sw / 2, drawY);
+                            ctx.lineTo(drawX + (k + 1) * sw, drawY + 6);
+                            ctx.closePath();
+                            ctx.fill();
+                        }
+                        break;
+
+                    case PLATFORM_TYPES.BOUNCE:
+                        // Trampoline Base
+                        ctx.fillStyle = '#223843';
+                        ctx.fillRect(drawX, drawY, p.width, p.height);
+                        // Spring / bouncy surface
+                        ctx.fillStyle = '#4EA8DE';
+                        ctx.fillRect(drawX + 4, drawY + 2, p.width - 8, 4);
+                        // Spring coils
+                        ctx.strokeStyle = '#90E0EF';
+                        ctx.lineWidth = 2;
+                        ctx.beginPath();
+                        for (let k = 10; k < p.width - 10; k += 14) {
+                            ctx.moveTo(drawX + k, drawY + 7);
+                            ctx.lineTo(drawX + k + 7, drawY + 13);
+                        }
+                        ctx.stroke();
+                        break;
+
+                    case PLATFORM_TYPES.CONVEYOR_L:
+                    case PLATFORM_TYPES.CONVEYOR_R:
+                        ctx.fillStyle = '#2D3748';
+                        ctx.fillRect(drawX, drawY, p.width, p.height);
+                        // Moving chevrons
+                        ctx.fillStyle = '#E5B869';
+                        const dir = p.type === PLATFORM_TYPES.CONVEYOR_L ? -1 : 1;
+                        for (let k = -10; k < p.width + 10; k += 18) {
+                            const cx = drawX + ((k + (dir * p.animOffset * 2) + 100) % p.width);
+                            if (cx > drawX + 4 && cx < drawX + p.width - 8) {
+                                ctx.beginPath();
+                                if (dir === -1) {
+                                    ctx.moveTo(cx + 6, drawY + 4);
+                                    ctx.lineTo(cx, drawY + p.height / 2);
+                                    ctx.lineTo(cx + 6, drawY + p.height - 4);
+                                } else {
+                                    ctx.moveTo(cx, drawY + 4);
+                                    ctx.lineTo(cx + 6, drawY + p.height / 2);
+                                    ctx.lineTo(cx, drawY + p.height - 4);
+                                }
+                                ctx.strokeStyle = '#E5B869';
+                                ctx.lineWidth = 2;
+                                ctx.stroke();
+                            }
+                        }
+                        break;
+
+                    case PLATFORM_TYPES.CRUMBLE:
+                        ctx.fillStyle = '#78593B';
+                        ctx.fillRect(drawX, drawY, p.width, p.height);
+                        // Cracks
+                        ctx.strokeStyle = p.isTriggered ? '#E76F51' : '#473322';
+                        ctx.lineWidth = 1.5;
+                        ctx.beginPath();
+                        ctx.moveTo(drawX + 20, drawY);
+                        ctx.lineTo(drawX + 35, drawY + 9);
+                        ctx.lineTo(drawX + 50, drawY + 3);
+                        ctx.lineTo(drawX + 70, drawY + 12);
+                        ctx.stroke();
+                        break;
+                }
+
+                ctx.restore();
+            }
+
+            function drawPlayer() {
+                // Blink when invincible
+                if (player.invincibleFrames > 0 && Math.floor(player.invincibleFrames / 4) % 2 === 0) {
+                    return;
+                }
+
+                ctx.save();
+                ctx.translate(player.x + player.width / 2, player.y + player.height / 2);
+                if (player.facing === -1) {
+                    ctx.scale(-1, 1);
+                }
+
+                const hw = player.width / 2;
+                const hh = player.height / 2;
+
+                // 1. Body / Outfit (Green hoodie / pastoral hiker)
+                ctx.fillStyle = '#2D6A4F';
+                ctx.fillRect(-hw + 3, -hh + 10, player.width - 6, 12);
+
+                // 2. Head & Hair
+                // Face
+                ctx.fillStyle = '#F8D7DA';
+                ctx.fillRect(-hw + 4, -hh + 2, 14, 10);
+                // Hair
+                ctx.fillStyle = '#5A3E2B';
+                ctx.fillRect(-hw + 3, -hh, 16, 4);
+                ctx.fillRect(-hw + 2, -hh + 2, 3, 5);
+
+                // 3. Eye
+                ctx.fillStyle = '#1D2A20';
+                ctx.fillRect(-hw + 11, -hh + 5, 3, 3);
+
+                // 4. Legs / Feet with running cycle
+                ctx.fillStyle = '#1E2B22';
+                if (player.onPlatform && Math.abs(player.vx) > 0.5) {
+                    const legOffset = Math.sin(player.runCycle) * 4;
+                    ctx.fillRect(-hw + 4, hh - 7, 5, 7 + legOffset);
+                    ctx.fillRect(-hw + 11, hh - 7, 5, 7 - legOffset);
+                } else if (!player.onPlatform) {
+                    // Jumping / falling posture
+                    ctx.fillRect(-hw + 3, hh - 6, 5, 5);
+                    ctx.fillRect(-hw + 12, hh - 8, 5, 7);
+                } else {
+                    // Standing
+                    ctx.fillRect(-hw + 4, hh - 6, 5, 6);
+                    ctx.fillRect(-hw + 11, hh - 6, 5, 6);
+                }
+
+                // 5. Hands
+                ctx.fillStyle = '#F8D7DA';
+                if (!player.onPlatform) {
+                    // Hands up when falling
+                    ctx.fillRect(-hw + 1, -hh + 7, 4, 4);
+                } else {
+                    ctx.fillRect(-hw + 2, -hh + 12, 4, 4);
+                }
+
+                ctx.restore();
+            }
+
+            // ==========================================
+            // Main Animation Frame
+            // ==========================================
+            function gameLoop() {
+                update();
+                draw();
+                requestAnimationFrame(gameLoop);
+            }
+
+            // ==========================================
+            // Controls & Event Handlers
+            // ==========================================
+            function startGame() {
+                initAudio();
+                startOverlay.classList.add('hidden');
+                startOverlay.style.display = 'none';
+                gameOverOverlay.classList.add('hidden');
+                gameOverOverlay.style.display = 'none';
+                initGame();
+                gameState = STATE.PLAYING;
+            }
+
+            startBtn.addEventListener('click', startGame);
+            retryBtn.addEventListener('click', startGame);
+
+            // Keyboard handlers
+            window.addEventListener('keydown', (e) => {
+                if (e.code === 'ArrowLeft' || e.code === 'KeyA') {
+                    keys.left = true;
+                    if (gameState === STATE.PLAYING) e.preventDefault();
+                }
+                if (e.code === 'ArrowRight' || e.code === 'KeyD') {
+                    keys.right = true;
+                    if (gameState === STATE.PLAYING) e.preventDefault();
+                }
+                if (e.code === 'Space' || e.code === 'Enter') {
+                    if (gameState === STATE.MENU || gameState === STATE.GAMEOVER) {
+                        e.preventDefault();
+                        startGame();
+                    }
+                }
+            });
+
+            window.addEventListener('keyup', (e) => {
+                if (e.code === 'ArrowLeft' || e.code === 'KeyA') {
+                    keys.left = false;
+                }
+                if (e.code === 'ArrowRight' || e.code === 'KeyD') {
+                    keys.right = false;
+                }
+            });
+
+            // Touch button handlers
+            function setupTouchBtn(btn, keyProp) {
+                const startAction = (e) => {
+                    e.preventDefault();
+                    initAudio();
+                    keys[keyProp] = true;
+                    btn.classList.add('active');
+                };
+                const endAction = (e) => {
+                    e.preventDefault();
+                    keys[keyProp] = false;
+                    btn.classList.remove('active');
+                };
+
+                btn.addEventListener('touchstart', startAction, { passive: false });
+                btn.addEventListener('touchend', endAction, { passive: false });
+                btn.addEventListener('mousedown', startAction);
+                btn.addEventListener('mouseup', endAction);
+                btn.addEventListener('mouseleave', endAction);
+            }
+
+            setupTouchBtn(touchLeft, 'left');
+            setupTouchBtn(touchRight, 'right');
+
+            // Sound mute toggle
+            soundBtn.addEventListener('click', () => {
+                initAudio();
+                isMuted = !isMuted;
+                soundBtn.textContent = isMuted ? '🔇' : '🔊';
+            });
+
+            // Prevent default arrow key scrolling on window
+            window.addEventListener('keydown', function(e) {
+                if(['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].indexOf(e.code) > -1) {
+                    if (gameState === STATE.PLAYING) {
+                        e.preventDefault();
+                    }
+                }
+            }, false);
+
+            // Initialize display & kick off loop
+            initGame();
+            requestAnimationFrame(gameLoop);
+        })();
+    </script>
+</body>
+</html>
