@@ -22,7 +22,7 @@ Tools matter less than the patterns and concepts behind them.
 | Language        | Java 4.5 yrs — Spring Boot, Spring Batch, Spring Data, MVC; authored a shared EventBus framework and a Spring Secret Manager plugin. Golang, JavaScript, HTML5, Bash, SQL |
 | Test            | Unit test (mock), integration test, stress test; coverage above 90%                                   |
 | Infra / Tooling | AWS, Kubernetes (Istio), Terraform, GitOps (Argo CD), Ansible, EFK, Docker, Linux, GitLab, Azure DevOps, RDB, Elasticsearch, MongoDB, Redis |
-| Concept         | Microservice, event-driven, HA, scalability, SOLID, design pattern, CI/CD, cache, TDD, RWD, SDLC      |
+| Concept         | Microservice, event-driven, HA, scalability, SOLID, design pattern, CI/CD, cache, TDD, RWD, SDLC, MLOps (GPU scheduling for inference serving) |
 | Methodology     | Scrum, Agile, Lean                                                                                    |
 
 ## Work Experience
@@ -46,14 +46,17 @@ Tools matter less than the patterns and concepts behind them.
 ### Senior Engineer — TSMC, Hsinchu, TW · 2022/03 ~ 2022/07
 
 The largest semiconductor company.
-Stack: Kubernetes (Docker, Istio, EFK, Prometheus, Grafana, Argo CD, NATS), Terraform, Node.js, Redis, Azure DevOps.
+Stack: Kubernetes (Docker, Istio, EFK, Prometheus, Grafana, Argo CD, NATS), Terraform, Node.js, Redis, Azure DevOps, MLOps (GPU inference scheduling).
 
 - Acted as technical project manager: broke work into tasks and set target schedules against goals.
 - Architected the AI platform to make scope explicit, drive direction and align with business needs.
 - Set a high project standard: functions under 30 lines, testing coverage above 90%.
 - Ran platform delivery as GitOps: Argo CD reconciled cluster state from Git, with Terraform describing the
   underlying cloud and cluster resources so environments stayed reproducible and reviewable.
-- Projects: GPU job scheduler, PoC tooling, CI/CD flow on Azure.
+- Owned MLOps for the inference tier: a GPU job scheduler that packs n queued inference tasks onto m GPU
+  resources and immediately admits the next task whenever one finishes, keeping the pool saturated and
+  the queue draining under a fixed accelerator budget.
+- Projects: GPU inference job scheduler, PoC tooling, CI/CD flow on Azure.
 - Left over company culture fit, with appreciation from both managers and the department manager.
 
 ### Tech Lead + Senior Engineer — Change Healthcare, Songshan, TW · 2017/02 ~ 2021/09

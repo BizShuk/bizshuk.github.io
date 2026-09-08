@@ -823,6 +823,7 @@
                             <span class="tag">TDD</span>
                             <span class="tag">RWD</span>
                             <span class="tag">SDLC</span>
+                            <span class="tag">MLOps</span>
                         </div>
                     </div>
                     <div class="skill-row">
@@ -913,7 +914,8 @@
                         <p class="job-meta">
                             The largest semiconductor company. Stack: Kubernetes
                             (Docker, Istio, EFK, Prometheus, Grafana, Argo,
-                            NATS), Node.js, Redis, Azure DevOps.
+                            NATS), Node.js, Redis, Azure DevOps, MLOps (GPU
+                            inference scheduling).
                         </p>
                         <ul class="points">
                             <li>
@@ -931,8 +933,15 @@
                                 lines, testing coverage above 90%.
                             </li>
                             <li>
-                                Projects: GPU job scheduler, PoC tooling, CI/CD
-                                flow on Azure.
+                                Owned MLOps for the inference tier: a GPU job
+                                scheduler that packs n queued inference tasks
+                                onto m GPU resources and immediately admits the
+                                next task whenever one finishes, keeping the
+                                pool saturated under a fixed accelerator budget.
+                            </li>
+                            <li>
+                                Projects: GPU inference job scheduler, PoC
+                                tooling, CI/CD flow on Azure.
                             </li>
                             <li>
                                 Left over company culture fit, with appreciation
