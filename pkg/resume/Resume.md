@@ -1,6 +1,6 @@
 # Liu, Teng-Yuan (Shuk Liu)
 
-<biz.shuk@gmail.com> · [LinkedIn](https://www.linkedin.com/in/bizshuk/) · [WhatsApp](https://api.whatsapp.com/send?phone=6580129716) Last updated: 2026-09-03.
+<biz.shuk@gmail.com> · [LinkedIn](https://www.linkedin.com/in/bizshuk/) · [WhatsApp](https://api.whatsapp.com/send?phone=6580129716) Last updated: 2026-09-10.
 
 > Singapore Permanent Resident (PR), currently based in Singapore. 12+ years of experience, focused on
 > system architecture (organisation design included) and AI orchestration. Familiar with the majority of
@@ -37,11 +37,21 @@ Tools matter less than the patterns and concepts behind them.
 
 ### Senior Software Engineer (Tech Lead) — ByteDance (TikTok PTE. LTD.), Singapore · 2023/01 ~ 2026/08
 
-- Aligned internal and external services onto a new data centre, coordinating across teams.
-- Built a flexible data channel foundation between data centres to satisfy compliance and stability.
-- Designed global data centre redundancy, lowering implementation and maintenance effort by 2 job grades.
-- Designed a high-level task orchestration framework and drove adoption of a regional compliance
-  migration framework across departments.
+Owned the wallet data architecture roadmap and its data SDLC, turning "where data lives" from one-off
+migration projects into a platform property.
+
+- Aligned internal and external services onto a new data centre, coordinating across teams to land the
+  region before any of the data work could start.
+- Delivered a deadline-driven EU data migration for wallet, then generalised it into global change-region
+  compliance under eventual compliance consistency across data centres.
+- Upgraded that migration into a high-abstraction process serving multiple purposes, adopted by business
+  lines outside wallet rather than staying a wallet-only tool.
+- Defined the data SDLC behind it, so residency, retention and compliance consistency became a lifecycle
+  property instead of a per-project checklist.
+- Redesigned the cross-data-centre channels, consolidating the one-off ones left by the deadline-driven
+  phase into a single transport.
+- Designed transaction data redundancy across data centres, lowering implementation and maintenance
+  effort by 2 job grades.
 
 ### Senior Engineer — TSMC, Hsinchu, TW · 2022/03 ~ 2022/07
 
