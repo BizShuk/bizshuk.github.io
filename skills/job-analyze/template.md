@@ -1,8 +1,9 @@
 # JD 檔案樣板 (JD File Template)
 
-欄位列舉值以 [jd/README.md](../../jd/README.md) 的 `資料欄位 (Schema)` 為準, 以下僅示範結構.
+欄位列舉值以 [jd/README.md](../../pkg/resume/jd/README.md) 的 `資料欄位 (Schema)` 為準, 以下僅示範結構.
+樣板內的相對連結 (如 `../../Resume.md`) 是以 `jd/<company>/` 下的 JD 檔為基準.
 
-```markdown
+````markdown
 ---
 company: "公司名"
 title: "職稱原文"
@@ -16,6 +17,7 @@ source: direct
 posted: null
 expiry: null
 fetched: YYYY-MM-DD
+created: YYYY-MM-DD
 min_years: 12
 education: null
 score: 52
@@ -60,6 +62,7 @@ status_updated: YYYY-MM-DD
 | 學歷要求 (Min Qualification) | |
 | 投遞狀態 (Status) | `not_applied` (更新於 YYYY-MM-DD) |
 | 抓取日期 (Fetched) | |
+| 建立日期 (Created) | |
 
 ## 團隊背景 (Team Context)
 
@@ -98,7 +101,62 @@ JD 原文的職責條目. 原文只有要求沒有職責時, 註明`職責由要
 
 `值不值得轉向`:
 
+## 角色評估 (Role Assessment)
+
+`評估日期`: YYYY-MM-DD
+
+| 面向 | 判斷 | 依據 |
+| --- | --- | --- |
+| 真實職級 | | `原文` / `推論` / `外部` + 說明 |
+| 影響範圍 (Scope) | | |
+| 組織位置 | | |
+| 業務壓力 | | |
+| 成長天花板 | | |
+| 風險與紅旗 | | |
+
+`角色本質`: 一句話.
+
+## 機會 (Opportunities)
+
+- `能力資產`:
+- `軌道轉換`:
+- `市場訊號`:
+- `槓桿與網絡`:
+
+## 路線圖 (Roadmap)
+
+`投遞前 (0-2 週)`:
+
+| 動作 | 時間窗 | 驗收 |
+| --- | --- | --- |
+
+`面試 (2-6 週)`:
+
+| 動作 | 時間窗 | 驗收 |
+| --- | --- | --- |
+
+`到職 90 天`:
+
+| 階段 | 可交付成果 | 對準的業務壓力 |
+| --- | --- | --- |
+| 30 天 | | |
+| 60 天 | | |
+| 90 天 | | |
+
+`1-3 年`:
+
+```mermaid
+flowchart LR
+    A["現在"] -->|"投遞"| B["本職缺"]
+    B -->|"累積 X"| C["下一步 A"]
+    B -->|"累積 Y"| D["下一步 B"]
+```
+
+到達下一步所需的證據:
+
+-
+
 ## 我的對位敘事 (Positioning Angle)
 
 面試與履歷的敘事順序, 以及必須主動處理的弱點.
-```
+````

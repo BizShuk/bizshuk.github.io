@@ -29,6 +29,9 @@ bizshuk.github.io/
     │   ├── Resume.md       # 履歷內容主稿
     │   ├── assets/         # 可下載的履歷 PDF 與作品截圖
     │   ├── jd/             # 職缺庫 (Markdown),含匹配度評分
+    │   ├── skills/         # agent skills 正本 (jd-evaluation)
+    │   ├── .claude/skills -> ../skills   # 軟連結:Claude Code 探索路徑
+    │   ├── .agents/skills -> ../skills   # 軟連結:其他 agent runtime 探索路徑
     │   ├── go.mod          # 獨立 Go module,唯一有程式的子頁面
     │   ├── main.go         # resume CLI 進入點
     │   ├── svc/            # MyCareersFuture API client (含 svc/README.md 的實測記錄)
@@ -78,6 +81,9 @@ bizshuk.github.io/
 - Decision 8: `pkg/resume/` 自成一個 Go module 而非在 repo 根建 module。
   本 repo 主體是靜態站,根層放 `go.mod` 會讓每個子頁面都被納入同一相依圖;
   職缺蒐集只是履歷頁的上游素材工具,與 deploy 產物無關,因此就地封裝。
+- Decision 9: agent skills 的正本放 `pkg/resume/skills/`,由 `.claude/skills` 與
+  `.agents/skills` 兩個軟連結指向它。skill 操作的資料 (`jd/`, `Resume.md`) 就在同一層,
+  放這裡讓 skill 隨資料一起版控,且兩種 runtime 共用同一份正本不必複製。
 
 ## 模組對應 (Module Mapping)
 
