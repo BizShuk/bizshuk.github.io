@@ -40,13 +40,14 @@ description: Use when a job URL or job description is pasted, linked, or fetched
 - `證據分級`: 每個角色判斷標注來源 - `原文` (JD 明寫), `推論` (由 JD 用詞, 職級, 團隊位置推得), `外部` (公司公告, 財報, 新聞, 需附連結). 不得把推論寫成事實.
 - `必寫風險`: 只講機會的分析是廣告. `角色評估` 一定要有 `風險與紅旗` 一項, 即使結論是`未發現`.
 - `路線圖要可執行`: 每一步有動作與時間窗, 不寫`提升領導力`這類無法驗收的句子.
+- `重複職缺合併 (Merge on Duplicate)`: 若職缺已在庫內 (相同 URL, job_post_id, 或同公司同職務), 不得建立重複檔案; 一律就地合併更新 (merge in-place), 保留原始 `created` 日期, 更新 `status`, `status_updated`, `fetched`, 補齊分析區塊並同步 `README.md` 索引.
 - `格式`: 不使用粗體, 一律 backtick 強調; 半形標點; Mermaid 邊線文字加雙引號.
 
 ## Workflow
 
-1. `前置檢查`: `test -d ~/projects/product/bizshuk.github.io`, 失敗即報錯停止. 職缺已在庫內則直接讀檔, 不重抓.
+1. `前置檢查`: `test -d ~/projects/product/bizshuk.github.io`, 失敗即報錯停止. 職缺已在庫內則進入合併模式 (merge in-place), 不另立新檔.
 2. `取得全文`: 先試 `pkg/resume/` 的 `resume mcf` CLI 或直接抓取. 被阻擋且改由人工貼入時, 於 [_coverage_notes.md](../../pkg/resume/jd/_coverage_notes.md) 記下該公司的阻擋狀況與已補檔數.
-3. `建檔`: 路徑 `~/projects/product/bizshuk.github.io/pkg/resume/jd/<company>/<title_slug>.<team_or_domain>.md`, 全小寫加底線. front matter 欄位與列舉值以 README 的 `資料欄位 (Schema)` 表為準, 未載明一律 `null`, 不要以 `0` 或空字串冒充; 新檔寫入 `created`. 本文區塊順序固定, 見 [template.md](template.md).
+3. `建檔 / 合併`: 路徑 `~/projects/product/bizshuk.github.io/pkg/resume/jd/<company>/<title_slug>.<team_or_domain>.md`, 全小寫加底線. 既有檔案保留原始 `created` 日期並就地覆蓋合併; 新檔寫入今日 `created`. front matter 欄位與列舉值以 README 的 `資料欄位 (Schema)` 表為準, 未載明一律 `null`, 不要以 `0` 或空字串冒充. 本文區塊順序固定, 見 [template.md](template.md).
 4. `評分`: 逐條比對硬性要求, 再以加分要求與領域相鄰度調整, 對照 README 的 `分數的意義` 區間表. 觸發條件成立時寫 `缺口分析`.
 5. `角色評估`: 依 `Role Assessment` 六個面向逐項判斷.
 6. `機會`: 依 `Opportunities` 四類找出這個角色能打開的東西.
