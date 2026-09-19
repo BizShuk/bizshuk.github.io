@@ -11,11 +11,12 @@ source: direct
 posted: null
 expiry: null
 fetched: 2026-09-02
+created: 2026-09-02
 min_years: 10
 education: null
 score: 76
-status: not_applied
-status_updated: 2026-09-03
+status: rejected
+status_updated: 2026-09-19
 ---
 # Thoughtworks - Lead Developer (NodeJS)
 

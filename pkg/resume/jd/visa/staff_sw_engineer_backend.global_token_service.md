@@ -11,6 +11,7 @@ source: direct
 posted: 2026-04-21
 expiry: null
 fetched: 2026-09-14
+created: 2026-09-14
 min_years: 6
 education: bachelor
 score: 75
