@@ -126,6 +126,7 @@ python3 ~/projects/product/bizshuk.github.io/skills/job-analyze/scripts/archive_
 
 - `判準`: `created` (缺則 `fetched`) 早於今天往前推 `3 個月`, 就從 `jd/<company>/` 移到 `jd/archive/<company>/`. 已在 git 追蹤的檔案用 `git mv`.
 - `SKIP no-date`: 沒有 front matter 日期的檔案不動, 在回覆中列出請使用者處理.
+- `伴隨檔 (companion)`: 與 JD 同 stem 的 `.coverletter.md` / `.coverletter.pdf` 屬 `coverletter` skill, 不是 JD, 不計入檔數與排序總表; 腳本會讓它們隨 JD 一起移動.
 - `投遞中不封存`: `status` 為 `applied`, `screening`, `interviewing`, `offer` 的檔案由腳本跳過 (`SKIP active`), 因為進行中的流程仍需要它留在主表.
 - `移動後同步`:
   - [jd/README.md](../../pkg/resume/jd/README.md): 從 `排序總表` 與 `投遞追蹤` 移除該列, 加到 `已封存` 清單, 更新總檔數. 已封存的檔案之後`不得`再加回排序總表.

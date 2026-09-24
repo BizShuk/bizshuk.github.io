@@ -1,11 +1,14 @@
 """skills/coverletter/scripts/render_pdf.py - render a cover letter source (.md) into a one-page A4 PDF.
 
 Usage:
-    uv run --with reportlab --with pypdf python render_pdf.py <letter.md> [--resume <Resume.md>] [--out <letter.pdf>]
+    uv run --with reportlab --with pypdf python render_pdf.py <jd_stem>.coverletter.md [--resume <Resume.md>]
 
 The letter header (name, email, phone, LinkedIn) is read from Resume.md so contact details keep a
 single source of truth. The letter body comes from <letter.md>: a front matter block followed by
 plain-text paragraphs separated by blank lines.
+
+The letter is a companion of its JD file: it must sit beside the JD named in front matter `jd`, as
+<jd_stem>.coverletter.md, and the PDF is written next to it as <jd_stem>.coverletter.pdf.
 
 Exit codes: 0 ok, 1 bad input, 2 letter does not fit on one page even at the smallest font size.
 """
@@ -23,8 +26,10 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.units import mm
 from reportlab.platypus import HRFlowable, Paragraph, SimpleDocTemplate, Spacer
 
-DEFAULT_RESUME = Path(__file__).resolve().parents[3] / "pkg" / "resume" / "Resume.md"
-REQUIRED_FIELDS = ("company", "role", "date")
+REPO = Path(__file__).resolve().parents[3]
+DEFAULT_RESUME = REPO / "pkg" / "resume" / "Resume.md"
+REQUIRED_FIELDS = ("company", "role", "date", "jd")
+LETTER_SUFFIX = ".coverletter.md"
 # Body font sizes tried in order; the first one that fits on a single page wins.
 FONT_SIZES = (10.5, 10.0, 9.5)
 ACCENT = HexColor("#1f3a5f")
@@ -53,6 +58,15 @@ def parse_letter(path):
     if len(blocks) < 3:
         fail(1, f"{path}: body needs salutation, paragraphs and closing")
     return meta, blocks
+
+
+def check_alignment(letter, meta):
+    jd = REPO / meta["jd"]
+    if not jd.is_file():
+        fail(1, f"{letter}: jd not found: {meta['jd']}")
+    expected = jd.with_name(jd.stem + LETTER_SUFFIX)
+    if letter.resolve() != expected.resolve():
+        fail(1, f"{letter}: letter must sit beside its JD as {expected.relative_to(REPO)}")
 
 
 def parse_contact(resume_path):
@@ -112,7 +126,6 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("letter", type=Path)
     ap.add_argument("--resume", type=Path, default=DEFAULT_RESUME)
-    ap.add_argument("--out", type=Path)
     args = ap.parse_args()
     if not args.letter.is_file():
         fail(1, f"letter not found: {args.letter}")
@@ -120,8 +133,9 @@ def main():
         fail(1, f"resume not found: {args.resume}")
 
     meta, blocks = parse_letter(args.letter)
+    check_alignment(args.letter, meta)
     name, contact = parse_contact(args.resume)
-    out = args.out or args.letter.with_suffix(".pdf")
+    out = args.letter.with_suffix(".pdf")
     for size in FONT_SIZES:
         pages = build(meta, blocks, name, contact, out, size)
         if pages == 1:

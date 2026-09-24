@@ -1,6 +1,6 @@
 ---
 name: coverletter
-description: Use when a cover letter / motivation letter PDF is needed for a specific job, written from pkg/resume/Resume.md and tailored to a job description - triggers on "cover letter", "coverletter", "write a cover letter for this job", "motivation letter", "求職信", "自薦信", "幫我寫 cover letter", and on any write into pkg/resume/coverletter/. Requires a JD (pasted text, URL, or a pkg/resume/jd/ file); stops when none is given.
+description: Use when a cover letter / motivation letter PDF is needed for a specific job, written from pkg/resume/Resume.md and tailored to a job description - triggers on "cover letter", "coverletter", "write a cover letter for this job", "motivation letter", "求職信", "自薦信", "幫我寫 cover letter", and on any write of cover letters in pkg/resume/jd/. Requires a JD (pasted text, URL, or a pkg/resume/jd/ file); stops when none is given.
 ---
 
 # Cover Letter
@@ -14,6 +14,21 @@ PDF 產製遵循 `pdf` skill (`/pdf`) 的 `reportlab` 建檔與 `pypdf` 驗證�
 
 `不適用`: JD 建檔與匹配度評分 (屬 `job-analyze`), 履歷改寫本身 (屬 `Resume.md`).
 
+## Output Location (與 JD 路徑對齊)
+
+求職信是 JD 檔的`伴隨檔 (companion)`, 與 JD `同目錄, 同檔名主幹 (stem)`, 只換副檔名:
+
+| 檔案 | 路徑 |
+| --- | --- |
+| JD | `pkg/resume/jd/<company>/<title_slug>.<team_or_domain>.md` |
+| 原稿 | `pkg/resume/jd/<company>/<title_slug>.<team_or_domain>.coverletter.md` |
+| PDF | `pkg/resume/jd/<company>/<title_slug>.<team_or_domain>.coverletter.pdf` |
+
+- `先有 JD 檔才有路徑`: JD 以全文或 URL 提供且尚未入庫時, 先以 `job-analyze` 的 `只建檔評分` 模式建檔, 再以該檔路徑推導輸出路徑. `不得`自行編造 `<company>/<stem>`, 也`不得`寫到 `pkg/resume/coverletter/` 等其他目錄.
+- `已封存的 JD`: JD 位於 `jd/archive/<company>/` 時, 求職信也寫在同一個 archive 目錄.
+- `前置檢查`: 原稿的 front matter `jd:` 必須等於 JD 檔的 repo 相對路徑, 且 `test -f <jd>` 成立.
+- `封存連動`: `job-analyze` 的封存腳本會把 `.coverletter.md` / `.coverletter.pdf` 隨 JD 一起移到 `archive/`, 不需另外處理.
+
 ## JD Gate (先做, 不可跳過)
 
 在讀履歷或寫任何字`之前`, 確認使用者這次`明確提供`了 JD, 形式限於:
@@ -23,6 +38,8 @@ PDF 產製遵循 `pdf` skill (`/pdf`) 的 `reportlab` 建檔與 `pypdf` 驗證�
 | 貼上的 JD 全文或主要要求條目 | 通過 |
 | 職缺 URL, 且能抓到全文 | 通過; 抓取被擋則視同未提供 |
 | [pkg/resume/jd/](../../pkg/resume/jd/) 下的檔案路徑, 或能唯一對應到單一檔案的 `公司 + 職稱` | 通過 |
+
+全文或 URL 通過 Gate 後, 仍須先入庫取得 JD 檔路徑, 見 `Output Location`.
 
 不通過時`立即停止`, 不建目錄, 不寫檔, 不產 PDF, 只回覆:
 
@@ -53,9 +70,10 @@ JD 未提供, 已停止產出 cover letter.
 ## Workflow
 
 1. `JD Gate`: 見上. 未通過即停止.
-2. `讀 JD`: 萃取 3-5 條硬性要求與團隊使命. 若 JD 已在 [pkg/resume/jd/](../../pkg/resume/jd/) 有檔, 一併讀它的 `缺口分析` 與 `對位敘事`, 避免寫到缺口上.
-3. `讀 Resume.md`: 為每條要求找對應原句, 找不到的標為缺口.
-4. `寫原稿`: `pkg/resume/coverletter/<company>/<jd_basename>.md`, 全小寫加底線; 來自既有 JD 檔時 `<jd_basename>` 沿用其檔名. 已存在則就地覆蓋. 格式:
+2. `定位 JD 檔`: 取得 JD 檔的 repo 相對路徑 `<jd>`; 尚未入庫則先跑 `job-analyze` 的 `只建檔評分`. 輸出路徑一律由 `<jd>` 推導, 見 `Output Location`.
+3. `讀 JD`: 萃取 3-5 條硬性要求與團隊使命, 一併讀 JD 檔的 `缺口分析` 與 `對位敘事`, 避免寫到缺口上.
+4. `讀 Resume.md`: 為每條要求找對應原句, 找不到的標為缺口.
+5. `寫原稿`: 寫到 `<jd 去掉 .md>.coverletter.md`, 已存在則就地覆蓋. 格式:
 
    ```markdown
    ---
@@ -76,17 +94,17 @@ JD 未提供, 已停止產出 cover letter.
    Shuk Liu
    ```
 
-   `company`, `role`, `date` 必填; `recipient` 僅在 JD 寫明聯絡人時填姓名, 否則 `Hiring Team`. 段落之間空一行, 段內不換行.
-5. `渲染 PDF` (在 repo 根目錄執行):
+   `company`, `role`, `date`, `jd` 必填, `jd` 為 JD 檔的 repo 相對路徑; `recipient` 僅在 JD 寫明聯絡人時填姓名, 否則 `Hiring Team`. 段落之間空一行, 段內不換行.
+6. `渲染 PDF` (在 repo 根目錄執行):
 
    ```bash
    uv run --with reportlab --with pypdf python skills/coverletter/scripts/render_pdf.py \
-     pkg/resume/coverletter/<company>/<jd_basename>.md
+     pkg/resume/jd/<company>/<title_slug>.<team_or_domain>.coverletter.md
    ```
 
-   輸出同名 `.pdf`. 退出碼 `2` 表示超過一頁, 回步驟 4 刪減. 這台機器的 `python3` 沒有 `reportlab`, 一律經 `uv run --with` 帶入.
-6. `驗證`: 以 `pypdf` 抽出 PDF 文字, 逐句確認沒有 Resume.md 以外的事實, 公司名與職稱與 JD 一致.
-7. `回覆使用者`: 一行對位摘要 (哪兩條 JD 要求對到哪兩段經歷), 未覆蓋的 JD 硬性要求, 以及原稿與 PDF 的`絕對路徑`.
+   輸出同目錄的 `.coverletter.pdf`, 不要用 `--out` 改到別處. 退出碼 `2` 表示超過一頁, 回步驟 5 刪減. 這台機器的 `python3` 沒有 `reportlab`, 一律經 `uv run --with` 帶入.
+7. `驗證`: 以 `pypdf` 抽出 PDF 文字, 逐句確認沒有 Resume.md 以外的事實, 公司名與職稱與 JD 一致.
+8. `回覆使用者`: 一行對位摘要 (哪兩條 JD 要求對到哪兩段經歷), 未覆蓋的 JD 硬性要求, 以及原稿與 PDF 的`絕對路徑`.
 
 ## Common Mistakes
 
@@ -96,3 +114,5 @@ JD 未提供, 已停止產出 cover letter.
 | 把 JD 的技術關鍵字塞進自己的經歷 | 只用 Resume.md 原句, 缺口不提 |
 | 重述整份履歷時間線 | 只挑兩段最對位的經歷 |
 | 超過一頁就縮邊界 | 刪減內容, 邊界與字級下限固定 |
+| 寫到 `pkg/resume/coverletter/` 或自訂檔名 (`.cover.md`) | 一律 `<jd stem>.coverletter.md`, 與 JD 同目錄 |
+| JD 未入庫就自行編造 `<company>/<stem>` | 先以 `job-analyze` 建檔, 再由 JD 檔路徑推導 |
