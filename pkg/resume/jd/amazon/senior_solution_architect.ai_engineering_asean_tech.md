@@ -16,7 +16,7 @@ min_years: 7
 education: null
 score: 66
 status: rejected
-status_updated: 2026-09-08
+status_updated: 2026-09-19
 ---
 # AWS - Senior Solution Architect, AI Engineering, ASEAN Tech (Singapore)
 
