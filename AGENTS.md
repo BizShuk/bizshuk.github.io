@@ -9,7 +9,7 @@ bizshuk.github.io/
 ├── .agents/skills -> ../skills   # 軟連結:其他 agent runtime 探索路徑
 ├── index.html              # 入口頁 (gallery landing,樣式與腳本 inline)
 ├── README.md
-├── CLAUDE.md
+├── AGENTS.md
 │
 ├── assets/                 # 圖片等靜態資源
 │   └── images/
