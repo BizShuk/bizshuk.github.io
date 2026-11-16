@@ -1,6 +1,8 @@
 ---
 name: coverletter
 description: Use when a cover letter / motivation letter PDF is needed for a specific job, written from pkg/resume/Resume.md and tailored to a job description - triggers on "cover letter", "coverletter", "write a cover letter for this job", "motivation letter", "求職信", "自薦信", "幫我寫 cover letter", and on any write of cover letters in pkg/resume/jd/. Requires a JD (pasted text, URL, or a pkg/resume/jd/ file); stops when none is given.
+metadata:
+    source: https://github.com/BizShuk/bizshuk.github.io
 ---
 
 # Cover Letter

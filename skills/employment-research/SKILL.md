@@ -1,6 +1,8 @@
 ---
 name: employment-research
 description: 跨市場就業結果資料集 (Employment Outcomes Dataset) 的週期性收集, 稽核與排程. 每次執行依 schedule.json 展開到期任務, 產出本次 TODO; 未完成的任務自動延續到下一次執行並依失敗原因決定重試間隔. 觸發詞 - "跑就業資料收集", "employment outcomes", "collect graduate employment", "畢業生就業率", "本週排程", "jobs 排程", "collection plan", "GES", "NACE", "Graduate Outcomes", "就職状況調査".
+metadata:
+    source: https://github.com/BizShuk/bizshuk.github.io
 ---
 
 # Employment Outcomes — 週期性收集排程

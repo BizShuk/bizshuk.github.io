@@ -1,6 +1,8 @@
 ---
 name: job-analyze
 description: Use when a job URL or job description is pasted, linked, or fetched and should be recorded, scored against the resume, and analyzed for role value, opportunities, and roadmap - triggers on "note this JD", "evaluate this job", "analyze this job", "job-analyze", "這個職缺適合嗎", "這個職缺值得嗎", "匹配度", "幫我評估這份 JD", "分析這個角色", "職涯路線圖", "roadmap for this role", on re-scoring existing JD files after Resume.md changes, and on any write into pkg/resume/jd/.
+metadata:
+    source: https://github.com/BizShuk/bizshuk.github.io
 ---
 
 # Job Analyze
