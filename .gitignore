@@ -3,3 +3,4 @@
 life/
 .playwright-cli
 .codegraphy/*
+**/node_modules/
