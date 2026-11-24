@@ -36,7 +36,7 @@ RUN mkdir -p /home/app/out/html \
         /home/app/out/html/pkg/resume/bin \
         /home/app/out/html/pkg/resume/Resume.md \
     && find /home/app/out -type f -name '*.map' -delete \
-    && cp docker/nginx.conf /home/app/out/default.conf \
+    && cp config/nginx.conf /home/app/out/default.conf \
     && printf '%s\n' '#!/bin/sh' 'exec nginx -g "pid /home/app/.config/bizshuk.github.io/data/nginx.pid; daemon off;"' > /home/app/out/entrypoint.sh \
     && chmod +x /home/app/out/entrypoint.sh
 
