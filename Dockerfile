@@ -27,13 +27,7 @@ RUN mkdir -p /home/app/out/html \
         /home/app/out/html/skills \
         /home/app/out/html/life \
         /home/app/out/html/tmp \
-        /home/app/out/html/pkg/resume/go.mod \
-        /home/app/out/html/pkg/resume/go.sum \
-        /home/app/out/html/pkg/resume/main.go \
-        /home/app/out/html/pkg/resume/cmd \
-        /home/app/out/html/pkg/resume/svc \
         /home/app/out/html/pkg/resume/jd \
-        /home/app/out/html/pkg/resume/bin \
         /home/app/out/html/pkg/resume/Resume.md \
     && find /home/app/out -type f -name '*.map' -delete \
     && cp config/nginx.conf /home/app/out/default.conf \

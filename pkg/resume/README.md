@@ -24,26 +24,6 @@
 | `skills/`                  | 就業結果週期性收集排程、驗證與 CSV 萃取管線                |
 | `schedule.json`            | 跨市場就業統計發布月份排程                                   |
 | `README.todo`              | 待辦事項清單與排程任務帳本 (受管區塊)                       |
-| `svc/`, `cmd/`, `main.go`  | `resume` CLI:從 MyCareersFuture 蒐集職缺資料到 `jd/` 的原始素材 |
-
-## 職缺蒐集 CLI (Job Collection CLI)
-
-`resume` 是一支 Go CLI,從 `api.mycareersfuture.gov.sg` 蒐集職缺,供 `jd/` 的職缺庫使用。
-該 API `不需要 API key`,實測過的端點、欄位與陷阱記在 [svc/README.md](svc/README.md)。
-
-```bash
-go build -o bin/resume .
-
-bin/resume mcf search "engineering manager" --salary 12000 --level Manager
-bin/resume mcf detail <uuid>                       # 唯一拿得到 JD 全文的路徑
-bin/resume mcf fetch "engineering manager" --max 50 # 搜尋 + 逐筆補全文 + 落檔
-bin/resume mcf jobs --salary 15000                 # 全站列表,不吃關鍵字
-bin/resume mcf company capgemini                   # 雇主查詢,解析出 UEN
-```
-
-設定走 gosdk 的扁平大寫 key,可由同名環境變數覆寫:
-`MCF_BASE_URL`, `MCF_USER_AGENT`, `MCF_TIMEOUT`, `MCF_MAX_ATTEMPTS`, `COMMAND_TIMEOUT`。
-落檔位置預設為 `~/.config/resume-jd/data/mcf/jobs/`,可用 `--out` 覆寫。
 
 ## 關聯 (Related)
 

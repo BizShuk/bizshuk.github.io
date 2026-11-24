@@ -48,7 +48,7 @@ metadata:
 ## Workflow
 
 1. `前置檢查`: `test -d ~/projects/product/bizshuk.github.io`, 失敗即報錯停止. 職缺已在庫內則進入合併模式 (merge in-place), 不另立新檔.
-2. `取得全文`: 先試 `pkg/resume/` 的 `resume mcf` CLI 或直接抓取. 被阻擋且改由人工貼入時, 於 [_coverage_notes.md](../../../pkg/resume/jd/_coverage_notes.md) 記下該公司的阻擋狀況與已補檔數.
+2. `取得全文`: 直接抓取 (MyCareersFuture 職缺可直取 `https://api.mycareersfuture.gov.sg/v2/jobs/<uuid>`). 被阻擋且改由人工貼入時, 於 [_coverage_notes.md](../../../pkg/resume/jd/_coverage_notes.md) 記下該公司的阻擋狀況與已補檔數.
 3. `建檔 / 合併`: 路徑 `~/projects/product/bizshuk.github.io/pkg/resume/jd/<company>/<title_slug>.<team_or_domain>.md`, 全小寫加底線. 既有檔案保留原始 `created` 日期並就地覆蓋合併; 新檔寫入今日 `created`. front matter 欄位與列舉值以 README 的 `資料欄位 (Schema)` 表為準, 未載明一律 `null`, 不要以 `0` 或空字串冒充. 本文區塊順序固定, 見 [template.md](template.md).
 4. `評分`: 逐條比對硬性要求, 再以加分要求與領域相鄰度調整, 對照 README 的 `分數的意義` 區間表. 觸發條件成立時寫 `缺口分析`.
 5. `角色評估`: 依 `Role Assessment` 六個面向逐項判斷.

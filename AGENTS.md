@@ -43,11 +43,10 @@ bizshuk.github.io/
     │   ├── index.html      # 履歷頁 (sunny 風格,樣式與腳本 inline)
     │   ├── Resume.md       # 履歷內容主稿
     │   ├── assets/         # 可下載的履歷 PDF 與作品截圖
+    │   ├── data/           # 跨市場就業結果資料集 (Employment Outcomes Dataset)
+    │   ├── docs/           # 面試筆記、自傳、術語表與職涯參考資料
     │   ├── jd/             # 職缺庫 (Markdown),含匹配度評分
-    │   ├── go.mod          # 獨立 Go module,唯一有程式的子頁面
-    │   ├── main.go         # resume CLI 進入點
-    │   ├── svc/            # MyCareersFuture API client (含 svc/README.md 的實測記錄)
-    │   └── cmd/            # cobra 子命令:mcf search / detail / jobs / company / fetch
+    │   └── privacy/        # 招募隱私法遵文件
     └── surf/
         └── index.html      # 衝浪頁 (ocean editorial, Uluwatu hero,樣式與腳本 inline)
 ```
@@ -60,14 +59,12 @@ bizshuk.github.io/
 
 ## 技術棧 (Tech Stack)
 
-- Language: HTML5 + vanilla JavaScript (ES2017, `fetch` API);`pkg/resume/` 另有 Go 1.26 module
+- Language: HTML5 + vanilla JavaScript (ES2017, `fetch` API)
 - Framework: 無 (no React, no jQuery, no Vue — 自 2026-06 重構移除)
 - Build tool: 無 (靜態檔案直接 deploy)
 - Font: Google Fonts — `Montserrat` 300/400/600(/700)
 - Image hosting: `i.imgur.com` (外部 hot-link)、`via.placeholder.com` (教育卡片 fallback)
 - 部署: GitHub Pages (假設 `master` 分支 / `gh-pages` 流程;未偵測到 workflow 檔)
-- `pkg/resume/` CLI 相依: `github.com/bizshuk/gosdk` (config / http retry / log / file / tui)、
-  `spf13/cobra`、`spf13/viper`;二進位不進 deploy,`bin/` 已 gitignore
 
 關鍵相依：
 
@@ -90,10 +87,7 @@ bizshuk.github.io/
 - Decision 6: 教育卡片使用 inline `onerror="this.src='https://via.placeholder.com/...'"` 處理圖片失效情境,確保卡片 layout 不會破。
 - Decision 7: gallery 渲染時若 `link` 為空字串則降級為純 `<div>`,讓
   decorative tile 與有連結的 tile 共用同一份資料 schema。
-- Decision 8: `pkg/resume/` 自成一個 Go module 而非在 repo 根建 module。
-  本 repo 主體是靜態站,根層放 `go.mod` 會讓每個子頁面都被納入同一相依圖;
-  職缺蒐集只是履歷頁的上游素材工具,與 deploy 產物無關,因此就地封裝。
-- Decision 9: agent skills 的正本放 `.agents/skills/`,由根層 `.claude -> .agents` 與
+- Decision 8: agent skills 的正本放 `.agents/skills/`,由根層 `.claude -> .agents` 與
   `.grok/skills -> ../.agents/skills` 指向它。統一收斂在 `.agents/` 下讓各 agent runtime
   都能探索到,skill 操作的資料 (`pkg/resume/jd/`, `pkg/resume/Resume.md`) 以相對連結與
   絕對路徑引用,多種 runtime 共用同一份正本不必複製。
@@ -105,7 +99,6 @@ bizshuk.github.io/
 | 個人作品集 (Personal Portfolio) | `index.html` (樣式與腳本 inline), `data/gallery.json`            | `index.html` inline `<script>` 的 `DOMContentLoaded` |
 | 履歷展示 (Resume Showcase)      | `pkg/resume/index.html` (樣式與腳本 inline)                         | 頁尾 inline `<script>` (年份 + 捲動顯影)       |
 | 衝浪頁 (Surf Page)              | `pkg/surf/index.html` (樣式與腳本 inline)                           | `pkg/surf/index.html` inline `<script>` 的 `DOMContentLoaded` |
-| 職缺蒐集 (Job Collection)       | `pkg/resume/svc/` (API client), `pkg/resume/cmd/` (CLI)             | `pkg/resume/main.go` → `cmd.Execute()`         |
 | App Store 政策頁 (Policy Pages) | `pkg/copyright/` (`index.html` + 6 個 app 子目錄)                   | `pkg/copyright/index.html`, `scripts/release-store.sh` |
 
 ## 開發指南 (Development Guide)
@@ -131,12 +124,6 @@ bizshuk.github.io/
 1. 開啟 `index.html` 並確認 gallery 16 個 tile 都正確載入
 2. 將 `data/gallery.json` 暫時改成非法 JSON,確認 console 有錯誤訊息
 3. 開啟 `pkg/resume/index.html` 確認 PDF 下載連結,以及 `pkg/surf/index.html` 的捲動顯影
-
-`pkg/resume/` 的 Go module 有單元測試:
-
-```bash
-cd pkg/resume && go vet ./... && go test ./...
-```
 
 ### 部署 (Deploy)
 

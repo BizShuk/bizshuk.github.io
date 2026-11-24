@@ -9,7 +9,6 @@ life/
 .playwright-cli/
 .codegraphy/
 **/node_modules/
-pkg/resume/bin/
 Dockerfile
 docker-compose.yml
 deployment.yml

@@ -5,7 +5,6 @@
   "description": "Shuk Liu 個人作品集 (personal portfolio) 靜態站 — vanilla HTML/CSS/JS，無 build step，GitHub Pages 部署",
   "scripts": {
     "dev": "python3 -m http.server 8329",
-    "test": "cd pkg/resume && go vet ./... && go test ./...",
     "release:store": "./scripts/release-store.sh",
     "run:setup": "./scripts/run.sh"
   }
