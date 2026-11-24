@@ -1,0 +1,190 @@
+{
+  "schema_version": 2,
+  "country": "SG",
+  "country_name": "Singapore",
+  "is_aggregate": false,
+  "period": "2026-H1",
+  "collected_at": "2026-09-08",
+  "collector": "claude-opus-5",
+  "stale": false,
+  "superseded_by_period": null,
+  "new_grad": {
+    "measured": true,
+    "instrument_name": "Joint Autonomous Universities Graduate Employment Survey",
+    "reference_year": 2025,
+    "published_date": "2026-03-05",
+    "window_months": 6,
+    "denominator": "in_labour_force",
+    "numerator_includes": "any_employment",
+    "employment_rate": {
+      "value_pct": 88.9,
+      "data_gap": false,
+      "gap_reason": null,
+      "source_id": "ges_2025"
+    },
+    "fulltime_permanent_rate": {
+      "value_pct": 74.4,
+      "data_gap": false,
+      "gap_reason": null,
+      "source_id": "ges_2025"
+    },
+    "further_study_rate": {
+      "value_pct": null,
+      "data_gap": true,
+      "gap_reason": "not_found",
+      "source_id": null
+    },
+    "underemployment_rate": {
+      "value_pct": null,
+      "data_gap": true,
+      "gap_reason": "not_measured",
+      "source_id": null
+    },
+    "unemployment_rate": {
+      "value_pct": null,
+      "data_gap": true,
+      "gap_reason": "not_measured",
+      "source_id": null
+    },
+    "median_salary": 4500,
+    "currency": "SGD",
+    "salary_period": "monthly",
+    "salary_excludes_bonus": true,
+    "domestic_vs_international_gap_pp": null
+  },
+  "experienced": {
+    "direct_rate_exists": false,
+    "proxies": [
+      {
+        "metric": "national_unemployment_rate",
+        "sector": "ALL",
+        "value": 2.0,
+        "unit": "pct",
+        "index_base_period": null,
+        "as_of": "2026-06-30",
+        "is_proxy": true,
+        "proxy_caveat": "全經濟口徑的失業率 (whole-economy unemployment). 完全沒有說明中生代轉職者需要多久才能再就業; 在一個少有人流動的凍結市場中, 這個數字一樣可以很低.",
+        "source_id": "mom_labour_2q26"
+      },
+      {
+        "metric": "hiring_intention_rate",
+        "sector": "ALL",
+        "value": 44.6,
+        "unit": "pct",
+        "index_base_period": null,
+        "as_of": "2026-03-31",
+        "is_proxy": true,
+        "proxy_caveat": "未來三個月預期招聘的廠商比例, 前一個月為 54.6. 測量的是陳述意圖 (stated intent) 而非實際聘僱 (realised hiring), 單月變動可能只是調查雜訊 (survey noise).",
+        "source_id": "mom_bes_mar26"
+      },
+      {
+        "metric": "retrenchment_count",
+        "sector": "ALL",
+        "value": 4500,
+        "unit": "persons",
+        "index_base_period": null,
+        "as_of": "2026-06-30",
+        "is_proxy": true,
+        "proxy_caveat": "該季的裁員人數. 計算的是離職事件 (separations), 不是找新工作的難度, 且高度集中在外向型產業 (outward-oriented sectors).",
+        "source_id": "mom_labour_2q26"
+      }
+    ]
+  },
+  "sectors": [
+    {
+      "sector": "IT",
+      "source_label": "Bachelor of Computing (Computer Science), NUS",
+      "mapping_confidence": "exact",
+      "cohort": "new_grad",
+      "metric": "employment_rate",
+      "value_pct": 90.9,
+      "median_salary": 6400,
+      "currency": "SGD",
+      "salary_period": "monthly",
+      "source_id": "nus_soc_ges2025"
+    },
+    {
+      "sector": "IT",
+      "source_label": "Bachelor of Computing (Information Systems), NUS",
+      "mapping_confidence": "exact",
+      "cohort": "new_grad",
+      "metric": "employment_rate",
+      "value_pct": 96.8,
+      "median_salary": 6000,
+      "currency": "SGD",
+      "salary_period": "monthly",
+      "source_id": "nus_soc_ges2025"
+    },
+    {
+      "sector": "FIN",
+      "source_label": "Accountancy, SMU",
+      "mapping_confidence": "approximate",
+      "cohort": "new_grad",
+      "metric": "employment_rate",
+      "value_pct": 97.0,
+      "median_salary": 4500,
+      "currency": "SGD",
+      "salary_period": "monthly",
+      "source_id": "smu_ges2025"
+    },
+    {
+      "sector": "OTHER",
+      "source_label": "Computing & Law, SMU",
+      "mapping_confidence": "loose",
+      "cohort": "new_grad",
+      "metric": "employment_rate",
+      "value_pct": 81.0,
+      "median_salary": 5000,
+      "currency": "SGD",
+      "salary_period": "monthly",
+      "source_id": "smu_ges2025"
+    }
+  ],
+  "sources": [
+    {
+      "id": "ges_2025",
+      "name": "Joint Autonomous Universities Graduate Employment Survey 2025",
+      "publisher": "Ministry of Education Singapore and the six autonomous universities",
+      "url": "https://www.moe.gov.sg/",
+      "published_date": "2026-03-05",
+      "accessed_at": "2026-09-08",
+      "tier": "primary_official"
+    },
+    {
+      "id": "nus_soc_ges2025",
+      "name": "NUS School of Computing GES 2025 results",
+      "publisher": "National University of Singapore",
+      "url": "https://www.comp.nus.edu.sg/news/nus-computing-graduates-among-singapores-highest-earners-and-most-employable-ges-2025-shows",
+      "published_date": "2026-03-11",
+      "accessed_at": "2026-09-08",
+      "tier": "primary_official"
+    },
+    {
+      "id": "smu_ges2025",
+      "name": "SMU GES 2025 web publication",
+      "publisher": "Singapore Management University",
+      "url": "https://news.smu.edu.sg/sites/news.smu.edu.sg/files/smu/news_room/Annex%20B_Web%20Publication%20SMU%20GES%202025.pdf",
+      "published_date": "2026-03-11",
+      "accessed_at": "2026-09-08",
+      "tier": "primary_official"
+    },
+    {
+      "id": "mom_labour_2q26",
+      "name": "Labour Market Report 2Q 2026",
+      "publisher": "Ministry of Manpower Singapore",
+      "url": "https://stats.mom.gov.sg/",
+      "published_date": null,
+      "accessed_at": "2026-09-08",
+      "tier": "primary_official"
+    },
+    {
+      "id": "mom_bes_mar26",
+      "name": "Business Expectations poll, March 2026",
+      "publisher": "Ministry of Manpower Singapore",
+      "url": "https://stats.mom.gov.sg/",
+      "published_date": null,
+      "accessed_at": "2026-09-08",
+      "tier": "primary_official"
+    }
+  ]
+}

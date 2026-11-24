@@ -19,6 +19,11 @@
 | `assets/`                  | 匯出的 PDF,以及履歷與作品集截圖 (專案畫面、公司/團隊圖表)   |
 | `achievement.todo`         | 各任職公司的成就與專案清單,履歷條目的原始素材              |
 | `jd/`                      | 職缺庫 (job description library),含匹配度評分              |
+| `data/`                    | 跨市場就業結果資料集 (Employment Outcomes Dataset), 結構化與口徑配對 |
+| `privacy/`                 | 招募隱私法遵 (Hiring Privacy Compliance), 依法源拆解跨國揭露義務 |
+| `skills/`                  | 就業結果週期性收集排程、驗證與 CSV 萃取管線                |
+| `schedule.json`            | 跨市場就業統計發布月份排程                                   |
+| `README.todo`              | 待辦事項清單與排程任務帳本 (受管區塊)                       |
 | `svc/`, `cmd/`, `main.go`  | `resume` CLI:從 MyCareersFuture 蒐集職缺資料到 `jd/` 的原始素材 |
 
 ## 職缺蒐集 CLI (Job Collection CLI)

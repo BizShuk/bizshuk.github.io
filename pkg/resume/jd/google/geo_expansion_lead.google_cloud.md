@@ -11,6 +11,7 @@ source: mycareersfuture
 posted: 2026-07-23
 expiry: 2026-09-16
 fetched: 2026-09-03
+created: 2026-09-03
 min_years: 7
 education: bachelor
 score: 40
@@ -159,7 +160,7 @@ Business Alignment, Sales Forecasting, Data-Driven Decision Making, Leading Stak
 缺這一層會導致無法與基礎設施工程團隊平等對話, 淪為傳話者.
 
 `怎麼補`: `可自學, 成本低`. `layer 1-4` 對有 Nginx, Linux, Kubernetes 底子的人是複習;
-機櫃與電力則需補課. 巧的是本 repository 的 [pkg/dc_energy](../../../../pkg/dc_energy/) 研究子專案
+機櫃與電力則需補課. 巧的是本 repository 的 [pkg/dc_energy](../../../../../pkg/dc_energy/) 研究子專案
 `正好就是這個領域`, 材料已在手上.
 
 ### 角色地圖 (Role Map)

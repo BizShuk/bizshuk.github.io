@@ -1,0 +1,84 @@
+# Jobs / Employment Outcomes Dataset TODO
+
+## 已完成 (Done)
+
+- [x] 完成專案結構目錄分發 (`data/`, `docs/`, `skills/`)
+- [x] 驗證 `2026-H1__SG` 配對資料解析 (`extract.py`)
+- [x] 建立 Unified Interface 標準檔案 (`CLAUDE.md`, `AGENTS.md`, `README.todo`, `docs/terminology.md`)
+- [x] 設定 `validate.py` 執行環境相依套件 (`jsonschema`, 裝在 `.venv/`)
+- [x] 把 prompts, schema, scripts 收斂成 `skills/employment-research/` 單一來源
+- [x] 建立事件排程與任務帳本 (`schedule.json`, `plan.py`, 帳本內嵌於本檔)
+- [x] 整合稽核工具至排程流程 (`verify` 事件, `depends_on` 相依與串聯放棄)
+
+## 待辦事項 (Pending)
+
+- [ ] 補齊 2026-H1 其餘市場收集 (US, TW, JP, EU) 與 2026-H2 的 GB
+- [ ] 對 `2026-H1__SG` 執行 `verify`, 產出 `docs/audits/2026-H1__SG-audit.md`
+- [ ] 核對 `schedule.json` 各市場 `due.months` 與官方實際發布月份是否相符
+- [ ] 決定週排程的觸發方式 (cron / pm2 / 手動)
+
+<!-- BEGIN employment-research -->
+## employment-research — 收集排程 (Collection Schedule)
+
+更新於 2026-09-08 | 執行頻率 `weekly` | 下次執行 `2026-09-15`
+
+本次待辦 7 件, 等待重試 0 件, 阻塞 5 件, 需人工 0 件, 已結案 1 件.
+
+由 `plan.py` 維護. 勾選框與散文給人看, 行尾註解給腳本讀, 兩者同時寫入.
+回報結果請用 `record`, 手改本區塊會在下次執行時被覆寫.
+
+### 本次待辦 (TODO this run)
+
+- [ ] `sg_verify@2026-H1` — SG verify — 新加坡配對稽核 (source pair audit)
+      到期 2026-03-01 — **逾期 170 天**
+      <!-- task id=sg_verify@2026-H1 due=2026-03-01 status=pending attempts=0 retry=- first=2026-09-08 last=- reason=- note=- -->
+- [ ] `eu_collect@2026-H1` — EU collect — 歐盟 Eurostat 近期畢業生就業率收集
+      到期 2026-04-30 — **逾期 110 天**
+      <!-- task id=eu_collect@2026-H1 due=2026-04-30 status=pending attempts=0 retry=- first=2026-09-08 last=- reason=- note=- -->
+- [ ] `tw_collect@2026-H1` — TW collect — 台灣大專畢業生就業追蹤收集
+      到期 2026-05-01 — **逾期 109 天**
+      <!-- task id=tw_collect@2026-H1 due=2026-05-01 status=pending attempts=0 retry=- first=2026-09-08 last=- reason=- note=- -->
+- [ ] `jp_collect@2026-H1` — JP collect — 日本大學畢業生就職狀況調查收集
+      到期 2026-05-20 — **逾期 90 天**
+      <!-- task id=jp_collect@2026-H1 due=2026-05-20 status=pending attempts=0 retry=- first=2026-09-08 last=- reason=- note=- -->
+- [ ] `dataset_extract@2026-H1` — extract — 全資料集展平為 tidy CSV
+      到期 2026-05-31 — **逾期 86 天**
+      <!-- task id=dataset_extract@2026-H1 due=2026-05-31 status=pending attempts=0 retry=- first=2026-09-08 last=- reason=- note=- -->
+- [ ] `us_collect@2026-H1` — US collect — 美國 First-Destination Survey 收集
+      到期 2026-06-01 — **逾期 78 天**
+      <!-- task id=us_collect@2026-H1 due=2026-06-01 status=pending attempts=0 retry=- first=2026-09-08 last=- reason=- note=- -->
+- [ ] `gb_collect@2026-H2` — GB collect — 英國 Graduate Outcomes 收集
+      到期 2026-07-01 — **逾期 48 天**
+      <!-- task id=gb_collect@2026-H2 due=2026-07-01 status=pending attempts=0 retry=- first=2026-09-08 last=- reason=- note=- -->
+
+### 等待重試 (Waiting on backoff)
+
+無.
+
+### 阻塞 (Blocked)
+
+- [ ] `eu_verify@2026-H1` — 等待相依 eu_collect
+      <!-- task id=eu_verify@2026-H1 due=2026-04-30 status=blocked attempts=0 retry=- first=2026-09-08 last=- reason=- note=- -->
+- [ ] `tw_verify@2026-H1` — 等待相依 tw_collect
+      <!-- task id=tw_verify@2026-H1 due=2026-05-01 status=blocked attempts=0 retry=- first=2026-09-08 last=- reason=- note=- -->
+- [ ] `jp_verify@2026-H1` — 等待相依 jp_collect
+      <!-- task id=jp_verify@2026-H1 due=2026-05-20 status=blocked attempts=0 retry=- first=2026-09-08 last=- reason=- note=- -->
+- [ ] `us_verify@2026-H1` — 等待相依 us_collect
+      <!-- task id=us_verify@2026-H1 due=2026-06-01 status=blocked attempts=0 retry=- first=2026-09-08 last=- reason=- note=- -->
+- [ ] `gb_verify@2026-H2` — 等待相依 gb_collect
+      <!-- task id=gb_verify@2026-H2 due=2026-07-01 status=blocked attempts=0 retry=- first=2026-09-08 last=- reason=- note=- -->
+
+### 需人工介入 (Needs human)
+
+無.
+
+### 已結案 (Closed)
+
+- [x] `sg_collect@2026-H1` — 完成 — 產出已存在, 自動結案 (auto-reconciled)
+      <!-- task id=sg_collect@2026-H1 due=2026-03-01 status=done attempts=0 retry=- first=2026-09-08 last=2026-09-08 reason=- note=產出已存在, 自動結案 (auto-reconciled) -->
+
+### 本次變動 (Changes this run)
+
+- 新展開 (materialized): 0 件
+- 自動結案 (auto-reconciled): 0 件
+<!-- END employment-research -->

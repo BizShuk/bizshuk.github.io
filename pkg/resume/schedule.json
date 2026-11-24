@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "cadence": "weekly",
+  "period_scheme": "H",
+  "start": "2026-01-01",
+
+  "defaults": {
+    "grace_days": 21,
+    "backoff_days": [7, 7, 14, 28],
+    "max_attempts": 8
+  },
+
+  "events": [
+    {
+      "id": "sg_collect",
+      "task": "collect",
+      "country": "SG",
+      "title": "新加坡畢業生就業調查 (GES) 收集",
+      "instrument": "Joint Autonomous Universities Graduate Employment Survey",
+      "due": { "months": [3], "day": 1 },
+      "notes": "MOE 與六所大學聯合發布, 通常落在 2 月下旬至 3 月上旬."
+    },
+    {
+      "id": "sg_verify",
+      "task": "verify",
+      "country": "SG",
+      "title": "新加坡配對稽核 (source pair audit)",
+      "due": { "months": [3], "day": 1 },
+      "depends_on": ["sg_collect"]
+    },
+
+    {
+      "id": "us_collect",
+      "task": "collect",
+      "country": "US",
+      "title": "美國 First-Destination Survey 收集",
+      "instrument": "NACE First-Destination Survey",
+      "due": { "months": [6], "day": 1 },
+      "notes": "NACE 於畢業年度後隔年春末發布; NY Fed 的近期畢業生勞動市場資料為季更新, 可作補充."
+    },
+    {
+      "id": "us_verify",
+      "task": "verify",
+      "country": "US",
+      "title": "美國配對稽核",
+      "due": { "months": [6], "day": 1 },
+      "depends_on": ["us_collect"]
+    },
+
+    {
+      "id": "jp_collect",
+      "task": "collect",
+      "country": "JP",
+      "title": "日本大學畢業生就職狀況調查收集",
+      "instrument": "大学等卒業者の就職状況調査",
+      "due": { "months": [5], "day": 20 },
+      "notes": "文科省與厚労省於 5 月中旬公布 4 月 1 日時點確定值; 12 月至 2 月另有中間值."
+    },
+    {
+      "id": "jp_verify",
+      "task": "verify",
+      "country": "JP",
+      "title": "日本配對稽核",
+      "due": { "months": [5], "day": 20 },
+      "depends_on": ["jp_collect"]
+    },
+
+    {
+      "id": "tw_collect",
+      "task": "collect",
+      "country": "TW",
+      "title": "台灣大專畢業生就業追蹤收集",
+      "instrument": "大專畢業生就業追蹤系統 / 人力資源調查",
+      "due": { "months": [5], "day": 1 },
+      "notes": "勞動部追蹤系統發布時點不固定; 主計總處人力資源調查為月更新, 可作 experienced 代理指標."
+    },
+    {
+      "id": "tw_verify",
+      "task": "verify",
+      "country": "TW",
+      "title": "台灣配對稽核",
+      "due": { "months": [5], "day": 1 },
+      "depends_on": ["tw_collect"]
+    },
+
+    {
+      "id": "gb_collect",
+      "task": "collect",
+      "country": "GB",
+      "title": "英國 Graduate Outcomes 收集",
+      "instrument": "HESA Graduate Outcomes",
+      "due": { "months": [7], "day": 1 },
+      "notes": "HESA 通常於初夏發布; 調查窗口為畢業後 15 個月, 與其他市場的 6 個月窗口不同."
+    },
+    {
+      "id": "gb_verify",
+      "task": "verify",
+      "country": "GB",
+      "title": "英國配對稽核",
+      "due": { "months": [7], "day": 1 },
+      "depends_on": ["gb_collect"]
+    },
+
+    {
+      "id": "au_collect",
+      "task": "collect",
+      "country": "AU",
+      "title": "澳洲 Graduate Outcomes Survey 收集",
+      "instrument": "QILT Graduate Outcomes Survey (GOS / GOS-L)",
+      "due": { "months": [11], "day": 15 },
+      "notes": "QILT 於年底發布; 分子口徑僅計全職, 與 SG/US 不可直接對比."
+    },
+    {
+      "id": "au_verify",
+      "task": "verify",
+      "country": "AU",
+      "title": "澳洲配對稽核",
+      "due": { "months": [11], "day": 15 },
+      "depends_on": ["au_collect"]
+    },
+
+    {
+      "id": "eu_collect",
+      "task": "collect",
+      "country": "EU",
+      "title": "歐盟 Eurostat 近期畢業生就業率收集",
+      "instrument": "Eurostat Labour Force Survey / employment rates of recent graduates",
+      "due": { "months": [4, 10], "day": 30 },
+      "notes": "Eurostat 為季更新, 但本資料集半年收集一次, 因此每期取最早到期時點開任務."
+    },
+    {
+      "id": "eu_verify",
+      "task": "verify",
+      "country": "EU",
+      "title": "歐盟配對稽核",
+      "due": { "months": [4, 10], "day": 30 },
+      "depends_on": ["eu_collect"]
+    },
+
+    {
+      "id": "dataset_extract",
+      "task": "extract",
+      "country": null,
+      "title": "全資料集展平為 tidy CSV",
+      "due": { "per_period": true, "offset_days": 150 },
+      "grace_days": 14,
+      "backoff_days": [7],
+      "max_attempts": 4,
+      "notes": "期末統一執行, 不等待個別市場, 缺漏由 data_gap 欄位自行表達."
+    }
+  ]
+}

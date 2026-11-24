@@ -11,6 +11,7 @@ source: direct
 posted: null
 expiry: null
 fetched: 2026-09-02
+created: 2026-09-02
 min_years: 10
 education: bachelor_cs
 score: 50

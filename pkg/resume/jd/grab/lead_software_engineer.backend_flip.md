@@ -11,6 +11,7 @@ source: direct
 posted: 2026-09-07
 expiry: null
 fetched: 2026-09-08
+created: 2026-09-08
 min_years: 7
 education: null
 score: 80
