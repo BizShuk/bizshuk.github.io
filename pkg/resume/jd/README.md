@@ -9,7 +9,7 @@
 
 `常用入口`: [Amazon Career Dashboard (Applicant)](https://account.amazon.jobs/en-US/applicant) · [Apple Career Dashboard](https://jobs.apple.com/app/en-sg/profile/roles) · [Meta Careers (Job Search)](https://www.metacareers.com/jobsearch/) · [Google Careers (Application Dashboard)](https://www.google.com/about/careers/applications/dashboard) · [Visa Careers (Workday Applicant Home)](https://visa.wd5.myworkdayjobs.com/en-US/Visa/userHome) · [JPMorgan Career Dashboard](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/my-profile)
 
-`最近一次蒐集`: 2026-09-22 · `最近一次狀態盤點`: 2026-11-24 · 共 `49` 檔 · 覆蓋範圍與未涵蓋公司見 [_coverage_notes.md](_coverage_notes.md)
+`最近一次蒐集`: 2026-09-22 · `最近一次狀態盤點`: 2026-11-24 · 共 `45` 檔 · 覆蓋範圍與未涵蓋公司見 [_coverage_notes.md](_coverage_notes.md)
 
 ## 排序總表 (Ranked)
 
@@ -48,18 +48,14 @@
 | 📤 | `52` | Software Engineer, Principal | Meta | Staff IC | Data / AI | [檔案](meta/software_engineer_principal.xf_apac_products.md) `+缺口分析` |
 | ⬜ | `52` | AI Manager | TSMC | Manager | Data / AI | [檔案](tsmc/ai_manager.ai_platform.md) |
 | 📤 | `48` | Applied AI Architect | Anthropic | Architect / 客戶面向 | Data / AI | [檔案](anthropic/applied_ai_architect.technical_success.md) `+缺口分析` |
-| ⬜ | `46` | Manager, AI Change Management | TSMC | Manager | Data / AI | [檔案](tsmc/manager_ai_change_management.enterprise_transformation.md) |
 | ⬜ | `45` | Senior Software Engineer | Jump Trading Group | IC | 低延遲交易 | [檔案](jump_trading/senior_software_engineer.core_development.md) |
-| ⬜ | `44` | Mobile APP Manager | TSMC | Manager | - | [檔案](tsmc/mobile_app_manager.enterprise_mobility.md) |
 | ⬜ | `42` | Applied AI Engineer, Cyber | OpenAI | IC / 客戶面向 | 資安 | [檔案](openai/applied_ai_engineer.cyber.md) |
 | ⬜ | `42` | IT Security Technical Manager | TSMC | Manager | 資安 | [檔案](tsmc/it_security_technical_manager.information_security.md) |
-| ⬜ | `40` | AI Specialist Solution Architect, Southeast Asia | Red Hat | Architect / 客戶面向 | ML Infra | [檔案](redhat/ai_specialist_solution_architect.apac_technology_sales.md) `+缺口分析` |
 | ⬜ | `40` | Core Engineering Manager, C++ | Tower Research Capital | Manager | 低延遲交易 | [檔案](tower_research/core_engineering_manager.core_engineering_markets.md) |
 | ⬜ | `40` | eCommerce Product Manager | TSMC | Program Manager | - | [檔案](tsmc/ecommerce_product_manager.ebusiness.md) |
 | ⬜ | `38` | AI Data Center Development Manager | Meta | Program Manager | 雲平台 | [檔案](meta/ai_data_center_development_manager.data_center_strategy.md) `+缺口分析` |
 | ⬜ | `38` | Data Protection AI Security Manager | TSMC | Manager | 資安 | [檔案](tsmc/data_protection_ai_security_manager.information_security.md) |
 | ⬜ | `36` | Cybersecurity Solution Architect | TSMC | Architect | 資安 | [檔案](tsmc/cybersecurity_solution_architect.information_security.md) |
-| ⬜ | `35` | Senior Principal Engineer, Solutions Architecture | Dell Technologies | Architect / 客戶面向 | ML Infra | [檔案](dell/senior_principal_solutions_architect.hyperscale_ai_infrastructure.md) |
 | ⬜ | `32` | AI Product Manager, Semiconductor | TSMC | Program Manager | Data / AI | [檔案](tsmc/ai_product_manager_semiconductor.equipment_ai.md) |
 | ⬜ | `28` | Director, Compliance & Assurance | Meta | Director | 資安 | [檔案](meta/director_compliance_assurance.regulatory_compliance_programs.md) `+缺口分析` |
 | ⬜ | `26` | eBusiness HR Product Manager | TSMC | Program Manager | - | [檔案](tsmc/ebusiness_hr_product_manager.ebusiness.md) |
@@ -141,7 +137,7 @@ Meta 的 `Business Support Engineer` 兩檔 (AdTech 與 Meta Business Agents) �
 
 - [archived/google/geo_expansion_lead.google_cloud.md](archived/google/geo_expansion_lead.google_cloud.md) - Google Cloud APAC 資料中心區域損益 (商業策略軌道)
 - [grab/lead_software_engineer.backend_flip.md](grab/lead_software_engineer.backend_flip.md) - Grab FLIP 內部開發者平台 Go 深度舉證缺口 (開發者體驗軌道)
-- [redhat/ai_specialist_solution_architect.apac_technology_sales.md](redhat/ai_specialist_solution_architect.apac_technology_sales.md) - Red Hat AI SSA 推論服務層缺口 (AI 平台軌道), 補齊教材見 [docs/tutorials/ai_inference_serving.md](../docs/tutorials/ai_inference_serving.md)
+- [archived/redhat/ai_specialist_solution_architect.apac_technology_sales.md](archived/redhat/ai_specialist_solution_architect.apac_technology_sales.md) - Red Hat AI SSA 推論服務層缺口 (AI 平台軌道), 補齊教材見 [docs/tutorials/ai_inference_serving.md](../docs/tutorials/ai_inference_serving.md)
 - [tsmc/ai_hpc_manager.ai_hpc_platform.md](tsmc/ai_hpc_manager.ai_hpc_platform.md) - TSMC AI HPC 的 HPC 本業技術棧缺口 (MPI, CUDA 與運算層 vs 排程層之別)
 - [meta/software_engineer_principal.xf_apac_products.md](meta/software_engineer_principal.xf_apac_products.md) - Meta Principal 的組織級 scope 與產品變現領域缺口 (職級幅度而非軌道)
 - [carharbor/technical_lead.web3_marketplace.md](carharbor/technical_lead.web3_marketplace.md) - CarHarbor Web3 車輛市集的 TypeScript 棧與鏈上所有權一致性缺口 (本庫第一條 Web3 / 鏈上軌道, 另含雇主可查證性的盡職調查前提)
@@ -207,3 +203,7 @@ Meta 的 `Business Support Engineer` 兩檔 (AdTech 與 Meta Business Agents) �
 - [Google - Senior Staff Tech Lead Manager, TPU Workload Onboarding and Optimization](archived/google/senior_staff_tech_lead_manager.tpu_workload_optimization.md) (`35`)
 - [Societe Generale - Front Office Software Engineer - FIC Automated Trading](archived/societe_generale/front_office_software_engineer.fic_automated_trading.md) (`35`)
 - [Ambiq - Senior Staff Engineer, Analog Design](archived/ambiq/senior_staff_engineer.analog_design.md) (`25`)
+- [TSMC - Manager, AI Change Management](archived/tsmc/manager_ai_change_management.enterprise_transformation.md) (`46`)
+- [TSMC - Mobile APP Manager](archived/tsmc/mobile_app_manager.enterprise_mobility.md) (`44`)
+- [Red Hat - AI Specialist Solution Architect, Southeast Asia](archived/redhat/ai_specialist_solution_architect.apac_technology_sales.md) (`40`)
+- [Dell Technologies - Senior Principal Engineer, Solutions Architecture](archived/dell/senior_principal_solutions_architect.hyperscale_ai_infrastructure.md) (`35`)

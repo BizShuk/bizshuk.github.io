@@ -10,7 +10,7 @@ url: "https://careers.tsmc.com/en_US/careers/JobDetail?jobId=17914"
 source: direct
 posted: 2026-03-25
 expiry: null
-fetched: 2026-09-08
+fetched: 2026-11-24
 created: 2026-09-08
 min_years: 8
 education: master_cs

@@ -10,13 +10,13 @@ url: null
 source: direct
 posted: 2026-09-02
 expiry: null
-fetched: 2026-09-07
+fetched: 2026-11-24
 created: 2026-09-07
 min_years: 15
 education: bachelor_cs
 score: 40
-status: not_applied
-status_updated: 2026-09-07
+status: closed
+status_updated: 2026-11-24
 ---
 # Red Hat - AI Specialist Solution Architect, Southeast Asia (新加坡)
 

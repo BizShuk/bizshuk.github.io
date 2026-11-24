@@ -10,13 +10,13 @@ url: "https://careers.tsmc.com/en_US/careers/JobDetail?jobId=18863"
 source: direct
 posted: 2026-03-25
 expiry: null
-fetched: 2026-09-08
+fetched: 2026-11-24
 created: 2026-09-08
 min_years: 8
 education: null
 score: 44
-status: not_applied
-status_updated: 2026-09-08
+status: closed
+status_updated: 2026-11-24
 ---
 # TSMC - Mobile APP Manager (Android MDM)
 

@@ -10,7 +10,7 @@ url: "https://careers.tsmc.com/en_US/careers/JobDetail?jobId=20479"
 source: direct
 posted: 2026-05-12
 expiry: null
-fetched: 2026-09-08
+fetched: 2026-11-24
 created: 2026-09-08
 min_years: 15
 education: master_cs

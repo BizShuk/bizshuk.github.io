@@ -10,13 +10,13 @@ url: "https://www.linkedin.com/jobs/view/4460947617"
 source: direct
 posted: 2026-09-02
 expiry: null
-fetched: 2026-09-03
+fetched: 2026-11-24
 created: 2026-09-03
 min_years: 12
 education: bachelor
 score: 35
-status: not_applied
-status_updated: 2026-09-03
+status: closed
+status_updated: 2026-11-24
 ---
 # Dell Technologies - Senior Principal Solutions Architect (超大規模 AI 基礎設施, 東京)
 

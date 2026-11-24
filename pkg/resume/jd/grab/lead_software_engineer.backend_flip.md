@@ -10,7 +10,7 @@ url: null
 source: direct
 posted: 2026-09-07
 expiry: null
-fetched: 2026-09-08
+fetched: 2026-11-24
 created: 2026-09-08
 min_years: 7
 education: null

@@ -10,7 +10,7 @@ url: "https://www.metacareers.com/profile/job_details/1298625432375018/"
 source: direct
 posted: null
 expiry: null
-fetched: 2026-09-10
+fetched: 2026-11-24
 created: 2026-09-10
 min_years: 12
 education: null

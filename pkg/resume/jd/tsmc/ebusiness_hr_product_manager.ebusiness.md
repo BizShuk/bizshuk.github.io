@@ -10,7 +10,7 @@ url: "https://careers.tsmc.com/en_US/careers/JobDetail?jobId=22784"
 source: direct
 posted: 2026-08-28
 expiry: null
-fetched: 2026-09-08
+fetched: 2026-11-24
 created: 2026-09-08
 min_years: 10
 education: bachelor_cs
