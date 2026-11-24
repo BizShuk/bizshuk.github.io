@@ -1,0 +1,23 @@
+# deployment.yml — bizshuk (個人作品集靜態站) 的部署宣告
+#
+# 格式定義由 platform/inf 的 inf-spec (deployment.md) 單一擁有。
+# 這裡只回答: 在哪些節點跑, 誰連得到。
+#
+# 目前是 lan tier: 尚未開 Cloudflare Tunnel (inf hosts/liva/config.yml 無 bizshuk ingress),
+# 區網經 nginx 的 https://bizshuk.local / https://bizshuk.shuks.dev 或直連 :8329。
+# 全部路由唯讀、無認證、無寫入, 因此 access 設為 app。
+services:
+  - name: bizshuk
+    production: [liva]
+    expose:
+      port: 8329
+      bind: 0.0.0.0
+      protocol: http
+      hostname: bizshuk
+      access: app
+    artifact:
+      kind: image
+      repo: bizshuk/bizshuk.github.io
+    observability:
+      health: /health
+      logs: stdout

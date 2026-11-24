@@ -1,3 +1,15 @@
-.git
+.git/
+.github/
+.env*
+*.log
+tmp/
+docs/
+coverage/
+life/
+.playwright-cli/
+.codegraphy/
+**/node_modules/
+pkg/resume/bin/
 Dockerfile
-tmp
+docker-compose.yml
+deployment.yml
