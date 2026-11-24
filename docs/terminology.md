@@ -38,11 +38,11 @@
 
 | 術語 (Term) | 英文 (English) | 定義 (Definition) | 出處 (Source) |
 | ----------- | -------------- | ----------------- | ------------- |
-| 政策發佈 | Store Policy Release | 把 iPhone 專案的 `appstore/` 目錄同步進本站 `pkg/<route>/` 的流程,以 `rsync -a --delete` 執行 | `scripts/release-store.sh`, `package.json` (`release:store`) |
-| 路由名 | Route | `APPS` 陣列中 `project:route` 的右半,決定政策頁在站上的路徑 `pkg/<route>/` | `scripts/release-store.sh` |
+| 政策發佈 | Store Policy Release | 把 iPhone 專案的 `appstore/` 目錄同步進本站 `pkg/copyright/<route>/` 的流程,以 `rsync -a --delete` 執行 | `scripts/release-store.sh`, `package.json` (`release:store`) |
+| 路由名 | Route | `APPS` 陣列中 `project:route` 的右半,決定政策頁在站上的路徑 `pkg/copyright/<route>/` | `scripts/release-store.sh` |
 | 政策驗證器 | Policy Validator | 發佈前逐專案執行的外部 Python 檢查腳本,路徑由 `POLICY_VALIDATOR` 覆寫。找不到即中止發佈 | `scripts/release-store.sh` |
 | 來源專案根 | `IPHONE_PROJECTS_ROOT` | iPhone 專案所在目錄,預設為 repo 上兩層的 `iphone/`。政策頁的原始內容住在這裡,不在本 repo 編輯 | `scripts/release-store.sh` |
-| 政策頁組 | Policy Page Set | 每個 app 固定四件套 + 預覽圖:`index.html`、`privacy.html`、`copyright.html`、`privacy.md`、`preview/` | `pkg/<app>/` |
+| 政策頁組 | Policy Page Set | 每個 app 固定四件套 + 預覽圖:`index.html`、`privacy.html`、`copyright.html`、`privacy.md`、`preview/` | `pkg/copyright/<app>/` |
 
 ## 部署 (Deployment)
 

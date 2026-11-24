@@ -3,8 +3,7 @@
 - [ ] `README.md` / `CLAUDE.md` 已與現況分岔: 兩份文件都寫「無 `package.json`」「無 build step」「未偵測到部署設定」,
       但 repo 內已有 `package.json`(`dev` / `build` / `deploy` / `release:store` scripts)、`Dockerfile`、
       `docker/nginx.conf`。下次動文件時同步修正,不要再新增第三份說法。
-- [ ] `pkg/` 底下的 App Store 政策頁 (App Store Policy Pages) 是第三個業務領域,README 的
-      `業務領域 (Business Domains)` 只寫了作品集與履歷兩個,缺這一節。
+- [x] `pkg/` 底下的 App Store 政策頁 (App Store Policy Pages) 已收斂至 `pkg/copyright/` 並在 `README.md`、`AGENTS.md` 補上說明。
 
 ## 作品集頁面 (Gallery)
 

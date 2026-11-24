@@ -16,6 +16,11 @@ the production output is the working tree itself.
 - `pkg/surf/index.html` is an ocean-editorial magazine page built around the
   owner's own Uluwatu drop-in photo — story, surf-spot footprints
   (Bali / Lombok / Taiwan), and quiver.
+- `pkg/copyright/` gathers the App Store introduction, privacy policy, and
+  copyright & attribution pages for six Apple-platform apps (`MinimalBrowser`,
+  `castlan`, `iphone_sync`, `md-viewer`, `push`, `tally`), indexed at
+  [pkg/copyright/index.html](pkg/copyright/index.html) and synced from upstream
+  by [scripts/release-store.sh](scripts/release-store.sh).
 
 ## 業務領域 (Business Domains)
 
@@ -92,6 +97,24 @@ template engine and no data binding.
 
 ---
 
+### App Store 政策頁 (App Store Policy Pages)
+
+A consolidated policy directory under `pkg/copyright/` that hosts the public
+app introduction, privacy policy, and copyright & attribution pages for six
+Apple-platform apps (`MinimalBrowser`, `castlan`, `iphone_sync`, `md-viewer`,
+`push`, `tally`).
+
+`領域流程 (Domain Flow):`
+
+1. Visitor opens `https://bizshuk.github.io/pkg/copyright/` (served as
+   `pkg/copyright/index.html`) or navigates directly to
+   `https://bizshuk.github.io/pkg/copyright/<app>/`.
+2. Upstream sources live in `../iphone/<project>/appstore/` and are synced into
+   `pkg/copyright/<route>/` by `scripts/release-store.sh` after passing the
+   external policy validator.
+
+---
+
 ## 領域關聯 (Domain Relationships)
 
 - The Gallery domain is the only entry point and the only page that issues a
@@ -112,6 +135,7 @@ template engine and no data binding.
   `https://bizshuk.github.io/pkg/resume/` directly. The PDF is at
   `https://bizshuk.github.io/pkg/resume/assets/Resume-ShukLiu.pdf`.
 - View the surf page: `https://bizshuk.github.io/pkg/surf/`.
+- View the App Store policy directory: `https://bizshuk.github.io/pkg/copyright/`.
 - Edit the gallery: append or remove entries in `data/gallery.json`. An
   entry with an empty `link` renders as a decorative tile (no anchor, no
   hover navigation); an entry with `link` becomes an anchor that opens in a

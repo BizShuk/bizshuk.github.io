@@ -26,7 +26,18 @@ bizshuk.github.io/
 │   ├── gallery.json        # gallery tile 資料來源
 │   └── params.json         # legacy GitHub Pages metadata (未使用)
 │
+├── scripts/
+│   └── release-store.sh    # 同步 ../iphone/<app>/appstore/ 至 pkg/copyright/<route>/
+│
 └── pkg/                    # 各自封裝的子頁面 (subpage packages)
+    ├── copyright/          # App Store 政策頁整合目錄
+    │   ├── index.html      # 6 個 app 政策頁索引
+    │   ├── MinimalBrowser/
+    │   ├── castlan/
+    │   ├── iphone_sync/
+    │   ├── md-viewer/
+    │   ├── push/
+    │   └── tally/          # 各含 index.html, privacy.html, copyright.html, privacy.md, preview/
     ├── resume/
     │   ├── index.html      # 履歷頁 (sunny 風格,樣式與腳本 inline)
     │   ├── Resume.md       # 履歷內容主稿
@@ -94,6 +105,7 @@ bizshuk.github.io/
 | 履歷展示 (Resume Showcase)      | `pkg/resume/index.html` (樣式與腳本 inline)                         | 頁尾 inline `<script>` (年份 + 捲動顯影)       |
 | 衝浪頁 (Surf Page)              | `pkg/surf/index.html` (樣式與腳本 inline)                           | `pkg/surf/index.html` inline `<script>` 的 `DOMContentLoaded` |
 | 職缺蒐集 (Job Collection)       | `pkg/resume/svc/` (API client), `pkg/resume/cmd/` (CLI)             | `pkg/resume/main.go` → `cmd.Execute()`         |
+| App Store 政策頁 (Policy Pages) | `pkg/copyright/` (`index.html` + 6 個 app 子目錄)                   | `pkg/copyright/index.html`, `scripts/release-store.sh` |
 
 ## 開發指南 (Development Guide)
 

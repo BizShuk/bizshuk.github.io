@@ -53,19 +53,19 @@ for entry in "${SELECTED_APPS[@]}"; do
   project="${entry%%:*}"
   route="${entry##*:}"
   source_dir="${IPHONE_PROJECTS_ROOT}/${project}/appstore"
-  destination_dir="${SITE_ROOT}/pkg/${route}"
+  destination_dir="${SITE_ROOT}/pkg/copyright/${route}"
 
   case "${destination_dir}" in
-    "${SITE_ROOT}/pkg/"*) ;;
+    "${SITE_ROOT}/pkg/copyright/"*) ;;
     *)
-      echo "Refusing destination outside pkg/: ${destination_dir}" >&2
+      echo "Refusing destination outside pkg/copyright/: ${destination_dir}" >&2
       exit 1
       ;;
   esac
 
   mkdir -p "${destination_dir}"
   rsync -a --delete --exclude '.DS_Store' "${source_dir}/" "${destination_dir}/"
-  echo "Released ${project} policy to pkg/${route}/"
+  echo "Released ${project} policy to pkg/copyright/${route}/"
 done
 
 echo "Store policy release completed for ${#SELECTED_APPS[@]} apps."
