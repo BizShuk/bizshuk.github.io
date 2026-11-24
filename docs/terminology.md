@@ -48,10 +48,10 @@
 
 | 術語 (Term) | 英文 (English) | 定義 (Definition) | 出處 (Source) |
 | ----------- | -------------- | ----------------- | ------------- |
-| 打包階段 | `image-build` stage | Dockerfile 第一階段。把工作樹複製成 `/home/app/out/html`,並剔除 `.git` / `Dockerfile` / `docker/` 與 `*.map` | `Dockerfile` |
-| 產物目錄 | `/home/app/out` | runtime 階段唯一帶入的目錄,內含 `html/`、`nginx.conf`、`entrypoint.sh` | `Dockerfile` |
+| 打包階段 | `image-build` stage | Dockerfile 第一階段。把工作樹複製成 `/home/app/out/html`,並剔除 `.git` / `Dockerfile` / `config/` 等非執行期檔案與 `*.map` | `Dockerfile` |
+| 產物目錄 | `/home/app/out` | runtime 階段唯一帶入的目錄,內含 `html/`、`default.conf`、`entrypoint.sh` | `Dockerfile` |
 | 入口符號連結 | `/home/app/app` | 指向 `out/entrypoint.sh` 的 symlink,是容器 `ENTRYPOINT` | `Dockerfile` |
-| 設定根 | `/home/app/.config/bizshuk.github.io/` | 容器內的 per-app 設定根,`data/` 放 nginx pid、`logs/` 保留 | `Dockerfile`, `docker/nginx.conf` |
+| 設定根 | `/home/app/.config/bizshuk.github.io/` | 容器內的 per-app 設定根,`data/` 放 nginx pid、`logs/` 保留 | `Dockerfile`, `config/nginx.conf` |
 
 ## 狀態值 (Status Values)
 
