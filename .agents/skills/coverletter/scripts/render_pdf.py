@@ -1,4 +1,4 @@
-"""skills/coverletter/scripts/render_pdf.py - render a cover letter source (.md) into a one-page A4 PDF.
+"""render_pdf.py - render a cover letter source (.md) into a one-page A4 PDF.
 
 Usage:
     uv run --with reportlab --with pypdf python render_pdf.py <jd_stem>.coverletter.md [--resume <Resume.md>]
@@ -26,7 +26,7 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.units import mm
 from reportlab.platypus import HRFlowable, Paragraph, SimpleDocTemplate, Spacer
 
-REPO = Path(__file__).resolve().parents[3]
+REPO = Path(__file__).resolve().parents[4]
 DEFAULT_RESUME = REPO / "pkg" / "resume" / "Resume.md"
 REQUIRED_FIELDS = ("company", "role", "date", "jd")
 LETTER_SUFFIX = ".coverletter.md"

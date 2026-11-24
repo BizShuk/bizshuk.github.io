@@ -4,9 +4,10 @@
 
 ```tree
 bizshuk.github.io/
-├── skills/                 # agent skills 正本 (job-analyze, coverletter)
-├── .claude/skills -> ../skills   # 軟連結:Claude Code 探索路徑
-├── .agents/skills -> ../skills   # 軟連結:其他 agent runtime 探索路徑
+├── .agents/
+│   └── skills/             # agent skills 正本 (job-analyze, coverletter, employment-research)
+├── .claude -> .agents      # 軟連結:Claude Code 探索路徑
+├── .grok/skills -> ../.agents/skills   # 軟連結:Grok 探索路徑
 ├── index.html              # 入口頁 (gallery landing,樣式與腳本 inline)
 ├── README.md
 ├── AGENTS.md
@@ -92,10 +93,10 @@ bizshuk.github.io/
 - Decision 8: `pkg/resume/` 自成一個 Go module 而非在 repo 根建 module。
   本 repo 主體是靜態站,根層放 `go.mod` 會讓每個子頁面都被納入同一相依圖;
   職缺蒐集只是履歷頁的上游素材工具,與 deploy 產物無關,因此就地封裝。
-- Decision 9: agent skills 的正本放 repo 根目錄 `skills/`,由根層 `.claude/skills` 與
-  `.agents/skills` 兩個軟連結指向它。放在根層讓從 repo 根目錄啟動的 agent 也能探索到;
-  skill 操作的資料 (`pkg/resume/jd/`, `pkg/resume/Resume.md`) 以相對連結與絕對路徑引用,
-  兩種 runtime 共用同一份正本不必複製。
+- Decision 9: agent skills 的正本放 `.agents/skills/`,由根層 `.claude -> .agents` 與
+  `.grok/skills -> ../.agents/skills` 指向它。統一收斂在 `.agents/` 下讓各 agent runtime
+  都能探索到,skill 操作的資料 (`pkg/resume/jd/`, `pkg/resume/Resume.md`) 以相對連結與
+  絕對路徑引用,多種 runtime 共用同一份正本不必複製。
 
 ## 模組對應 (Module Mapping)
 

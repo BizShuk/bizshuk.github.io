@@ -9,7 +9,7 @@ metadata:
 
 ## Overview
 
-把一個職缺連結或 JD 全文收進 [pkg/resume/jd/](../../pkg/resume/jd/) 職缺庫, 並回答兩個問題:
+把一個職缺連結或 JD 全文收進 [pkg/resume/jd/](../../../pkg/resume/jd/) 職缺庫, 並回答兩個問題:
 
 | 問題 | 產出 | 區塊 |
 | --- | --- | --- |
@@ -34,7 +34,7 @@ metadata:
 ## Non-Negotiables
 
 - `輸出根目錄固定`: `~/projects/product/bizshuk.github.io/pkg/resume/jd/<company>/`. 動手前先檢查 `~/projects/product/bizshuk.github.io` 存在; 不存在就回報 `ERROR: repo not found: <path>` 並`立即停止`, 不建檔, 不改寫到其他位置, 不自行建立目錄.
-- `先讀 [jd/README.md](../../pkg/resume/jd/README.md)` 再動筆. 它是 schema, 評分基準與特例規則的單一事實來源, 且會演進; 不要憑本檔記憶的欄位值硬寫.
+- `先讀 [jd/README.md](../../../pkg/resume/jd/README.md)` 再動筆. 它是 schema, 評分基準與特例規則的單一事實來源, 且會演進; 不要憑本檔記憶的欄位值硬寫.
 - `建立時間`: 每份 JD 的 front matter 必有 `created: YYYY-MM-DD`, 建檔當天寫入, 之後重抓或重評分`不得改動`. 舊檔缺 `created` 時以 `fetched` 值補上.
 - `不得杜撰要求`. 只寫 JD 原文有的內容. 抓取被阻擋而使用者只給了片段時, 標明來源為人工貼入, 不要用搜尋引擎摘要補齊要求條目.
 - `必寫不符合的部分`. 只列符合項的評估等於沒有評估; 缺口是這個庫的核心產出.
@@ -48,7 +48,7 @@ metadata:
 ## Workflow
 
 1. `前置檢查`: `test -d ~/projects/product/bizshuk.github.io`, 失敗即報錯停止. 職缺已在庫內則進入合併模式 (merge in-place), 不另立新檔.
-2. `取得全文`: 先試 `pkg/resume/` 的 `resume mcf` CLI 或直接抓取. 被阻擋且改由人工貼入時, 於 [_coverage_notes.md](../../pkg/resume/jd/_coverage_notes.md) 記下該公司的阻擋狀況與已補檔數.
+2. `取得全文`: 先試 `pkg/resume/` 的 `resume mcf` CLI 或直接抓取. 被阻擋且改由人工貼入時, 於 [_coverage_notes.md](../../../pkg/resume/jd/_coverage_notes.md) 記下該公司的阻擋狀況與已補檔數.
 3. `建檔 / 合併`: 路徑 `~/projects/product/bizshuk.github.io/pkg/resume/jd/<company>/<title_slug>.<team_or_domain>.md`, 全小寫加底線. 既有檔案保留原始 `created` 日期並就地覆蓋合併; 新檔寫入今日 `created`. front matter 欄位與列舉值以 README 的 `資料欄位 (Schema)` 表為準, 未載明一律 `null`, 不要以 `0` 或空字串冒充. 本文區塊順序固定, 見 [template.md](template.md).
 4. `評分`: 逐條比對硬性要求, 再以加分要求與領域相鄰度調整, 對照 README 的 `分數的意義` 區間表. 觸發條件成立時寫 `缺口分析`.
 5. `角色評估`: 依 `Role Assessment` 六個面向逐項判斷.
@@ -100,7 +100,7 @@ metadata:
 四類各找最多兩點, 找不到就寫`無`, 不湊數:
 
 - `能力資產`: 做完這份工作後, 履歷上會多出什麼`可舉證`的東西 (規模, 領域, 職級).
-- `軌道轉換`: 是否打開新軌道 (客戶面向, 管理, AI 平台, 特定產業), 對照 [jd/README.md](../../pkg/resume/jd/README.md) 的軌道與庫內相鄰職缺.
+- `軌道轉換`: 是否打開新軌道 (客戶面向, 管理, AI 平台, 特定產業), 對照 [jd/README.md](../../../pkg/resume/jd/README.md) 的軌道與庫內相鄰職缺.
 - `市場訊號`: 這類職缺在庫內與市場上是變多還是變少, 可附上庫內同類檔數.
 - `槓桿與網絡`: 雇主品牌, 內部轉調機會, 接觸的人脈層級.
 
@@ -122,8 +122,8 @@ metadata:
 每次建檔或重評分後都對整個職缺庫跑一次, 規則由腳本決定, 不要手算日期:
 
 ```bash
-python3 ~/projects/product/bizshuk.github.io/skills/job-analyze/scripts/archive_stale.py --dry-run
-python3 ~/projects/product/bizshuk.github.io/skills/job-analyze/scripts/archive_stale.py
+python3 ~/projects/product/bizshuk.github.io/.agents/skills/job-analyze/scripts/archive_stale.py --dry-run
+python3 ~/projects/product/bizshuk.github.io/.agents/skills/job-analyze/scripts/archive_stale.py
 ```
 
 - `判準`: `created` (缺則 `fetched`) 早於今天往前推 `3 個月`, 就從 `jd/<company>/` 移到 `jd/archive/<company>/`. 已在 git 追蹤的檔案用 `git mv`.
@@ -131,7 +131,7 @@ python3 ~/projects/product/bizshuk.github.io/skills/job-analyze/scripts/archive_
 - `伴隨檔 (companion)`: 與 JD 同 stem 的 `.coverletter.md` / `.coverletter.pdf` 屬 `coverletter` skill, 不是 JD, 不計入檔數與排序總表; 腳本會讓它們隨 JD 一起移動.
 - `投遞中不封存`: `status` 為 `applied`, `screening`, `interviewing`, `offer` 的檔案由腳本跳過 (`SKIP active`), 因為進行中的流程仍需要它留在主表.
 - `移動後同步`:
-  - [jd/README.md](../../pkg/resume/jd/README.md): 從 `排序總表` 與 `投遞追蹤` 移除該列, 加到 `已封存` 清單, 更新總檔數. 已封存的檔案之後`不得`再加回排序總表.
+  - [jd/README.md](../../../pkg/resume/jd/README.md): 從 `排序總表` 與 `投遞追蹤` 移除該列, 加到 `已封存` 清單, 更新總檔數. 已封存的檔案之後`不得`再加回排序總表.
   - `相對連結`: `grep -rn '<檔名>' pkg/resume/jd/ pkg/resume/docs/` 找出其他檔案指向它的連結, 改成 `archive/<company>/` 下的新路徑.
 
 ## Common Mistakes

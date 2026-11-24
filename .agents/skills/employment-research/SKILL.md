@@ -36,21 +36,21 @@ schedule.json  ──展開──▶  README.todo 受管區塊  ──▶  資�
 
 ```bash
 # 1. 展開本次排程, 對帳, 重寫 README.todo 的待辦區塊
-python3 skills/employment-research/scripts/plan.py --root . plan
+python3 .agents/skills/employment-research/scripts/plan.py --root . plan
 
 # 2. 回報單一任務結果
-python3 skills/employment-research/scripts/plan.py --root . record \
+python3 .agents/skills/employment-research/scripts/plan.py --root . record \
     --task sg_collect@2026-H1 --status failed --reason not_yet_published \
     --note "GES 2026 尚未發布"
 
 # 3. 查看帳本全貌
-python3 skills/employment-research/scripts/plan.py --root . status
+python3 .agents/skills/employment-research/scripts/plan.py --root . status
 
 # 4. 驗證資料配對 (需 jsonschema)
-.venv/bin/python3 skills/employment-research/scripts/validate.py data/2026-H1/
+.venv/bin/python3 .agents/skills/employment-research/scripts/validate.py data/2026-H1/
 
 # 5. 展平為 tidy CSV
-python3 skills/employment-research/scripts/extract.py data/ --out outcomes
+python3 .agents/skills/employment-research/scripts/extract.py data/ --out outcomes
 ```
 
 補充旗標: `--as-of YYYY-MM-DD` 指定基準日 (回填或重演用), `--dry-run` 只印區塊不寫檔,
@@ -131,9 +131,9 @@ JSON Schema, 跨欄位不變式, 以及`每個有值的欄位都必須在 .md �
 | `README.todo` | 手寫待辦 + 受管的任務帳本區塊. 區塊由腳本維護 |
 | `data/<period>/<period>__<CC>.{json,md}` | 資料配對 |
 | `docs/audits/<period>__<CC>-audit.md` | 稽核報告 |
-| `skills/employment-research/schema/` | 資料 schema, 排程 schema, 控制詞彙 |
-| `skills/employment-research/prompts/` | collect 與 verify 提示詞 |
-| `skills/employment-research/scripts/` | `plan.py`, `validate.py`, `extract.py` |
+| `.agents/skills/employment-research/schema/` | 資料 schema, 排程 schema, 控制詞彙 |
+| `.agents/skills/employment-research/prompts/` | collect 與 verify 提示詞 |
+| `.agents/skills/employment-research/scripts/` | `plan.py`, `validate.py`, `extract.py` |
 
 ## 新增市場 (Adding a Market)
 

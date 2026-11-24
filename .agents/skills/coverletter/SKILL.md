@@ -9,7 +9,7 @@ metadata:
 
 ## Overview
 
-以 [Resume.md](../../pkg/resume/Resume.md) 為唯一事實來源, 針對`一份指定的 JD` 產出`單頁 (1 page)` 的英文求職信 PDF.
+以 [Resume.md](../../../pkg/resume/Resume.md) 為唯一事實來源, 針對`一份指定的 JD` 產出`單頁 (1 page)` 的英文求職信 PDF.
 PDF 產製遵循 `pdf` skill (`/pdf`) 的 `reportlab` 建檔與 `pypdf` 驗證做法, 由 [scripts/render_pdf.py](scripts/render_pdf.py) 封裝.
 
 `核心原則`: 求職信是`JD 要求 -> 履歷證據`的對位, 不是履歷的散文版. 每一段都要能指回 JD 的某條要求與 Resume.md 的某行事實.
@@ -39,7 +39,7 @@ PDF 產製遵循 `pdf` skill (`/pdf`) 的 `reportlab` 建檔與 `pypdf` 驗證�
 | --- | --- |
 | 貼上的 JD 全文或主要要求條目 | 通過 |
 | 職缺 URL, 且能抓到全文 | 通過; 抓取被擋則視同未提供 |
-| [pkg/resume/jd/](../../pkg/resume/jd/) 下的檔案路徑, 或能唯一對應到單一檔案的 `公司 + 職稱` | 通過 |
+| [pkg/resume/jd/](../../../pkg/resume/jd/) 下的檔案路徑, 或能唯一對應到單一檔案的 `公司 + 職稱` | 通過 |
 
 全文或 URL 通過 Gate 後, 仍須先入庫取得 JD 檔路徑, 見 `Output Location`.
 
@@ -100,7 +100,7 @@ JD 未提供, 已停止產出 cover letter.
 6. `渲染 PDF` (在 repo 根目錄執行):
 
    ```bash
-   uv run --with reportlab --with pypdf python skills/coverletter/scripts/render_pdf.py \
+   uv run --with reportlab --with pypdf python .agents/skills/coverletter/scripts/render_pdf.py \
      pkg/resume/jd/<company>/<title_slug>.<team_or_domain>.coverletter.md
    ```
 
