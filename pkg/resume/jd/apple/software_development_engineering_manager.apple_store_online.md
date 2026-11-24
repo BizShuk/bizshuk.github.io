@@ -10,7 +10,7 @@ url: "https://jobs.apple.com/en-sg/details/200664400-3278/software-development-e
 source: direct
 posted: 2026-08-04
 expiry: null
-fetched: 2026-09-02
+fetched: 2026-11-24
 created: 2026-09-02
 min_years: 8
 education: bachelor_cs

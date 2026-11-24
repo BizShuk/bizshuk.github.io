@@ -10,7 +10,7 @@ url: "https://jobs.ashbyhq.com/airwallex/6b1be488-4a24-4f94-9baf-8ef281613b9a"
 source: ashby
 posted: null
 expiry: null
-fetched: 2026-09-02
+fetched: 2026-11-24
 created: 2026-09-02
 min_years: 6
 education: bachelor_cs

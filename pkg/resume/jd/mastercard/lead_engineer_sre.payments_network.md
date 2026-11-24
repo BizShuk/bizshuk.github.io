@@ -10,7 +10,7 @@ url: "https://builtin.com/job/lead-network-engineer-site-reliability-engineering
 source: builtin
 posted: 2026-09-15
 expiry: 2026-10-15
-fetched: 2026-09-22
+fetched: 2026-11-24
 created: 2026-09-22
 min_years: 5
 education: bachelor_cs

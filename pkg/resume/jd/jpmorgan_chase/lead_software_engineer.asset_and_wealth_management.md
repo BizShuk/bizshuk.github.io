@@ -10,7 +10,7 @@ url: "https://builtin.com/job/lead-software-engineer/11274262"
 source: builtin
 posted: 2026-09-21
 expiry: 2026-10-21
-fetched: 2026-09-22
+fetched: 2026-11-24
 created: 2026-09-22
 min_years: 5
 education: bachelor_cs

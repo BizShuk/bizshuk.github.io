@@ -10,7 +10,7 @@ url: "https://jobs.ashbyhq.com/openai/b8fbe6d1-6363-4366-8484-de32cf4d1410"
 source: ashby
 posted: null
 expiry: null
-fetched: 2026-09-02
+fetched: 2026-11-24
 created: 2026-09-02
 min_years: null
 education: null

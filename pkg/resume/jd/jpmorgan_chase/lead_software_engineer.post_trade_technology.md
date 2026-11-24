@@ -10,7 +10,7 @@ url: "https://builtin.com/job/lead-software-engineer-post-trade-technology/11244
 source: builtin
 posted: 2026-09-18
 expiry: 2026-10-18
-fetched: 2026-09-22
+fetched: 2026-11-24
 created: 2026-09-22
 min_years: 5
 education: bachelor_cs

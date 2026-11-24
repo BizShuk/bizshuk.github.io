@@ -10,7 +10,7 @@ url: "https://job-boards.greenhouse.io/anthropic/jobs/5390742008"
 source: greenhouse
 posted: null
 expiry: null
-fetched: 2026-09-17
+fetched: 2026-11-24
 created: 2026-09-02
 min_years: 10
 education: bachelor

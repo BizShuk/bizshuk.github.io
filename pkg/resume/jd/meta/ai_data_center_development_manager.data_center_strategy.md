@@ -179,7 +179,7 @@ JD 對理想人選的描述是`同時具備分析與策略思維, 能鑽進細�
 
 `最高槓桿的單一動作不是補這些缺口, 是換一個掛法`. 這條軌道上真正該追的是`資料中心開發的內部工具與資料平台`職位 -- 也就是把 JD 第五塊獨立出來的那種缺. 超大規模業者都有這類團隊 (選址資料平台, 容量與電力規劃工具, 開發權與許可的追蹤系統), 而它們要的是`懂資料中心語彙的工程師`, 不是`會寫程式的不動產開發經理`.
 
-若真要往本檔方向靠攏, 排序如下: 先用 [pkg/dc_energy](../../../../../pkg/dc_energy/) 把實體層語彙補到能對話 (成本最低, 材料已備); 再把 ByteDance 的跨資料中心備援重寫成一份含資本支出與營運成本的 business case 作為面試素材; 這兩件事的產出對 [Google Geo Expansion Lead](../google/geo_expansion_lead.google_cloud.md) 同樣適用, 一次投入兩處回收.
+若真要往本檔方向靠攏, 排序如下: 先用 [pkg/dc_energy](../../../../../pkg/dc_energy/) 把實體層語彙補到能對話 (成本最低, 材料已備); 再把 ByteDance 的跨資料中心備援重寫成一份含資本支出與營運成本的 business case 作為面試素材; 這兩件事的產出對 [Google Geo Expansion Lead](../archived/google/geo_expansion_lead.google_cloud.md) 同樣適用, 一次投入兩處回收.
 
 ### 值不值得轉向
 

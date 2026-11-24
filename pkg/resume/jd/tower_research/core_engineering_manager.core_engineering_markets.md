@@ -10,7 +10,7 @@ url: "https://www.tower-research.com/open-positions/?gh_jid=7995006"
 source: greenhouse
 posted: null
 expiry: null
-fetched: 2026-09-02
+fetched: 2026-11-24
 created: 2026-09-02
 min_years: 10
 education: null

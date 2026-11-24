@@ -10,7 +10,7 @@ url: "https://www.squarepoint-capital.com/open-opportunities?id=7709566&gh_jid=7
 source: greenhouse
 posted: null
 expiry: null
-fetched: 2026-09-02
+fetched: 2026-11-24
 created: 2026-09-02
 min_years: 5
 education: bachelor_cs

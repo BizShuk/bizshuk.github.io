@@ -10,7 +10,7 @@ url: "https://www.jumptrading.com/hr/job?gh_jid=7809758"
 source: greenhouse
 posted: null
 expiry: null
-fetched: 2026-09-02
+fetched: 2026-11-24
 created: 2026-09-02
 min_years: 3
 education: bachelor_cs

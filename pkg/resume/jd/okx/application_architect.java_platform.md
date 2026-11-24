@@ -10,7 +10,7 @@ url: "https://job-boards.greenhouse.io/okx/jobs/7766838003"
 source: greenhouse
 posted: null
 expiry: null
-fetched: 2026-09-02
+fetched: 2026-11-24
 created: 2026-09-02
 min_years: 7
 education: bachelor_cs

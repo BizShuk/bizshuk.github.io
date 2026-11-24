@@ -10,7 +10,7 @@ url: "https://jobs.ashbyhq.com/airwallex/8323ef8a-a728-41a6-a82d-addb2d645a85"
 source: ashby
 posted: null
 expiry: null
-fetched: 2026-09-02
+fetched: 2026-11-24
 created: 2026-09-02
 min_years: 8
 education: null

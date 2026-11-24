@@ -169,7 +169,7 @@ flowchart LR
 - `2 個遠`: 拉伸型, 值得投, 面試本身有情報價值.
 - `3 個以上遠且集中在同一側 (商業側或技術側)`: 這不是下一步, 是下兩步, 應改找`中間站`.
 
-`實例`: [google/geo_expansion_lead.google_cloud.md](../../jd/google/geo_expansion_lead.google_cloud.md)
+`實例`: [google/geo_expansion_lead.google_cloud.md](../../jd/archived/google/geo_expansion_lead.google_cloud.md)
 六面向中三個`遠`且全在商業側, 因此結論是不投, 改找 `Infrastructure TPM`, `Capacity Planning`,
 `Cloud FinOps Lead` 這三個中間站.
 

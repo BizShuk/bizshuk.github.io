@@ -48,7 +48,12 @@ metadata:
 ## Workflow
 
 1. `前置檢查`: `test -d ~/projects/product/bizshuk.github.io`, 失敗即報錯停止. 職缺已在庫內則進入合併模式 (merge in-place), 不另立新檔.
-2. `取得全文`: 直接抓取 (MyCareersFuture 職缺可直取 `https://api.mycareersfuture.gov.sg/v2/jobs/<uuid>`). 被阻擋且改由人工貼入時, 於 [_coverage_notes.md](../../../pkg/resume/jd/_coverage_notes.md) 記下該公司的阻擋狀況與已補檔數.
+2. `取得全文`: 先查 [_coverage_notes.md](../../../pkg/resume/jd/_coverage_notes.md) 該公司已知的可行管道, 再依下列三層由上往下, 前一層失敗才換. 各層的端點, 指令與操作細節見 [references/access.md](references/access.md).
+    1. `公開抓取`: 雇主 ATS 或職缺平台的公開 API, 或直接抓頁面.
+    2. `桌面操作`: 被擋 (bot check, 4xx) 時, 以桌面操作在使用者的真實瀏覽器開啟頁面, 處理登入, 驗證或彈窗, 以截圖讀取內文.
+    3. `人工貼入`: 以上皆失敗才請使用者貼全文, 來源標明人工貼入.
+
+    任一層被阻擋時, 於 `_coverage_notes.md` 記下該公司的阻擋狀況, 可行管道與已補檔數.
 3. `建檔 / 合併`: 路徑 `~/projects/product/bizshuk.github.io/pkg/resume/jd/<company>/<title_slug>.<team_or_domain>.md`, 全小寫加底線. 既有檔案保留原始 `created` 日期並就地覆蓋合併; 新檔寫入今日 `created`. front matter 欄位與列舉值以 README 的 `資料欄位 (Schema)` 表為準, 未載明一律 `null`, 不要以 `0` 或空字串冒充. 本文區塊順序固定, 見 [template.md](template.md).
 4. `評分`: 逐條比對硬性要求, 再以加分要求與領域相鄰度調整, 對照 README 的 `分數的意義` 區間表. 觸發條件成立時寫 `缺口分析`.
 5. `角色評估`: 依 `Role Assessment` 六個面向逐項判斷.

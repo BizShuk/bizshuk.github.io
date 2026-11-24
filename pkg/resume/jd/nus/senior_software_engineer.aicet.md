@@ -10,7 +10,7 @@ url: "https://careers.nus.edu.sg/job/Senior-Software-Engineer%2C-AICET-NUS-%281-
 source: direct
 posted: null
 expiry: null
-fetched: 2026-09-17
+fetched: 2026-11-24
 created: 2026-09-17
 min_years: 3
 education: bachelor
