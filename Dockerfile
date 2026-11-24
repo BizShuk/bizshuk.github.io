@@ -22,7 +22,7 @@ RUN mkdir -p /home/app/out/html \
         /home/app/out/html/README.md \
         /home/app/out/html/AGENTS.md \
         /home/app/out/html/README.todo \
-        /home/app/out/html/docker \
+        /home/app/out/html/config \
         /home/app/out/html/scripts \
         /home/app/out/html/skills \
         /home/app/out/html/life \
