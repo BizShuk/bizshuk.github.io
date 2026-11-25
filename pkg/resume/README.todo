@@ -9,6 +9,7 @@
 - [x] 把 prompts, schema, scripts 收斂成 `skills/employment-research/` 單一來源
 - [x] 建立事件排程與任務帳本 (`schedule.json`, `plan.py`, 帳本內嵌於本檔)
 - [x] 整合稽核工具至排程流程 (`verify` 事件, `depends_on` 相依與串聯放棄)
+- [x] 將 `.pages` 原稿歸檔至 `archive/` 並從 `Resume.md` (`2026-09-10`) 直接產生 `assets/Resume-ShukLiu-full.pdf`
 
 ## 待辦事項 (Pending)
 

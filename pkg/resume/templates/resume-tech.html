@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Liu, Teng-Yuan (Shuk Liu) — Tech Resume</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 10mm 13mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: #1f2937;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+      font-size: 8.6pt;
+      line-height: 1.32;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    a {
+      color: #1d6fa5;
+      text-decoration: none;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1.5px solid #1f2937;
+      padding-bottom: 4px;
+      margin-bottom: 5px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 15.5pt;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #111827;
+    }
+
+    .header-meta {
+      text-align: right;
+      font-size: 8.2pt;
+      color: #4b5563;
+      white-space: nowrap;
+    }
+
+    .header-meta .updated {
+      display: block;
+      font-size: 7.2pt;
+      color: #6b7280;
+      margin-top: 1px;
+    }
+
+    .summary {
+      margin: 0 0 6px;
+      color: #374151;
+      font-size: 8.5pt;
+    }
+
+    h2 {
+      margin: 6px 0 4px;
+      padding-bottom: 1.5px;
+      border-bottom: 0.75px solid #9ca3af;
+      font-size: 8.8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #111827;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    .skills-grid {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2px;
+    }
+
+    .skill-row {
+      display: table-row;
+    }
+
+    .skill-label {
+      display: table-cell;
+      width: 88px;
+      padding: 1px 8px 1px 0;
+      font-weight: 600;
+      color: #111827;
+      vertical-align: top;
+      font-size: 8.2pt;
+    }
+
+    .skill-val {
+      display: table-cell;
+      padding: 1px 0;
+      color: #374151;
+      vertical-align: top;
+      font-size: 8.2pt;
+    }
+
+    .entry {
+      margin-bottom: 5.5px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .entry-title {
+      font-weight: 700;
+      font-size: 8.8pt;
+      color: #111827;
+    }
+
+    .entry-date {
+      font-size: 8pt;
+      color: #4b5563;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    .entry-sub {
+      margin: 1px 0 1.5px;
+      font-size: 8pt;
+      font-style: italic;
+      color: #4b5563;
+    }
+
+    .entry-stack {
+      margin: 1px 0 2px;
+      font-size: 7.9pt;
+      color: #4b5563;
+    }
+
+    ul {
+      margin: 1.5px 0 0;
+      padding-left: 14px;
+    }
+
+    li {
+      margin-bottom: 1px;
+      font-size: 8.2pt;
+      color: #1f2937;
+    }
+
+    .edu-list {
+      margin: 2px 0 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .edu-list li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5px;
+      font-size: 8.3pt;
+    }
+
+    .edu-date {
+      color: #4b5563;
+      font-size: 8pt;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Liu, Teng-Yuan (Shuk Liu)</h1>
+    <div class="header-meta">
+      <a href="mailto:biz.shuk@gmail.com">biz.shuk@gmail.com</a> ·
+      <a href="https://www.linkedin.com/in/bizshuk/">LinkedIn</a> ·
+      <a href="https://api.whatsapp.com/send?phone=6580129716">WhatsApp (+65 8012 9716)</a>
+      <span class="updated">Last updated: 2026-09-10</span>
+    </div>
+  </header>
+
+  <p class="summary">
+    Singapore Permanent Resident (PR), based in Singapore. 12+ years of experience, focused on system architecture (organisation design included) and AI orchestration. Familiar with the majority of the tech stack, the SDLC and its methodologies.
+  </p>
+
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-row">
+      <div class="skill-label">Certificate</div>
+      <div class="skill-val">AWS Solutions Architect – Associate (2018/08) · TOEIC 830 (2019/01)</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-label">Language</div>
+      <div class="skill-val">Java 4.5 yrs (Spring Boot/Batch/Data/MVC; authored shared EventBus &amp; Spring Secret Manager plugin), Golang, JavaScript, HTML5, Bash, SQL</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-label">Test</div>
+      <div class="skill-val">Unit test (mock), integration test, stress test; coverage above 90%</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-label">Infra / Tooling</div>
+      <div class="skill-val">AWS, Kubernetes (Istio), Terraform, GitOps (Argo CD), Ansible, EFK, Docker, Linux, GitLab, Azure DevOps, RDB, Elasticsearch, MongoDB, Redis</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-label">Concept</div>
+      <div class="skill-val">Microservice, event-driven, HA, scalability, SOLID, design pattern, CI/CD, cache, TDD, RWD, SDLC, MLOps (GPU scheduling for inference serving)</div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-label">Methodology</div>
+      <div class="skill-val">Scrum, Agile, Lean</div>
+    </div>
+  </div>
+
+  <h2>Work Experience</h2>
+
+  <article class="entry">
+    <div class="entry-head">
+      <div class="entry-title">AI Engineer — self-directed</div>
+      <div class="entry-date">2026/06 ~ present</div>
+    </div>
+    <ul>
+      <li>Work across a variety of AI models: Gemini, Claude, GPT, Grok, MiniMax, DeepSeek, Qwen, ElevenLabs.</li>
+      <li>Built an Agent SDK that accommodates different providers and models behind one interface.</li>
+      <li>Orchestrated personal infrastructure covering account, payment and cloud; shipped iOS tool apps, a product service, a surfing tracker, and two voice agent prototypes (tutor, customer service).</li>
+    </ul>
+  </article>
+
+  <article class="entry">
+    <div class="entry-head">
+      <div class="entry-title">Senior Software Engineer (Tech Lead) — ByteDance (TikTok PTE. LTD.), Singapore</div>
+      <div class="entry-date">2023/01 ~ 2026/08</div>
+    </div>
+    <p class="entry-sub">Owned the wallet data architecture roadmap and its data SDLC, turning "where data lives" from one-off migrations into a platform property.</p>
+    <ul>
+      <li>Aligned internal and external services onto a new data centre, coordinating across teams to land the region before data work started.</li>
+      <li>Delivered a deadline-driven EU data migration for wallet, then generalised it into global change-region compliance under eventual compliance consistency across data centres, adopted by business lines outside wallet.</li>
+      <li>Defined the data SDLC so residency, retention and compliance consistency became a lifecycle property; redesigned cross-DC channels into a single transport and designed transaction data redundancy, lowering effort by 2 job grades.</li>
+    </ul>
+  </article>
+
+  <article class="entry">
+    <div class="entry-head">
+      <div class="entry-title">Senior Engineer — TSMC, Hsinchu, TW</div>
+      <div class="entry-date">2022/03 ~ 2022/07</div>
+    </div>
+    <p class="entry-stack"><strong>Stack:</strong> Kubernetes (Docker, Istio, EFK, Prometheus, Grafana, Argo CD, NATS), Terraform, Node.js, Redis, Azure DevOps, MLOps.</p>
+    <ul>
+      <li>Acted as technical PM and architected the AI platform; set engineering standards (functions &lt; 30 lines, test coverage &gt; 90%).</li>
+      <li>Ran platform delivery as GitOps (Argo CD + Terraform) and owned MLOps GPU inference scheduling, packing queued tasks onto GPU resources to keep the pool saturated under a fixed accelerator budget.</li>
+    </ul>
+  </article>
+
+  <article class="entry">
+    <div class="entry-head">
+      <div class="entry-title">Tech Lead + Senior Engineer — Change Healthcare, Songshan, TW (Remote)</div>
+      <div class="entry-date">2017/02 ~ 2021/09</div>
+    </div>
+    <p class="entry-stack"><strong>Stack:</strong> Scrum, AWS, Golang, Java (Spring Boot, MVC, Batch, Data), Elasticsearch, React.</p>
+    <ul>
+      <li>Managed 5 engineers, coordinated across teams, and assessed candidates over 30+ interview rounds.</li>
+      <li>Created shared frameworks (Lambda, event annotation, Spring Secret Manager plugin, EventBus) and resolved security findings (JWT unsubscribe, KMS in Jenkins CI, Fortify).</li>
+      <li>Delivered async S3 file batch processing, user engagement service (Pinpoint, CloudFront), log alerting (CloudWatch, SNS), and enterprise migration (AWS, Apigee).</li>
+    </ul>
+  </article>
+
+  <article class="entry">
+    <div class="entry-head">
+      <div class="entry-title">Cloud Engineer — Shanghai Droi Tech Co. Ltd., Taipei 101, TW</div>
+      <div class="entry-date">2015/07 ~ 2016/05</div>
+    </div>
+    <p class="entry-stack"><strong>Stack:</strong> Bash, Lua, Linux, Nginx, Docker, Jenkins, Terraform, Ansible, Kubernetes, MongoDB, PostgreSQL.</p>
+    <ul>
+      <li>Modelled BaaS CI/CD (Jenkins, Docker, Kubernetes), codified infra (Terraform, Ansible) with Git as single source of truth, built an E2E test framework, and shipped a linear version-control CLI.</li>
+    </ul>
+  </article>
+
+  <article class="entry">
+    <div class="entry-head">
+      <div class="entry-title">Game and BI Developer — Gamesofa Inc., Taipei, TW</div>
+      <div class="entry-date">2012/11 ~ 2015/04</div>
+    </div>
+    <p class="entry-stack"><strong>Stack:</strong> LAMP, Perl, HTML5, JavaScript, AngularJS, CSS, Memcached, A/B testing, data pipeline.</p>
+    <ul>
+      <li>Developed game features &amp; analytics pipelines: Win8 "Godgame Big Two", "Godgame Texas Hold'em", Omaha hand-evaluation optimisation, friend/survey/customer services, and user group analysis tool.</li>
+    </ul>
+  </article>
+
+  <article class="entry">
+    <div class="entry-head">
+      <div class="entry-title">Web Developer — National Central University, Jongli, TW</div>
+      <div class="entry-date">2010/03 ~ 2011/06</div>
+    </div>
+    <ul>
+      <li>Set up LAMP sites and an e-book search bypassing the library system, saving $20,000+ plus maintenance fees.</li>
+    </ul>
+  </article>
+
+  <h2>Education</h2>
+  <ul class="edu-list">
+    <li><span><strong>M.S. in Computer Science</strong>, National Central University, Jongli, TW</span><span class="edu-date">2009/09 ~ 2011/06</span></li>
+    <li><span><strong>B.S. in Computer Science</strong>, National Dong-Hua University, Hualien, TW</span><span class="edu-date">2004/09 ~ 2009/06</span></li>
+  </ul>
+</body>
+</html>

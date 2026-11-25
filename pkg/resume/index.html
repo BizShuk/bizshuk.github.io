@@ -80,37 +80,52 @@
                 color: inherit;
             }
 
-            /* ---------- PDF download (icon only) ---------- */
-            .btn-pdf {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 52px;
-                height: 52px;
-                border-radius: 50%;
-                background: linear-gradient(135deg, var(--sun-1), var(--sun-2));
-                color: #4a2c00;
-                text-decoration: none;
-                box-shadow: var(--shadow-lg);
-                transition:
-                    transform 0.18s ease,
-                    box-shadow 0.18s ease;
-            }
-
-            .btn-pdf:hover {
-                transform: translateY(-3px) scale(1.04);
-            }
-            .btn-pdf svg {
-                width: 24px;
-                height: 24px;
-            }
-
-            .btn-pdf.floating {
+            /* ---------- PDF downloads (floating pills) ---------- */
+            .pdf-floating {
                 position: fixed;
                 top: 20px;
                 right: 22px;
                 z-index: 30;
-                border: 3px solid rgba(255, 255, 255, 0.85);
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .btn-pdf {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                padding: 9px 14px;
+                border-radius: 999px;
+                background: linear-gradient(135deg, var(--sun-1), var(--sun-2));
+                color: #4a2c00;
+                border: 2px solid rgba(255, 255, 255, 0.9);
+                font-size: 0.8rem;
+                font-weight: 600;
+                text-decoration: none;
+                white-space: nowrap;
+                box-shadow: var(--shadow-lg);
+                transition:
+                    transform 0.18s ease,
+                    box-shadow 0.18s ease,
+                    border-color 0.18s ease;
+            }
+
+            .btn-pdf.btn-pdf-secondary {
+                background: rgba(255, 255, 255, 0.96);
+                color: var(--ink);
+                border: 1px solid var(--line);
+            }
+
+            .btn-pdf:hover {
+                transform: translateY(-2px);
+                border-color: var(--sun-2);
+            }
+            .btn-pdf svg {
+                width: 17px;
+                height: 17px;
+                flex-shrink: 0;
             }
 
             /* ---------- Hero ---------- */
@@ -560,18 +575,21 @@
             }
 
             @media (max-width: 640px) {
-                .btn-pdf.floating {
-                    top: 14px;
+                .pdf-floating {
+                    top: 12px;
                     right: 14px;
-                    width: 46px;
-                    height: 46px;
+                    gap: 6px;
                 }
-                .btn-pdf.floating svg {
-                    width: 21px;
-                    height: 21px;
+                .btn-pdf {
+                    padding: 7px 11px;
+                    font-size: 0.74rem;
+                }
+                .btn-pdf svg {
+                    width: 15px;
+                    height: 15px;
                 }
                 .hero {
-                    padding: 44px 20px 54px;
+                    padding: 62px 20px 54px;
                 }
                 .hero-inner {
                     gap: 26px;
@@ -616,6 +634,7 @@
             }
 
             @media print {
+                .pdf-floating,
                 .btn-pdf,
                 footer,
                 .sunburst {
@@ -632,31 +651,59 @@
         </style>
     </head>
     <body>
-        <!-- PDF download (icon only, floats top right) -->
-        <a
-            class="btn-pdf floating"
-            href="assets/Resume-ShukLiu.pdf"
-            download
-            title="Download PDF resume"
-            aria-label="Download PDF resume"
-        >
-            <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.9"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
+        <!-- PDF downloads (floating pills top right) -->
+        <div class="pdf-floating" role="group" aria-label="Resume PDF downloads">
+            <a
+                class="btn-pdf"
+                href="assets/Resume-ShukLiu.pdf"
+                download
+                title="Download Tech Resume PDF (1-page)"
+                aria-label="Download Tech Resume PDF (1-page)"
             >
-                <path
-                    d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 3 14 8 19 8"></polyline>
-                <polyline points="9.5 12.5 12 15 14.5 12.5"></polyline>
-                <line x1="12" y1="15" x2="12" y2="10.5"></line>
-            </svg>
-        </a>
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"
+                    ></path>
+                    <polyline points="14 3 14 8 19 8"></polyline>
+                    <polyline points="9.5 12.5 12 15 14.5 12.5"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="10.5"></line>
+                </svg>
+                <span>Tech PDF</span>
+            </a>
+            <a
+                class="btn-pdf btn-pdf-secondary"
+                href="assets/Resume-ShukLiu-full.pdf"
+                download
+                title="Download Full Resume PDF"
+                aria-label="Download Full Resume PDF"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"
+                    ></path>
+                    <polyline points="14 3 14 8 19 8"></polyline>
+                    <polyline points="9.5 12.5 12 15 14.5 12.5"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="10.5"></line>
+                </svg>
+                <span>Full PDF</span>
+            </a>
+        </div>
 
         <!-- Hero -->
         <header class="hero" id="top">
