@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""archive_stale.py - move JD files whose `created` date is older than N months into jd/archive/<company>/.
+"""archive_stale.py - move JD files to jd/archived/<company>/ when in a non-successful final state or older than N months.
 
 Companion files that share the JD stem (<stem>.coverletter.md / .pdf, owned by the coverletter skill)
 are not JDs themselves; they move together with their JD so the pair stays aligned.
@@ -16,6 +16,7 @@ REPO = os.path.expanduser("~/projects/product/bizshuk.github.io")
 JD_DIR = os.path.join(REPO, "pkg", "resume", "jd")
 DATE_KEYS = ("created", "fetched")
 ACTIVE_STATUSES = {"applied", "screening", "interviewing", "offer"}
+FINAL_NON_SUCCESS_STATUSES = {"rejected", "withdrawn", "closed"}
 COMPANION_SUFFIXES = (".coverletter.md", ".coverletter.pdf")
 
 
@@ -75,26 +76,30 @@ def main():
 
     for company in sorted(os.listdir(JD_DIR)):
         company_dir = os.path.join(JD_DIR, company)
-        if company == "archive" or not os.path.isdir(company_dir):
+        if company in ("archive", "archived", "xingyun") or not os.path.isdir(company_dir):
             continue
         for name in sorted(os.listdir(company_dir)):
             if not name.endswith(".md") or name.endswith(COMPANION_SUFFIXES):
                 continue
             src = os.path.join(company_dir, name)
             key, date, status = front_matter_date(src)
-            if date is None:
-                print(f"SKIP no-date: {src}")
-                continue
-            if date >= cutoff:
-                continue
-            if status in ACTIVE_STATUSES:
-                print(f"SKIP active status={status}: {src}")
-                continue
-            dst = os.path.join(JD_DIR, "archive", company, name)
+            if status in FINAL_NON_SUCCESS_STATUSES:
+                reason = f"status={status}"
+            else:
+                if date is None:
+                    print(f"SKIP no-date: {src}")
+                    continue
+                if date >= cutoff:
+                    continue
+                if status in ACTIVE_STATUSES:
+                    print(f"SKIP active status={status}: {src}")
+                    continue
+                reason = f"{key}={date}"
+            dst = os.path.join(JD_DIR, "archived", company, name)
             if os.path.exists(dst):
                 print(f"SKIP exists: {dst}")
                 continue
-            print(f"ARCHIVE {key}={date}: {src} -> {dst}")
+            print(f"ARCHIVE {reason}: {src} -> {dst}")
             if not args.dry_run:
                 move(src, dst)
             stem = name[: -len(".md")]

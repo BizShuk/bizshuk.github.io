@@ -142,7 +142,7 @@ flowchart LR
 `值不值得轉向`: 不需要轉向. 這條軌道 (`內部開發者平台`) 與履歷的既有重心
 (框架作者 + K8s 平台 + 跨團隊推動) `幾乎完全重疊`, 是目前庫內距離最短的高分職缺之一,
 且不像 [Red Hat](../redhat/ai_specialist_solution_architect.apac_technology_sales.md) 或
-[AWS](../amazon/senior_solution_architect.ai_engineering_asean_tech.md) 那樣需要客戶面向的職涯類型轉換.
+[AWS](../archived/amazon/senior_solution_architect.ai_engineering_asean_tech.md) 那樣需要客戶面向的職涯類型轉換.
 
 ## 我的對位敘事 (Positioning Angle)
 

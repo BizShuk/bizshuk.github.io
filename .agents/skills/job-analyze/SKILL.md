@@ -131,13 +131,15 @@ python3 ~/projects/product/bizshuk.github.io/.agents/skills/job-analyze/scripts/
 python3 ~/projects/product/bizshuk.github.io/.agents/skills/job-analyze/scripts/archive_stale.py
 ```
 
-- `判準`: `created` (缺則 `fetched`) 早於今天往前推 `3 個月`, 就從 `jd/<company>/` 移到 `jd/archive/<company>/`. 已在 git 追蹤的檔案用 `git mv`.
-- `SKIP no-date`: 沒有 front matter 日期的檔案不動, 在回覆中列出請使用者處理.
+- `判準`: 符合以下任一條件即從 `jd/<company>/` 移到 `jd/archived/<company>/` (已在 git 追蹤的檔案用 `git mv`):
+  1. `status` 為非成功終態 (`rejected`, `withdrawn`, `closed`), 立即封存 (不受 `3 個月` 限制)
+  2. `created` (缺則 `fetched`) 早於今天往前推 `3 個月`, 且 `status` 非進行中 (`applied`, `screening`, `interviewing`, `offer`)
+- `SKIP no-date`: 沒有 front matter 日期的檔案 (且非終態) 不動, 在回覆中列出請使用者處理.
 - `伴隨檔 (companion)`: 與 JD 同 stem 的 `.coverletter.md` / `.coverletter.pdf` 屬 `coverletter` skill, 不是 JD, 不計入檔數與排序總表; 腳本會讓它們隨 JD 一起移動.
-- `投遞中不封存`: `status` 為 `applied`, `screening`, `interviewing`, `offer` 的檔案由腳本跳過 (`SKIP active`), 因為進行中的流程仍需要它留在主表.
+- `進行中不封存`: `status` 為 `applied`, `screening`, `interviewing`, `offer` 的檔案由腳本跳過 (`SKIP active`), 因為進行中的流程仍需要它留在主表.
 - `移動後同步`:
   - [jd/README.md](../../../pkg/resume/jd/README.md): 從 `排序總表` 與 `投遞追蹤` 移除該列, 加到 `已封存` 清單, 更新總檔數. 已封存的檔案之後`不得`再加回排序總表.
-  - `相對連結`: `grep -rn '<檔名>' pkg/resume/jd/ pkg/resume/docs/` 找出其他檔案指向它的連結, 改成 `archive/<company>/` 下的新路徑.
+  - `相對連結`: `grep -rn '<檔名>' pkg/resume/jd/ pkg/resume/docs/` 找出其他檔案指向它的連結, 改成 `archived/<company>/` 下的新路徑.
 
 ## Common Mistakes
 

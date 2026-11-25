@@ -9,7 +9,7 @@
 
 `常用入口`: [Amazon Career Dashboard (Applicant)](https://account.amazon.jobs/en-US/applicant) · [Apple Career Dashboard](https://jobs.apple.com/app/en-sg/profile/roles) · [Meta Careers (Job Search)](https://www.metacareers.com/jobsearch/) · [Google Careers (Application Dashboard)](https://www.google.com/about/careers/applications/dashboard) · [Visa Careers (Workday Applicant Home)](https://visa.wd5.myworkdayjobs.com/en-US/Visa/userHome) · [JPMorgan Career Dashboard](https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/my-profile)
 
-`最近一次蒐集`: 2026-09-22 · `最近一次狀態盤點`: 2026-11-24 · 共 `45` 檔 · 覆蓋範圍與未涵蓋公司見 [_coverage_notes.md](_coverage_notes.md)
+`最近一次蒐集`: 2026-09-22 · `最近一次狀態盤點`: 2026-11-24 · 共 `38` 檔 · 覆蓋範圍與未涵蓋公司見 [_coverage_notes.md](_coverage_notes.md)
 
 ## 排序總表 (Ranked)
 
@@ -24,24 +24,17 @@
 | 📤 | `82` | Application Architect, Java | OKX | Architect | 加密貨幣 | [檔案](okx/application_architect.java_platform.md) |
 | 📤 | `80` | Infrastructure Stability Architect | OKX | Architect | 雲平台 | [檔案](okx/infrastructure_stability_architect.infrastructure.md) |
 | ⬜ | `80` | Lead Software Engineer, Backend | Grab | Lead | 雲平台 | [檔案](grab/lead_software_engineer.backend_flip.md) `+缺口分析` |
-| 📤 | `80` | Software Engineer, Infrastructure (Singapore) | Meta | IC | 雲平台 | [檔案](meta/software_engineer_infrastructure.singapore.md) |
 | 🔎 | `80` | Senior Software Engineer, AICET (1-year Contract) | NUS | IC | Data / AI | [檔案](nus/senior_software_engineer.aicet.md) `+缺口分析` |
 | ⬜ | `79` | AI Application Architect | OKX | Architect | Data / AI | [檔案](okx/ai_application_architect.ai_platform.md) |
 | ⬜ | `78` | Lead Engineer, Site Reliability Engineering | Mastercard | Lead | 雲平台 | [檔案](mastercard/lead_engineer_sre.payments_network.md) |
 | ⬜ | `78` | IT DevOps Manager | TSMC | Manager | 雲平台 | [檔案](tsmc/it_devops_manager.it_product_development.md) |
-| ❌ | `76` | Lead Developer(NodeJS) | Thoughtworks | Lead / 客戶面向 | 顧問交付 | [檔案](thoughtworks/lead_developer_nodejs.delivery_engineering.md) |
-| ❌ | `76` | Solutions Architect | TSMC | Architect | 雲平台 | [檔案](tsmc/solutions_architect.it_platform_services.md) |
 | ⬜ | `72` | Engineering Manager, Financial Platform | Airwallex | Manager | 支付 | [檔案](airwallex/engineering_manager.financial_platform.md) |
-| 📤 | `72` | Forward Deployed Engineer, Enterprise AI (Senior) | Meta | IC / 客戶面向 | Data / AI | [檔案](meta/forward_deployed_engineer_senior.enterprise_ai.md) |
 | 📤 | `70` | Technical Lead | CarHarbor | Lead | 加密貨幣 | [檔案](carharbor/technical_lead.web3_marketplace.md) `+缺口分析` |
 | ⬜ | `70` | Engineering Manager, IAM & Account Infrastructure | Airwallex | Manager | 資安 | [檔案](airwallex/engineering_manager.iam_account_infrastructure.md) |
 | ⬜ | `70` | Business Support Engineer - Meta Business Agents | Meta | IC / 客戶面向 | Data / AI | [檔案](meta/business_support_engineer.business_agents.md) `+缺口分析` |
 | ⬜ | `68` | Staff/Senior Staff Engineer, Kubernetes | OKX | Staff IC | 雲平台 | [檔案](okx/staff_engineer.kubernetes_platform.md) |
-| 📤 | `68` | Software Engineer, Product (Singapore) | Meta | IC | - | [檔案](meta/software_engineer_product.singapore.md) |
 | ⬜ | `68` | Business Support Engineer - AdTech | Meta | IC / 客戶面向 | - | [檔案](meta/business_support_engineer.adtech.md) |
-| ❌ | `66` | Senior Solution Architect, AI Engineering | Amazon Web Services | Architect / 客戶面向 | Data / AI | [檔案](amazon/senior_solution_architect.ai_engineering_asean_tech.md) |
 | ⬜ | `66` | Forward Deployed Engineer | OpenAI | IC / 客戶面向 | Data / AI | [檔案](openai/forward_deployed_engineer.forward_deployed_engineering.md) |
-| 📤 | `66` | Forward Deployed Engineer, Enterprise AI (Staff) | Meta | Staff IC / 客戶面向 | Data / AI | [檔案](meta/forward_deployed_engineer_staff.enterprise_ai.md) |
 | ⬜ | `65` | Trade Flow Support - Trading Infrastructure Support Lead | Squarepoint Capital | Lead | 低延遲交易 | [檔案](squarepoint/trading_infrastructure_support_lead.trade_flow_support.md) |
 | ⬜ | `60` | Applied AI Architect | OpenAI | Architect / 客戶面向 | Data / AI | [檔案](openai/applied_ai_architect.technical_success.md) |
 | ⬜ | `56` | AI HPC Manager | TSMC | Manager | ML Infra | [檔案](tsmc/ai_hpc_manager.ai_hpc_platform.md) `+缺口分析` |
@@ -78,14 +71,7 @@
 | 📤 | 2026-09-19 | `70` | Technical Lead | CarHarbor | `Application` | [檔案](carharbor/technical_lead.web3_marketplace.md) |
 | 🔎 | 2026-09-17 | `80` | Senior Software Engineer, AICET (1-year Contract) | NUS | `Screening` | [檔案](nus/senior_software_engineer.aicet.md) |
 | 📤 | 2026-09-17 | `48` | Applied AI Architect | Anthropic | `Application` | [檔案](anthropic/applied_ai_architect.technical_success.md) |
-| 📤 | 2026-09-10 | `80` | Software Engineer, Infrastructure (Singapore) | Meta | `Application` | [檔案](meta/software_engineer_infrastructure.singapore.md) |
-| 📤 | 2026-09-10 | `72` | Forward Deployed Engineer, Enterprise AI (Senior) | Meta | `Application` | [檔案](meta/forward_deployed_engineer_senior.enterprise_ai.md) |
-| 📤 | 2026-09-10 | `68` | Software Engineer, Product (Singapore) | Meta | `Application` | [檔案](meta/software_engineer_product.singapore.md) |
-| 📤 | 2026-09-10 | `66` | Forward Deployed Engineer, Enterprise AI (Staff) | Meta | `Application` | [檔案](meta/forward_deployed_engineer_staff.enterprise_ai.md) |
 | 📤 | 2026-09-10 | `52` | Software Engineer, Principal | Meta | `Application` | [檔案](meta/software_engineer_principal.xf_apac_products.md) |
-| ❌ | - | `76` | Lead Developer(NodeJS) | Thoughtworks | `Rejected` | [檔案](thoughtworks/lead_developer_nodejs.delivery_engineering.md) |
-| ❌ | - | `76` | Solutions Architect | TSMC | `Rejected` | [檔案](tsmc/solutions_architect.it_platform_services.md) |
-| ❌ | - | `66` | Senior Solution Architect, AI Engineering | Amazon Web Services | `Rejected` | [檔案](amazon/senior_solution_architect.ai_engineering_asean_tech.md) |
 
 `已知重疊`: Forward Deployed Engineer, Enterprise AI 的 Senior 與 Staff 兩檔已同時投遞.
 依`同一份 JD 的多職級版本`一節的判準, 這類情況原則上只投職級高的那一檔;
@@ -166,7 +152,7 @@ Meta 的 `Business Support Engineer` 兩檔 (AdTech 與 Meta Business Agents) �
 | `status` | `not_applied`, `shortlisted`, `applied`, `screening`, `interviewing`, `offer`, `rejected`, `withdrawn`, `closed` |
 | `min_years`, `score` | 整數, 未載明為 `null` |
 | `posted`, `expiry`, `fetched`, `status_updated` | `YYYY-MM-DD`, 未載明為 `null` |
-| `created` | `YYYY-MM-DD`, 建檔當天寫入且不再改動; 早於 3 個月且非投遞中者移入 `archive/<company>/` |
+| `created` | `YYYY-MM-DD`, 建檔當天寫入且不再改動; 早於 3 個月且非投遞中者移入 `archived/<company>/` |
 
 本文區塊固定為: `評估摘要` (blockquote) → `基本資訊` → `團隊背景` (選備) → `崗位職責` →
 `任職要求` → `缺口分析` (選備) → `角色評估`, `機會`, `路線圖` (選備, 由 `job-analyze` skill 產出) → `我的對位敘事`.
@@ -207,3 +193,10 @@ Meta 的 `Business Support Engineer` 兩檔 (AdTech 與 Meta Business Agents) �
 - [TSMC - Mobile APP Manager](archived/tsmc/mobile_app_manager.enterprise_mobility.md) (`44`)
 - [Red Hat - AI Specialist Solution Architect, Southeast Asia](archived/redhat/ai_specialist_solution_architect.apac_technology_sales.md) (`40`)
 - [Dell Technologies - Senior Principal Engineer, Solutions Architecture](archived/dell/senior_principal_solutions_architect.hyperscale_ai_infrastructure.md) (`35`)
+- [Meta - Software Engineer, Infrastructure (Singapore)](archived/meta/software_engineer_infrastructure.singapore.md) (`80`, `rejected`)
+- [Thoughtworks - Lead Developer(NodeJS)](archived/thoughtworks/lead_developer_nodejs.delivery_engineering.md) (`76`, `rejected`)
+- [TSMC - Solutions Architect](archived/tsmc/solutions_architect.it_platform_services.md) (`76`, `rejected`)
+- [Meta - Forward Deployed Engineer, Enterprise AI (Senior)](archived/meta/forward_deployed_engineer_senior.enterprise_ai.md) (`72`, `rejected`)
+- [Meta - Software Engineer, Product (Singapore)](archived/meta/software_engineer_product.singapore.md) (`68`, `rejected`)
+- [Amazon Web Services - Senior Solution Architect, AI Engineering](archived/amazon/senior_solution_architect.ai_engineering_asean_tech.md) (`66`, `rejected`)
+- [Meta - Forward Deployed Engineer, Enterprise AI (Staff)](archived/meta/forward_deployed_engineer_staff.enterprise_ai.md) (`66`, `rejected`)

@@ -96,4 +96,4 @@ status_updated: 2026-09-08
 
 `不建議投遞`. CISSP 為明文硬性要求, 且 8 年資安本業年資無法以工程經驗替代.
 
-`保留價值`: 值得注意的是 JD 把 `AI 安全架構` 列為硬性要求 — 這是一個正在成形的交叉領域 (AI 加資安), 目前市場上符合「15 年資安加 AI 架構」的人極少. 若未來想切入這個交叉點, 可行的入口不是資安側, 而是`從 AI 平台側往安全治理延伸`, 對應同批的 [ai_manager.ai_platform.md](ai_manager.ai_platform.md) 與 [solutions_architect.it_platform_services.md](solutions_architect.it_platform_services.md).
+`保留價值`: 值得注意的是 JD 把 `AI 安全架構` 列為硬性要求 — 這是一個正在成形的交叉領域 (AI 加資安), 目前市場上符合「15 年資安加 AI 架構」的人極少. 若未來想切入這個交叉點, 可行的入口不是資安側, 而是`從 AI 平台側往安全治理延伸`, 對應同批的 [ai_manager.ai_platform.md](ai_manager.ai_platform.md) 與 [solutions_architect.it_platform_services.md](../archived/tsmc/solutions_architect.it_platform_services.md).

@@ -210,6 +210,6 @@ flowchart LR
 
 `二, 中間站才是該投的`. 若對這條路徑有興趣, 正確的下一步關鍵字是 `Privacy Engineering`, `Compliance Engineering`, `Data Governance` 與 `Technology Risk` -- 這些職位同時接受工程背景, 又能累積 audit-facing 的交付物. 本庫目前一檔都沒有, 應在下一輪蒐集補上.
 
-`三, Meta 的正確入口不是這一檔`. 若目標是 Meta, 履歷該投的是本庫已有的 [Forward Deployed Engineer, Enterprise AI (Senior)](forward_deployed_engineer_senior.enterprise_ai.md) 與 [Software Engineer, Product (Singapore)](software_engineer_product.singapore.md) -- 新加坡在地, 工作權無虞, 且進去之後 `L-1 內部調動`與`內轉 RCP` 兩條路才會打開. 以`外部直聘 Director`為起點, 是把七年的路徑壓縮成一次申請, 不會成立.
+`三, Meta 的正確入口不是這一檔`. 若目標是 Meta, 履歷該投的是本庫已有的 [Forward Deployed Engineer, Enterprise AI (Senior)](../archived/meta/forward_deployed_engineer_senior.enterprise_ai.md) 與 [Software Engineer, Product (Singapore)](../archived/meta/software_engineer_product.singapore.md) -- 新加坡在地, 工作權無虞, 且進去之後 `L-1 內部調動`與`內轉 RCP` 兩條路才會打開. 以`外部直聘 Director`為起點, 是把七年的路徑壓縮成一次申請, 不會成立.
 
 `若情況改變`: 唯一值得重新評估的觸發條件是 `+ 1 more` 的第二地點為新加坡, `且`職缺實際對標的是 `Compliance Engineering` 而非 GRC 管理. 屆時應以`用 AI 建立合規證據自動化`為單一切入角重新計分.

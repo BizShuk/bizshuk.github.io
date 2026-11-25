@@ -67,9 +67,9 @@ Microsoft 的職缺站已從 `jobs.careers.microsoft.com` 遷移到 `apply.caree
 抓取管道的阻擋狀況不變. 其餘 Meta 新加坡職缺仍待人工開啟瀏覽器補齊.
 
 `2026-09-10 第二次更新`: 再由人工貼入 `5 檔`全文建檔, 皆`未附原始連結`, 故 `url` 與 `job_post_id` 為 `null`:
-[FDE, Enterprise AI (Senior)](meta/forward_deployed_engineer_senior.enterprise_ai.md),
-[FDE, Enterprise AI (Staff)](meta/forward_deployed_engineer_staff.enterprise_ai.md),
-[Software Engineer, Product](meta/software_engineer_product.singapore.md),
+[FDE, Enterprise AI (Senior)](archived/meta/forward_deployed_engineer_senior.enterprise_ai.md),
+[FDE, Enterprise AI (Staff)](archived/meta/forward_deployed_engineer_staff.enterprise_ai.md),
+[Software Engineer, Product](archived/meta/software_engineer_product.singapore.md),
 [Business Support Engineer - AdTech](meta/business_support_engineer.adtech.md),
 [Business Support Engineer - Meta Business Agents](meta/business_support_engineer.business_agents.md).
 Meta 累計 `6 檔`. 抓取管道的阻擋狀況`仍然不變`, 全部 6 檔都是人工貼入.
@@ -82,7 +82,7 @@ Meta 累計 `6 檔`. 抓取管道的阻擋狀況`仍然不變`, 全部 6 檔都�
 `WebSearch` 無法以 job id 反查職缺. 唯一可行的自動化路徑是`已渲染的瀏覽器`
 (Claude 的 Chrome 擴充或 headless Chrome `--dump-dom`), 本次工作階段中該擴充未連線.
 
-`2026-09-10 第四次更新`: 再由人工貼入 [Software Engineer, Infrastructure (Singapore)](meta/software_engineer_infrastructure.singapore.md)
+`2026-09-10 第四次更新`: 再由人工貼入 [Software Engineer, Infrastructure (Singapore)](archived/meta/software_engineer_infrastructure.singapore.md)
 全文建檔, `未附原始連結`, 故 `url` 與 `job_post_id` 為 `null`. Meta 累計 `8 檔`.
 該檔與既有的 Software Engineer, Product 為`同一份 generic req 的兩個方向`,
 硬性要求八條中七條逐字相同, 差異僅在職責段; 未來比對 Meta 通用職缺時可據此直接判親緣.

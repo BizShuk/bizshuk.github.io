@@ -166,7 +166,7 @@ Meta 近期推出 `Business Agent`, 讓各種規模的企業以 AI 提升生產�
 - 職等表是`與 SWE 同一張`, 還是獨立的 support ladder. `這是最關鍵的單一問題`.
 - 過去兩年離開這個團隊的人去了哪裡 - 內部轉 FDE 與 Production Engineering 的比例是多少.
 
-主投仍應是 [OKX AI Application Architect](../okx/ai_application_architect.ai_platform.md) 與 [Airwallex Engineering Lead, Data & AI](../airwallex/engineering_lead.data_ai_infrastructure.md) 這類同時保住職級與 AI 曝光的職缺; 但若上述四題的答案都偏 proactive 側, 這兩檔應與 [Meta FDE (Senior)](forward_deployed_engineer_senior.enterprise_ai.md) `同批投遞`而非當作備援, 因為它們篩的是同一種人.
+主投仍應是 [OKX AI Application Architect](../okx/ai_application_architect.ai_platform.md) 與 [Airwallex Engineering Lead, Data & AI](../airwallex/engineering_lead.data_ai_infrastructure.md) 這類同時保住職級與 AI 曝光的職缺; 但若上述四題的答案都偏 proactive 側, 這兩檔應與 [Meta FDE (Senior)](../archived/meta/forward_deployed_engineer_senior.enterprise_ai.md) `同批投遞`而非當作備援, 因為它們篩的是同一種人.
 
 ## 我的對位敘事 (Positioning Angle)
 

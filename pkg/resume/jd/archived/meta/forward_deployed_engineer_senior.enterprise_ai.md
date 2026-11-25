@@ -10,13 +10,13 @@ url: null
 source: direct
 posted: null
 expiry: null
-fetched: 2026-09-10
+fetched: 2026-11-24
 created: 2026-09-10
 min_years: 6
 education: bachelor_cs
 score: 72
-status: applied
-status_updated: 2026-09-10
+status: rejected
+status_updated: 2026-11-24
 ---
 # Meta - Forward Deployed Engineer, Enterprise AI (Senior)
 
