@@ -45,18 +45,28 @@ this developer. The App sends the study prompt with your API key to
 `MiniMax-H3-Image-Highspeed`. The App does not bundle those models and does
 not contact their provider itself.
 
-This policy does not state how long `stts.shuks.dev` keeps prompts, logs, or
-generated images. That retention is not established by the App. If you point
-the App at a different address, that operator's practices apply instead, and
-this policy does not describe them.
+The default server does not write the study prompt or the generated image to
+disk. What it keeps is described in Storage and retention. If you point the
+App at a different address, that operator's practices apply instead, and this
+policy does not describe them. This policy does not state how long the
+upstream model provider keeps a prompt.
 
 ## 5. Storage and retention
 
 The API key is stored in the device Keychain. Study settings are stored in
 local app settings. Card text, the per-subject history, and images stay in
 the App's shared container until you remove the App, which removes that local
-data. This policy does not promise deletion of prompts or images held by the
-server you configured.
+data.
+
+On `stts.shuks.dev`, the server keeps no copy of the prompt or the generated
+image. A successful request adds one process log line with the path, model
+name, and token counts. A failed request adds an error line with the path and
+status. The reverse proxy adds an access line with the request line, status,
+and size, and not the request body. Those logs stay in the host container
+log: at most 3 files of 10 MB for the application container, and the same
+limit for the reverse-proxy container. The proxy limit is shared with that
+proxy's other sites. There is no calendar retention period. A different stts
+address is outside this limit.
 
 ## 6. Your privacy choices
 
