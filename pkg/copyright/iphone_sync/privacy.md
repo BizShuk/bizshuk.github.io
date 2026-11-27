@@ -1,15 +1,15 @@
-# iPhone Sync Privacy Policy
+# Photo Sync Privacy Policy
 
 Effective August 10, 2026
-Last updated August 10, 2026
+Last updated August 12, 2026
 
-iPhone Sync transfers selected Photo Library media directly to a paired
+Photo Sync transfers selected Photo Library media directly to a paired
 computer on the same local network. The developer operates no cloud relay or
 account service for this transfer.
 
 ## 1. Scope
 
-This policy applies to the iPhone and iPad source App and the paired macOS
+This policy applies to the iPhone source App and the paired macOS or Windows
 receiver. It covers album selection, local-network pairing, media transfer,
 transfer history, automatic sync settings, and optional deletion after sync.
 
@@ -64,7 +64,7 @@ according to its own permissions and backup settings.
 
 ## 8. Children's privacy
 
-iPhone Sync is a personal backup utility and is not directed to children under
+Photo Sync is a personal backup utility and is not directed to children under
 13. The developer does not knowingly collect children's personal information
 through an App-operated service.
 
