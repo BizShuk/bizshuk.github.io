@@ -15,6 +15,8 @@ APPS=(
   "md-viewer:md-viewer"
   "push:push"
   "tally:tally"
+  "golive:golive"
+  "learnvocab:learnvocab"
 )
 
 SELECTED_APPS=("${APPS[@]}")

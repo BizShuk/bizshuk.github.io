@@ -17,8 +17,8 @@ the production output is the working tree itself.
   owner's own Uluwatu drop-in photo — story, surf-spot footprints
   (Bali / Lombok / Taiwan), and quiver.
 - `pkg/copyright/` gathers the App Store introduction, privacy policy, and
-  copyright & attribution pages for six Apple-platform apps (`MinimalBrowser`,
-  `castlan`, `iphone_sync`, `md-viewer`, `push`, `tally`), indexed at
+  copyright & attribution pages for eight Apple-platform apps (`MinimalBrowser`,
+  `castlan`, `iphone_sync`, `md-viewer`, `push`, `tally`, `golive`, `learnvocab`), indexed at
   [pkg/copyright/index.html](pkg/copyright/index.html) and synced from upstream
   by [scripts/release-store.sh](scripts/release-store.sh).
 
@@ -100,9 +100,9 @@ template engine and no data binding.
 ### App Store 政策頁 (App Store Policy Pages)
 
 A consolidated policy directory under `pkg/copyright/` that hosts the public
-app introduction, privacy policy, and copyright & attribution pages for six
+app introduction, privacy policy, and copyright & attribution pages for eight
 Apple-platform apps (`MinimalBrowser`, `castlan`, `iphone_sync`, `md-viewer`,
-`push`, `tally`).
+`push`, `tally`, `golive`, `learnvocab`).
 
 `領域流程 (Domain Flow):`
 

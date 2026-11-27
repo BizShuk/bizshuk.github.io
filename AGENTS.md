@@ -32,13 +32,15 @@ bizshuk.github.io/
 │
 └── pkg/                    # 各自封裝的子頁面 (subpage packages)
     ├── copyright/          # App Store 政策頁整合目錄
-    │   ├── index.html      # 6 個 app 政策頁索引
+    │   ├── index.html      # 8 個 app 政策頁索引
     │   ├── MinimalBrowser/
     │   ├── castlan/
     │   ├── iphone_sync/
     │   ├── md-viewer/
     │   ├── push/
-    │   └── tally/          # 各含 index.html, privacy.html, copyright.html, privacy.md, preview/
+    │   ├── tally/
+    │   ├── golive/
+    │   └── learnvocab/     # 各含 index.html, privacy.html, copyright.html, privacy.md, preview/
     ├── resume/
     │   ├── index.html      # 履歷頁 (sunny 風格,樣式與腳本 inline)
     │   ├── Resume.md       # 履歷內容主稿
@@ -99,7 +101,7 @@ bizshuk.github.io/
 | 個人作品集 (Personal Portfolio) | `index.html` (樣式與腳本 inline), `data/gallery.json`            | `index.html` inline `<script>` 的 `DOMContentLoaded` |
 | 履歷展示 (Resume Showcase)      | `pkg/resume/index.html` (樣式與腳本 inline)                         | 頁尾 inline `<script>` (年份 + 捲動顯影)       |
 | 衝浪頁 (Surf Page)              | `pkg/surf/index.html` (樣式與腳本 inline)                           | `pkg/surf/index.html` inline `<script>` 的 `DOMContentLoaded` |
-| App Store 政策頁 (Policy Pages) | `pkg/copyright/` (`index.html` + 6 個 app 子目錄)                   | `pkg/copyright/index.html`, `scripts/release-store.sh` |
+| App Store 政策頁 (Policy Pages) | `pkg/copyright/` (`index.html` + 8 個 app 子目錄)                   | `pkg/copyright/index.html`, `scripts/release-store.sh` |
 
 ## 開發指南 (Development Guide)
 
