@@ -24,12 +24,12 @@
 
 ## 重建與驗證 (Build & Verify)
 
-於 repo 根目錄執行:
+於 repo 根目錄或 `pkg/resume/` 執行:
 
 ```bash
-npm run build:pdf
+./pkg/resume/scripts/build-pdf.sh
 ```
 
-(或直接執行 `./pkg/resume/scripts/build-pdf.sh`) 腳本會以 headless Chrome 列印兩份 PDF, 並自動驗證:
+腳本會以 headless Chrome 列印兩份 PDF, 並自動驗證:
 - `Resume-ShukLiu.pdf` 為 `1` 頁, `Resume-ShukLiu-full.pdf` 為 `2` 頁.
 - 兩份 PDF 抽出文字後皆不含 `High School` 與 `Heping`.
